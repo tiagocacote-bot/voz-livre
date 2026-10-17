@@ -1,0 +1,5 @@
+# Preserve artwork source bytes: provenance records include exact SHA-256 hashes.
+artwork/** -text
+*.png binary
+*.apk binary
+*.zip binary
