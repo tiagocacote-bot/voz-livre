@@ -1,0 +1,42 @@
+name: Import reviewed source distribution
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and expand reviewed source
+        shell: python
+        run: |
+          import hashlib, pathlib, zipfile
+          root = pathlib.Path.cwd().resolve()
+          archive = root / 'Voz-Livre-0.1.1-source.zip'
+          expected = '905cb06afeb54d38409d6aa0a26d97d3fa0467f3571f7b9cd5ae86d16a98bf37'
+          assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected, 'Unexpected source hash'
+          with zipfile.ZipFile(archive) as z:
+              assert len(z.infolist()) == 450
+              assert sum(f.file_size for f in z.infolist()) < 30000000
+              for f in z.infolist():
+                  rel = pathlib.PurePosixPath(f.filename)
+                  assert not rel.is_absolute() and '..' not in rel.parts and '.git' not in rel.parts
+                  assert '\\' not in f.filename and ':' not in f.filename
+                  assert (f.external_attr >> 16) & 0o170000 != 0o120000, 'Symlink not allowed'
+                  if f.filename.startswith('.github/workflows/'):
+                      continue
+                  target = root.joinpath(*rel.parts).resolve()
+                  assert target.is_relative_to(root)
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(z.read(f))
+          archive.unlink()
+      - name: Check attribution and assets
+        run: python scripts/check-assets.py
+      - name: Commit application sources
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          git commit -m 'Publish Voz Livre Android alpha with MIT code and attributed artwork'
+          git push origin HEAD:main
