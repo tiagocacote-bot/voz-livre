@@ -1,10 +1,10 @@
-# Voz Livre
+# Voz Livre — Free Voice
 
 **Comunicação Aumentativa e Alternativa (CAA) gratuita e de código aberto para Android.**
 
 [English](README.md) · [Baixar APK para Android](https://github.com/tiagocacote-bot/voz-livre/releases) · [Compilar o código](BUILDING.md)
 
-A comunicação não deveria depender da renda ou da marca de um aparelho. O Voz Livre busca oferecer um comunicador personalizável em celulares e tablets Android mais acessíveis, inclusive para pessoas autistas e outras pessoas que utilizam CAA. É gratuito para usar, estudar, adaptar e compartilhar, sem conta, assinatura ou anúncios.
+A comunicação não deveria depender da renda ou da marca de um aparelho. O Voz Livre é um aplicativo gratuito de CAA para Android, criado para ampliar o acesso de pessoas autistas, outras pessoas neurodivergentes e qualquer pessoa que precise de apoio para se comunicar — especialmente famílias que não podem comprar um iPhone ou iPad e só têm aparelhos Android. Oferece um comunicador personalizável para celulares e tablets mais acessíveis. É gratuito para usar, estudar, adaptar e compartilhar, sem conta, assinatura ou anúncios.
 
 **A versão 0.1.1 é uma alfa inicial.** O aplicativo e as pranchas estão em português brasileiro. O responsável pelo projeto relata que o uso básico aparentemente funcionou em um Samsung Galaxy S24 FE e em um tablet Samsung SM-P619. A versão do app, as versões do Android e os recursos testados não foram registrados; isso não confirma todos os métodos de acesso nem a nova edição 0.1.1 com outras imagens. Ainda precisamos ampliar a avaliação com usuários. É um projeto independente, sem vínculo com a Tobii Dynavox; não é o TD Snap e não oferece todos os recursos dele.
 

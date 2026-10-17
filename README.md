@@ -1,10 +1,10 @@
-# Voz Livre
+# Voz Livre — Free Voice
 
 **Free, open-source augmentative and alternative communication (AAC) for Android.**
 
 [Português do Brasil](README.pt-BR.md) · [Download the Android APK](https://github.com/tiagocacote-bot/voz-livre/releases) · [Build from source](BUILDING.md)
 
-Communication should not depend on income or device brand. Voz Livre aims to make a customizable communicator available on affordable Android phones and tablets, including for autistic people and other people who use AAC. Free to use, study, adapt and share; no account, subscription or ads.
+Communication should not depend on income or device brand. Voz Livre is a free AAC app for Android, created to expand access for autistic people, other neurodivergent people and anyone who needs support to communicate — especially families who cannot afford an iPhone or iPad and only have Android devices. It offers a customizable communicator for affordable phones and tablets. Free to use, study, adapt and share; no account, subscription or ads.
 
 **0.1.1 is an early alpha.** The app and starter boards are currently in **Brazilian Portuguese**; this English README does not mean the interface is translated. The project owner reports that basic use appeared to work on a Samsung Galaxy S24 FE and a Samsung SM-P619 tablet. App version, Android versions and tested features were not recorded; this does not confirm every access mode or the new 0.1.1 artwork edition. Broader accessibility testing is still needed. This is an independent project, not TD Snap, and is not affiliated with Tobii Dynavox. It does not reproduce all TD Snap features.
 
