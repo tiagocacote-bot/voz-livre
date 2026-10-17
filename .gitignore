@@ -1,0 +1,13 @@
+/build/
+/.gradle/
+/local.properties
+/signing/
+/tests/target/
+/.toolchain/
+/.test-fixtures/
+*.p12
+*.jks
+*.keystore
+password.txt
+/rt/
+/node_modules/

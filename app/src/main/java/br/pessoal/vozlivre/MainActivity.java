@@ -1,0 +1,2216 @@
+package br.pessoal.vozlivre;
+
+import android.app.*;
+import android.content.*;
+import android.content.res.Configuration;
+import android.graphics.*;
+import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
+import android.os.*;
+import android.speech.tts.*;
+import android.view.*;
+import android.widget.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.concurrent.*;
+import org.json.*;
+
+public class MainActivity extends Activity {
+  Model model;
+  Repository repo;
+  TextToSpeech tts;
+  boolean voiceReady = false, edit = false, paused = false, stopped = false;
+  LinearLayout root, header, messageItems;
+  TextView messageText, pageTitle, status;
+  ScrollView pageScroll;
+  GridLayout grid;
+  HorizontalScrollView messageScroll;
+  String current;
+  Deque<String> back = new ArrayDeque<>();
+  final Handler handler = new Handler(Looper.getMainLooper());
+  final ScanEngine scanner = new ScanEngine();
+  final ArrayList<View> targets = new ArrayList<>();
+  final ArrayList<Runnable> targetActions = new ArrayList<>();
+  final Map<View, Integer> colors = new HashMap<>();
+  final ExecutorService io = Executors.newSingleThreadExecutor();
+  final Map<String, Bitmap> bitmapCache =
+      new LinkedHashMap<String, Bitmap>(32, .75f, true) {
+        protected boolean removeEldestEntry(Map.Entry<String, Bitmap> e) {
+          return size() > 80;
+        }
+      };
+  int dialogCount = 0;
+  View focused = null, touchTarget = null;
+  Runnable dwell = null;
+  JSONObject photoDraft = null;
+  TextView photoLabel = null;
+  String search = "";
+  static final int EXPORT = 10, IMPORT = 11, PHOTO = 12;
+  final int ink = Color.rgb(21, 48, 65), teal = Color.rgb(8, 127, 140);
+  final Runnable scanTick =
+      new Runnable() {
+        public void run() {
+          if (activeScan() && "auto".equals(model.settings().optString("scanType", "auto"))) {
+            focus(scanner.next());
+            handler.postDelayed(this, clamp(model.settings().optInt("scanMs", 1200), 400, 8000));
+          }
+        }
+      };
+
+  @Override
+  public void onCreate(Bundle state) {
+    super.onCreate(state);
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    repo = new Repository(this);
+    try {
+      model = repo.load();
+    } catch (Exception e) {
+      new AlertDialog.Builder(this)
+          .setTitle("Não foi possível abrir o comunicador")
+          .setMessage(e.toString())
+          .setPositiveButton("Fechar", (d, w) -> finish())
+          .show();
+      return;
+    }
+    current = model.profile().optString("home");
+    if (state != null) {
+      String p = state.getString("page");
+      if (model.page(p) != null) current = p;
+    }
+    build();
+    tts =
+        new TextToSpeech(
+            this,
+            result -> {
+              voiceReady = result == TextToSpeech.SUCCESS;
+              if (voiceReady) configureVoice();
+              runOnUiThread(
+                  () -> {
+                    if (status != null)
+                      status.setText(
+                          voiceReady ? "Pronto para comunicar" : "Configure uma voz em Ajustes");
+                  });
+            });
+    if (repo.recovered)
+      show(
+          new AlertDialog.Builder(this)
+              .setTitle("Dados recuperados")
+              .setMessage(
+                  "Foi necessário recuperar seus dados. Uma cópia do arquivo anterior foi"
+                      + " preservada no aparelho. Exporte um backup em Ajustes.")
+              .setPositiveButton("Entendi", null));
+  }
+
+  int dp(float n) {
+    return (int) (n * getResources().getDisplayMetrics().density + .5f);
+  }
+
+  int clamp(int n, int min, int max) {
+    return Math.min(max, Math.max(min, n));
+  }
+
+  boolean contrast() {
+    return model.settings().optBoolean("contrast");
+  }
+
+  int bg() {
+    return contrast() ? Color.BLACK : Color.rgb(243, 247, 249);
+  }
+
+  int fg() {
+    return contrast() ? Color.WHITE : ink;
+  }
+
+  GradientDrawable shape(int color) {
+    GradientDrawable g = new GradientDrawable();
+    g.setColor(color);
+    g.setCornerRadius(dp(12));
+    g.setStroke(dp(1), contrast() ? Color.LTGRAY : Color.rgb(208, 222, 229));
+    return g;
+  }
+
+  LinearLayout row() {
+    LinearLayout l = new LinearLayout(this);
+    l.setOrientation(LinearLayout.HORIZONTAL);
+    l.setGravity(Gravity.CENTER_VERTICAL);
+    return l;
+  }
+
+  LinearLayout column() {
+    LinearLayout l = new LinearLayout(this);
+    l.setOrientation(LinearLayout.VERTICAL);
+    return l;
+  }
+
+  TextView text(String s, int size) {
+    TextView t = new TextView(this);
+    t.setText(s);
+    t.setTextSize(size);
+    t.setTextColor(fg());
+    return t;
+  }
+
+  void toast(String s) {
+    Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+  }
+
+  void error(Exception e) {
+    runOnUiThread(
+        () ->
+            show(
+                new AlertDialog.Builder(this)
+                    .setTitle("Não foi possível concluir")
+                    .setMessage(e.getMessage() == null ? e.toString() : e.getMessage())
+                    .setPositiveButton("Entendi", null)));
+  }
+
+  void save() {
+    try {
+      repo.save(model);
+    } catch (Exception e) {
+      status.setText("Não foi possível salvar — exporte um backup");
+      error(e);
+    }
+  }
+
+  AlertDialog show(AlertDialog.Builder b) {
+    cancelTouch();
+    dialogCount++;
+    handler.removeCallbacks(scanTick);
+    AlertDialog d = b.create();
+    d.setOnDismissListener(
+        x -> {
+          dialogCount = Math.max(0, dialogCount - 1);
+          startScan();
+        });
+    d.show();
+    return d;
+  }
+
+  Button plain(String title, Runnable action) {
+    Button b = new Button(this);
+    b.setText(title);
+    b.setAllCaps(false);
+    b.setTextSize(15);
+    b.setTextColor(fg());
+    b.setMinHeight(dp(48));
+    b.setPadding(dp(9), 0, dp(9), 0);
+    b.setBackground(shape(contrast() ? Color.rgb(25, 25, 25) : Color.WHITE));
+    b.setOnClickListener(v -> action.run());
+    return b;
+  }
+
+  Button action(String title, Runnable action) {
+    Button b = plain(title, action);
+    register(b, action, contrast() ? Color.rgb(25, 25, 25) : Color.WHITE);
+    return b;
+  }
+
+  void addRowButton(LinearLayout row, View v, float weight) {
+    LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(0, dp(50), weight);
+    p.setMargins(dp(3), dp(3), dp(3), dp(3));
+    row.addView(v, p);
+  }
+
+  void build() {
+    handler.removeCallbacks(scanTick);
+    cancelTouch();
+    targets.clear();
+    targetActions.clear();
+    colors.clear();
+    focused = null;
+    root = column();
+    root.setBackgroundColor(bg());
+    root.setPadding(dp(10), dp(6), dp(10), dp(8));
+    root.setOnApplyWindowInsetsListener(
+        (v, insets) -> {
+          root.setPadding(
+              dp(10) + insets.getSystemWindowInsetLeft(),
+              dp(6) + insets.getSystemWindowInsetTop(),
+              dp(10) + insets.getSystemWindowInsetRight(),
+              dp(8) + insets.getSystemWindowInsetBottom());
+          return insets;
+        });
+    setContentView(root);
+    root.requestApplyInsets();
+    header = row();
+    TextView brand = text("Voz Livre", 23);
+    brand.setTypeface(null, Typeface.BOLD);
+    header.addView(brand, new LinearLayout.LayoutParams(0, dp(50), 1));
+    Button profiles = plain("Perfil ▾", () -> profiles());
+    header.addView(profiles);
+    Button settings = plain("Ajustes", () -> settings());
+    header.addView(settings);
+    root.addView(header);
+    LinearLayout titleRow = row();
+    pageTitle = text("", 18);
+    pageTitle.setTypeface(null, Typeface.BOLD);
+    titleRow.addView(pageTitle, new LinearLayout.LayoutParams(0, dp(40), 1));
+    Button ed = plain(edit ? "Concluir edição" : "Editar", () -> toggleEdit());
+    titleRow.addView(ed);
+    boolean compact = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+    if (compact) {
+      header.removeView(brand);
+      titleRow.removeView(pageTitle);
+      titleRow.removeView(ed);
+      header.addView(pageTitle, 0, new LinearLayout.LayoutParams(0, dp(50), 1));
+      header.addView(ed);
+    } else root.addView(titleRow);
+    messageScroll = new HorizontalScrollView(this);
+    messageScroll.setBackground(shape(contrast() ? Color.rgb(20, 20, 20) : Color.WHITE));
+    messageItems = row();
+    messageItems.setPadding(dp(8), dp(6), dp(8), dp(6));
+    messageScroll.addView(messageItems);
+    root.addView(messageScroll, new LinearLayout.LayoutParams(-1, dp(compact ? 72 : 92)));
+    LinearLayout speech = row();
+    Button speak = action("▶ Falar", () -> speak(model.text(), false));
+    speak.setTextColor(Color.WHITE);
+    speak.setBackground(shape(teal));
+    colors.put(speak, teal);
+    addRowButton(speech, speak, 1.5f);
+    addRowButton(
+        speech,
+        action(
+            "Parar",
+            () -> {
+              if (tts != null) tts.stop();
+            }),
+        1);
+    addRowButton(
+        speech,
+        action(
+            "Apagar",
+            () -> {
+              model.remove();
+              changed();
+            }),
+        1);
+    addRowButton(
+        speech,
+        action(
+            "Limpar",
+            () -> {
+              model.clear();
+              changed();
+            }),
+        1);
+    root.addView(speech);
+    LinearLayout nav = row();
+    addRowButton(nav, action("⌂ Início", () -> home()), 1);
+    addRowButton(nav, action("‹ Voltar", () -> goBack()), 1);
+    addRowButton(nav, action("Teclado", () -> keyboard()), 1);
+    addRowButton(nav, action("Mais ▾", () -> tools()), 1);
+    root.addView(nav);
+    pageScroll = new ScrollView(this);
+    pageScroll.setFillViewport(false);
+    grid = new GridLayout(this);
+    grid.setPadding(0, dp(4), 0, dp(8));
+    pageScroll.addView(grid);
+    root.addView(pageScroll, new LinearLayout.LayoutParams(-1, 0, 1));
+    status =
+        text(
+            edit
+                ? "Toque para editar; mantenha pressionado para mover ou copiar"
+                : "Salvo neste aparelho",
+            12);
+    status.setPadding(dp(6), dp(4), 0, 0);
+    root.addView(status);
+    renderMessage();
+    renderPage();
+  }
+
+  void changed() {
+    renderMessage();
+    save();
+  }
+
+  void renderMessage() {
+    messageItems.removeAllViews();
+    JSONArray a = model.message();
+    if (a.length() == 0) {
+      TextView hint = text("Escolha palavras para montar sua mensagem", 17);
+      hint.setPadding(dp(8), 0, dp(8), 0);
+      messageItems.addView(hint);
+    } else
+      for (int i = 0; i < a.length(); i++) {
+        JSONObject token = a.optJSONObject(i);
+        LinearLayout tile = column();
+        tile.setGravity(Gravity.CENTER);
+        String symbol = token.optString("symbol");
+        if (!symbol.isEmpty()) {
+          ImageView image = image(symbol, 36);
+          if (image != null) tile.addView(image);
+        }
+        TextView t = text(token.optString("text"), 18);
+        t.setGravity(Gravity.CENTER);
+        t.setPadding(dp(7), 0, dp(7), 0);
+        tile.addView(t);
+        tile.setContentDescription(token.optString("text"));
+        messageItems.addView(tile);
+      }
+    messageScroll.post(() -> messageScroll.fullScroll(View.FOCUS_RIGHT));
+  }
+
+  int categoryColor(String c) {
+    if (contrast()) return Color.rgb(20, 20, 20);
+    switch (c) {
+      case "yellow":
+        return Color.rgb(255, 241, 190);
+      case "green":
+        return Color.rgb(214, 239, 219);
+      case "orange":
+        return Color.rgb(255, 227, 196);
+      case "red":
+        return Color.rgb(255, 216, 218);
+      case "pink":
+        return Color.rgb(244, 220, 238);
+      case "purple":
+        return Color.rgb(230, 224, 248);
+      default:
+        return Color.rgb(221, 238, 250);
+    }
+  }
+
+  ImageView image(String name, int size) {
+    if (!Repository.safe(name)) return null;
+    try {
+      Bitmap bitmap = bitmapCache.get(name);
+      if (bitmap == null) {
+        InputStream in =
+            name.startsWith("user/")
+                ? new FileInputStream(new File(getFilesDir(), name))
+                : getAssets().open(name);
+        try (InputStream data = in) {
+          BitmapFactory.Options options = new BitmapFactory.Options();
+          options.inSampleSize = name.startsWith("symbols/") ? 4 : 2;
+          bitmap = BitmapFactory.decodeStream(data, null, options);
+        }
+        if (bitmap == null) return null;
+        bitmapCache.put(name, bitmap);
+      }
+      ImageView v = new ImageView(this);
+      v.setImageBitmap(bitmap);
+      v.setAdjustViewBounds(true);
+      v.setScaleType(ImageView.ScaleType.FIT_CENTER);
+      v.setLayoutParams(new LinearLayout.LayoutParams(dp(size), dp(size)));
+      v.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+      return v;
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  void renderPage() {
+    int cardBase = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE ? 64 : 90;
+    float cardScale = cardBase == 64 ? 3f : 3.5f;
+    cancelTouch();
+    while (targets.size() > 8) {
+      int i = targets.size() - 1;
+      colors.remove(targets.remove(i));
+      targetActions.remove(i);
+    }
+    grid.removeAllViews();
+    JSONObject page = model.page(current);
+    if (page == null) {
+      current = model.profile().optString("home");
+      page = model.page(current);
+    }
+    pageTitle.setText(page.optString("title") + (edit ? " · edição" : ""));
+    int cols = clamp(model.settings().optInt("columns", 3), 2, 6);
+    grid.setColumnCount(cols);
+    JSONArray buttons = page.optJSONArray("buttons");
+    for (int i = 0; i < buttons.length(); i++) {
+      final JSONObject b = buttons.optJSONObject(i);
+      if (b.optBoolean("hidden") && !edit) {
+        View space = new View(this);
+        space.setVisibility(View.INVISIBLE);
+        space.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+        GridLayout.LayoutParams pos = new GridLayout.LayoutParams();
+        pos.width = 0;
+        pos.height = dp(cardBase + clamp(model.settings().optInt("font", 19), 15, 30) * cardScale);
+        pos.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
+        pos.setMargins(dp(3), dp(3), dp(3), dp(3));
+        grid.addView(space, pos);
+        continue;
+      }
+      if (!search.isEmpty()
+          && !fold(b.optString("label") + " " + b.optString("message")).contains(fold(search)))
+        continue;
+      LinearLayout card = column();
+      card.setGravity(Gravity.CENTER);
+      card.setPadding(dp(4), dp(8), dp(4), dp(6));
+      int color = categoryColor(b.optString("color"));
+      card.setBackground(shape(color));
+      card.setAlpha(b.optBoolean("hidden") ? .4f : 1f);
+      ImageView img = image(b.optString("symbol"), 60);
+      if (img != null) card.addView(img);
+      else {
+        TextView icon =
+            text(b.optString("emoji", b.optString("type").equals("link") ? "↗" : "●"), 29);
+        icon.setGravity(Gravity.CENTER);
+        card.addView(icon, new LinearLayout.LayoutParams(-1, dp(55)));
+      }
+      String label =
+          (b.optBoolean("disabled") ? "⚠ " : "")
+              + b.optString("label")
+              + ("link".equals(b.optString("type")) ? " ›" : "");
+      TextView t = text(label, clamp(model.settings().optInt("font", 19), 15, 30));
+      t.setGravity(Gravity.CENTER);
+      t.setMaxLines(3);
+      t.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+      card.addView(t, new LinearLayout.LayoutParams(-1, -2));
+      card.setContentDescription(
+          b.optString("label") + (b.optString("type").equals("link") ? ", abrir página" : ""));
+      card.setFocusable(true);
+      card.setClickable(true);
+      Runnable click =
+          () -> {
+            if (edit) editButton(b, false);
+            else activate(b);
+          };
+      card.setOnClickListener(v -> click.run());
+      card.setOnLongClickListener(
+          v -> {
+            if (edit) {
+              organize(b);
+              return true;
+            }
+            return false;
+          });
+      register(card, click, color);
+      GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
+      lp.width = 0;
+      lp.height = dp(cardBase + clamp(model.settings().optInt("font", 19), 15, 30) * cardScale);
+      lp.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
+      lp.setMargins(dp(3), dp(3), dp(3), dp(3));
+      grid.addView(card, lp);
+    }
+    if (edit) {
+      Button add = plain("+ Novo botão", () -> editButton(model.newButton(), true));
+      GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
+      lp.width = 0;
+      lp.height = dp(125);
+      lp.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
+      lp.setMargins(dp(3), dp(3), dp(3), dp(3));
+      grid.addView(add, lp);
+    }
+    if (!edit && grid.getChildCount() == 0) {
+      TextView empty = text("Nenhuma palavra aqui. Use Editar para adicionar.", 18);
+      grid.addView(empty);
+    }
+    scanner.reset(targets.size());
+    startScan();
+  }
+
+  void activate(JSONObject b) {
+    if (b.optBoolean("disabled")) {
+      toast("Ação importada não reconhecida. Revise este botão em Editar antes de ativar.");
+      return;
+    }
+    try {
+      switch (b.optString("type", "word")) {
+        case "link":
+          navigate(b.optString("target"));
+          break;
+        case "speak":
+          speak(b.optString("message", b.optString("label")), false);
+          break;
+        default:
+          model.append(b.optString("message", b.optString("label")), b.optString("symbol"));
+          changed();
+          if (model.settings().optBoolean("speakWords")) speak(b.optString("message"), false);
+      }
+    } catch (Exception e) {
+      error(e);
+    }
+  }
+
+  void navigate(String page) {
+    if (model.page(page) == null) {
+      toast("Esta página não foi encontrada. Você pode corrigir o destino em Editar.");
+      return;
+    }
+    back.push(current);
+    current = page;
+    search = "";
+    pageScroll.scrollTo(0, 0);
+    renderPage();
+  }
+
+  void home() {
+    current = model.profile().optString("home");
+    back.clear();
+    search = "";
+    pageScroll.scrollTo(0, 0);
+    renderPage();
+  }
+
+  void goBack() {
+    if (!back.isEmpty() && model.page(back.peek()) != null) {
+      current = back.pop();
+      search = "";
+      renderPage();
+    } else home();
+  }
+
+  @Override
+  public void onBackPressed() {
+    if (edit) {
+      edit = false;
+      build();
+    } else if (!back.isEmpty()) goBack();
+    else super.onBackPressed();
+  }
+
+  void toggleEdit() {
+    String pin = model.settings().optString("pin");
+    if (!edit && !pin.isEmpty()) {
+      EditText input =
+          field(
+              "Código de edição",
+              "",
+              android.text.InputType.TYPE_CLASS_NUMBER
+                  | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+      show(
+          new AlertDialog.Builder(this)
+              .setTitle("Entrar na edição")
+              .setView(input)
+              .setPositiveButton(
+                  "Entrar",
+                  (d, w) -> {
+                    if (pin.equals(input.getText().toString())) {
+                      edit = true;
+                      build();
+                    } else toast("Código incorreto.");
+                  })
+              .setNegativeButton("Cancelar", null));
+    } else {
+      edit = !edit;
+      build();
+    }
+  }
+
+  static String fold(String s) {
+    return java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+        .replaceAll("\\p{M}", "")
+        .toLowerCase(Locale.ROOT);
+  }
+
+  void register(View v, Runnable r, int color) {
+    targets.add(v);
+    targetActions.add(r);
+    colors.put(v, color);
+    v.setOnTouchListener((view, event) -> touch(view, event));
+    v.setOnHoverListener(
+        (view, event) -> {
+          if (!edit && "mouse".equals(model.settings().optString("method"))) {
+            if (event.getAction() == MotionEvent.ACTION_HOVER_ENTER) {
+              cancelTouch();
+              highlight(view);
+              dwell =
+                  () -> {
+                    if ((!paused || (view instanceof Button && ((Button)view).getText().toString().startsWith("Mais"))) && dialogCount == 0) {
+                      r.run();
+                    }
+                  };
+              handler.postDelayed(dwell, clamp(model.settings().optInt("holdMs", 650), 200, 5000));
+            } else if (event.getAction() == MotionEvent.ACTION_HOVER_EXIT) cancelTouch();
+          }
+          return false;
+        });
+  }
+
+  View at(float x, float y) {
+    for (View v : targets) {
+      int[] pos = new int[2];
+      v.getLocationOnScreen(pos);
+      if (x >= pos[0] && x < pos[0] + v.getWidth() && y >= pos[1] && y < pos[1] + v.getHeight())
+        return v;
+    }
+    return null;
+  }
+
+  boolean touch(View v, MotionEvent e) {
+    if (edit || dialogCount > 0) return false;
+    String method = model.settings().optString("method", "touch");
+    if (paused)
+      return !(v instanceof Button && ((Button) v).getText().toString().startsWith("Mais"));
+    if (method.equals("touch") || method.equals("mouse") || method.equals("scan")) return false;
+    if (e.getAction() == MotionEvent.ACTION_DOWN) {
+      cancelTouch();
+      touchTarget = v;
+      highlight(v);
+      if (method.equals("hold")) {
+        dwell =
+            () -> {
+              if (touchTarget == v) {
+                touchTarget = null;
+                runTarget(v);
+              }
+            };
+        handler.postDelayed(dwell, clamp(model.settings().optInt("holdMs", 650), 200, 5000));
+      } else if (method.equals("auditory")) {
+        speak(
+            v.getContentDescription() != null
+                ? v.getContentDescription().toString()
+                : v instanceof Button ? ((Button) v).getText().toString() : "",
+            true);
+      }
+    } else if (e.getAction() == MotionEvent.ACTION_MOVE) {
+      View hit = at(e.getRawX(), e.getRawY());
+      if (!method.equals("hold") && hit != touchTarget) {
+        touchTarget = hit;
+        if (hit != null) {
+          highlight(hit);
+          if (method.equals("auditory"))
+            speak(
+                hit.getContentDescription() != null
+                    ? hit.getContentDescription().toString()
+                    : hit instanceof Button ? ((Button) hit).getText().toString() : "",
+                true);
+        }
+      } else if (method.equals("hold") && hit != touchTarget) cancelTouch();
+    } else if (e.getAction() == MotionEvent.ACTION_UP) {
+      View selected = touchTarget;
+      cancelTouch();
+      if ((method.equals("release") || method.equals("auditory")) && selected != null)
+        runTarget(selected);
+    } else if (e.getAction() == MotionEvent.ACTION_CANCEL) cancelTouch();
+    return true;
+  }
+
+  void runTarget(View v) {
+    int i = targets.indexOf(v);
+    if (i >= 0) targetActions.get(i).run();
+  }
+
+  void cancelTouch() {
+    if (dwell != null) handler.removeCallbacks(dwell);
+    dwell = null;
+    touchTarget = null;
+  }
+
+  void highlight(View v) {
+    if (focused != null && colors.containsKey(focused))
+      focused.setBackground(shape(colors.get(focused)));
+    focused = v;
+    if (v != null) {
+      GradientDrawable g = shape(colors.getOrDefault(v, Color.WHITE));
+      g.setStroke(dp(5), Color.rgb(239, 111, 25));
+      v.setBackground(g);
+      v.requestRectangleOnScreen(new Rect(0, 0, v.getWidth(), v.getHeight()), false);
+    }
+  }
+
+  boolean activeScan() {
+    return model != null
+        && !stopped
+        && !edit
+        && !paused
+        && dialogCount == 0
+        && "scan".equals(model.settings().optString("method"));
+  }
+
+  void focus(int i) {
+    if (i >= 0 && i < targets.size()) highlight(targets.get(i));
+  }
+
+  void startScan() {
+    handler.removeCallbacks(scanTick);
+    if (activeScan()) {
+      if (scanner.selected() < 0) focus(scanner.next());
+      if ("auto".equals(model.settings().optString("scanType", "auto")))
+        handler.postDelayed(scanTick, clamp(model.settings().optInt("scanMs", 1200), 400, 8000));
+    }
+  }
+
+  void selectScan() {
+    if (!activeScan()) return;
+    int i = scanner.selected();
+    if (i >= 0 && i < targetActions.size()) {
+      handler.removeCallbacks(scanTick);
+      targetActions.get(i).run();
+      startScan();
+    }
+  }
+
+  @Override
+  public boolean dispatchKeyEvent(KeyEvent event) {
+    if (paused && dialogCount == 0 && "scan".equals(model.settings().optString("method"))
+        && (event.getKeyCode() == KeyEvent.KEYCODE_SPACE || event.getKeyCode() == KeyEvent.KEYCODE_ENTER
+            || event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER)) {
+      if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
+        paused = false;
+        status.setText("Acesso retomado");
+        startScan();
+      }
+      return true;
+    }
+    if (activeScan()
+        && (event.getKeyCode() == KeyEvent.KEYCODE_SPACE
+            || event.getKeyCode() == KeyEvent.KEYCODE_ENTER
+            || event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER)) {
+      if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
+        if ("step".equals(model.settings().optString("scanType"))
+            && event.getKeyCode() == KeyEvent.KEYCODE_SPACE) focus(scanner.next());
+        else selectScan();
+      }
+      return true;
+    }
+    return super.dispatchKeyEvent(event);
+  }
+
+  void configureVoice() {
+    if (!voiceReady || tts == null) return;
+    try {
+      tts.setLanguage(new Locale("pt", "BR"));
+      Set<Voice> voices = tts.getVoices();
+      String chosen = model.settings().optString("voice");
+      Voice best = null;
+      if (voices != null)
+        for (Voice v : voices) {
+          if (v.getName().equals(chosen)) best = v;
+        }
+      if (best == null && voices != null)
+        for (Voice v : voices)
+          if (v.getLocale().getLanguage().equals("pt")
+              && v.getLocale().getCountry().equals("BR")
+              && !v.isNetworkConnectionRequired()) {
+            best = v;
+            break;
+          }
+      if (best != null) tts.setVoice(best);
+      tts.setSpeechRate((float) Math.max(.3, Math.min(2, model.settings().optDouble("rate", 1))));
+      tts.setPitch((float) Math.max(.5, Math.min(2, model.settings().optDouble("pitch", 1))));
+    } catch (Exception e) {
+      runOnUiThread(() -> toast("Não foi possível configurar esta voz."));
+    }
+  }
+
+  void speak(String s, boolean cue) {
+    if (s.trim().isEmpty()) return;
+    if (!voiceReady) {
+      toast("A voz ainda não está pronta. Verifique Ajustes → Voz.");
+      return;
+    }
+    configureVoice();
+    String text = s.trim();
+    int limit = TextToSpeech.getMaxSpeechInputLength();
+    String first = text.substring(0, Math.min(text.length(), limit));
+    int result = tts.speak(first, TextToSpeech.QUEUE_FLUSH, null, Model.id());
+    for (int offset = first.length(); offset < text.length(); offset += limit)
+      tts.speak(
+          text.substring(offset, Math.min(text.length(), offset + limit)),
+          TextToSpeech.QUEUE_ADD,
+          null,
+          Model.id());
+    if (result == TextToSpeech.ERROR)
+      toast("A fala falhou. Verifique a voz nas configurações do Android.");
+  }
+
+  EditText field(String label, String value, int type) {
+    EditText e = new EditText(this);
+    e.setHint(label);
+    e.setContentDescription(label);
+    e.setText(value);
+    e.setInputType(type);
+    e.setSelectAllOnFocus(false);
+    return e;
+  }
+
+  void styleForm(View v) {
+    if (v instanceof TextView) ((TextView) v).setTextColor(ink);
+    if (v instanceof Button) v.setBackground(shape(Color.WHITE));
+    if (v instanceof ViewGroup)
+      for (int i = 0; i < ((ViewGroup) v).getChildCount(); i++)
+        styleForm(((ViewGroup) v).getChildAt(i));
+  }
+
+  void label(LinearLayout form, String s) {
+    TextView t = text(s, 15);
+    t.setPadding(dp(4), dp(12), 0, dp(2));
+    form.addView(t);
+  }
+
+  ScrollView scroll(LinearLayout form) {
+    ScrollView s = new ScrollView(this);
+    form.setPadding(dp(16), dp(4), dp(16), dp(16));
+    form.setBackgroundColor(Color.WHITE);
+    styleForm(form);
+    s.addView(form);
+    return s;
+  }
+
+  Spinner spinner(String[] values, int selected) {
+    Spinner s = new Spinner(this);
+    s.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, values));
+    s.setSelection(Math.max(0, selected));
+    return s;
+  }
+
+  void editButton(JSONObject original, boolean fresh) {
+    if (!edit && !model.settings().optString("pin").isEmpty()) {
+      unlock(
+          () -> {
+            edit = true;
+            build();
+            editButton(original, fresh);
+          });
+      return;
+    }
+    JSONObject draft = Model.copy(original);
+    LinearLayout form = column();
+    label(form, "Texto do botão");
+    EditText name = field("Rótulo", draft.optString("label"), 1);
+    form.addView(name);
+    label(form, "O que será falado");
+    EditText message =
+        field(
+            "Mensagem",
+            draft.optString("message"),
+            android.text.InputType.TYPE_CLASS_TEXT
+                | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+    form.addView(message);
+    String[] types = {"Adicionar à mensagem", "Falar diretamente", "Abrir página"};
+    String type = draft.optString("type");
+    label(form, "Ao tocar");
+    Spinner kind = spinner(types, type.equals("speak") ? 1 : type.equals("link") ? 2 : 0);
+    form.addView(kind);
+    String[] names = new String[model.pages().length()];
+    int targetIndex = 0;
+    for (int i = 0; i < names.length; i++) {
+      JSONObject p = model.pages().optJSONObject(i);
+      names[i] = p.optString("title");
+      if (p.optString("id").equals(draft.optString("target"))) targetIndex = i;
+    }
+    label(form, "Página de destino (para Abrir página)");
+    Spinner dest = spinner(names, targetIndex);
+    form.addView(dest);
+    String[] palettes = {"Azul", "Amarelo", "Verde", "Laranja", "Rosa", "Roxo", "Vermelho"},
+        codes = {"blue", "yellow", "green", "orange", "pink", "purple", "red"};
+    label(form, "Cor");
+    Spinner palette = spinner(palettes, Arrays.asList(codes).indexOf(draft.optString("color")));
+    form.addView(palette);
+    CheckBox hidden = new CheckBox(this);
+    hidden.setText("Ocultar no modo de comunicação");
+    hidden.setChecked(draft.optBoolean("hidden"));
+    form.addView(hidden);
+    photoLabel =
+        text(draft.optString("symbol").isEmpty() ? "Sem imagem" : "Imagem selecionada", 14);
+    form.addView(photoLabel);
+    LinearLayout imageRow = row();
+    addRowButton(imageRow, plain("Escolher símbolo", () -> symbols(draft)), 1);
+    addRowButton(
+        imageRow,
+        plain(
+            "Usar foto",
+            () -> {
+              photoDraft = draft;
+              Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+              intent.setType("image/*");
+              intent.addCategory(Intent.CATEGORY_OPENABLE);
+              startActivityForResult(intent, PHOTO);
+            }),
+        1);
+    addRowButton(
+        imageRow,
+        plain(
+            "Sem imagem",
+            () -> {
+              Model.put(draft, "symbol", "");
+              photoLabel.setText("Sem imagem");
+            }),
+        1);
+    form.addView(imageRow);
+    AlertDialog dialog =
+        show(
+            new AlertDialog.Builder(this)
+                .setTitle(fresh ? "Novo botão" : "Editar botão")
+                .setView(scroll(form))
+                .setPositiveButton("Salvar", null)
+                .setNegativeButton("Cancelar", null)
+                .setNeutralButton(
+                    fresh ? "" : "Excluir",
+                    fresh
+                        ? null
+                        : (d, w) -> {
+                          model.beforeEdit();
+                          JSONArray a = model.page(current).optJSONArray("buttons");
+                          for (int i = 0; i < a.length(); i++)
+                            if (a.optJSONObject(i)
+                                .optString("id")
+                                .equals(original.optString("id"))) {
+                              a.remove(i);
+                              break;
+                            }
+                          save();
+                          renderPage();
+                        }));
+    dialog
+        .getButton(AlertDialog.BUTTON_POSITIVE)
+        .setOnClickListener(
+            v -> {
+              if (name.getText().toString().trim().isEmpty()) {
+                name.setError("Digite um rótulo");
+                return;
+              }
+              model.beforeEdit();
+              Model.put(draft, "label", name.getText().toString().trim());
+              Model.put(draft, "message", message.getText().toString());
+              Model.put(
+                  draft,
+                  "type",
+                  new String[] {"word", "speak", "link"}[kind.getSelectedItemPosition()]);
+              Model.put(
+                  draft,
+                  "target",
+                  model.pages().optJSONObject(dest.getSelectedItemPosition()).optString("id"));
+              Model.put(draft, "color", codes[palette.getSelectedItemPosition()]);
+              Model.put(draft, "hidden", hidden.isChecked());
+              Model.put(draft, "disabled", false);
+              JSONArray a = model.page(current).optJSONArray("buttons");
+              if (fresh) {
+                if (a.length() >= 600) {
+                  toast("Esta página está cheia.");
+                  return;
+                }
+                a.put(draft);
+              } else
+                for (int i = 0; i < a.length(); i++)
+                  if (a.optJSONObject(i).optString("id").equals(original.optString("id"))) {
+                    try {
+                      a.put(i, draft);
+                    } catch (JSONException e) {
+                      error(e);
+                    }
+                    break;
+                  }
+              save();
+              dialog.dismiss();
+              renderPage();
+            });
+  }
+
+  void organize(JSONObject button) {
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(button.optString("label"))
+            .setItems(
+                new String[] {"Mover posição nesta página", "Copiar para outra página"},
+                (d, option) -> {
+                  JSONArray buttons = model.page(current).optJSONArray("buttons");
+                  if (option == 0) {
+                    String[] positions = new String[buttons.length()];
+                    for (int i = 0; i < positions.length; i++)
+                      positions[i] = (i + 1) + " · " + buttons.optJSONObject(i).optString("label");
+                    show(
+                        new AlertDialog.Builder(this)
+                            .setTitle("Trocar com qual posição?")
+                            .setItems(
+                                positions,
+                                (x, pos) -> {
+                                  model.beforeEdit();
+                                  int old = -1;
+                                  for (int i = 0; i < buttons.length(); i++)
+                                    if (buttons.optJSONObject(i) == button) old = i;
+                                  if (old >= 0)
+                                    try {
+                                      JSONObject other = buttons.getJSONObject(pos);
+                                      buttons.put(pos, button);
+                                      buttons.put(old, other);
+                                      save();
+                                      renderPage();
+                                    } catch (Exception e) {
+                                      error(e);
+                                    }
+                                })
+                            .setNegativeButton("Cancelar", null));
+                  } else {
+                    String[] names = new String[model.pages().length()];
+                    for (int i = 0; i < names.length; i++)
+                      names[i] = model.pages().optJSONObject(i).optString("title");
+                    show(
+                        new AlertDialog.Builder(this)
+                            .setTitle("Copiar para")
+                            .setItems(
+                                names,
+                                (x, pos) -> {
+                                  JSONArray a =
+                                      model.pages().optJSONObject(pos).optJSONArray("buttons");
+                                  if (a.length() >= 600) {
+                                    toast("Esta página está cheia.");
+                                    return;
+                                  }
+                                  model.beforeEdit();
+                                  JSONObject copy = Model.copy(button);
+                                  Model.put(copy, "id", Model.id());
+                                  a.put(copy);
+                                  save();
+                                  renderPage();
+                                })
+                            .setNegativeButton("Cancelar", null));
+                  }
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void symbols(JSONObject draft) {
+    try {
+      JSONArray all =
+          new JSONObject(
+                  new String(
+                      Repository.read(getAssets().open("symbols-provenance.json"), 2000000),
+                      StandardCharsets.UTF_8))
+              .getJSONArray("records");
+      LinearLayout form = column();
+      EditText query = field("Buscar símbolo", "", 1);
+      form.addView(query);
+      GridLayout choices = new GridLayout(this);
+      choices.setColumnCount(3);
+      form.addView(choices);
+      AlertDialog d =
+          show(
+              new AlertDialog.Builder(this)
+                  .setTitle("Símbolos disponíveis")
+                  .setView(scroll(form))
+                  .setNegativeButton("Fechar", null));
+      Runnable update =
+          () -> {
+            choices.removeAllViews();
+            Set<String> seen = new HashSet<>();
+            for (int i = 0; i < all.length(); i++) {
+              JSONObject item = all.optJSONObject(i);
+              String file = item.optString("file");
+              if (!seen.add(file)
+                  || !fold(item.optString("search") + item.optJSONArray("keywords"))
+                      .contains(fold(query.getText().toString()))) continue;
+              LinearLayout tile = column();
+              ImageView img = image(file, 60);
+              if (img != null) tile.addView(img);
+              TextView t = text(item.optString("search"), 14);
+              tile.addView(t);
+              tile.setPadding(dp(6), dp(6), dp(6), dp(6));
+              tile.setContentDescription(item.optString("search"));
+              tile.setOnClickListener(
+                  v -> {
+                    Model.put(draft, "symbol", file);
+                    if (photoLabel != null)
+                      photoLabel.setText("Símbolo: " + item.optString("search"));
+                    d.dismiss();
+                  });
+              choices.addView(tile, new GridLayout.LayoutParams());
+            }
+          };
+      query.addTextChangedListener(watcher(update));
+      update.run();
+    } catch (Exception e) {
+      error(e);
+    }
+  }
+
+  android.text.TextWatcher watcher(Runnable change) {
+    return new android.text.TextWatcher() {
+      public void beforeTextChanged(CharSequence s, int st, int c, int a) {}
+
+      public void onTextChanged(CharSequence s, int st, int before, int count) {
+        change.run();
+      }
+
+      public void afterTextChanged(android.text.Editable e) {}
+    };
+  }
+
+  void keyboard() {
+    LinearLayout form = column();
+    EditText input =
+        field(
+            "Escreva sua mensagem",
+            "",
+            android.text.InputType.TYPE_CLASS_TEXT
+                | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE
+                | android.text.InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+    input.setMinLines(3);
+    form.addView(input);
+    LinearLayout controls = row();
+    addRowButton(controls, plain("Falar", () -> speak(input.getText().toString(), false)), 1);
+    addRowButton(
+        controls,
+        plain(
+            "Apagar letra",
+            () -> {
+              String s = input.getText().toString();
+              if (!s.isEmpty()) input.setText(s.substring(0, s.offsetByCodePoints(s.length(), -1)));
+            }),
+        1);
+    form.addView(controls);
+    GridLayout keys = new GridLayout(this);
+    keys.setColumnCount(6);
+    for (String k : "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Ç Ã É Í Ó Ú".split(" ")) {
+      Button b =
+          plain(
+              k,
+              () -> {
+                input.append(k.toLowerCase(new Locale("pt", "BR")));
+              });
+      keys.addView(b, new GridLayout.LayoutParams());
+    }
+    form.addView(keys);
+    form.addView(plain("Espaço", () -> input.append(" ")));
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Teclado")
+            .setView(scroll(form))
+            .setPositiveButton(
+                "Adicionar à mensagem",
+                (d, w) -> {
+                  try {
+                    model.append(input.getText().toString(), "");
+                    changed();
+                  } catch (Exception e) {
+                    error(e);
+                  }
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void tools() {
+    String[] opts = {
+      "Desfazer mensagem",
+      "Refazer mensagem",
+      "Pesquisar palavra",
+      "Salvar mensagem em botão",
+      "Notas e frases pessoais",
+      "Rotinas visuais",
+      "Temporizador",
+      "Quadro branco",
+      "Compartilhar mensagem",
+      "Pausar / retomar acesso",
+      "Desfazer última edição",
+      "Páginas"
+    };
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Ferramentas")
+            .setItems(
+                opts,
+                (d, i) -> {
+                  switch (i) {
+                    case 0:
+                      model.undo();
+                      changed();
+                      break;
+                    case 1:
+                      model.redo();
+                      changed();
+                      break;
+                    case 2:
+                      findWord();
+                      break;
+                    case 3:
+                      if (model.text().isEmpty()) toast("Monte uma mensagem primeiro.");
+                      else {
+                        JSONObject b = model.newButton();
+                        Model.put(b, "label", model.text());
+                        Model.put(b, "message", model.text());
+                        Model.put(b, "type", "speak");
+                        editButton(b, true);
+                      }
+                      break;
+                    case 4:
+                      notes();
+                      break;
+                    case 5:
+                      routines();
+                      break;
+                    case 6:
+                      timer();
+                      break;
+                    case 7:
+                      whiteboard();
+                      break;
+                    case 8:
+                      Intent share = new Intent(Intent.ACTION_SEND);
+                      share.setType("text/plain");
+                      share.putExtra(Intent.EXTRA_TEXT, model.text());
+                      startActivity(Intent.createChooser(share, "Compartilhar mensagem"));
+                      break;
+                    case 9:
+                      paused = !paused;
+                      status.setText(
+                          paused ? "Acesso pausado — Mais ou acionador para retomar" : "Acesso retomado");
+                      startScan();
+                      break;
+                    case 10:
+                      if (model.undoEdit()) {
+                        save();
+                        build();
+                      } else toast("Nenhuma edição para desfazer nesta sessão.");
+                      break;
+                    case 11:
+                      pagesMenu();
+                      break;
+                  }
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void findWord() {
+    EditText q = field("Palavra", "", 1);
+    AlertDialog prompt =
+        show(
+            new AlertDialog.Builder(this)
+                .setTitle("Pesquisar em todas as páginas")
+                .setView(q)
+                .setPositiveButton(
+                    "Pesquisar",
+                    (d, w) -> {
+                      String needle = fold(q.getText().toString());
+                      ArrayList<String> labels = new ArrayList<>(), dest = new ArrayList<>();
+                      for (int i = 0; i < model.pages().length(); i++) {
+                        JSONObject p = model.pages().optJSONObject(i);
+                        JSONArray a = p.optJSONArray("buttons");
+                        for (int j = 0; j < a.length(); j++) {
+                          JSONObject b = a.optJSONObject(j);
+                          if (fold(b.optString("label") + " " + b.optString("message"))
+                              .contains(needle)) {
+                            labels.add(
+                                b.optString("label")
+                                    + " — "
+                                    + p.optString("title")
+                                    + (b.optBoolean("hidden") ? " (oculto)" : ""));
+                            dest.add(p.optString("id"));
+                          }
+                        }
+                      }
+                      if (labels.isEmpty()) toast("Palavra não encontrada.");
+                      else
+                        show(
+                            new AlertDialog.Builder(this)
+                                .setTitle("Onde está a palavra")
+                                .setItems(
+                                    labels.toArray(new String[0]),
+                                    (x, i) -> {
+                                      navigate(dest.get(i));
+                                    })
+                                .setNegativeButton("Fechar", null));
+                    })
+                .setNegativeButton("Cancelar", null));
+  }
+
+  void pagesMenu() {
+    if (!edit && !model.settings().optString("pin").isEmpty()) {
+      unlock(
+          () -> {
+            edit = true;
+            build();
+            pagesMenu();
+          });
+      return;
+    }
+    JSONArray pages = model.pages();
+    String[] names = new String[pages.length()];
+    for (int i = 0; i < names.length; i++) names[i] = pages.optJSONObject(i).optString("title");
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Suas páginas")
+            .setItems(names, (d, i) -> navigate(pages.optJSONObject(i).optString("id")))
+            .setPositiveButton(
+                "+ Nova página",
+                (d, w) -> {
+                  EditText input = field("Nome da página", "", 1);
+                  show(
+                      new AlertDialog.Builder(this)
+                          .setTitle("Nova página")
+                          .setView(input)
+                          .setPositiveButton(
+                              "Criar",
+                              (x, y) -> {
+                                String name = input.getText().toString().trim();
+                                if (name.isEmpty()) return;
+                                JSONObject pg = model.newPage(name);
+                                JSONObject link = model.newButton();
+                                Model.put(link, "label", name);
+                                Model.put(link, "type", "link");
+                                Model.put(link, "target", pg.optString("id"));
+                                Model.put(link, "color", "pink");
+                                model
+                                    .page(model.profile().optString("home"))
+                                    .optJSONArray("buttons")
+                                    .put(link);
+                                current = pg.optString("id");
+                                edit = true;
+                                save();
+                                build();
+                              })
+                          .setNegativeButton("Cancelar", null));
+                })
+            .setNeutralButton(
+                "Renomear atual",
+                (d, w) -> {
+                  EditText input = field("Nome", model.page(current).optString("title"), 1);
+                  show(
+                      new AlertDialog.Builder(this)
+                          .setTitle("Renomear página")
+                          .setView(input)
+                          .setPositiveButton(
+                              "Salvar",
+                              (x, y) -> {
+                                if (!input.getText().toString().trim().isEmpty()) {
+                                  model.beforeEdit();
+                                  Model.put(
+                                      model.page(current),
+                                      "title",
+                                      input.getText().toString().trim());
+                                  save();
+                                  renderPage();
+                                }
+                              })
+                          .setNegativeButton("Cancelar", null));
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void profiles() {
+    JSONArray a = model.root.optJSONArray("profiles");
+    String[] names = new String[a.length()];
+    for (int i = 0; i < a.length(); i++) names[i] = a.optJSONObject(i).optString("name");
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Quem vai se comunicar?")
+            .setItems(
+                names,
+                (d, i) -> {
+                  model.selectProfile(a.optJSONObject(i).optString("id"));
+                  current = model.profile().optString("home");
+                  back.clear();
+                  edit = false;
+                  save();
+                  build();
+                })
+            .setPositiveButton(
+                "Novo perfil",
+                (d, w) -> {
+                  if (a.length() >= 16) {
+                    toast("Limite de 16 perfis.");
+                    return;
+                  }
+                  EditText input = field("Nome do perfil", "", 1);
+                  show(
+                      new AlertDialog.Builder(this)
+                          .setTitle("Novo perfil")
+                          .setView(input)
+                          .setPositiveButton(
+                              "Criar",
+                              (x, y) -> {
+                                if (input.getText().toString().trim().isEmpty()) return;
+                                try {
+                                  JSONObject template = new Model(repo.defaults()).profile();
+                                  model.newProfile(input.getText().toString(), template);
+                                  current = model.profile().optString("home");
+                                  back.clear();
+                                  save();
+                                  build();
+                                } catch (Exception e) {
+                                  error(e);
+                                }
+                              })
+                          .setNegativeButton("Cancelar", null));
+                })
+            .setNeutralButton(
+                "Renomear",
+                (d, w) -> {
+                  EditText input = field("Nome", model.profile().optString("name"), 1);
+                  show(
+                      new AlertDialog.Builder(this)
+                          .setTitle("Nome do perfil")
+                          .setView(input)
+                          .setPositiveButton(
+                              "Salvar",
+                              (x, y) -> {
+                                if (!input.getText().toString().trim().isEmpty()) {
+                                  Model.put(
+                                      model.profile(), "name", input.getText().toString().trim());
+                                  save();
+                                }
+                              })
+                          .setNegativeButton("Cancelar", null));
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void settings() {
+    if (!model.settings().optString("pin").isEmpty()) {
+      unlock(() -> settingsUnlocked());
+      return;
+    }
+    settingsUnlocked();
+  }
+
+  void unlock(Runnable task) {
+    EditText code =
+        field(
+            "Código de edição",
+            "",
+            android.text.InputType.TYPE_CLASS_NUMBER
+                | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Código de edição")
+            .setView(code)
+            .setPositiveButton(
+                "Continuar",
+                (d, w) -> {
+                  if (model.settings().optString("pin").equals(code.getText().toString()))
+                    task.run();
+                  else toast("Código incorreto.");
+                })
+            .setNegativeButton("Cancelar", null));
+  }
+
+  void settingsUnlocked() {
+    String[] items = {
+      "Acesso: toque, permanência e varredura",
+      "Voz e velocidade",
+      "Tamanho da grade e letras",
+      "Exportar backup completo",
+      "Restaurar backup",
+      "Importar prancha TD Snap (experimental)",
+      "Código para proteger a edição",
+      "Sobre o Voz Livre"
+    };
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(model.profile().optString("name"))
+            .setItems(
+                items,
+                (d, i) -> {
+                  switch (i) {
+                    case 0:
+                      accessSettings();
+                      break;
+                    case 1:
+                      voiceSettings();
+                      break;
+                    case 2:
+                      displaySettings();
+                      break;
+                    case 3:
+                      Intent out = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+                      out.setType("application/json");
+                      out.addCategory(Intent.CATEGORY_OPENABLE);
+                      out.putExtra(
+                          Intent.EXTRA_TITLE,
+                          "Voz-Livre-"
+                              + new java.text.SimpleDateFormat("yyyy-MM-dd", Locale.ROOT)
+                                  .format(new Date())
+                              + ".vozlivre.json");
+                      startActivityForResult(out, EXPORT);
+                      break;
+                    case 4:
+                      chooseImport(false);
+                      break;
+                    case 5:
+                      show(
+                          new AlertDialog.Builder(this)
+                              .setTitle("Importação experimental")
+                              .setMessage(
+                                  "Importa páginas, textos e links básicos de arquivos SPS/SPB."
+                                      + " Símbolos de bibliotecas privadas e ações especiais podem"
+                                      + " não ser transferidos. O original é preservado.")
+                              .setPositiveButton("Escolher cópia", (x, y) -> chooseImport(true))
+                              .setNegativeButton("Cancelar", null));
+                      break;
+                    case 6:
+                      pinSettings();
+                      break;
+                    case 7:
+                      about();
+                      break;
+                  }
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void accessSettings() {
+    JSONObject s = model.settings();
+    LinearLayout form = column();
+    String[]
+        methods =
+            {
+              "Toque direto",
+              "Manter pressionado",
+              "Selecionar ao soltar",
+              "Toque com pista auditiva",
+              "Permanência do ponteiro",
+              "Varredura"
+            },
+        codes = {"touch", "hold", "release", "auditory", "mouse", "scan"};
+    label(form, "Como selecionar");
+    Spinner method = spinner(methods, Arrays.asList(codes).indexOf(s.optString("method")));
+    form.addView(method);
+    label(form, "Tempo de permanência / pressão (milissegundos)");
+    EditText hold = field("200 a 5000", s.optInt("holdMs", 650) + "", 2);
+    form.addView(hold);
+    label(form, "Varredura");
+    Spinner scan =
+        spinner(
+            new String[] {
+              "Automática: Enter ou Espaço confirma",
+              "Dois acionadores: Espaço avança, Enter confirma"
+            },
+            s.optString("scanType").equals("step") ? 1 : 0);
+    form.addView(scan);
+    label(form, "Velocidade de varredura (milissegundos)");
+    EditText speed = field("400 a 8000", s.optInt("scanMs", 1200) + "", 2);
+    form.addView(speed);
+    TextView note =
+        text(
+            "A varredura interna percorre a tela principal. Os diálogos usam os controles do"
+                + " Android e podem ser operados com Switch Access. Olhar exige um dispositivo que"
+                + " forneça ponteiro; não há calibração ocular por câmera nesta versão.",
+            14);
+    form.addView(note);
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Acesso")
+            .setView(scroll(form))
+            .setPositiveButton(
+                "Salvar",
+                (d, w) -> {
+                  try {
+                    Model.put(
+                        s, "holdMs", clamp(Integer.parseInt(hold.getText().toString()), 200, 5000));
+                    Model.put(
+                        s,
+                        "scanMs",
+                        clamp(Integer.parseInt(speed.getText().toString()), 400, 8000));
+                    Model.put(s, "method", codes[method.getSelectedItemPosition()]);
+                    Model.put(s, "scanType", scan.getSelectedItemPosition() == 1 ? "step" : "auto");
+                    paused = false;
+                    save();
+                    build();
+                  } catch (NumberFormatException e) {
+                    toast("Digite os tempos em números.");
+                  }
+                })
+            .setNegativeButton("Cancelar", null));
+  }
+
+  void voiceSettings() {
+    if (!voiceReady) {
+      show(
+          new AlertDialog.Builder(this)
+              .setTitle("Voz não disponível")
+              .setMessage(
+                  "Configure uma voz em português no Android. Depois, feche e reabra o Voz Livre.")
+              .setPositiveButton(
+                  "Configurar no Android",
+                  (d, w) -> startActivity(new Intent("com.android.settings.TTS_SETTINGS")))
+              .setNegativeButton("Fechar", null));
+      return;
+    }
+    JSONObject s = model.settings();
+    ArrayList<Voice> voices = new ArrayList<>();
+    Set<Voice> all = tts.getVoices();
+    if (all != null)
+      for (Voice v : all) if (v.getLocale().getLanguage().equals("pt")) voices.add(v);
+    voices.sort(
+        Comparator.comparing(Voice::isNetworkConnectionRequired).thenComparing(Voice::getName));
+    LinearLayout form = column();
+    String[] names = new String[Math.max(1, voices.size())];
+    int selected = 0;
+    for (int i = 0; i < voices.size(); i++) {
+      Voice v = voices.get(i);
+      names[i] =
+          v.getName() + (v.isNetworkConnectionRequired() ? " · precisa de internet" : " · local");
+      if (v.getName().equals(s.optString("voice"))) selected = i;
+    }
+    if (voices.isEmpty()) names[0] = "Voz padrão do sistema";
+    label(form, "Voz disponível no aparelho");
+    Spinner voice = spinner(names, selected);
+    form.addView(voice);
+    label(form, "Velocidade (0,3 a 2)");
+    EditText rate = field("Velocidade", s.optDouble("rate", 1) + "", 8194);
+    form.addView(rate);
+    label(form, "Altura (0,5 a 2)");
+    EditText pitch = field("Altura", s.optDouble("pitch", 1) + "", 8194);
+    form.addView(pitch);
+    CheckBox words = new CheckBox(this);
+    words.setText("Falar cada palavra ao adicionar");
+    words.setChecked(s.optBoolean("speakWords"));
+    form.addView(words);
+    form.addView(
+        plain("Ouvir exemplo", () -> speak("Esta é a minha voz. Eu tenho algo a dizer.", false)));
+    form.addView(
+        plain(
+            "Configurar vozes no Android",
+            () -> {
+              try {
+                startActivity(new Intent("com.android.settings.TTS_SETTINGS"));
+              } catch (Exception e) {
+                error(e);
+              }
+            }));
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Sua voz")
+            .setView(scroll(form))
+            .setPositiveButton(
+                "Salvar",
+                (d, w) -> {
+                  try {
+                    if (!voices.isEmpty())
+                      Model.put(s, "voice", voices.get(voice.getSelectedItemPosition()).getName());
+                    Model.put(
+                        s,
+                        "rate",
+                        Math.max(
+                            .3,
+                            Math.min(
+                                2,
+                                Double.parseDouble(rate.getText().toString().replace(',', '.')))));
+                    Model.put(
+                        s,
+                        "pitch",
+                        Math.max(
+                            .5,
+                            Math.min(
+                                2,
+                                Double.parseDouble(pitch.getText().toString().replace(',', '.')))));
+                    Model.put(s, "speakWords", words.isChecked());
+                    save();
+                    configureVoice();
+                  } catch (Exception e) {
+                    toast("Digite valores numéricos para a voz.");
+                  }
+                })
+            .setNegativeButton("Cancelar", null));
+  }
+
+  void displaySettings() {
+    JSONObject s = model.settings();
+    LinearLayout form = column();
+    label(form, "Colunas (mudar pode alterar as posições)");
+    Spinner cols =
+        spinner(
+            new String[] {"2 colunas", "3 colunas", "4 colunas", "5 colunas", "6 colunas"},
+            clamp(s.optInt("columns", 3), 2, 6) - 2);
+    form.addView(cols);
+    label(form, "Tamanho das letras");
+    Spinner font =
+        spinner(
+            new String[] {"17", "19", "22", "26", "30"},
+            Math.max(0, Arrays.asList(17, 19, 22, 26, 30).indexOf(s.optInt("font", 19))));
+    form.addView(font);
+    CheckBox contrast = new CheckBox(this);
+    contrast.setText("Alto contraste");
+    contrast.setChecked(s.optBoolean("contrast"));
+    form.addView(contrast);
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Grade e aparência")
+            .setView(scroll(form))
+            .setPositiveButton(
+                "Salvar",
+                (d, w) -> {
+                  Model.put(s, "columns", cols.getSelectedItemPosition() + 2);
+                  Model.put(s, "font", Integer.parseInt(font.getSelectedItem().toString()));
+                  Model.put(s, "contrast", contrast.isChecked());
+                  save();
+                  build();
+                })
+            .setNegativeButton("Cancelar", null));
+  }
+
+  void pinSettings() {
+    EditText input =
+        field(
+            "Código numérico (vazio remove)",
+            model.settings().optString("pin"),
+            android.text.InputType.TYPE_CLASS_NUMBER
+                | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Proteção da edição")
+            .setMessage(
+                "Este código evita edições por acidente. Ele não criptografa seus dados. Guarde seu"
+                    + " backup para recuperação.")
+            .setView(input)
+            .setPositiveButton(
+                "Salvar",
+                (d, w) -> {
+                  Model.put(model.settings(), "pin", input.getText().toString());
+                  save();
+                })
+            .setNegativeButton("Cancelar", null));
+  }
+
+  boolean snapImport = false;
+
+  void chooseImport(boolean snap) {
+    snapImport = snap;
+    Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+    intent.setType("*/*");
+    intent.addCategory(Intent.CATEGORY_OPENABLE);
+    startActivityForResult(intent, IMPORT);
+  }
+
+  void notes() {
+    JSONArray notes = model.profile().optJSONArray("notes");
+    String[] titles = new String[notes.length()];
+    for (int i = 0; i < titles.length; i++) titles[i] = notes.optJSONObject(i).optString("title");
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Notas pessoais")
+            .setItems(titles, (d, i) -> noteEdit(notes.optJSONObject(i), false))
+            .setPositiveButton(
+                "Nova nota",
+                (d, w) -> {
+                  JSONObject n = new JSONObject();
+                  Model.put(n, "title", "Nova nota");
+                  Model.put(n, "text", model.text());
+                  noteEdit(n, true);
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void noteEdit(JSONObject n, boolean fresh) {
+    LinearLayout form = column();
+    EditText title = field("Título", n.optString("title"), 1),
+        content =
+            field(
+                "Texto",
+                n.optString("text"),
+                android.text.InputType.TYPE_CLASS_TEXT
+                    | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+    content.setMinLines(5);
+    form.addView(title);
+    form.addView(content);
+    form.addView(plain("Falar nota", () -> speak(content.getText().toString(), false)));
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Nota")
+            .setView(scroll(form))
+            .setPositiveButton(
+                "Salvar",
+                (d, w) -> {
+                  Model.put(n, "title", title.getText().toString());
+                  Model.put(n, "text", content.getText().toString());
+                  if (fresh) model.profile().optJSONArray("notes").put(n);
+                  save();
+                })
+            .setNeutralButton(
+                "Adicionar à mensagem",
+                (d, w) -> {
+                  try {
+                    model.append(content.getText().toString(), "");
+                    changed();
+                  } catch (Exception e) {
+                    error(e);
+                  }
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void routines() {
+    JSONArray routines = model.profile().optJSONArray("routines");
+    String[] names = new String[routines.length()];
+    for (int i = 0; i < names.length; i++) names[i] = routines.optJSONObject(i).optString("title");
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Rotinas visuais")
+            .setItems(names, (d, i) -> routine(routines.optJSONObject(i)))
+            .setPositiveButton(
+                "Criar rotina",
+                (d, w) -> {
+                  LinearLayout form = column();
+                  EditText title = field("Nome", "Minha rotina", 1),
+                      steps =
+                          field(
+                              "Uma etapa por linha",
+                              "Primeiro\nDepois",
+                              android.text.InputType.TYPE_CLASS_TEXT
+                                  | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                  form.addView(title);
+                  form.addView(steps);
+                  show(
+                      new AlertDialog.Builder(this)
+                          .setTitle("Nova rotina")
+                          .setView(scroll(form))
+                          .setPositiveButton(
+                              "Criar",
+                              (x, y) -> {
+                                JSONObject r = new JSONObject();
+                                Model.put(r, "title", title.getText().toString());
+                                JSONArray a = new JSONArray();
+                                for (String t : steps.getText().toString().split("\n"))
+                                  if (!t.trim().isEmpty()) a.put(t.trim());
+                                if (a.length() == 0) return;
+                                Model.put(r, "steps", a);
+                                Model.put(r, "done", 0);
+                                routines.put(r);
+                                save();
+                                routine(r);
+                              })
+                          .setNegativeButton("Cancelar", null));
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void routine(JSONObject r) {
+    JSONArray steps = r.optJSONArray("steps");
+    if (steps == null) return;
+    LinearLayout form = column();
+    int done = r.optInt("done");
+    for (int i = 0; i < steps.length(); i++) {
+      String text = (i < done ? "✓ " : i == done ? "→ " : "○ ") + steps.optString(i);
+      TextView t = text(text, 23);
+      t.setPadding(dp(8), dp(16), 0, dp(16));
+      form.addView(t);
+    }
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(r.optString("title"))
+            .setView(scroll(form))
+            .setPositiveButton(
+                done >= steps.length() ? "Concluído" : "Próxima etapa",
+                (d, w) -> {
+                  if (done < steps.length()) {
+                    speak(steps.optString(done), false);
+                    Model.put(r, "done", done + 1);
+                    save();
+                    routine(r);
+                  }
+                })
+            .setNeutralButton(
+                "Recomeçar",
+                (d, w) -> {
+                  Model.put(r, "done", 0);
+                  save();
+                  routine(r);
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  void timer() {
+    EditText minutes = field("Minutos", "2", 2);
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Temporizador visual")
+            .setView(minutes)
+            .setPositiveButton(
+                "Começar",
+                (d, w) -> {
+                  try {
+                    long duration =
+                        clamp(Integer.parseInt(minutes.getText().toString()), 1, 120) * 60000L;
+                    LinearLayout form = column();
+                    TextView time = text("", 42);
+                    time.setGravity(Gravity.CENTER);
+                    form.addView(time);
+                    ProgressBar progress =
+                        new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
+                    progress.setMax(1000);
+                    form.addView(progress);
+                    AlertDialog dialog =
+                        show(
+                            new AlertDialog.Builder(this)
+                                .setTitle("Tempo da atividade")
+                                .setView(scroll(form))
+                                .setNegativeButton("Encerrar", null));
+                    CountDownTimer timer =
+                        new CountDownTimer(duration, 250) {
+                          public void onTick(long ms) {
+                            time.setText(
+                                String.format(
+                                    Locale.ROOT, "%02d:%02d", ms / 60000, (ms / 1000) % 60));
+                            progress.setProgress((int) (ms * 1000 / duration));
+                          }
+
+                          public void onFinish() {
+                            time.setText("Terminou");
+                            progress.setProgress(0);
+                            speak("O tempo terminou", false);
+                          }
+                        };
+                    dialog.setOnDismissListener(
+                        x -> {
+                          timer.cancel();
+                          dialogCount = Math.max(0, dialogCount - 1);
+                          startScan();
+                        });
+                    timer.start();
+                  } catch (Exception e) {
+                    toast("Digite o tempo em minutos.");
+                  }
+                })
+            .setNegativeButton("Cancelar", null));
+  }
+
+  void whiteboard() {
+    LinearLayout form = column();
+    Drawing drawing = new Drawing(this);
+    form.addView(drawing, new LinearLayout.LayoutParams(-1, dp(360)));
+    form.addView(plain("Limpar desenho", () -> drawing.clear()));
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Quadro branco")
+            .setView(scroll(form))
+            .setPositiveButton(
+                "Salvar como botão",
+                (d, w) -> {
+                  try {
+                    String file = "user/" + Model.id() + ".png";
+                    Bitmap b =
+                        Bitmap.createBitmap(
+                            Math.max(1, drawing.getWidth()),
+                            Math.max(1, drawing.getHeight()),
+                            Bitmap.Config.ARGB_8888);
+                    drawing.draw(new Canvas(b));
+                    try (FileOutputStream out =
+                        new FileOutputStream(new File(getFilesDir(), file))) {
+                      b.compress(Bitmap.CompressFormat.PNG, 100, out);
+                    }
+                    JSONObject button = model.newButton();
+                    Model.put(button, "label", "Meu desenho");
+                    Model.put(button, "message", "Meu desenho");
+                    Model.put(button, "symbol", file);
+                    editButton(button, true);
+                  } catch (Exception e) {
+                    error(e);
+                  }
+                })
+            .setNegativeButton("Fechar", null));
+  }
+
+  static class Drawing extends View {
+    Paint pen = new Paint(3);
+    Path path = new Path();
+
+    Drawing(Context c) {
+      super(c);
+      pen.setColor(Color.rgb(20, 60, 80));
+      pen.setStyle(Paint.Style.STROKE);
+      pen.setStrokeWidth(7);
+      pen.setStrokeCap(Paint.Cap.ROUND);
+      setBackgroundColor(Color.WHITE);
+      setContentDescription("Área para desenho por toque");
+    }
+
+    void clear() {
+      path.reset();
+      invalidate();
+    }
+
+    protected void onDraw(Canvas c) {
+      super.onDraw(c);
+      c.drawPath(path, pen);
+    }
+
+    public boolean onTouchEvent(MotionEvent e) {
+      if (e.getAction() == MotionEvent.ACTION_DOWN) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        path.moveTo(e.getX(), e.getY());
+      } else if (e.getAction() == MotionEvent.ACTION_MOVE) path.lineTo(e.getX(), e.getY());
+      else if (e.getAction() == MotionEvent.ACTION_UP) {
+        path.lineTo(e.getX() + .1f, e.getY() + .1f);
+        getParent().requestDisallowInterceptTouchEvent(false);
+        performClick();
+      }
+      invalidate();
+      return true;
+    }
+
+    public boolean performClick() {
+      super.performClick();
+      return true;
+    }
+  }
+
+  void about() {
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle("Voz Livre 0.1.1")
+            .setMessage(
+                "Seu comunicador pessoal. Funciona sem conta e sem conexão para as pranchas e os"
+                    + " recursos locais. A voz depende do motor instalado no Android.\n\n"
+                    + "Aplicativo independente, sem vínculo com Tobii Dynavox. Não inclui PCS,"
+                    + " PODD, Gateway ou vozes comerciais.\n\n"
+                    + "Mulberry Symbols by Steve Lee (CC BY-SA 4.0), convertidos para PNG. "
+                    + "github.com/mulberrysymbols/mulberry-symbols. Licença: "
+                    + "creativecommons.org/licenses/by-sa/4.0/. Desenhos próprios e código: MIT.\n\n"
+                    + "Versão alfa: símbolos e vocabulário precisam de revisão individual. "
+                    + "Sem validação clínica. Os recursos de acesso precisam de testes em cada aparelho.\n\n"
+                    + "Esta primeira versão não inclui calibração ocular, sincronização em nuvem,"
+                    + " automação residencial nem atividades Boardmaker. Faça um backup das suas"
+                    + " personalizações em Ajustes.")
+            .setPositiveButton("Fechar", null));
+  }
+
+  @Override
+  protected void onActivityResult(int request, int result, Intent data) {
+    super.onActivityResult(request, result, data);
+    if (result != RESULT_OK || data == null || data.getData() == null) return;
+    Uri uri = data.getData();
+    if (request == PHOTO) {
+      JSONObject draft = photoDraft;
+      io.execute(
+          () -> {
+            try {
+              BitmapFactory.Options options = new BitmapFactory.Options();
+              options.inJustDecodeBounds = true;
+              try (InputStream in = getContentResolver().openInputStream(uri)) {
+                BitmapFactory.decodeStream(in, null, options);
+              }
+              options.inSampleSize = 1;
+              while (options.outWidth / options.inSampleSize > 1024
+                  || options.outHeight / options.inSampleSize > 1024) options.inSampleSize *= 2;
+              options.inJustDecodeBounds = false;
+              Bitmap image;
+              try (InputStream in = getContentResolver().openInputStream(uri)) {
+                image = BitmapFactory.decodeStream(in, null, options);
+              }
+              if (image == null) throw new IOException("Não foi possível abrir a imagem.");
+              String name = "user/" + Model.id() + ".jpg";
+              try (FileOutputStream out = new FileOutputStream(new File(getFilesDir(), name))) {
+                image.compress(Bitmap.CompressFormat.JPEG, 85, out);
+              }
+              runOnUiThread(
+                  () -> {
+                    if (draft != null) {
+                      Model.put(draft, "symbol", name);
+                      if (photoLabel != null) photoLabel.setText("Foto selecionada");
+                    }
+                  });
+            } catch (Exception e) {
+              error(e);
+            }
+          });
+    } else if (request == EXPORT) {
+      try {
+        Model snapshot = new Model(model.root.toString());
+        io.execute(
+            () -> {
+              try {
+                byte[] bytes = repo.backup(snapshot);
+                try (OutputStream out = getContentResolver().openOutputStream(uri, "wt")) {
+                  out.write(bytes);
+                }
+                runOnUiThread(() -> toast("Backup exportado com suas fotos e personalizações."));
+              } catch (Exception e) {
+                error(e);
+              }
+            });
+      } catch (Exception e) {
+        error(e);
+      }
+    } else if (request == IMPORT) {
+      boolean snap = snapImport;
+      io.execute(
+          () -> {
+            try {
+              byte[] bytes = Repository.read(getContentResolver().openInputStream(uri), 32000000);
+              if (snap) {
+                SnapImporter.Result imported = SnapImporter.read(this, bytes);
+                runOnUiThread(
+                    () ->
+                        show(
+                            new AlertDialog.Builder(this)
+                                .setTitle("Prancha lida")
+                                .setMessage(imported.summary)
+                                .setPositiveButton(
+                                    "Adicionar como perfil",
+                                    (d, w) -> {
+                                      try {
+                                        if (model.root.optJSONArray("profiles").length() >= 16)
+                                          throw new IOException("Limite de perfis atingido.");
+                                        model.newProfile("Prancha importada", imported.profile);
+                                        current = model.profile().optString("home");
+                                        save();
+                                        build();
+                                      } catch (Exception e) {
+                                        error(e);
+                                      }
+                                    })
+                                .setNegativeButton("Cancelar", null)));
+              } else {
+                Model loaded = repo.parseBackup(bytes);
+                runOnUiThread(
+                    () ->
+                        show(
+                            new AlertDialog.Builder(this)
+                                .setTitle("Restaurar backup?")
+                                .setMessage(
+                                    "O arquivo contém "
+                                        + loaded.root.optJSONArray("profiles").length()
+                                        + " perfil(is). A restauração substituirá os dados ativos"
+                                        + " deste aparelho. Exporte primeiro um backup se desejar"
+                                        + " conservar as alterações atuais.")
+                                .setPositiveButton(
+                                    "Restaurar",
+                                    (d, w) -> {
+                                      try {
+                                        Model restored = repo.restoreImages(bytes);
+                                        repo.save(restored);
+                                        model = restored;
+                                        current = model.profile().optString("home");
+                                        back.clear();
+                                        edit = false;
+                                        bitmapCache.clear();
+                                        build();
+                                        toast("Backup restaurado.");
+                                      } catch (Exception e) {
+                                        error(e);
+                                      }
+                                    })
+                                .setNegativeButton("Cancelar", null)));
+              }
+            } catch (Exception e) {
+              error(e);
+            }
+          });
+    }
+  }
+
+  @Override
+  public void onConfigurationChanged(Configuration config) {
+    super.onConfigurationChanged(config);
+    build();
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle state) {
+    super.onSaveInstanceState(state);
+    state.putString("page", current);
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+    stopped = true;
+    handler.removeCallbacks(scanTick);
+    cancelTouch();
+    if (tts != null) tts.stop();
+    if (model != null && status != null) save();
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    stopped = false;
+    if (model != null) startScan();
+  }
+
+  @Override
+  protected void onDestroy() {
+    stopped = true;
+    handler.removeCallbacksAndMessages(null);
+    if (tts != null) {
+      tts.stop();
+      tts.shutdown();
+    }
+    io.shutdown();
+    super.onDestroy();
+  }
+}

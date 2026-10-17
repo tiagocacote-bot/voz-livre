@@ -1,0 +1,16 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'br.pessoal.vozlivre'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'br.pessoal.vozlivre'
+        minSdk 26
+        targetSdk 35
+        versionCode 2
+        versionName '0.1.1'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

@@ -1,0 +1,1604 @@
+{
+  "format": "voz-livre",
+  "version": 1,
+  "activeProfile": "principal",
+  "profiles": [
+    {
+      "id": "principal",
+      "name": "Meu comunicador",
+      "home": "inicio",
+      "pages": [
+        {
+          "id": "inicio",
+          "title": "Palavras principais",
+          "buttons": [
+            {
+              "label": "eu",
+              "message": "eu",
+              "color": "yellow",
+              "type": "word",
+              "id": "b1",
+              "hidden": false,
+              "symbol": "symbols/original-self.png"
+            },
+            {
+              "label": "quero",
+              "message": "quero",
+              "color": "green",
+              "type": "word",
+              "id": "b2",
+              "hidden": false,
+              "symbol": "symbols/mulberry-want___to.png"
+            },
+            {
+              "label": "não",
+              "message": "não",
+              "color": "orange",
+              "type": "word",
+              "id": "b3",
+              "hidden": false,
+              "symbol": "symbols/original-no.png"
+            },
+            {
+              "label": "você",
+              "message": "você",
+              "color": "yellow",
+              "type": "word",
+              "id": "b4",
+              "hidden": false,
+              "symbol": "symbols/original-you.png"
+            },
+            {
+              "label": "preciso",
+              "message": "preciso",
+              "color": "green",
+              "type": "word",
+              "id": "b5",
+              "hidden": false,
+              "symbol": "symbols/original-need.png"
+            },
+            {
+              "label": "sim",
+              "message": "sim",
+              "color": "orange",
+              "type": "word",
+              "id": "b6",
+              "hidden": false,
+              "symbol": "symbols/original-yes.png"
+            },
+            {
+              "label": "mais",
+              "message": "mais",
+              "color": "orange",
+              "type": "word",
+              "id": "b7",
+              "hidden": false,
+              "symbol": "symbols/mulberry-more.png"
+            },
+            {
+              "label": "ajuda",
+              "message": "ajuda",
+              "color": "red",
+              "type": "word",
+              "id": "b8",
+              "hidden": false,
+              "symbol": "symbols/mulberry-help___to.png"
+            },
+            {
+              "label": "parar",
+              "message": "parar",
+              "color": "red",
+              "type": "word",
+              "id": "b9",
+              "hidden": false,
+              "symbol": "symbols/original-stop.png"
+            },
+            {
+              "label": "gosto",
+              "message": "gosto",
+              "color": "green",
+              "type": "word",
+              "id": "b10",
+              "hidden": false,
+              "symbol": "symbols/mulberry-heart_shape.png"
+            },
+            {
+              "label": "ir",
+              "message": "ir",
+              "color": "green",
+              "type": "word",
+              "id": "b11",
+              "hidden": false,
+              "symbol": "symbols/mulberry-go___to.png"
+            },
+            {
+              "label": "ter",
+              "message": "ter",
+              "color": "green",
+              "type": "word",
+              "id": "b12",
+              "hidden": false,
+              "symbol": "symbols/original-have.png"
+            },
+            {
+              "label": "aqui",
+              "message": "aqui",
+              "color": "blue",
+              "type": "word",
+              "id": "b13",
+              "hidden": false,
+              "symbol": "symbols/original-here.png"
+            },
+            {
+              "label": "agora",
+              "message": "agora",
+              "color": "blue",
+              "type": "word",
+              "id": "b14",
+              "hidden": false,
+              "symbol": "symbols/mulberry-now.png"
+            },
+            {
+              "label": "depois",
+              "message": "depois",
+              "color": "blue",
+              "type": "word",
+              "id": "b15",
+              "hidden": false,
+              "symbol": "symbols/original-later.png"
+            },
+            {
+              "label": "Comer e beber",
+              "message": "",
+              "target": "comida",
+              "emoji": "🍽",
+              "color": "pink",
+              "type": "link",
+              "id": "b16",
+              "hidden": false,
+              "symbol": "symbols/mulberry-food.png"
+            },
+            {
+              "label": "Sentimentos",
+              "message": "",
+              "target": "sentimentos",
+              "emoji": "♡",
+              "color": "pink",
+              "type": "link",
+              "id": "b17",
+              "hidden": false,
+              "symbol": "symbols/mulberry-happy_man.png"
+            },
+            {
+              "label": "Pessoas",
+              "message": "",
+              "target": "pessoas",
+              "emoji": "♟",
+              "color": "pink",
+              "type": "link",
+              "id": "b18",
+              "hidden": false,
+              "symbol": "symbols/mulberry-family.png"
+            },
+            {
+              "label": "Fazer",
+              "message": "",
+              "target": "atividades",
+              "emoji": "✦",
+              "color": "pink",
+              "type": "link",
+              "id": "b19",
+              "hidden": false,
+              "symbol": "symbols/mulberry-play___to.png"
+            },
+            {
+              "label": "Lugares",
+              "message": "",
+              "target": "lugares",
+              "emoji": "⌂",
+              "color": "pink",
+              "type": "link",
+              "id": "b20",
+              "hidden": false,
+              "symbol": "symbols/mulberry-house.png"
+            },
+            {
+              "label": "Meu corpo",
+              "message": "",
+              "target": "corpo",
+              "emoji": "✚",
+              "color": "pink",
+              "type": "link",
+              "id": "b21",
+              "hidden": false,
+              "symbol": "symbols/mulberry-body_outline.png"
+            },
+            {
+              "label": "Frases rápidas",
+              "message": "",
+              "target": "frases",
+              "emoji": "❞",
+              "color": "pink",
+              "type": "link",
+              "id": "b22",
+              "hidden": false,
+              "symbol": "symbols/mulberry-talk_1___to.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "comida",
+          "title": "Comer e beber",
+          "buttons": [
+            {
+              "label": "água",
+              "message": "água",
+              "color": "blue",
+              "type": "word",
+              "id": "b23",
+              "hidden": false,
+              "symbol": "symbols/mulberry-water.png"
+            },
+            {
+              "label": "comer",
+              "message": "comer",
+              "color": "blue",
+              "type": "word",
+              "id": "b24",
+              "hidden": false,
+              "symbol": "symbols/mulberry-eat___to.png"
+            },
+            {
+              "label": "beber",
+              "message": "beber",
+              "color": "blue",
+              "type": "word",
+              "id": "b25",
+              "hidden": false,
+              "symbol": "symbols/mulberry-drink___to.png"
+            },
+            {
+              "label": "pão",
+              "message": "pão",
+              "color": "blue",
+              "type": "word",
+              "id": "b26",
+              "hidden": false,
+              "symbol": "symbols/mulberry-bread.png"
+            },
+            {
+              "label": "arroz",
+              "message": "arroz",
+              "color": "blue",
+              "type": "word",
+              "id": "b27",
+              "hidden": false,
+              "symbol": "symbols/mulberry-rice.png"
+            },
+            {
+              "label": "feijão",
+              "message": "feijão",
+              "color": "blue",
+              "type": "word",
+              "id": "b28",
+              "hidden": false,
+              "symbol": "symbols/original-beans.png"
+            },
+            {
+              "label": "carne",
+              "message": "carne",
+              "color": "blue",
+              "type": "word",
+              "id": "b29",
+              "hidden": false,
+              "symbol": "symbols/mulberry-meat.png"
+            },
+            {
+              "label": "frango",
+              "message": "frango",
+              "color": "blue",
+              "type": "word",
+              "id": "b30",
+              "hidden": false,
+              "symbol": "symbols/mulberry-chicken.png"
+            },
+            {
+              "label": "ovo",
+              "message": "ovo",
+              "color": "blue",
+              "type": "word",
+              "id": "b31",
+              "hidden": false,
+              "symbol": "symbols/mulberry-egg.png"
+            },
+            {
+              "label": "leite",
+              "message": "leite",
+              "color": "blue",
+              "type": "word",
+              "id": "b32",
+              "hidden": false,
+              "symbol": "symbols/mulberry-milk.png"
+            },
+            {
+              "label": "suco",
+              "message": "suco",
+              "color": "blue",
+              "type": "word",
+              "id": "b33",
+              "hidden": false,
+              "symbol": "symbols/mulberry-apple_juice.png"
+            },
+            {
+              "label": "banana",
+              "message": "banana",
+              "color": "blue",
+              "type": "word",
+              "id": "b34",
+              "hidden": false,
+              "symbol": "symbols/mulberry-banana.png"
+            },
+            {
+              "label": "maçã",
+              "message": "maçã",
+              "color": "blue",
+              "type": "word",
+              "id": "b35",
+              "hidden": false,
+              "symbol": "symbols/mulberry-apple.png"
+            },
+            {
+              "label": "biscoito",
+              "message": "biscoito",
+              "color": "blue",
+              "type": "word",
+              "id": "b36",
+              "hidden": false,
+              "symbol": "symbols/mulberry-biscuits.png"
+            },
+            {
+              "label": "café",
+              "message": "café",
+              "color": "blue",
+              "type": "word",
+              "id": "b37",
+              "hidden": false,
+              "symbol": "symbols/mulberry-coffee.png"
+            },
+            {
+              "label": "sopa",
+              "message": "sopa",
+              "color": "blue",
+              "type": "word",
+              "id": "b38",
+              "hidden": false,
+              "symbol": "symbols/original-soup.png"
+            },
+            {
+              "label": "macarrão",
+              "message": "macarrão",
+              "color": "blue",
+              "type": "word",
+              "id": "b39",
+              "hidden": false,
+              "symbol": "symbols/mulberry-pasta.png"
+            },
+            {
+              "label": "fruta",
+              "message": "fruta",
+              "color": "blue",
+              "type": "word",
+              "id": "b40",
+              "hidden": false,
+              "symbol": "symbols/mulberry-fruit.png"
+            },
+            {
+              "label": "fome",
+              "message": "fome",
+              "color": "blue",
+              "type": "word",
+              "id": "b41",
+              "hidden": false,
+              "symbol": "symbols/mulberry-hungry.png"
+            },
+            {
+              "label": "sede",
+              "message": "sede",
+              "color": "blue",
+              "type": "word",
+              "id": "b42",
+              "hidden": false,
+              "symbol": "symbols/mulberry-thirsty.png"
+            },
+            {
+              "label": "quente",
+              "message": "quente",
+              "color": "blue",
+              "type": "word",
+              "id": "b43",
+              "hidden": false,
+              "symbol": "symbols/mulberry-hot.png"
+            },
+            {
+              "label": "frio",
+              "message": "frio",
+              "color": "blue",
+              "type": "word",
+              "id": "b44",
+              "hidden": false,
+              "symbol": "symbols/original-cold.png"
+            },
+            {
+              "label": "gostoso",
+              "message": "gostoso",
+              "color": "blue",
+              "type": "word",
+              "id": "b45",
+              "hidden": false,
+              "symbol": "symbols/mulberry-delicious_food.png"
+            },
+            {
+              "label": "acabou",
+              "message": "acabou",
+              "color": "blue",
+              "type": "word",
+              "id": "b46",
+              "hidden": false,
+              "symbol": "symbols/mulberry-finish.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "sentimentos",
+          "title": "Como estou",
+          "buttons": [
+            {
+              "label": "feliz",
+              "message": "feliz",
+              "color": "orange",
+              "type": "word",
+              "id": "b47",
+              "hidden": false,
+              "symbol": "symbols/mulberry-happy_man.png"
+            },
+            {
+              "label": "triste",
+              "message": "triste",
+              "color": "orange",
+              "type": "word",
+              "id": "b48",
+              "hidden": false,
+              "symbol": "symbols/mulberry-sad_man.png"
+            },
+            {
+              "label": "cansado",
+              "message": "cansado",
+              "color": "orange",
+              "type": "word",
+              "id": "b49",
+              "hidden": false,
+              "symbol": "symbols/original-tired.png"
+            },
+            {
+              "label": "com dor",
+              "message": "com dor",
+              "color": "orange",
+              "type": "word",
+              "id": "b50",
+              "hidden": false,
+              "symbol": "symbols/original-pain.png"
+            },
+            {
+              "label": "com medo",
+              "message": "com medo",
+              "color": "orange",
+              "type": "word",
+              "id": "b51",
+              "hidden": false,
+              "symbol": "symbols/mulberry-afraid_man.png"
+            },
+            {
+              "label": "bravo",
+              "message": "bravo",
+              "color": "orange",
+              "type": "word",
+              "id": "b52",
+              "hidden": false,
+              "symbol": "symbols/mulberry-angry_man.png"
+            },
+            {
+              "label": "calmo",
+              "message": "calmo",
+              "color": "orange",
+              "type": "word",
+              "id": "b53",
+              "hidden": false,
+              "symbol": "symbols/mulberry-relax___to.png"
+            },
+            {
+              "label": "animado",
+              "message": "animado",
+              "color": "orange",
+              "type": "word",
+              "id": "b54",
+              "hidden": false,
+              "symbol": "symbols/mulberry-excited_man.png"
+            },
+            {
+              "label": "sozinho",
+              "message": "sozinho",
+              "color": "orange",
+              "type": "word",
+              "id": "b55",
+              "hidden": false,
+              "symbol": "symbols/original-alone.png"
+            },
+            {
+              "label": "confuso",
+              "message": "confuso",
+              "color": "orange",
+              "type": "word",
+              "id": "b56",
+              "hidden": false,
+              "symbol": "symbols/mulberry-confused_man.png"
+            },
+            {
+              "label": "bem",
+              "message": "bem",
+              "color": "orange",
+              "type": "word",
+              "id": "b57",
+              "hidden": false,
+              "symbol": "symbols/mulberry-good.png"
+            },
+            {
+              "label": "mal",
+              "message": "mal",
+              "color": "orange",
+              "type": "word",
+              "id": "b58",
+              "hidden": false,
+              "symbol": "symbols/mulberry-bad.png"
+            },
+            {
+              "label": "gosto",
+              "message": "gosto",
+              "color": "orange",
+              "type": "word",
+              "id": "b59",
+              "hidden": false,
+              "symbol": "symbols/mulberry-heart_shape.png"
+            },
+            {
+              "label": "não gosto",
+              "message": "não gosto",
+              "color": "orange",
+              "type": "word",
+              "id": "b60",
+              "hidden": false,
+              "symbol": "symbols/original-notlike.png"
+            },
+            {
+              "label": "confortável",
+              "message": "confortável",
+              "color": "orange",
+              "type": "word",
+              "id": "b61",
+              "hidden": false,
+              "symbol": "symbols/mulberry-relax_2___to.png"
+            },
+            {
+              "label": "desconfortável",
+              "message": "desconfortável",
+              "color": "orange",
+              "type": "word",
+              "id": "b62",
+              "hidden": false,
+              "symbol": "symbols/original-pain.png"
+            },
+            {
+              "label": "quero descansar",
+              "message": "quero descansar",
+              "color": "orange",
+              "type": "word",
+              "id": "b63",
+              "hidden": false,
+              "symbol": "symbols/mulberry-rest___to.png"
+            },
+            {
+              "label": "quero companhia",
+              "message": "quero companhia",
+              "color": "orange",
+              "type": "word",
+              "id": "b64",
+              "hidden": false,
+              "symbol": "symbols/original-friend.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "pessoas",
+          "title": "Pessoas",
+          "buttons": [
+            {
+              "label": "eu",
+              "message": "eu",
+              "color": "yellow",
+              "type": "word",
+              "id": "b65",
+              "hidden": false,
+              "symbol": "symbols/original-self.png"
+            },
+            {
+              "label": "você",
+              "message": "você",
+              "color": "yellow",
+              "type": "word",
+              "id": "b66",
+              "hidden": false,
+              "symbol": "symbols/original-you.png"
+            },
+            {
+              "label": "ele",
+              "message": "ele",
+              "color": "yellow",
+              "type": "word",
+              "id": "b67",
+              "hidden": false,
+              "symbol": "symbols/original-other.png"
+            },
+            {
+              "label": "ela",
+              "message": "ela",
+              "color": "yellow",
+              "type": "word",
+              "id": "b68",
+              "hidden": false,
+              "symbol": "symbols/original-other.png"
+            },
+            {
+              "label": "nós",
+              "message": "nós",
+              "color": "yellow",
+              "type": "word",
+              "id": "b69",
+              "hidden": false,
+              "symbol": "symbols/original-group.png"
+            },
+            {
+              "label": "mamãe",
+              "message": "mamãe",
+              "color": "yellow",
+              "type": "word",
+              "id": "b70",
+              "hidden": false,
+              "symbol": "symbols/mulberry-mum_parent.png"
+            },
+            {
+              "label": "papai",
+              "message": "papai",
+              "color": "yellow",
+              "type": "word",
+              "id": "b71",
+              "hidden": false,
+              "symbol": "symbols/mulberry-dad_parent.png"
+            },
+            {
+              "label": "irmão",
+              "message": "irmão",
+              "color": "yellow",
+              "type": "word",
+              "id": "b72",
+              "hidden": false,
+              "symbol": "symbols/mulberry-brother.png"
+            },
+            {
+              "label": "irmã",
+              "message": "irmã",
+              "color": "yellow",
+              "type": "word",
+              "id": "b73",
+              "hidden": false,
+              "symbol": "symbols/mulberry-sister.png"
+            },
+            {
+              "label": "amigo",
+              "message": "amigo",
+              "color": "yellow",
+              "type": "word",
+              "id": "b74",
+              "hidden": false,
+              "symbol": "symbols/original-friend.png"
+            },
+            {
+              "label": "amiga",
+              "message": "amiga",
+              "color": "yellow",
+              "type": "word",
+              "id": "b75",
+              "hidden": false,
+              "symbol": "symbols/original-friend.png"
+            },
+            {
+              "label": "família",
+              "message": "família",
+              "color": "yellow",
+              "type": "word",
+              "id": "b76",
+              "hidden": false,
+              "symbol": "symbols/mulberry-family.png"
+            },
+            {
+              "label": "professor",
+              "message": "professor",
+              "color": "yellow",
+              "type": "word",
+              "id": "b77",
+              "hidden": false,
+              "symbol": "symbols/mulberry-teacher_1a.png"
+            },
+            {
+              "label": "médico",
+              "message": "médico",
+              "color": "yellow",
+              "type": "word",
+              "id": "b78",
+              "hidden": false,
+              "symbol": "symbols/mulberry-doctor_1a.png"
+            },
+            {
+              "label": "cuidador",
+              "message": "cuidador",
+              "color": "yellow",
+              "type": "word",
+              "id": "b79",
+              "hidden": false,
+              "symbol": "symbols/mulberry-take_care_of___to.png"
+            },
+            {
+              "label": "avó",
+              "message": "avó",
+              "color": "yellow",
+              "type": "word",
+              "id": "b80",
+              "hidden": false,
+              "symbol": "symbols/mulberry-grandmother.png"
+            },
+            {
+              "label": "avô",
+              "message": "avô",
+              "color": "yellow",
+              "type": "word",
+              "id": "b81",
+              "hidden": false,
+              "symbol": "symbols/mulberry-grandfather.png"
+            },
+            {
+              "label": "todo mundo",
+              "message": "todo mundo",
+              "color": "yellow",
+              "type": "word",
+              "id": "b82",
+              "hidden": false,
+              "symbol": "symbols/original-group.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "atividades",
+          "title": "O que quero fazer",
+          "buttons": [
+            {
+              "label": "brincar",
+              "message": "brincar",
+              "color": "green",
+              "type": "word",
+              "id": "b83",
+              "hidden": false,
+              "symbol": "symbols/mulberry-play___to.png"
+            },
+            {
+              "label": "dormir",
+              "message": "dormir",
+              "color": "green",
+              "type": "word",
+              "id": "b84",
+              "hidden": false,
+              "symbol": "symbols/mulberry-sleep_male___to.png"
+            },
+            {
+              "label": "andar",
+              "message": "andar",
+              "color": "green",
+              "type": "word",
+              "id": "b85",
+              "hidden": false,
+              "symbol": "symbols/mulberry-walk___to.png"
+            },
+            {
+              "label": "sentar",
+              "message": "sentar",
+              "color": "green",
+              "type": "word",
+              "id": "b86",
+              "hidden": false,
+              "symbol": "symbols/mulberry-sit___to.png"
+            },
+            {
+              "label": "levantar",
+              "message": "levantar",
+              "color": "green",
+              "type": "word",
+              "id": "b87",
+              "hidden": false,
+              "symbol": "symbols/mulberry-stand___to.png"
+            },
+            {
+              "label": "tomar banho",
+              "message": "tomar banho",
+              "color": "green",
+              "type": "word",
+              "id": "b88",
+              "hidden": false,
+              "symbol": "symbols/mulberry-shower_1___to.png"
+            },
+            {
+              "label": "escovar os dentes",
+              "message": "escovar os dentes",
+              "color": "green",
+              "type": "word",
+              "id": "b89",
+              "hidden": false,
+              "symbol": "symbols/mulberry-brush_teeth___to.png"
+            },
+            {
+              "label": "ler",
+              "message": "ler",
+              "color": "green",
+              "type": "word",
+              "id": "b90",
+              "hidden": false,
+              "symbol": "symbols/mulberry-read___to.png"
+            },
+            {
+              "label": "desenhar",
+              "message": "desenhar",
+              "color": "green",
+              "type": "word",
+              "id": "b91",
+              "hidden": false,
+              "symbol": "symbols/mulberry-draw___to.png"
+            },
+            {
+              "label": "ouvir música",
+              "message": "ouvir música",
+              "color": "green",
+              "type": "word",
+              "id": "b92",
+              "hidden": false,
+              "symbol": "symbols/mulberry-headphones.png"
+            },
+            {
+              "label": "assistir",
+              "message": "assistir",
+              "color": "green",
+              "type": "word",
+              "id": "b93",
+              "hidden": false,
+              "symbol": "symbols/mulberry-watch___to.png"
+            },
+            {
+              "label": "conversar",
+              "message": "conversar",
+              "color": "green",
+              "type": "word",
+              "id": "b94",
+              "hidden": false,
+              "symbol": "symbols/mulberry-talk_1___to.png"
+            },
+            {
+              "label": "abraçar",
+              "message": "abraçar",
+              "color": "green",
+              "type": "word",
+              "id": "b95",
+              "hidden": false,
+              "symbol": "symbols/mulberry-hug___to.png"
+            },
+            {
+              "label": "esperar",
+              "message": "esperar",
+              "color": "green",
+              "type": "word",
+              "id": "b96",
+              "hidden": false,
+              "symbol": "symbols/mulberry-wait___to.png"
+            },
+            {
+              "label": "abrir",
+              "message": "abrir",
+              "color": "green",
+              "type": "word",
+              "id": "b97",
+              "hidden": false,
+              "symbol": "symbols/mulberry-open___to.png"
+            },
+            {
+              "label": "fechar",
+              "message": "fechar",
+              "color": "green",
+              "type": "word",
+              "id": "b98",
+              "hidden": false,
+              "symbol": "symbols/mulberry-close___to.png"
+            },
+            {
+              "label": "pegar",
+              "message": "pegar",
+              "color": "green",
+              "type": "word",
+              "id": "b99",
+              "hidden": false,
+              "symbol": "symbols/mulberry-take___to.png"
+            },
+            {
+              "label": "dar",
+              "message": "dar",
+              "color": "green",
+              "type": "word",
+              "id": "b100",
+              "hidden": false,
+              "symbol": "symbols/mulberry-give___to.png"
+            },
+            {
+              "label": "comprar",
+              "message": "comprar",
+              "color": "green",
+              "type": "word",
+              "id": "b101",
+              "hidden": false,
+              "symbol": "symbols/original-buy.png"
+            },
+            {
+              "label": "estudar",
+              "message": "estudar",
+              "color": "green",
+              "type": "word",
+              "id": "b102",
+              "hidden": false,
+              "symbol": "symbols/mulberry-study___to.png"
+            },
+            {
+              "label": "trabalhar",
+              "message": "trabalhar",
+              "color": "green",
+              "type": "word",
+              "id": "b103",
+              "hidden": false,
+              "symbol": "symbols/original-work.png"
+            },
+            {
+              "label": "sair",
+              "message": "sair",
+              "color": "green",
+              "type": "word",
+              "id": "b104",
+              "hidden": false,
+              "symbol": "symbols/mulberry-go_outside___to.png"
+            },
+            {
+              "label": "voltar",
+              "message": "voltar",
+              "color": "green",
+              "type": "word",
+              "id": "b105",
+              "hidden": false,
+              "symbol": "symbols/mulberry-return___to.png"
+            },
+            {
+              "label": "escolher",
+              "message": "escolher",
+              "color": "green",
+              "type": "word",
+              "id": "b106",
+              "hidden": false,
+              "symbol": "symbols/original-choice.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "lugares",
+          "title": "Lugares",
+          "buttons": [
+            {
+              "label": "casa",
+              "message": "casa",
+              "color": "blue",
+              "type": "word",
+              "id": "b107",
+              "hidden": false,
+              "symbol": "symbols/mulberry-house.png"
+            },
+            {
+              "label": "banheiro",
+              "message": "banheiro",
+              "color": "blue",
+              "type": "word",
+              "id": "b108",
+              "hidden": false,
+              "symbol": "symbols/mulberry-toilet.png"
+            },
+            {
+              "label": "quarto",
+              "message": "quarto",
+              "color": "blue",
+              "type": "word",
+              "id": "b109",
+              "hidden": false,
+              "symbol": "symbols/mulberry-single_bed.png"
+            },
+            {
+              "label": "cozinha",
+              "message": "cozinha",
+              "color": "blue",
+              "type": "word",
+              "id": "b110",
+              "hidden": false,
+              "symbol": "symbols/original-kitchen.png"
+            },
+            {
+              "label": "escola",
+              "message": "escola",
+              "color": "blue",
+              "type": "word",
+              "id": "b111",
+              "hidden": false,
+              "symbol": "symbols/mulberry-school.png"
+            },
+            {
+              "label": "parque",
+              "message": "parque",
+              "color": "blue",
+              "type": "word",
+              "id": "b112",
+              "hidden": false,
+              "symbol": "symbols/mulberry-play_area.png"
+            },
+            {
+              "label": "hospital",
+              "message": "hospital",
+              "color": "blue",
+              "type": "word",
+              "id": "b113",
+              "hidden": false,
+              "symbol": "symbols/original-hospital.png"
+            },
+            {
+              "label": "mercado",
+              "message": "mercado",
+              "color": "blue",
+              "type": "word",
+              "id": "b114",
+              "hidden": false,
+              "symbol": "symbols/mulberry-shop.png"
+            },
+            {
+              "label": "rua",
+              "message": "rua",
+              "color": "blue",
+              "type": "word",
+              "id": "b115",
+              "hidden": false,
+              "symbol": "symbols/mulberry-road.png"
+            },
+            {
+              "label": "carro",
+              "message": "carro",
+              "color": "blue",
+              "type": "word",
+              "id": "b116",
+              "hidden": false,
+              "symbol": "symbols/mulberry-car.png"
+            },
+            {
+              "label": "praia",
+              "message": "praia",
+              "color": "blue",
+              "type": "word",
+              "id": "b117",
+              "hidden": false,
+              "symbol": "symbols/mulberry-beach.png"
+            },
+            {
+              "label": "piscina",
+              "message": "piscina",
+              "color": "blue",
+              "type": "word",
+              "id": "b118",
+              "hidden": false,
+              "symbol": "symbols/original-pool.png"
+            },
+            {
+              "label": "restaurante",
+              "message": "restaurante",
+              "color": "blue",
+              "type": "word",
+              "id": "b119",
+              "hidden": false,
+              "symbol": "symbols/original-restaurant.png"
+            },
+            {
+              "label": "farmácia",
+              "message": "farmácia",
+              "color": "blue",
+              "type": "word",
+              "id": "b120",
+              "hidden": false,
+              "symbol": "symbols/original-pharmacy.png"
+            },
+            {
+              "label": "trabalho",
+              "message": "trabalho",
+              "color": "blue",
+              "type": "word",
+              "id": "b121",
+              "hidden": false,
+              "symbol": "symbols/original-work.png"
+            },
+            {
+              "label": "jardim",
+              "message": "jardim",
+              "color": "blue",
+              "type": "word",
+              "id": "b122",
+              "hidden": false,
+              "symbol": "symbols/original-garden.png"
+            },
+            {
+              "label": "sala",
+              "message": "sala",
+              "color": "blue",
+              "type": "word",
+              "id": "b123",
+              "hidden": false,
+              "symbol": "symbols/mulberry-room.png"
+            },
+            {
+              "label": "cama",
+              "message": "cama",
+              "color": "blue",
+              "type": "word",
+              "id": "b124",
+              "hidden": false,
+              "symbol": "symbols/mulberry-single_bed.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "corpo",
+          "title": "Meu corpo e cuidados",
+          "buttons": [
+            {
+              "label": "cabeça",
+              "message": "cabeça",
+              "color": "blue",
+              "type": "word",
+              "id": "b125",
+              "hidden": false,
+              "symbol": "symbols/mulberry-head.png"
+            },
+            {
+              "label": "barriga",
+              "message": "barriga",
+              "color": "blue",
+              "type": "word",
+              "id": "b126",
+              "hidden": false,
+              "symbol": "symbols/mulberry-stomach.png"
+            },
+            {
+              "label": "braço",
+              "message": "braço",
+              "color": "blue",
+              "type": "word",
+              "id": "b127",
+              "hidden": false,
+              "symbol": "symbols/mulberry-arm.png"
+            },
+            {
+              "label": "perna",
+              "message": "perna",
+              "color": "blue",
+              "type": "word",
+              "id": "b128",
+              "hidden": false,
+              "symbol": "symbols/mulberry-leg.png"
+            },
+            {
+              "label": "mão",
+              "message": "mão",
+              "color": "blue",
+              "type": "word",
+              "id": "b129",
+              "hidden": false,
+              "symbol": "symbols/mulberry-left_hand.png"
+            },
+            {
+              "label": "pé",
+              "message": "pé",
+              "color": "blue",
+              "type": "word",
+              "id": "b130",
+              "hidden": false,
+              "symbol": "symbols/mulberry-foot.png"
+            },
+            {
+              "label": "costas",
+              "message": "costas",
+              "color": "blue",
+              "type": "word",
+              "id": "b131",
+              "hidden": false,
+              "symbol": "symbols/mulberry-back.png"
+            },
+            {
+              "label": "boca",
+              "message": "boca",
+              "color": "blue",
+              "type": "word",
+              "id": "b132",
+              "hidden": false,
+              "symbol": "symbols/mulberry-mouth.png"
+            },
+            {
+              "label": "dente",
+              "message": "dente",
+              "color": "blue",
+              "type": "word",
+              "id": "b133",
+              "hidden": false,
+              "symbol": "symbols/mulberry-tooth.png"
+            },
+            {
+              "label": "olho",
+              "message": "olho",
+              "color": "blue",
+              "type": "word",
+              "id": "b134",
+              "hidden": false,
+              "symbol": "symbols/mulberry-eye.png"
+            },
+            {
+              "label": "ouvido",
+              "message": "ouvido",
+              "color": "blue",
+              "type": "word",
+              "id": "b135",
+              "hidden": false,
+              "symbol": "symbols/mulberry-ear.png"
+            },
+            {
+              "label": "nariz",
+              "message": "nariz",
+              "color": "blue",
+              "type": "word",
+              "id": "b136",
+              "hidden": false,
+              "symbol": "symbols/original-nose.png"
+            },
+            {
+              "label": "dor",
+              "message": "dor",
+              "color": "blue",
+              "type": "word",
+              "id": "b137",
+              "hidden": false,
+              "symbol": "symbols/original-pain.png"
+            },
+            {
+              "label": "coceira",
+              "message": "coceira",
+              "color": "blue",
+              "type": "word",
+              "id": "b138",
+              "hidden": false,
+              "symbol": "symbols/mulberry-itch.png"
+            },
+            {
+              "label": "calor",
+              "message": "calor",
+              "color": "blue",
+              "type": "word",
+              "id": "b139",
+              "hidden": false,
+              "symbol": "symbols/mulberry-hot_person.png"
+            },
+            {
+              "label": "frio",
+              "message": "frio",
+              "color": "blue",
+              "type": "word",
+              "id": "b140",
+              "hidden": false,
+              "symbol": "symbols/original-cold.png"
+            },
+            {
+              "label": "remédio",
+              "message": "remédio",
+              "color": "blue",
+              "type": "word",
+              "id": "b141",
+              "hidden": false,
+              "symbol": "symbols/mulberry-medicine.png"
+            },
+            {
+              "label": "banheiro",
+              "message": "banheiro",
+              "color": "blue",
+              "type": "word",
+              "id": "b142",
+              "hidden": false,
+              "symbol": "symbols/mulberry-toilet.png"
+            },
+            {
+              "label": "respirar",
+              "message": "respirar",
+              "color": "blue",
+              "type": "word",
+              "id": "b143",
+              "hidden": false,
+              "symbol": "symbols/original-breathe.png"
+            },
+            {
+              "label": "posição",
+              "message": "posição",
+              "color": "blue",
+              "type": "word",
+              "id": "b144",
+              "hidden": false,
+              "symbol": "symbols/original-position.png"
+            },
+            {
+              "label": "roupa",
+              "message": "roupa",
+              "color": "blue",
+              "type": "word",
+              "id": "b145",
+              "hidden": false,
+              "symbol": "symbols/mulberry-clothes_generic.png"
+            },
+            {
+              "label": "óculos",
+              "message": "óculos",
+              "color": "blue",
+              "type": "word",
+              "id": "b146",
+              "hidden": false,
+              "symbol": "symbols/mulberry-glasses.png"
+            },
+            {
+              "label": "cadeira",
+              "message": "cadeira",
+              "color": "blue",
+              "type": "word",
+              "id": "b147",
+              "hidden": false,
+              "symbol": "symbols/mulberry-chair.png"
+            },
+            {
+              "label": "água",
+              "message": "água",
+              "color": "blue",
+              "type": "word",
+              "id": "b148",
+              "hidden": false,
+              "symbol": "symbols/mulberry-water.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "frases",
+          "title": "Frases rápidas",
+          "buttons": [
+            {
+              "label": "Preciso de ajuda",
+              "message": "Preciso de ajuda",
+              "color": "purple",
+              "type": "speak",
+              "id": "b149",
+              "hidden": false,
+              "symbol": "symbols/mulberry-help___to.png"
+            },
+            {
+              "label": "Quero falar uma coisa",
+              "message": "Quero falar uma coisa",
+              "color": "purple",
+              "type": "speak",
+              "id": "b150",
+              "hidden": false,
+              "symbol": "symbols/mulberry-talk_1___to.png"
+            },
+            {
+              "label": "Espere, estou falando",
+              "message": "Espere, estou falando",
+              "color": "purple",
+              "type": "speak",
+              "id": "b151",
+              "hidden": false,
+              "symbol": "symbols/mulberry-wait___to.png"
+            },
+            {
+              "label": "Sim",
+              "message": "Sim",
+              "color": "purple",
+              "type": "speak",
+              "id": "b152",
+              "hidden": false,
+              "symbol": "symbols/original-yes.png"
+            },
+            {
+              "label": "Não",
+              "message": "Não",
+              "color": "purple",
+              "type": "speak",
+              "id": "b153",
+              "hidden": false,
+              "symbol": "symbols/original-no.png"
+            },
+            {
+              "label": "Não entendi",
+              "message": "Não entendi",
+              "color": "purple",
+              "type": "speak",
+              "id": "b154",
+              "hidden": false,
+              "symbol": "symbols/mulberry-confused_man.png"
+            },
+            {
+              "label": "Pode repetir?",
+              "message": "Pode repetir?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b155",
+              "hidden": false,
+              "symbol": "symbols/original-repeat.png"
+            },
+            {
+              "label": "Quero ir ao banheiro",
+              "message": "Quero ir ao banheiro",
+              "color": "purple",
+              "type": "speak",
+              "id": "b156",
+              "hidden": false,
+              "symbol": "symbols/mulberry-toilet___go_to_the.png"
+            },
+            {
+              "label": "Estou com dor",
+              "message": "Estou com dor",
+              "color": "purple",
+              "type": "speak",
+              "id": "b157",
+              "hidden": false,
+              "symbol": "symbols/original-pain.png"
+            },
+            {
+              "label": "Quero mudar de posição",
+              "message": "Quero mudar de posição",
+              "color": "purple",
+              "type": "speak",
+              "id": "b158",
+              "hidden": false,
+              "symbol": "symbols/original-position.png"
+            },
+            {
+              "label": "Por favor",
+              "message": "Por favor",
+              "color": "purple",
+              "type": "speak",
+              "id": "b159",
+              "hidden": false,
+              "symbol": "symbols/original-please.png"
+            },
+            {
+              "label": "Obrigado",
+              "message": "Obrigado",
+              "color": "purple",
+              "type": "speak",
+              "id": "b160",
+              "hidden": false,
+              "symbol": "symbols/original-thanks.png"
+            },
+            {
+              "label": "Bom dia",
+              "message": "Bom dia",
+              "color": "purple",
+              "type": "speak",
+              "id": "b161",
+              "hidden": false,
+              "symbol": "symbols/mulberry-morning.png"
+            },
+            {
+              "label": "Tudo bem?",
+              "message": "Tudo bem?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b162",
+              "hidden": false,
+              "symbol": "symbols/mulberry-happy_man.png"
+            },
+            {
+              "label": "Quero ficar sozinho",
+              "message": "Quero ficar sozinho",
+              "color": "purple",
+              "type": "speak",
+              "id": "b163",
+              "hidden": false,
+              "symbol": "symbols/original-alone.png"
+            },
+            {
+              "label": "Quero companhia",
+              "message": "Quero companhia",
+              "color": "purple",
+              "type": "speak",
+              "id": "b164",
+              "hidden": false,
+              "symbol": "symbols/original-friend.png"
+            },
+            {
+              "label": "Essa não foi minha escolha",
+              "message": "Essa não foi minha escolha",
+              "color": "purple",
+              "type": "speak",
+              "id": "b165",
+              "hidden": false,
+              "symbol": "symbols/original-no.png"
+            },
+            {
+              "label": "Quero outra coisa",
+              "message": "Quero outra coisa",
+              "color": "purple",
+              "type": "speak",
+              "id": "b166",
+              "hidden": false,
+              "symbol": "symbols/original-choice.png"
+            }
+          ],
+          "columns": 3
+        }
+      ],
+      "settings": {
+        "method": "touch",
+        "holdMs": 650,
+        "scanMs": 1200,
+        "scanType": "auto",
+        "columns": 3,
+        "font": 19,
+        "rate": 1,
+        "pitch": 1,
+        "speakWords": false,
+        "contrast": false
+      },
+      "message": [],
+      "notes": [],
+      "routines": [
+        {
+          "title": "Meu dia",
+          "steps": [
+            "Acordar",
+            "Tomar café",
+            "Escovar os dentes",
+            "Sair de casa"
+          ],
+          "done": 0
+        }
+      ]
+    }
+  ]
+}

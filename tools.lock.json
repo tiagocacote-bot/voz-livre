@@ -1,0 +1,43 @@
+[
+  {
+    "name": "json.jar",
+    "url": "https://repo.maven.apache.org/maven2/org/json/json/20240303/json-20240303.jar",
+    "bytes": 78332,
+    "sha256": "3cf6cd6892e32e2b4c1c39e0f52f5248a2f5b37646fdfbb79a66b46b618414ed",
+    "verifiedAgainstVendor": false
+  },
+  {
+    "name": "apksig.jar",
+    "url": "https://dl.google.com/android/maven2/com/android/tools/build/apksig/8.7.3/apksig-8.7.3.jar",
+    "bytes": 506969,
+    "sha256": "c070ed1394629d74641aa0906f60b2ffa1ee77e6366a1f93437f59717b1aeb89",
+    "verifiedAgainstVendor": false
+  },
+  {
+    "name": "aapt2.jar",
+    "url": "https://dl.google.com/android/maven2/com/android/tools/build/aapt2/8.7.3-12006047/aapt2-8.7.3-12006047-windows.jar",
+    "bytes": 2053791,
+    "sha256": "9406af8e4742da01e4ce65773e23bda40ed5f599917b38cacc261c9ba0952331",
+    "verifiedAgainstVendor": false
+  },
+  {
+    "name": "r8.jar",
+    "url": "https://dl.google.com/android/maven2/com/android/tools/r8/8.7.18/r8-8.7.18.jar",
+    "bytes": 17650417,
+    "sha256": "58366f77067207c39a17d469de7b05701d2877212a9c55201bcb0af43e59e903",
+    "verifiedAgainstVendor": false
+  },
+  {
+    "name": "jdk.zip",
+    "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_windows_hotspot_17.0.20.1_1.zip",
+    "bytes": 190817615,
+    "sha256": "e53a79c3c3d86865bd7e787903884331068e71321714ffd44f145785affc7cb0",
+    "verifiedAgainstVendor": true
+  },
+  {
+    "name": "android.jar",
+    "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/refs/heads/main/35/public/android.jar?format=TEXT",
+    "bytes": 27100040,
+    "sha256": "ee568219aa3754977207a8fd849fdbf3a299658dd26dd0907d39ca830587f8aa"
+  }
+]
