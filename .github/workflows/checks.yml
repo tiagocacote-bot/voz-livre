@@ -1,0 +1,28 @@
+name: Android and source checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Check symbols, attribution and manifest
+        run: python scripts/check-assets.py
+      - name: Download hash-pinned development tools
+        run: node setup-tools.mjs
+      - name: Model and scanner checks
+        run: ./tests/run-model.ps1
+      - name: Compile and verify APK with an ephemeral CI key
+        run: ./build.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voz-livre-ci-apk
+          path: build/Voz-Livre-0.1.1.apk
+          retention-days: 7
