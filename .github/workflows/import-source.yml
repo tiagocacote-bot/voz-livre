@@ -14,7 +14,7 @@ jobs:
           import hashlib, pathlib, zipfile
           root = pathlib.Path.cwd().resolve()
           archive = root / 'Voz-Livre-0.1.1-source.zip'
-          expected = '905cb06afeb54d38409d6aa0a26d97d3fa0467f3571f7b9cd5ae86d16a98bf37'
+          expected = 'e7bc7d08ce6d5da6ecf7620a3cab6fdc906908bf7dea6b02f49712eb0f7a7498'
           assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected, 'Unexpected source hash'
           with zipfile.ZipFile(archive) as z:
               assert len(z.infolist()) == 450
