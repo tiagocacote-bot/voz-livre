@@ -1,0 +1,24 @@
+name: Fetch ARASAAC pictograms
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['scripts/fetch-arasaac.py', '.github/workflows/fetch-arasaac.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - run: pip install pillow==11.3.0
+      - run: python scripts/fetch-arasaac.py
+      - name: Commit pictograms
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app/src/main/assets/symbols scripts/arasaac-meta.json
+          git commit -m 'Download original ARASAAC pictograms' && git push || echo 'No changes'
