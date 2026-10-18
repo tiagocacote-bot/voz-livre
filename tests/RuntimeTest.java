@@ -43,7 +43,7 @@ public class RuntimeTest {
     ActivityController<MainActivity> c = Robolectric.buildActivity(MainActivity.class).setup();
     MainActivity a = c.get();
     assertEquals("inicio", a.current);
-    assertEquals(8, a.model.pages().length());
+    assertEquals(15, a.model.pages().length());
     assertTrue(a.grid.getChildCount() > 10);
     JSONObject page = a.model.page("inicio");
     for (String word : new String[] {"eu", "quero"}) {
@@ -231,14 +231,24 @@ public class RuntimeTest {
     a.tools();
     idle(400);
     assertNotNull("tools dialog is open", a.topDialog());
-    assertFalse("first group is highlighted", a.dialogFocus.isEmpty());
-    assertTrue("many items: scanning starts by groups", a.dialogFocus.size() > 1);
-    assertTrue(key(a, KeyEvent.KEYCODE_ENTER)); // enter the first group
+    assertFalse("a target is highlighted", a.dialogFocus.isEmpty());
+    if (a.dialogFocus.size() > 1) assertTrue(key(a, KeyEvent.KEYCODE_ENTER)); // enter the group
     assertEquals(1, a.dialogFocus.size());
     assertTrue(key(a, KeyEvent.KEYCODE_ENTER)); // first item: undo message
     idle(400);
     assertEquals("eu", a.model.text());
     assertNull("list dialog closed after choosing", a.topDialog());
+    JSONObject draft = a.model.newButton();
+    a.symbols(draft);
+    idle(400);
+    assertEquals("hundreds of symbols: scanning starts by groups of 8", 8, a.dialogFocus.size());
+    key(a, KeyEvent.KEYCODE_SPACE); // next group
+    assertEquals(8, a.dialogFocus.size());
+    key(a, KeyEvent.KEYCODE_ENTER); // into the second group
+    assertEquals(1, a.dialogFocus.size());
+    key(a, KeyEvent.KEYCODE_ENTER); // choose its first symbol
+    idle(400);
+    assertFalse("a symbol was chosen", draft.optString("symbol").isEmpty());
     a.settings();
     idle(400);
     for (int i = 0; i < 3; i++) key(a, KeyEvent.KEYCODE_SPACE);
