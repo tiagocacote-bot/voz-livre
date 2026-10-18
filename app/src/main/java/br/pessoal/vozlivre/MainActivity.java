@@ -885,6 +885,11 @@ public class MainActivity extends Activity {
             2,
             8);
     grid.setColumnCount(cols);
+    int baseFont = clamp(model.settings().optInt("font", 19), 15, 30);
+    int cardHeight =
+        cols >= 5
+            ? dp(cardBase * .75f + Math.max(11, baseFont * 4 / cols) * 2.6f)
+            : dp(cardBase + baseFont * cardScale);
     JSONArray buttons = page.optJSONArray("buttons");
     for (int i = 0; i < buttons.length(); i++) {
       final JSONObject b = buttons.optJSONObject(i);
@@ -894,7 +899,7 @@ public class MainActivity extends Activity {
         space.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
         GridLayout.LayoutParams pos = new GridLayout.LayoutParams();
         pos.width = 0;
-        pos.height = dp(cardBase + clamp(model.settings().optInt("font", 19), 15, 30) * cardScale);
+        pos.height = cardHeight;
         pos.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
         pos.setMargins(dp(3), dp(3), dp(3), dp(3));
         grid.addView(space, pos);
@@ -949,7 +954,7 @@ public class MainActivity extends Activity {
       register(card, click, color);
       GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
       lp.width = 0;
-      lp.height = dp(cardBase + clamp(model.settings().optInt("font", 19), 15, 30) * cardScale);
+      lp.height = cardHeight;
       lp.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f);
       lp.setMargins(dp(3), dp(3), dp(3), dp(3));
       grid.addView(card, lp);
