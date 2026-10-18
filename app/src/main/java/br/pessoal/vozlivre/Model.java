@@ -157,7 +157,7 @@ public final class Model {
       put(e, "time", System.currentTimeMillis());
       a.put(e);
       while (a.length() > 100) a.remove(0);
-    } catch (JSONException ignored) {
+    } catch (Exception ignored) {
     }
   }
 
