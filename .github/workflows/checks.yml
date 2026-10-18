@@ -38,13 +38,24 @@ jobs:
           Invoke-WebRequest 'https://raw.githubusercontent.com/willwade/AACProcessors/9e538963b236b84afce1ecf94980506d9a9bcd64/examples/demofiles/Medical%20Advocacy.spb' -OutFile .test-fixtures/sample.spb
           if ((Get-FileHash .test-fixtures/sample.spb -Algorithm SHA256).Hash -ne 'D2D6895D4FDC3C258EB971C05330CF34E446EC25DA016643F3DDE26BA0C98836') { throw 'Unexpected fixture hash' }
       - name: Android runtime and render tests (Robolectric, APIs 28 and 35)
-        run: ./tests/run-runtime.ps1
-      - uses: actions/upload-artifact@v5
+        shell: pwsh
+        run: |
+          $failed = $false
+          try { ./tests/run-runtime.ps1 *>&1 | Tee-Object -FilePath build/runtime.log } catch { $failed = $true }
+          if ($failed) {
+            $log = Get-Content build/runtime.log -Raw
+            $i = [Math]::Max(0, $log.IndexOf('There w'))
+            $msg = $log.Substring($i, [Math]::Min(6000, $log.Length - $i))
+            $msg = $msg -replace '%','%25' -replace "`r",'' -replace "`n",'%0A'
+            "::error title=Runtime tests::$msg"
+            exit 1
+          }
+      - uses: actions/upload-artifact@v7
         with:
           name: voz-livre-ci-apk
           path: build/Voz-Livre-*.apk
           retention-days: 7
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: voz-livre-screenshots

@@ -8,7 +8,7 @@
 
 A comunicação não deveria depender da renda ou da marca de um aparelho. O Voz Livre é um aplicativo gratuito de CAA para Android, criado para ampliar o acesso de pessoas autistas, outras pessoas neurodivergentes e qualquer pessoa que precise de apoio para se comunicar — especialmente famílias que não podem comprar um iPhone ou iPad e só têm aparelhos Android. Oferece um comunicador personalizável para celulares e tablets mais acessíveis. É e sempre será gratuito, sem conta, assinatura ou anúncios.
 
-**A versão 0.2.0 é uma alfa.** O aplicativo e as pranchas estão em português brasileiro. O responsável pelo projeto relata que o uso básico da versão anterior aparentemente funcionou em um Samsung Galaxy S24 FE e em um tablet Samsung SM-P619; a versão do app, as versões do Android e os recursos testados não foram registrados. Ainda precisamos ampliar a avaliação com usuários. É um projeto independente, sem vínculo com a Tobii Dynavox; não é o TD Snap e não oferece todos os recursos dele.
+**A versão 0.3.0 é uma alfa.** A interface está em português, inglês e espanhol; a prancha inicial pode ser criada em qualquer um dos três idiomas. O responsável pelo projeto relata que o uso básico da versão anterior aparentemente funcionou em um Samsung Galaxy S24 FE e em um tablet Samsung SM-P619; a versão do app, as versões do Android e os recursos testados não foram registrados. Ainda precisamos ampliar a avaliação com usuários. É um projeto independente, sem vínculo com a Tobii Dynavox; não é o TD Snap e não oferece todos os recursos dele.
 
 ## Como experimentar
 
@@ -19,21 +19,26 @@ A comunicação não deveria depender da renda ou da marca de um aparelho. O Voz
 
 ## Recursos desta versão
 
-- Oito páginas iniciais e 166 botões com pictogramas e texto para montar e falar mensagens.
+- 15 páginas iniciais e 317 botões com pictogramas e texto para montar e falar mensagens: **Núcleo** (36 palavras essenciais em posições fixas), **Começar a falar** (inícios de frase por intenção), palavras principais, comida, sentimentos, pessoas, ações, lugares, corpo, frases rápidas, perguntas, escola, brincadeiras, tempo e dias, cores e descrições.
 - **Previsão de palavras:** quatro sugestões da próxima palavra, também no teclado. Começa com sugestões em português e aprende, só no aparelho, com as mensagens que cada perfil fala. Pode ser desligada ou apagada em **Ajustes → Tamanho da grade e letras**.
+- **Formas das palavras:** toque numa palavra da mensagem para conjugar o verbo (eu brinco, brinquei, brincarei) ou mudar gênero e número (cansado, cansada, cansados). Conjugação automática opcional.
 - Edição de páginas, textos, fala, cores, links e visibilidade; fotos próprias pelo seletor do Android.
-- Perfis locais separados, busca, teclado, notas, rotinas em texto, temporizador e desenho.
-- Toque direto, tempo de permanência no toque, seleção ao soltar, pistas auditivas, permanência do ponteiro e varredura linear automática ou por passos. Precisam de testes com usuários e equipamentos.
+- Perfis locais separados, busca, teclado, notas, **rotinas visuais com pictogramas**, temporizador e desenho.
+- Toque direto, tempo de permanência no toque, seleção ao soltar, pistas auditivas, permanência do ponteiro e varredura automática ou por passos — **também dentro das janelas** (ajustes, edição, teclado, listas), com varredura por grupos quando há muitas opções. Precisam de testes com usuários e equipamentos.
 - Backup e restauração em JSON com fotos, desfazer/refazer mensagens e desfazer edição de páginas.
-- Importação experimental de `.spb`/`.sps`, com parte dos textos, links e comandos. Ações sem suporte ficam desativadas para revisão. Não preserva todas as imagens, posições ou ações avançadas.
+- Importação experimental de `.spb`/`.sps`: textos, links, cores, ordem dos botões, botões ocultos e fotos da própria prancha. Ações sem suporte ficam desativadas para revisão. Símbolos de bibliotecas comerciais (PCS etc.) não são copiados.
+
+## Vocabulário
+
+O vocabulário inicial é original e aberto, baseado em princípios públicos de CAA — vocabulário núcleo, posições fixas para memória motora, organização pragmática e cores por classe de palavra — sem copiar produtos comerciais como PCS, PODD ou Gateway. Detalhes e fontes em [docs/VOCABULARIO.md](docs/VOCABULARIO.md).
 
 ## Imagens
 
-Os botões iniciais usam os **pictogramas ARASAAC**, como no protótipo original (163 dos 166 botões; os outros três usam Mulberry ou desenhos próprios porque não há pictograma ARASAAC adequado). Ao atualizar da 0.1.1, os botões iniciais voltam automaticamente para ARASAAC; fotos pessoais e símbolos escolhidos à mão são mantidos. Quem preferir pode voltar para Mulberry e desenhos próprios em **Ajustes → Tamanho da grade e letras → Imagens dos botões iniciais**. Os dois conjuntos ficam disponíveis em **Editar → Escolher símbolo**.
+Os botões iniciais usam os **pictogramas ARASAAC**, como no protótipo original. Ao atualizar da 0.1.1, os botões iniciais voltam automaticamente para ARASAAC; fotos pessoais e símbolos escolhidos à mão são mantidos. Quem preferir pode voltar para Mulberry e desenhos próprios em **Ajustes → Tamanho da grade e letras → Imagens dos botões iniciais**. Os dois conjuntos ficam disponíveis em **Editar → Escolher símbolo**.
 
 ## Limitações atuais
 
-Não inclui calibração ocular, sincronização em nuvem, previsão gramatical completa, automação residencial, atividades Boardmaker nem vocabulários comerciais PCS/PODD/Gateway. A varredura não cobre todas as janelas e telas de edição. Switch Access, acionadores externos, ponteiros e motores de voz precisam de validação em aparelhos reais. Os testes automatizados não demonstram adequação clínica nem segurança para ser o único meio de comunicação de alguém. O vocabulário, as sugestões e os símbolos são um ponto de partida editável.
+Não inclui calibração ocular, sincronização em nuvem, automação residencial, atividades Boardmaker nem vocabulários comerciais PCS/PODD/Gateway. As formas das palavras e as sugestões conjugadas existem só em português; o símbolo é buscado por palavras em português. Switch Access, acionadores externos, ponteiros e motores de voz precisam de validação em aparelhos reais. Os testes automatizados não demonstram adequação clínica nem segurança para ser o único meio de comunicação de alguém. O vocabulário, as sugestões e os símbolos são um ponto de partida editável.
 
 ![Voz Livre — Android](docs/images/paisagem.png)
 

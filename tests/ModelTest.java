@@ -168,6 +168,90 @@ public class ModelTest {
     check(
         upgraded.root.getJSONArray("profiles").toString().equals(new JSONObject(arasaac).getJSONArray("profiles").toString()),
         "dados da 0.1.1 voltam exatamente aos pictogramas ARASAAC");
+    java.util.List<String> verbs = java.util.Arrays.asList("brincar", "escovar");
+    check(Grammar.conjugate("brincar", Grammar.EU, 0).equals("brinco"), "conjuga presente regular");
+    check(Grammar.conjugate("brincar", Grammar.EU, 1).equals("brinquei"), "passado com troca c→qu");
+    check(Grammar.conjugate("pegar", Grammar.EU, 1).equals("peguei"), "passado com troca g→gu");
+    check(Grammar.conjugate("ir", Grammar.NOS, 0).equals("vamos"), "verbo irregular ir");
+    check(Grammar.conjugate("ter", Grammar.ELES, 0).equals("têm"), "verbo irregular ter");
+    check(Grammar.conjugate("fazer", Grammar.EU, 3).equals("farei"), "futuro irregular");
+    check(Grammar.conjugate("dormir", Grammar.EU, 0).equals("durmo"), "presente com troca de vogal");
+    check(Grammar.agree("eu", "brincar", verbs).equals("brinco"), "concorda verbo com sujeito");
+    check(Grammar.agree("mais", "comer", verbs).equals("comer"), "sem sujeito não muda");
+    check(Grammar.agree("eu", "mar", verbs).equals("mar"), "não conjuga palavra desconhecida");
+    check("querer".equals(Grammar.lemma("quero", verbs)), "reconhece forma conjugada");
+    boolean past = false;
+    for (Grammar.Form f : Grammar.forms("brinco", "eu", verbs)) past |= f.text.equals("brinquei");
+    check(past, "formas do verbo incluem passado");
+    boolean fem = false;
+    for (Grammar.Form f : Grammar.forms("cansado", "", verbs)) fem |= f.text.equals("cansada");
+    check(fem, "formas do adjetivo incluem feminino");
+    check(Grammar.forms("água", "", verbs).size() == 1, "substantivo só ganha plural");
+    check(Grammar.forms("sim", "", verbs).isEmpty(), "palavra sem flexão");
+    check(Grammar.plural("confortável").equals("confortáveis") && Grammar.plural("mão").equals("mãos"), "plurais especiais");
+    Model words = new Model(source);
+    words.append("eu", "");
+    words.append("brincar", "");
+    words.replace(1, "brinco");
+    check(words.text().equals("eu brinco"), "troca a forma de uma palavra da mensagem");
+    words.undo();
+    check(words.text().equals("eu brincar"), "troca de forma pode ser desfeita");
+    JSONObject defaults = new JSONObject(source);
+    JSONObject old020 = new JSONObject(source);
+    old020.remove("starterVersion");
+    JSONArray oldPages = old020.getJSONArray("profiles").getJSONObject(0).getJSONArray("pages");
+    for (int i = oldPages.length() - 1; i >= 0; i--) {
+      String id = oldPages.getJSONObject(i).optString("id");
+      if (java.util.Arrays.asList("perguntas", "escola", "brincar", "tempo", "descricoes", "nucleo", "comecar", "lugares").contains(id))
+        oldPages.remove(i);
+    }
+    JSONArray oldHome = oldPages.getJSONObject(0).getJSONArray("buttons");
+    for (int i = oldHome.length() - 1; i >= 0; i--)
+      if (oldHome.getJSONObject(i).has("target")
+          && java.util.Arrays.asList("perguntas", "escola", "brincar", "tempo", "descricoes", "nucleo", "comecar").contains(oldHome.getJSONObject(i).optString("target")))
+        oldHome.remove(i);
+    for (int i = 0; i < oldPages.length(); i++) {
+      JSONArray bs = oldPages.getJSONObject(i).getJSONArray("buttons");
+      for (int j = 0; j < bs.length(); j++)
+        if (bs.getJSONObject(j).optString("id").equals("b45"))
+          Model.put(bs.getJSONObject(j), "symbol", "symbols/mulberry-delicious_food.png");
+    }
+    int homeBefore = oldHome.length();
+    check(Model.upgradeStarter(old020, defaults, legacy) == 7, "acrescenta as 7 páginas novas");
+    check(oldHome.length() == homeBefore + 7, "liga as páginas novas no início");
+    boolean placesBack = false, fixedSymbol = false;
+    for (int i = 0; i < oldPages.length(); i++) {
+      placesBack |= oldPages.getJSONObject(i).optString("id").equals("lugares");
+      JSONArray bs = oldPages.getJSONObject(i).getJSONArray("buttons");
+      for (int j = 0; j < bs.length(); j++)
+        fixedSymbol |= bs.getJSONObject(j).optString("id").equals("b45") && bs.getJSONObject(j).optString("symbol").equals("symbols/32340.png");
+    }
+    check(!placesBack, "não recria página apagada pela pessoa");
+    check(fixedSymbol, "dá pictograma ARASAAC a botão que não tinha");
+    check(Model.upgradeStarter(old020, defaults, legacy) == 0, "atualização roda uma vez só");
+    Model.validate(old020);
+    JSONObject routine = Model.copy(m.root);
+    JSONObject plain = new JSONObject();
+    Model.put(plain, "title", "Antiga");
+    plain.put("steps", new JSONArray().put("Primeiro").put("Depois"));
+    routine.getJSONArray("profiles").getJSONObject(0).getJSONArray("routines").put(plain);
+    Model.validate(routine);
+    check(true, "rotinas antigas só com texto continuam válidas");
+    JSONObject bad = new JSONObject();
+    Model.put(bad, "text", "x");
+    Model.put(bad, "symbol", "user/../../segredo.png");
+    plain.put("steps", new JSONArray().put(bad));
+    rejected(routine, "rejeitar imagem inválida em rotina");
+    JSONObject en = new JSONObject(read(assets.resolve("i18n/en.json")));
+    I18n.use("en", en);
+    check(I18n.t("Fechar").equals("Close") && I18n.t("texto sem tradução").equals("texto sem tradução"), "tradução com reserva em português");
+    I18n.use("pt", null);
+    check(I18n.t("Fechar").equals("Fechar"), "volta ao português");
+    check(I18n.resolve("auto", "es").equals("es") && I18n.resolve("auto", "fr").equals("pt") && I18n.resolve("en", "es").equals("en"), "idioma automático segue o aparelho");
+    for (String lang : new String[] {"en", "es"}) {
+      Model other = new Model(read(assets.resolve("default-" + lang + ".json")));
+      check(other.settings().optString("language").equals(lang) && other.pages().length() == board.pages().length(), "prancha inicial em " + lang);
+    }
     Model.validate(m.root);
     check(true, "estado completo continua válido após fluxos");
     System.out.println("TOTAL " + passed + " verificações aprovadas");

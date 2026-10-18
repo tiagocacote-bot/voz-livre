@@ -2,6 +2,9 @@ name: Fetch ARASAAC pictograms
 # Manual: re-downloads the ARASAAC pictograms (the build container may not reach arasaac.org).
 on:
   workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['scripts/arasaac-terms.json']
 permissions:
   contents: write
 jobs:

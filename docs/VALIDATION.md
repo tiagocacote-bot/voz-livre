@@ -1,4 +1,9 @@
-# Alpha validation — 0.2.0 (2026-10-18)
+# Alpha validation — 0.3.0 (2026-10-18)
+
+- GitHub Actions (Windows) on every push: asset checks (317 buttons, 378 PNGs including 244 ARASAAC pictograms, licenses and hashes, migration tables, English/Spanish boards in sync, every interface string translated), 67 model/grammar/prediction/migration/i18n assertions, APK build, and the Robolectric runtime suite on APIs 28 and 35 — now including dialog scanning, interface language, word forms, routines and an improved TD Snap import check — plus render checks.
+- Not yet tested on a physical device: scanning inside dialogs with real switches, Spanish/English voices, the 0.2.0 → 0.3.0 page upgrade. Please report results (device, Android version, access method).
+
+## Previous: 0.2.0 (2026-10-18)
 
 - GitHub Actions (Windows) on every push: asset checks (166 buttons, 275 PNGs including 141 ARASAAC pictograms, per-record licenses and SHA-256 values, migration tables, version consistency), 37 model/scanner/prediction/migration assertions, APK build with OpenJDK 17, Android API 35, AAPT2 8.7.3, D8 8.7.18 and apksig 8.7.3, and — new in this version — the Robolectric runtime suite on APIs 28 and 35 plus native-graphics render checks.
 - Release APKs are built by the release workflow, signed with the same key as 0.1.1 (the workflow compares certificates and refuses a mismatch) and listed with SHA-256 values in each release's `SHA256SUMS.txt`.

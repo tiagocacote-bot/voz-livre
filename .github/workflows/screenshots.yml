@@ -1,6 +1,6 @@
 name: Update screenshots
 # Renders the starter board with Robolectric and commits docs/images/*.png.
-# Suggestion row is tinted to tell it apart from navigation.
+# Rendered with a pt-BR device so the screenshots show the Portuguese interface (core page uses compact cards).
 on:
   workflow_dispatch:
   push:
@@ -37,11 +37,23 @@ jobs:
           New-Item -ItemType Directory -Force .test-fixtures | Out-Null
           Invoke-WebRequest 'https://raw.githubusercontent.com/willwade/AACProcessors/9e538963b236b84afce1ecf94980506d9a9bcd64/examples/demofiles/Medical%20Advocacy.spb' -OutFile .test-fixtures/sample.spb
           if ((Get-FileHash .test-fixtures/sample.spb -Algorithm SHA256).Hash -ne 'D2D6895D4FDC3C258EB971C05330CF34E446EC25DA016643F3DDE26BA0C98836') { throw 'Unexpected fixture hash' }
-      - run: ./tests/run-runtime.ps1
+      - name: Runtime and render tests
+        shell: pwsh
+        run: |
+          $failed = $false
+          try { ./tests/run-runtime.ps1 *>&1 | Tee-Object -FilePath build/runtime.log } catch { $failed = $true }
+          if ($failed) {
+            $log = Get-Content build/runtime.log -Raw
+            $i = [Math]::Max(0, $log.IndexOf('There w'))
+            $msg = $log.Substring($i, [Math]::Min(6000, $log.Length - $i))
+            $msg = $msg -replace '%','%25' -replace "`r",'' -replace "`n",'%0A'
+            "::error title=Runtime tests::$msg"
+            exit 1
+          }
       - name: Commit screenshots
         shell: pwsh
         run: |
-          Copy-Item build/inicio.png, build/comida.png, build/paisagem.png docs/images/ -Force
+          Copy-Item build/inicio.png, build/comida.png, build/nucleo.png, build/paisagem.png docs/images/ -Force
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs/images

@@ -1,0 +1,3081 @@
+{
+  "format": "voz-livre",
+  "version": 1,
+  "symbolSet": "arasaac",
+  "activeProfile": "principal",
+  "profiles": [
+    {
+      "id": "principal",
+      "name": "My communicator",
+      "home": "inicio",
+      "pages": [
+        {
+          "id": "inicio",
+          "title": "Core words",
+          "buttons": [
+            {
+              "label": "I",
+              "message": "I",
+              "color": "yellow",
+              "type": "word",
+              "id": "b1",
+              "hidden": false,
+              "symbol": "symbols/6632.png"
+            },
+            {
+              "label": "want",
+              "message": "want",
+              "color": "green",
+              "type": "word",
+              "id": "b2",
+              "hidden": false,
+              "symbol": "symbols/5441.png"
+            },
+            {
+              "label": "no",
+              "message": "no",
+              "color": "orange",
+              "type": "word",
+              "id": "b3",
+              "hidden": false,
+              "symbol": "symbols/5526.png"
+            },
+            {
+              "label": "you",
+              "message": "you",
+              "color": "yellow",
+              "type": "word",
+              "id": "b4",
+              "hidden": false,
+              "symbol": "symbols/6625.png"
+            },
+            {
+              "label": "need",
+              "message": "need",
+              "color": "green",
+              "type": "word",
+              "id": "b5",
+              "hidden": false,
+              "symbol": "symbols/37160.png"
+            },
+            {
+              "label": "yes",
+              "message": "yes",
+              "color": "orange",
+              "type": "word",
+              "id": "b6",
+              "hidden": false,
+              "symbol": "symbols/5584.png"
+            },
+            {
+              "label": "more",
+              "message": "more",
+              "color": "orange",
+              "type": "word",
+              "id": "b7",
+              "hidden": false,
+              "symbol": "symbols/3220.png"
+            },
+            {
+              "label": "help",
+              "message": "help",
+              "color": "red",
+              "type": "word",
+              "id": "b8",
+              "hidden": false,
+              "symbol": "symbols/12252.png"
+            },
+            {
+              "label": "stop",
+              "message": "stop",
+              "color": "red",
+              "type": "word",
+              "id": "b9",
+              "hidden": false,
+              "symbol": "symbols/7196.png"
+            },
+            {
+              "label": "like",
+              "message": "like",
+              "color": "green",
+              "type": "word",
+              "id": "b10",
+              "hidden": false,
+              "symbol": "symbols/37826.png"
+            },
+            {
+              "label": "go",
+              "message": "go",
+              "color": "green",
+              "type": "word",
+              "id": "b11",
+              "hidden": false,
+              "symbol": "symbols/8142.png"
+            },
+            {
+              "label": "have",
+              "message": "have",
+              "color": "green",
+              "type": "word",
+              "id": "b12",
+              "hidden": false,
+              "symbol": "symbols/32761.png"
+            },
+            {
+              "label": "here",
+              "message": "here",
+              "color": "blue",
+              "type": "word",
+              "id": "b13",
+              "hidden": false,
+              "symbol": "symbols/5382.png"
+            },
+            {
+              "label": "now",
+              "message": "now",
+              "color": "blue",
+              "type": "word",
+              "id": "b14",
+              "hidden": false,
+              "symbol": "symbols/32747.png"
+            },
+            {
+              "label": "later",
+              "message": "later",
+              "color": "blue",
+              "type": "word",
+              "id": "b15",
+              "hidden": false,
+              "symbol": "symbols/32749.png"
+            },
+            {
+              "label": "Core",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b317",
+              "hidden": false,
+              "symbol": "symbols/5596.png",
+              "target": "nucleo"
+            },
+            {
+              "label": "Start talking",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b316",
+              "hidden": false,
+              "symbol": "symbols/6517.png",
+              "target": "comecar"
+            },
+            {
+              "label": "Food and drink",
+              "message": "",
+              "target": "comida",
+              "emoji": "🍽",
+              "color": "pink",
+              "type": "link",
+              "id": "b16",
+              "hidden": false,
+              "symbol": "symbols/4610.png"
+            },
+            {
+              "label": "Feelings",
+              "message": "",
+              "target": "sentimentos",
+              "emoji": "♡",
+              "color": "pink",
+              "type": "link",
+              "id": "b17",
+              "hidden": false,
+              "symbol": "symbols/9907.png"
+            },
+            {
+              "label": "People",
+              "message": "",
+              "target": "pessoas",
+              "emoji": "♟",
+              "color": "pink",
+              "type": "link",
+              "id": "b18",
+              "hidden": false,
+              "symbol": "symbols/38351.png"
+            },
+            {
+              "label": "Do",
+              "message": "",
+              "target": "atividades",
+              "emoji": "✦",
+              "color": "pink",
+              "type": "link",
+              "id": "b19",
+              "hidden": false,
+              "symbol": "symbols/23392.png"
+            },
+            {
+              "label": "Places",
+              "message": "",
+              "target": "lugares",
+              "emoji": "⌂",
+              "color": "pink",
+              "type": "link",
+              "id": "b20",
+              "hidden": false,
+              "symbol": "symbols/6964.png"
+            },
+            {
+              "label": "My body",
+              "message": "",
+              "target": "corpo",
+              "emoji": "✚",
+              "color": "pink",
+              "type": "link",
+              "id": "b21",
+              "hidden": false,
+              "symbol": "symbols/2728.png"
+            },
+            {
+              "label": "Quick phrases",
+              "message": "",
+              "target": "frases",
+              "emoji": "❞",
+              "color": "pink",
+              "type": "link",
+              "id": "b22",
+              "hidden": false,
+              "symbol": "symbols/6517.png"
+            },
+            {
+              "label": "Questions",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b257",
+              "hidden": false,
+              "symbol": "symbols/12313.png",
+              "target": "perguntas"
+            },
+            {
+              "label": "School",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b258",
+              "hidden": false,
+              "symbol": "symbols/32446.png",
+              "target": "escola"
+            },
+            {
+              "label": "Play",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b259",
+              "hidden": false,
+              "symbol": "symbols/23392.png",
+              "target": "brincar"
+            },
+            {
+              "label": "Time and days",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b260",
+              "hidden": false,
+              "symbol": "symbols/7131.png",
+              "target": "tempo"
+            },
+            {
+              "label": "Colors and describing",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b261",
+              "hidden": false,
+              "symbol": "symbols/2808.png",
+              "target": "descricoes"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "comida",
+          "title": "Food and drink",
+          "buttons": [
+            {
+              "label": "water",
+              "message": "water",
+              "color": "blue",
+              "type": "word",
+              "id": "b23",
+              "hidden": false,
+              "symbol": "symbols/2248.png"
+            },
+            {
+              "label": "eat",
+              "message": "eat",
+              "color": "blue",
+              "type": "word",
+              "id": "b24",
+              "hidden": false,
+              "symbol": "symbols/6456.png"
+            },
+            {
+              "label": "drink",
+              "message": "drink",
+              "color": "blue",
+              "type": "word",
+              "id": "b25",
+              "hidden": false,
+              "symbol": "symbols/6061.png"
+            },
+            {
+              "label": "bread",
+              "message": "bread",
+              "color": "blue",
+              "type": "word",
+              "id": "b26",
+              "hidden": false,
+              "symbol": "symbols/2494.png"
+            },
+            {
+              "label": "rice",
+              "message": "rice",
+              "color": "blue",
+              "type": "word",
+              "id": "b27",
+              "hidden": false,
+              "symbol": "symbols/6911.png"
+            },
+            {
+              "label": "beans",
+              "message": "beans",
+              "color": "blue",
+              "type": "word",
+              "id": "b28",
+              "hidden": false,
+              "symbol": "symbols/3294.png"
+            },
+            {
+              "label": "meat",
+              "message": "meat",
+              "color": "blue",
+              "type": "word",
+              "id": "b29",
+              "hidden": false,
+              "symbol": "symbols/2316.png"
+            },
+            {
+              "label": "chicken",
+              "message": "chicken",
+              "color": "blue",
+              "type": "word",
+              "id": "b30",
+              "hidden": false,
+              "symbol": "symbols/4952.png"
+            },
+            {
+              "label": "egg",
+              "message": "egg",
+              "color": "blue",
+              "type": "word",
+              "id": "b31",
+              "hidden": false,
+              "symbol": "symbols/2427.png"
+            },
+            {
+              "label": "milk",
+              "message": "milk",
+              "color": "blue",
+              "type": "word",
+              "id": "b32",
+              "hidden": false,
+              "symbol": "symbols/2445.png"
+            },
+            {
+              "label": "juice",
+              "message": "juice",
+              "color": "blue",
+              "type": "word",
+              "id": "b33",
+              "hidden": false,
+              "symbol": "symbols/11461.png"
+            },
+            {
+              "label": "banana",
+              "message": "banana",
+              "color": "blue",
+              "type": "word",
+              "id": "b34",
+              "hidden": false,
+              "symbol": "symbols/2530.png"
+            },
+            {
+              "label": "apple",
+              "message": "apple",
+              "color": "blue",
+              "type": "word",
+              "id": "b35",
+              "hidden": false,
+              "symbol": "symbols/2462.png"
+            },
+            {
+              "label": "cookie",
+              "message": "cookie",
+              "color": "blue",
+              "type": "word",
+              "id": "b36",
+              "hidden": false,
+              "symbol": "symbols/8295.png"
+            },
+            {
+              "label": "coffee",
+              "message": "coffee",
+              "color": "blue",
+              "type": "word",
+              "id": "b37",
+              "hidden": false,
+              "symbol": "symbols/24479.png"
+            },
+            {
+              "label": "soup",
+              "message": "soup",
+              "color": "blue",
+              "type": "word",
+              "id": "b38",
+              "hidden": false,
+              "symbol": "symbols/2573.png"
+            },
+            {
+              "label": "pasta",
+              "message": "pasta",
+              "color": "blue",
+              "type": "word",
+              "id": "b39",
+              "hidden": false,
+              "symbol": "symbols/2455.png"
+            },
+            {
+              "label": "fruit",
+              "message": "fruit",
+              "color": "blue",
+              "type": "word",
+              "id": "b40",
+              "hidden": false,
+              "symbol": "symbols/28339.png"
+            },
+            {
+              "label": "hungry",
+              "message": "hungry",
+              "color": "blue",
+              "type": "word",
+              "id": "b41",
+              "hidden": false,
+              "symbol": "symbols/35559.png"
+            },
+            {
+              "label": "thirsty",
+              "message": "thirsty",
+              "color": "blue",
+              "type": "word",
+              "id": "b42",
+              "hidden": false,
+              "symbol": "symbols/7273.png"
+            },
+            {
+              "label": "hot",
+              "message": "hot",
+              "color": "blue",
+              "type": "word",
+              "id": "b43",
+              "hidden": false,
+              "symbol": "symbols/4583.png"
+            },
+            {
+              "label": "cold",
+              "message": "cold",
+              "color": "blue",
+              "type": "word",
+              "id": "b44",
+              "hidden": false,
+              "symbol": "symbols/4652.png"
+            },
+            {
+              "label": "yummy",
+              "message": "yummy",
+              "color": "blue",
+              "type": "word",
+              "id": "b45",
+              "hidden": false,
+              "symbol": "symbols/32340.png"
+            },
+            {
+              "label": "all done",
+              "message": "all done",
+              "color": "blue",
+              "type": "word",
+              "id": "b46",
+              "hidden": false,
+              "symbol": "symbols/28429.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "sentimentos",
+          "title": "How I feel",
+          "buttons": [
+            {
+              "label": "happy",
+              "message": "happy",
+              "color": "orange",
+              "type": "word",
+              "id": "b47",
+              "hidden": false,
+              "symbol": "symbols/9907.png"
+            },
+            {
+              "label": "sad",
+              "message": "sad",
+              "color": "orange",
+              "type": "word",
+              "id": "b48",
+              "hidden": false,
+              "symbol": "symbols/35545.png"
+            },
+            {
+              "label": "tired",
+              "message": "tired",
+              "color": "orange",
+              "type": "word",
+              "id": "b49",
+              "hidden": false,
+              "symbol": "symbols/35537.png"
+            },
+            {
+              "label": "in pain",
+              "message": "in pain",
+              "color": "orange",
+              "type": "word",
+              "id": "b50",
+              "hidden": false,
+              "symbol": "symbols/2367.png"
+            },
+            {
+              "label": "scared",
+              "message": "scared",
+              "color": "orange",
+              "type": "word",
+              "id": "b51",
+              "hidden": false,
+              "symbol": "symbols/10261.png"
+            },
+            {
+              "label": "angry",
+              "message": "angry",
+              "color": "orange",
+              "type": "word",
+              "id": "b52",
+              "hidden": false,
+              "symbol": "symbols/35539.png"
+            },
+            {
+              "label": "calm",
+              "message": "calm",
+              "color": "orange",
+              "type": "word",
+              "id": "b53",
+              "hidden": false,
+              "symbol": "symbols/31310.png"
+            },
+            {
+              "label": "excited",
+              "message": "excited",
+              "color": "orange",
+              "type": "word",
+              "id": "b54",
+              "hidden": false,
+              "symbol": "symbols/35547.png"
+            },
+            {
+              "label": "alone",
+              "message": "alone",
+              "color": "orange",
+              "type": "word",
+              "id": "b55",
+              "hidden": false,
+              "symbol": "symbols/39247.png"
+            },
+            {
+              "label": "confused",
+              "message": "confused",
+              "color": "orange",
+              "type": "word",
+              "id": "b56",
+              "hidden": false,
+              "symbol": "symbols/2352.png"
+            },
+            {
+              "label": "good",
+              "message": "good",
+              "color": "orange",
+              "type": "word",
+              "id": "b57",
+              "hidden": false,
+              "symbol": "symbols/5397.png"
+            },
+            {
+              "label": "bad",
+              "message": "bad",
+              "color": "orange",
+              "type": "word",
+              "id": "b58",
+              "hidden": false,
+              "symbol": "symbols/5504.png"
+            },
+            {
+              "label": "like",
+              "message": "like",
+              "color": "orange",
+              "type": "word",
+              "id": "b59",
+              "hidden": false,
+              "symbol": "symbols/37826.png"
+            },
+            {
+              "label": "don't like",
+              "message": "don't like",
+              "color": "orange",
+              "type": "word",
+              "id": "b60",
+              "hidden": false,
+              "symbol": "symbols/6155.png"
+            },
+            {
+              "label": "comfortable",
+              "message": "comfortable",
+              "color": "orange",
+              "type": "word",
+              "id": "b61",
+              "hidden": false,
+              "symbol": "symbols/11248.png"
+            },
+            {
+              "label": "uncomfortable",
+              "message": "uncomfortable",
+              "color": "orange",
+              "type": "word",
+              "id": "b62",
+              "hidden": false,
+              "symbol": "symbols/32528.png"
+            },
+            {
+              "label": "I want to rest",
+              "message": "I want to rest",
+              "color": "orange",
+              "type": "word",
+              "id": "b63",
+              "hidden": false,
+              "symbol": "symbols/3299.png"
+            },
+            {
+              "label": "I want company",
+              "message": "I want company",
+              "color": "orange",
+              "type": "word",
+              "id": "b64",
+              "hidden": false,
+              "symbol": "symbols/38236.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "pessoas",
+          "title": "People",
+          "buttons": [
+            {
+              "label": "I",
+              "message": "I",
+              "color": "yellow",
+              "type": "word",
+              "id": "b65",
+              "hidden": false,
+              "symbol": "symbols/6632.png"
+            },
+            {
+              "label": "you",
+              "message": "you",
+              "color": "yellow",
+              "type": "word",
+              "id": "b66",
+              "hidden": false,
+              "symbol": "symbols/6625.png"
+            },
+            {
+              "label": "he",
+              "message": "he",
+              "color": "yellow",
+              "type": "word",
+              "id": "b67",
+              "hidden": false,
+              "symbol": "symbols/6480.png"
+            },
+            {
+              "label": "she",
+              "message": "she",
+              "color": "yellow",
+              "type": "word",
+              "id": "b68",
+              "hidden": false,
+              "symbol": "symbols/7028.png"
+            },
+            {
+              "label": "we",
+              "message": "we",
+              "color": "yellow",
+              "type": "word",
+              "id": "b69",
+              "hidden": false,
+              "symbol": "symbols/7183.png"
+            },
+            {
+              "label": "mom",
+              "message": "mom",
+              "color": "yellow",
+              "type": "word",
+              "id": "b70",
+              "hidden": false,
+              "symbol": "symbols/2458.png"
+            },
+            {
+              "label": "dad",
+              "message": "dad",
+              "color": "yellow",
+              "type": "word",
+              "id": "b71",
+              "hidden": false,
+              "symbol": "symbols/16829.png"
+            },
+            {
+              "label": "brother",
+              "message": "brother",
+              "color": "yellow",
+              "type": "word",
+              "id": "b72",
+              "hidden": false,
+              "symbol": "symbols/2423.png"
+            },
+            {
+              "label": "sister",
+              "message": "sister",
+              "color": "yellow",
+              "type": "word",
+              "id": "b73",
+              "hidden": false,
+              "symbol": "symbols/2422.png"
+            },
+            {
+              "label": "friend",
+              "message": "friend",
+              "color": "yellow",
+              "type": "word",
+              "id": "b74",
+              "hidden": false,
+              "symbol": "symbols/25790.png"
+            },
+            {
+              "label": "friend",
+              "message": "friend",
+              "color": "yellow",
+              "type": "word",
+              "id": "b75",
+              "hidden": false,
+              "symbol": "symbols/8486.png"
+            },
+            {
+              "label": "family",
+              "message": "family",
+              "color": "yellow",
+              "type": "word",
+              "id": "b76",
+              "hidden": false,
+              "symbol": "symbols/38351.png"
+            },
+            {
+              "label": "teacher",
+              "message": "teacher",
+              "color": "yellow",
+              "type": "word",
+              "id": "b77",
+              "hidden": false,
+              "symbol": "symbols/6556.png"
+            },
+            {
+              "label": "doctor",
+              "message": "doctor",
+              "color": "yellow",
+              "type": "word",
+              "id": "b78",
+              "hidden": false,
+              "symbol": "symbols/6561.png"
+            },
+            {
+              "label": "caregiver",
+              "message": "caregiver",
+              "color": "yellow",
+              "type": "word",
+              "id": "b79",
+              "hidden": false,
+              "symbol": "symbols/7163.png"
+            },
+            {
+              "label": "grandma",
+              "message": "grandma",
+              "color": "yellow",
+              "type": "word",
+              "id": "b80",
+              "hidden": false,
+              "symbol": "symbols/2243.png"
+            },
+            {
+              "label": "grandpa",
+              "message": "grandpa",
+              "color": "yellow",
+              "type": "word",
+              "id": "b81",
+              "hidden": false,
+              "symbol": "symbols/23718.png"
+            },
+            {
+              "label": "everyone",
+              "message": "everyone",
+              "color": "yellow",
+              "type": "word",
+              "id": "b82",
+              "hidden": false,
+              "symbol": "symbols/30014.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "atividades",
+          "title": "What I want to do",
+          "buttons": [
+            {
+              "label": "play",
+              "message": "play",
+              "color": "green",
+              "type": "word",
+              "id": "b83",
+              "hidden": false,
+              "symbol": "symbols/23392.png"
+            },
+            {
+              "label": "sleep",
+              "message": "sleep",
+              "color": "green",
+              "type": "word",
+              "id": "b84",
+              "hidden": false,
+              "symbol": "symbols/6479.png"
+            },
+            {
+              "label": "walk",
+              "message": "walk",
+              "color": "green",
+              "type": "word",
+              "id": "b85",
+              "hidden": false,
+              "symbol": "symbols/6044.png"
+            },
+            {
+              "label": "sit",
+              "message": "sit",
+              "color": "green",
+              "type": "word",
+              "id": "b86",
+              "hidden": false,
+              "symbol": "symbols/6611.png"
+            },
+            {
+              "label": "get up",
+              "message": "get up",
+              "color": "green",
+              "type": "word",
+              "id": "b87",
+              "hidden": false,
+              "symbol": "symbols/36073.png"
+            },
+            {
+              "label": "take a bath",
+              "message": "take a bath",
+              "color": "green",
+              "type": "word",
+              "id": "b88",
+              "hidden": false,
+              "symbol": "symbols/6058.png"
+            },
+            {
+              "label": "brush teeth",
+              "message": "brush teeth",
+              "color": "green",
+              "type": "word",
+              "id": "b89",
+              "hidden": false,
+              "symbol": "symbols/2326.png"
+            },
+            {
+              "label": "read",
+              "message": "read",
+              "color": "green",
+              "type": "word",
+              "id": "b90",
+              "hidden": false,
+              "symbol": "symbols/7141.png"
+            },
+            {
+              "label": "draw",
+              "message": "draw",
+              "color": "green",
+              "type": "word",
+              "id": "b91",
+              "hidden": false,
+              "symbol": "symbols/8088.png"
+            },
+            {
+              "label": "listen to music",
+              "message": "listen to music",
+              "color": "green",
+              "type": "word",
+              "id": "b92",
+              "hidden": false,
+              "symbol": "symbols/2746.png"
+            },
+            {
+              "label": "watch",
+              "message": "watch",
+              "color": "green",
+              "type": "word",
+              "id": "b93",
+              "hidden": false,
+              "symbol": "symbols/21385.png"
+            },
+            {
+              "label": "talk",
+              "message": "talk",
+              "color": "green",
+              "type": "word",
+              "id": "b94",
+              "hidden": false,
+              "symbol": "symbols/6517.png"
+            },
+            {
+              "label": "hug",
+              "message": "hug",
+              "color": "green",
+              "type": "word",
+              "id": "b95",
+              "hidden": false,
+              "symbol": "symbols/6023.png"
+            },
+            {
+              "label": "wait",
+              "message": "wait",
+              "color": "green",
+              "type": "word",
+              "id": "b96",
+              "hidden": false,
+              "symbol": "symbols/36914.png"
+            },
+            {
+              "label": "open",
+              "message": "open",
+              "color": "green",
+              "type": "word",
+              "id": "b97",
+              "hidden": false,
+              "symbol": "symbols/24825.png"
+            },
+            {
+              "label": "close",
+              "message": "close",
+              "color": "green",
+              "type": "word",
+              "id": "b98",
+              "hidden": false,
+              "symbol": "symbols/24976.png"
+            },
+            {
+              "label": "take",
+              "message": "take",
+              "color": "green",
+              "type": "word",
+              "id": "b99",
+              "hidden": false,
+              "symbol": "symbols/10148.png"
+            },
+            {
+              "label": "give",
+              "message": "give",
+              "color": "green",
+              "type": "word",
+              "id": "b100",
+              "hidden": false,
+              "symbol": "symbols/28431.png"
+            },
+            {
+              "label": "buy",
+              "message": "buy",
+              "color": "green",
+              "type": "word",
+              "id": "b101",
+              "hidden": false,
+              "symbol": "symbols/8986.png"
+            },
+            {
+              "label": "study",
+              "message": "study",
+              "color": "green",
+              "type": "word",
+              "id": "b102",
+              "hidden": false,
+              "symbol": "symbols/6495.png"
+            },
+            {
+              "label": "work",
+              "message": "work",
+              "color": "green",
+              "type": "word",
+              "id": "b103",
+              "hidden": false,
+              "symbol": "symbols/6624.png"
+            },
+            {
+              "label": "go out",
+              "message": "go out",
+              "color": "green",
+              "type": "word",
+              "id": "b104",
+              "hidden": false,
+              "symbol": "symbols/2806.png"
+            },
+            {
+              "label": "come back",
+              "message": "come back",
+              "color": "green",
+              "type": "word",
+              "id": "b105",
+              "hidden": false,
+              "symbol": "symbols/6630.png"
+            },
+            {
+              "label": "choose",
+              "message": "choose",
+              "color": "green",
+              "type": "word",
+              "id": "b106",
+              "hidden": false,
+              "symbol": "symbols/30510.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "lugares",
+          "title": "Places",
+          "buttons": [
+            {
+              "label": "home",
+              "message": "home",
+              "color": "blue",
+              "type": "word",
+              "id": "b107",
+              "hidden": false,
+              "symbol": "symbols/6964.png"
+            },
+            {
+              "label": "bathroom",
+              "message": "bathroom",
+              "color": "blue",
+              "type": "word",
+              "id": "b108",
+              "hidden": false,
+              "symbol": "symbols/5921.png"
+            },
+            {
+              "label": "bedroom",
+              "message": "bedroom",
+              "color": "blue",
+              "type": "word",
+              "id": "b109",
+              "hidden": false,
+              "symbol": "symbols/5988.png"
+            },
+            {
+              "label": "kitchen",
+              "message": "kitchen",
+              "color": "blue",
+              "type": "word",
+              "id": "b110",
+              "hidden": false,
+              "symbol": "symbols/25966.png"
+            },
+            {
+              "label": "school",
+              "message": "school",
+              "color": "blue",
+              "type": "word",
+              "id": "b111",
+              "hidden": false,
+              "symbol": "symbols/32446.png"
+            },
+            {
+              "label": "park",
+              "message": "park",
+              "color": "blue",
+              "type": "word",
+              "id": "b112",
+              "hidden": false,
+              "symbol": "symbols/39572.png"
+            },
+            {
+              "label": "hospital",
+              "message": "hospital",
+              "color": "blue",
+              "type": "word",
+              "id": "b113",
+              "hidden": false,
+              "symbol": "symbols/36210.png"
+            },
+            {
+              "label": "market",
+              "message": "market",
+              "color": "blue",
+              "type": "word",
+              "id": "b114",
+              "hidden": false,
+              "symbol": "symbols/32942.png"
+            },
+            {
+              "label": "street",
+              "message": "street",
+              "color": "blue",
+              "type": "word",
+              "id": "b115",
+              "hidden": false,
+              "symbol": "symbols/2299.png"
+            },
+            {
+              "label": "car",
+              "message": "car",
+              "color": "blue",
+              "type": "word",
+              "id": "b116",
+              "hidden": false,
+              "symbol": "symbols/2339.png"
+            },
+            {
+              "label": "beach",
+              "message": "beach",
+              "color": "blue",
+              "type": "word",
+              "id": "b117",
+              "hidden": false,
+              "symbol": "symbols/30518.png"
+            },
+            {
+              "label": "pool",
+              "message": "pool",
+              "color": "blue",
+              "type": "word",
+              "id": "b118",
+              "hidden": false,
+              "symbol": "symbols/30516.png"
+            },
+            {
+              "label": "restaurant",
+              "message": "restaurant",
+              "color": "blue",
+              "type": "word",
+              "id": "b119",
+              "hidden": false,
+              "symbol": "symbols/32408.png"
+            },
+            {
+              "label": "pharmacy",
+              "message": "pharmacy",
+              "color": "blue",
+              "type": "word",
+              "id": "b120",
+              "hidden": false,
+              "symbol": "symbols/37368.png"
+            },
+            {
+              "label": "work",
+              "message": "work",
+              "color": "blue",
+              "type": "word",
+              "id": "b121",
+              "hidden": false,
+              "symbol": "symbols/16087.png"
+            },
+            {
+              "label": "garden",
+              "message": "garden",
+              "color": "blue",
+              "type": "word",
+              "id": "b122",
+              "hidden": false,
+              "symbol": "symbols/2434.png"
+            },
+            {
+              "label": "living room",
+              "message": "living room",
+              "color": "blue",
+              "type": "word",
+              "id": "b123",
+              "hidden": false,
+              "symbol": "symbols/6211.png"
+            },
+            {
+              "label": "bed",
+              "message": "bed",
+              "color": "blue",
+              "type": "word",
+              "id": "b124",
+              "hidden": false,
+              "symbol": "symbols/25900.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "corpo",
+          "title": "My body and care",
+          "buttons": [
+            {
+              "label": "head",
+              "message": "head",
+              "color": "blue",
+              "type": "word",
+              "id": "b125",
+              "hidden": false,
+              "symbol": "symbols/2673.png"
+            },
+            {
+              "label": "tummy",
+              "message": "tummy",
+              "color": "blue",
+              "type": "word",
+              "id": "b126",
+              "hidden": false,
+              "symbol": "symbols/2786.png"
+            },
+            {
+              "label": "arm",
+              "message": "arm",
+              "color": "blue",
+              "type": "word",
+              "id": "b127",
+              "hidden": false,
+              "symbol": "symbols/2669.png"
+            },
+            {
+              "label": "leg",
+              "message": "leg",
+              "color": "blue",
+              "type": "word",
+              "id": "b128",
+              "hidden": false,
+              "symbol": "symbols/8666.png"
+            },
+            {
+              "label": "hand",
+              "message": "hand",
+              "color": "blue",
+              "type": "word",
+              "id": "b129",
+              "hidden": false,
+              "symbol": "symbols/2928.png"
+            },
+            {
+              "label": "foot",
+              "message": "foot",
+              "color": "blue",
+              "type": "word",
+              "id": "b130",
+              "hidden": false,
+              "symbol": "symbols/25327.png"
+            },
+            {
+              "label": "back",
+              "message": "back",
+              "color": "blue",
+              "type": "word",
+              "id": "b131",
+              "hidden": false,
+              "symbol": "symbols/2748.png"
+            },
+            {
+              "label": "mouth",
+              "message": "mouth",
+              "color": "blue",
+              "type": "word",
+              "id": "b132",
+              "hidden": false,
+              "symbol": "symbols/2663.png"
+            },
+            {
+              "label": "tooth",
+              "message": "tooth",
+              "color": "blue",
+              "type": "word",
+              "id": "b133",
+              "hidden": false,
+              "symbol": "symbols/10267.png"
+            },
+            {
+              "label": "eye",
+              "message": "eye",
+              "color": "blue",
+              "type": "word",
+              "id": "b134",
+              "hidden": false,
+              "symbol": "symbols/6573.png"
+            },
+            {
+              "label": "ear",
+              "message": "ear",
+              "color": "blue",
+              "type": "word",
+              "id": "b135",
+              "hidden": false,
+              "symbol": "symbols/39498.png"
+            },
+            {
+              "label": "nose",
+              "message": "nose",
+              "color": "blue",
+              "type": "word",
+              "id": "b136",
+              "hidden": false,
+              "symbol": "symbols/2887.png"
+            },
+            {
+              "label": "pain",
+              "message": "pain",
+              "color": "blue",
+              "type": "word",
+              "id": "b137",
+              "hidden": false,
+              "symbol": "symbols/2367.png"
+            },
+            {
+              "label": "itchy",
+              "message": "itchy",
+              "color": "blue",
+              "type": "word",
+              "id": "b138",
+              "hidden": false,
+              "symbol": "symbols/11356.png"
+            },
+            {
+              "label": "hot",
+              "message": "hot",
+              "color": "blue",
+              "type": "word",
+              "id": "b139",
+              "hidden": false,
+              "symbol": "symbols/35561.png"
+            },
+            {
+              "label": "cold",
+              "message": "cold",
+              "color": "blue",
+              "type": "word",
+              "id": "b140",
+              "hidden": false,
+              "symbol": "symbols/4652.png"
+            },
+            {
+              "label": "medicine",
+              "message": "medicine",
+              "color": "blue",
+              "type": "word",
+              "id": "b141",
+              "hidden": false,
+              "symbol": "symbols/8163.png"
+            },
+            {
+              "label": "bathroom",
+              "message": "bathroom",
+              "color": "blue",
+              "type": "word",
+              "id": "b142",
+              "hidden": false,
+              "symbol": "symbols/5921.png"
+            },
+            {
+              "label": "breathe",
+              "message": "breathe",
+              "color": "blue",
+              "type": "word",
+              "id": "b143",
+              "hidden": false,
+              "symbol": "symbols/34377.png"
+            },
+            {
+              "label": "position",
+              "message": "position",
+              "color": "blue",
+              "type": "word",
+              "id": "b144",
+              "hidden": false,
+              "symbol": "symbols/32675.png"
+            },
+            {
+              "label": "clothes",
+              "message": "clothes",
+              "color": "blue",
+              "type": "word",
+              "id": "b145",
+              "hidden": false,
+              "symbol": "symbols/7233.png"
+            },
+            {
+              "label": "glasses",
+              "message": "glasses",
+              "color": "blue",
+              "type": "word",
+              "id": "b146",
+              "hidden": false,
+              "symbol": "symbols/3329.png"
+            },
+            {
+              "label": "chair",
+              "message": "chair",
+              "color": "blue",
+              "type": "word",
+              "id": "b147",
+              "hidden": false,
+              "symbol": "symbols/3155.png"
+            },
+            {
+              "label": "water",
+              "message": "water",
+              "color": "blue",
+              "type": "word",
+              "id": "b148",
+              "hidden": false,
+              "symbol": "symbols/2248.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "frases",
+          "title": "Quick phrases",
+          "buttons": [
+            {
+              "label": "I need help",
+              "message": "I need help",
+              "color": "purple",
+              "type": "speak",
+              "id": "b149",
+              "hidden": false,
+              "symbol": "symbols/12252.png"
+            },
+            {
+              "label": "I want to say something",
+              "message": "I want to say something",
+              "color": "purple",
+              "type": "speak",
+              "id": "b150",
+              "hidden": false,
+              "symbol": "symbols/6517.png"
+            },
+            {
+              "label": "Wait, I'm talking",
+              "message": "Wait, I'm talking",
+              "color": "purple",
+              "type": "speak",
+              "id": "b151",
+              "hidden": false,
+              "symbol": "symbols/36914.png"
+            },
+            {
+              "label": "Yes",
+              "message": "Yes",
+              "color": "purple",
+              "type": "speak",
+              "id": "b152",
+              "hidden": false,
+              "symbol": "symbols/5584.png"
+            },
+            {
+              "label": "No",
+              "message": "No",
+              "color": "purple",
+              "type": "speak",
+              "id": "b153",
+              "hidden": false,
+              "symbol": "symbols/5526.png"
+            },
+            {
+              "label": "I don't understand",
+              "message": "I don't understand",
+              "color": "purple",
+              "type": "speak",
+              "id": "b154",
+              "hidden": false,
+              "symbol": "symbols/9847.png"
+            },
+            {
+              "label": "Can you say it again?",
+              "message": "Can you say it again?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b155",
+              "hidden": false,
+              "symbol": "symbols/11752.png"
+            },
+            {
+              "label": "I need the bathroom",
+              "message": "I need the bathroom",
+              "color": "purple",
+              "type": "speak",
+              "id": "b156",
+              "hidden": false,
+              "symbol": "symbols/5921.png"
+            },
+            {
+              "label": "I'm in pain",
+              "message": "I'm in pain",
+              "color": "purple",
+              "type": "speak",
+              "id": "b157",
+              "hidden": false,
+              "symbol": "symbols/2367.png"
+            },
+            {
+              "label": "I want to change position",
+              "message": "I want to change position",
+              "color": "purple",
+              "type": "speak",
+              "id": "b158",
+              "hidden": false,
+              "symbol": "symbols/7167.png"
+            },
+            {
+              "label": "Please",
+              "message": "Please",
+              "color": "purple",
+              "type": "speak",
+              "id": "b159",
+              "hidden": false,
+              "symbol": "symbols/8195.png"
+            },
+            {
+              "label": "Thank you",
+              "message": "Thank you",
+              "color": "purple",
+              "type": "speak",
+              "id": "b160",
+              "hidden": false,
+              "symbol": "symbols/8129.png"
+            },
+            {
+              "label": "Good morning",
+              "message": "Good morning",
+              "color": "purple",
+              "type": "speak",
+              "id": "b161",
+              "hidden": false,
+              "symbol": "symbols/6944.png"
+            },
+            {
+              "label": "How are you?",
+              "message": "How are you?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b162",
+              "hidden": false,
+              "symbol": "symbols/9907.png"
+            },
+            {
+              "label": "I want to be alone",
+              "message": "I want to be alone",
+              "color": "purple",
+              "type": "speak",
+              "id": "b163",
+              "hidden": false,
+              "symbol": "symbols/39247.png"
+            },
+            {
+              "label": "I want company",
+              "message": "I want company",
+              "color": "purple",
+              "type": "speak",
+              "id": "b164",
+              "hidden": false,
+              "symbol": "symbols/38236.png"
+            },
+            {
+              "label": "That was not my choice",
+              "message": "That was not my choice",
+              "color": "purple",
+              "type": "speak",
+              "id": "b165",
+              "hidden": false,
+              "symbol": "symbols/5526.png"
+            },
+            {
+              "label": "I want something else",
+              "message": "I want something else",
+              "color": "purple",
+              "type": "speak",
+              "id": "b166",
+              "hidden": false,
+              "symbol": "symbols/17054.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "perguntas",
+          "title": "Questions",
+          "buttons": [
+            {
+              "label": "what?",
+              "message": "what?",
+              "color": "purple",
+              "type": "word",
+              "id": "b167",
+              "hidden": false,
+              "symbol": "symbols/11351.png"
+            },
+            {
+              "label": "who?",
+              "message": "who?",
+              "color": "purple",
+              "type": "word",
+              "id": "b168",
+              "hidden": false,
+              "symbol": "symbols/9853.png"
+            },
+            {
+              "label": "where?",
+              "message": "where?",
+              "color": "purple",
+              "type": "word",
+              "id": "b169",
+              "hidden": false,
+              "symbol": "symbols/7764.png"
+            },
+            {
+              "label": "when?",
+              "message": "when?",
+              "color": "purple",
+              "type": "word",
+              "id": "b170",
+              "hidden": false,
+              "symbol": "symbols/22621.png"
+            },
+            {
+              "label": "why?",
+              "message": "why?",
+              "color": "purple",
+              "type": "word",
+              "id": "b171",
+              "hidden": false,
+              "symbol": "symbols/24763.png"
+            },
+            {
+              "label": "how?",
+              "message": "how?",
+              "color": "purple",
+              "type": "word",
+              "id": "b172",
+              "hidden": false,
+              "symbol": "symbols/12313.png"
+            },
+            {
+              "label": "which?",
+              "message": "which?",
+              "color": "purple",
+              "type": "word",
+              "id": "b173",
+              "hidden": false,
+              "symbol": "symbols/26022.png"
+            },
+            {
+              "label": "how much?",
+              "message": "how much?",
+              "color": "purple",
+              "type": "word",
+              "id": "b174",
+              "hidden": false,
+              "symbol": "symbols/24731.png"
+            },
+            {
+              "label": "What is that?",
+              "message": "What is that?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b175",
+              "hidden": false,
+              "symbol": "symbols/11351.png"
+            },
+            {
+              "label": "Where is it?",
+              "message": "Where is it?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b176",
+              "hidden": false,
+              "symbol": "symbols/7764.png"
+            },
+            {
+              "label": "Can I go?",
+              "message": "Can I go?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b177",
+              "hidden": false,
+              "symbol": "symbols/11750.png"
+            },
+            {
+              "label": "Can I play?",
+              "message": "Can I play?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b178",
+              "hidden": false,
+              "symbol": "symbols/2439.png"
+            },
+            {
+              "label": "What time is it?",
+              "message": "What time is it?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b179",
+              "hidden": false,
+              "symbol": "symbols/2549.png"
+            },
+            {
+              "label": "Can you help me?",
+              "message": "Can you help me?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b180",
+              "hidden": false,
+              "symbol": "symbols/4570.png"
+            },
+            {
+              "label": "Why not?",
+              "message": "Why not?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b181",
+              "hidden": false,
+              "symbol": "symbols/24763.png"
+            },
+            {
+              "label": "Who are you?",
+              "message": "Who are you?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b182",
+              "hidden": false,
+              "symbol": "symbols/9853.png"
+            },
+            {
+              "label": "Shall we go?",
+              "message": "Shall we go?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b183",
+              "hidden": false,
+              "symbol": "symbols/8142.png"
+            },
+            {
+              "label": "Is it over?",
+              "message": "Is it over?",
+              "color": "purple",
+              "type": "speak",
+              "id": "b184",
+              "hidden": false,
+              "symbol": "symbols/28429.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "escola",
+          "title": "School",
+          "buttons": [
+            {
+              "label": "teacher",
+              "message": "teacher",
+              "color": "yellow",
+              "type": "word",
+              "id": "b185",
+              "hidden": false,
+              "symbol": "symbols/2456.png"
+            },
+            {
+              "label": "classmate",
+              "message": "classmate",
+              "color": "yellow",
+              "type": "word",
+              "id": "b186",
+              "hidden": false,
+              "symbol": "symbols/39421.png"
+            },
+            {
+              "label": "book",
+              "message": "book",
+              "color": "orange",
+              "type": "word",
+              "id": "b187",
+              "hidden": false,
+              "symbol": "symbols/2450.png"
+            },
+            {
+              "label": "notebook",
+              "message": "notebook",
+              "color": "orange",
+              "type": "word",
+              "id": "b188",
+              "hidden": false,
+              "symbol": "symbols/2359.png"
+            },
+            {
+              "label": "pencil",
+              "message": "pencil",
+              "color": "orange",
+              "type": "word",
+              "id": "b189",
+              "hidden": false,
+              "symbol": "symbols/2440.png"
+            },
+            {
+              "label": "pen",
+              "message": "pen",
+              "color": "orange",
+              "type": "word",
+              "id": "b190",
+              "hidden": false,
+              "symbol": "symbols/2282.png"
+            },
+            {
+              "label": "eraser",
+              "message": "eraser",
+              "color": "orange",
+              "type": "word",
+              "id": "b191",
+              "hidden": false,
+              "symbol": "symbols/2409.png"
+            },
+            {
+              "label": "backpack",
+              "message": "backpack",
+              "color": "orange",
+              "type": "word",
+              "id": "b192",
+              "hidden": false,
+              "symbol": "symbols/2475.png"
+            },
+            {
+              "label": "scissors",
+              "message": "scissors",
+              "color": "orange",
+              "type": "word",
+              "id": "b193",
+              "hidden": false,
+              "symbol": "symbols/2591.png"
+            },
+            {
+              "label": "glue",
+              "message": "glue",
+              "color": "orange",
+              "type": "word",
+              "id": "b194",
+              "hidden": false,
+              "symbol": "symbols/2510.png"
+            },
+            {
+              "label": "paint",
+              "message": "paint",
+              "color": "green",
+              "type": "word",
+              "id": "b195",
+              "hidden": false,
+              "symbol": "symbols/2348.png"
+            },
+            {
+              "label": "write",
+              "message": "write",
+              "color": "green",
+              "type": "word",
+              "id": "b196",
+              "hidden": false,
+              "symbol": "symbols/2380.png"
+            },
+            {
+              "label": "class",
+              "message": "class",
+              "color": "orange",
+              "type": "word",
+              "id": "b197",
+              "hidden": false,
+              "symbol": "symbols/5913.png"
+            },
+            {
+              "label": "recess",
+              "message": "recess",
+              "color": "orange",
+              "type": "word",
+              "id": "b198",
+              "hidden": false,
+              "symbol": "symbols/6204.png"
+            },
+            {
+              "label": "snack",
+              "message": "snack",
+              "color": "orange",
+              "type": "word",
+              "id": "b199",
+              "hidden": false,
+              "symbol": "symbols/4695.png"
+            },
+            {
+              "label": "computer",
+              "message": "computer",
+              "color": "orange",
+              "type": "word",
+              "id": "b200",
+              "hidden": false,
+              "symbol": "symbols/2487.png"
+            },
+            {
+              "label": "I'm done",
+              "message": "I'm done",
+              "color": "red",
+              "type": "speak",
+              "id": "b201",
+              "hidden": false,
+              "symbol": "symbols/5358.png"
+            },
+            {
+              "label": "I don't know",
+              "message": "I don't know",
+              "color": "red",
+              "type": "speak",
+              "id": "b202",
+              "hidden": false,
+              "symbol": "symbols/2352.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "brincar",
+          "title": "Play",
+          "buttons": [
+            {
+              "label": "ball",
+              "message": "ball",
+              "color": "orange",
+              "type": "word",
+              "id": "b203",
+              "hidden": false,
+              "symbol": "symbols/3241.png"
+            },
+            {
+              "label": "doll",
+              "message": "doll",
+              "color": "orange",
+              "type": "word",
+              "id": "b204",
+              "hidden": false,
+              "symbol": "symbols/2482.png"
+            },
+            {
+              "label": "toy car",
+              "message": "toy car",
+              "color": "orange",
+              "type": "word",
+              "id": "b205",
+              "hidden": false,
+              "symbol": "symbols/2340.png"
+            },
+            {
+              "label": "puzzle",
+              "message": "puzzle",
+              "color": "orange",
+              "type": "word",
+              "id": "b206",
+              "hidden": false,
+              "symbol": "symbols/26403.png"
+            },
+            {
+              "label": "blocks",
+              "message": "blocks",
+              "color": "orange",
+              "type": "word",
+              "id": "b207",
+              "hidden": false,
+              "symbol": "symbols/4935.png"
+            },
+            {
+              "label": "play dough",
+              "message": "play dough",
+              "color": "orange",
+              "type": "word",
+              "id": "b208",
+              "hidden": false,
+              "symbol": "symbols/2529.png"
+            },
+            {
+              "label": "swing",
+              "message": "swing",
+              "color": "orange",
+              "type": "word",
+              "id": "b209",
+              "hidden": false,
+              "symbol": "symbols/4608.png"
+            },
+            {
+              "label": "slide",
+              "message": "slide",
+              "color": "orange",
+              "type": "word",
+              "id": "b210",
+              "hidden": false,
+              "symbol": "symbols/4759.png"
+            },
+            {
+              "label": "video game",
+              "message": "video game",
+              "color": "orange",
+              "type": "word",
+              "id": "b211",
+              "hidden": false,
+              "symbol": "symbols/21945.png"
+            },
+            {
+              "label": "tablet",
+              "message": "tablet",
+              "color": "orange",
+              "type": "word",
+              "id": "b212",
+              "hidden": false,
+              "symbol": "symbols/9165.png"
+            },
+            {
+              "label": "dance",
+              "message": "dance",
+              "color": "green",
+              "type": "word",
+              "id": "b213",
+              "hidden": false,
+              "symbol": "symbols/2652.png"
+            },
+            {
+              "label": "jump",
+              "message": "jump",
+              "color": "green",
+              "type": "word",
+              "id": "b214",
+              "hidden": false,
+              "symbol": "symbols/2804.png"
+            },
+            {
+              "label": "run",
+              "message": "run",
+              "color": "green",
+              "type": "word",
+              "id": "b215",
+              "hidden": false,
+              "symbol": "symbols/2719.png"
+            },
+            {
+              "label": "hide and seek",
+              "message": "hide and seek",
+              "color": "orange",
+              "type": "word",
+              "id": "b216",
+              "hidden": false,
+              "symbol": "symbols/21845.png"
+            },
+            {
+              "label": "cartoons",
+              "message": "cartoons",
+              "color": "orange",
+              "type": "word",
+              "id": "b217",
+              "hidden": false,
+              "symbol": "symbols/8089.png"
+            },
+            {
+              "label": "sing",
+              "message": "sing",
+              "color": "green",
+              "type": "word",
+              "id": "b218",
+              "hidden": false,
+              "symbol": "symbols/2315.png"
+            },
+            {
+              "label": "My turn",
+              "message": "My turn",
+              "color": "yellow",
+              "type": "speak",
+              "id": "b219",
+              "hidden": false,
+              "symbol": "symbols/7158.png"
+            },
+            {
+              "label": "Your turn",
+              "message": "Your turn",
+              "color": "yellow",
+              "type": "speak",
+              "id": "b220",
+              "hidden": false,
+              "symbol": "symbols/34713.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "tempo",
+          "title": "Time and days",
+          "buttons": [
+            {
+              "label": "today",
+              "message": "today",
+              "color": "blue",
+              "type": "word",
+              "id": "b221",
+              "hidden": false,
+              "symbol": "symbols/7131.png"
+            },
+            {
+              "label": "tomorrow",
+              "message": "tomorrow",
+              "color": "blue",
+              "type": "word",
+              "id": "b222",
+              "hidden": false,
+              "symbol": "symbols/7152.png"
+            },
+            {
+              "label": "yesterday",
+              "message": "yesterday",
+              "color": "blue",
+              "type": "word",
+              "id": "b223",
+              "hidden": false,
+              "symbol": "symbols/6926.png"
+            },
+            {
+              "label": "in the morning",
+              "message": "in the morning",
+              "color": "blue",
+              "type": "word",
+              "id": "b224",
+              "hidden": false,
+              "symbol": "symbols/3175.png"
+            },
+            {
+              "label": "in the afternoon",
+              "message": "in the afternoon",
+              "color": "blue",
+              "type": "word",
+              "id": "b225",
+              "hidden": false,
+              "symbol": "symbols/3176.png"
+            },
+            {
+              "label": "at night",
+              "message": "at night",
+              "color": "blue",
+              "type": "word",
+              "id": "b226",
+              "hidden": false,
+              "symbol": "symbols/7181.png"
+            },
+            {
+              "label": "already",
+              "message": "already",
+              "color": "blue",
+              "type": "word",
+              "id": "b227",
+              "hidden": false,
+              "symbol": "symbols/25736.png"
+            },
+            {
+              "label": "not yet",
+              "message": "not yet",
+              "color": "blue",
+              "type": "word",
+              "id": "b228",
+              "hidden": false,
+              "symbol": "symbols/5526.png"
+            },
+            {
+              "label": "Monday",
+              "message": "Monday",
+              "color": "blue",
+              "type": "word",
+              "id": "b229",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "Tuesday",
+              "message": "Tuesday",
+              "color": "blue",
+              "type": "word",
+              "id": "b230",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "Wednesday",
+              "message": "Wednesday",
+              "color": "blue",
+              "type": "word",
+              "id": "b231",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "Thursday",
+              "message": "Thursday",
+              "color": "blue",
+              "type": "word",
+              "id": "b232",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "Friday",
+              "message": "Friday",
+              "color": "blue",
+              "type": "word",
+              "id": "b233",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "Saturday",
+              "message": "Saturday",
+              "color": "blue",
+              "type": "word",
+              "id": "b234",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "Sunday",
+              "message": "Sunday",
+              "color": "blue",
+              "type": "word",
+              "id": "b235",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "week",
+              "message": "week",
+              "color": "blue",
+              "type": "word",
+              "id": "b236",
+              "hidden": false,
+              "symbol": "symbols/7244.png"
+            },
+            {
+              "label": "birthday",
+              "message": "birthday",
+              "color": "orange",
+              "type": "word",
+              "id": "b237",
+              "hidden": false,
+              "symbol": "symbols/3087.png"
+            },
+            {
+              "label": "vacation",
+              "message": "vacation",
+              "color": "orange",
+              "type": "word",
+              "id": "b238",
+              "hidden": false,
+              "symbol": "symbols/3166.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "descricoes",
+          "title": "Colors and describing",
+          "buttons": [
+            {
+              "label": "big",
+              "message": "big",
+              "color": "blue",
+              "type": "word",
+              "id": "b239",
+              "hidden": false,
+              "symbol": "symbols/4658.png"
+            },
+            {
+              "label": "small",
+              "message": "small",
+              "color": "blue",
+              "type": "word",
+              "id": "b240",
+              "hidden": false,
+              "symbol": "symbols/4716.png"
+            },
+            {
+              "label": "a lot",
+              "message": "a lot",
+              "color": "blue",
+              "type": "word",
+              "id": "b241",
+              "hidden": false,
+              "symbol": "symbols/5521.png"
+            },
+            {
+              "label": "a little",
+              "message": "a little",
+              "color": "blue",
+              "type": "word",
+              "id": "b242",
+              "hidden": false,
+              "symbol": "symbols/5546.png"
+            },
+            {
+              "label": "pretty",
+              "message": "pretty",
+              "color": "blue",
+              "type": "word",
+              "id": "b243",
+              "hidden": false,
+              "symbol": "symbols/11194.png"
+            },
+            {
+              "label": "ugly",
+              "message": "ugly",
+              "color": "blue",
+              "type": "word",
+              "id": "b244",
+              "hidden": false,
+              "symbol": "symbols/4648.png"
+            },
+            {
+              "label": "new",
+              "message": "new",
+              "color": "blue",
+              "type": "word",
+              "id": "b245",
+              "hidden": false,
+              "symbol": "symbols/4705.png"
+            },
+            {
+              "label": "old",
+              "message": "old",
+              "color": "blue",
+              "type": "word",
+              "id": "b246",
+              "hidden": false,
+              "symbol": "symbols/4770.png"
+            },
+            {
+              "label": "fast",
+              "message": "fast",
+              "color": "blue",
+              "type": "word",
+              "id": "b247",
+              "hidden": false,
+              "symbol": "symbols/5306.png"
+            },
+            {
+              "label": "slow",
+              "message": "slow",
+              "color": "blue",
+              "type": "word",
+              "id": "b248",
+              "hidden": false,
+              "symbol": "symbols/4676.png"
+            },
+            {
+              "label": "red",
+              "message": "red",
+              "color": "blue",
+              "type": "word",
+              "id": "b249",
+              "hidden": false,
+              "symbol": "symbols/2808.png"
+            },
+            {
+              "label": "blue",
+              "message": "blue",
+              "color": "blue",
+              "type": "word",
+              "id": "b250",
+              "hidden": false,
+              "symbol": "symbols/3355.png"
+            },
+            {
+              "label": "green",
+              "message": "green",
+              "color": "blue",
+              "type": "word",
+              "id": "b251",
+              "hidden": false,
+              "symbol": "symbols/4886.png"
+            },
+            {
+              "label": "yellow",
+              "message": "yellow",
+              "color": "blue",
+              "type": "word",
+              "id": "b252",
+              "hidden": false,
+              "symbol": "symbols/2648.png"
+            },
+            {
+              "label": "black",
+              "message": "black",
+              "color": "blue",
+              "type": "word",
+              "id": "b253",
+              "hidden": false,
+              "symbol": "symbols/2886.png"
+            },
+            {
+              "label": "white",
+              "message": "white",
+              "color": "blue",
+              "type": "word",
+              "id": "b254",
+              "hidden": false,
+              "symbol": "symbols/2662.png"
+            },
+            {
+              "label": "pink",
+              "message": "pink",
+              "color": "blue",
+              "type": "word",
+              "id": "b255",
+              "hidden": false,
+              "symbol": "symbols/2807.png"
+            },
+            {
+              "label": "same",
+              "message": "same",
+              "color": "blue",
+              "type": "word",
+              "id": "b256",
+              "hidden": false,
+              "symbol": "symbols/3423.png"
+            }
+          ],
+          "columns": 3
+        },
+        {
+          "id": "nucleo",
+          "title": "Core",
+          "columns": 6,
+          "buttons": [
+            {
+              "label": "I",
+              "message": "I",
+              "color": "yellow",
+              "type": "word",
+              "id": "b262",
+              "hidden": false,
+              "symbol": "symbols/6632.png"
+            },
+            {
+              "label": "you",
+              "message": "you",
+              "color": "yellow",
+              "type": "word",
+              "id": "b263",
+              "hidden": false,
+              "symbol": "symbols/6625.png"
+            },
+            {
+              "label": "he",
+              "message": "he",
+              "color": "yellow",
+              "type": "word",
+              "id": "b264",
+              "hidden": false,
+              "symbol": "symbols/6480.png"
+            },
+            {
+              "label": "she",
+              "message": "she",
+              "color": "yellow",
+              "type": "word",
+              "id": "b265",
+              "hidden": false,
+              "symbol": "symbols/7028.png"
+            },
+            {
+              "label": "this",
+              "message": "this",
+              "color": "yellow",
+              "type": "word",
+              "id": "b266",
+              "hidden": false,
+              "symbol": "symbols/7095.png"
+            },
+            {
+              "label": "that",
+              "message": "that",
+              "color": "yellow",
+              "type": "word",
+              "id": "b267",
+              "hidden": false,
+              "symbol": "symbols/6906.png"
+            },
+            {
+              "label": "want",
+              "message": "want",
+              "color": "green",
+              "type": "word",
+              "id": "b268",
+              "hidden": false,
+              "symbol": "symbols/5441.png"
+            },
+            {
+              "label": "like",
+              "message": "like",
+              "color": "green",
+              "type": "word",
+              "id": "b269",
+              "hidden": false,
+              "symbol": "symbols/37826.png"
+            },
+            {
+              "label": "take",
+              "message": "take",
+              "color": "green",
+              "type": "word",
+              "id": "b270",
+              "hidden": false,
+              "symbol": "symbols/10148.png"
+            },
+            {
+              "label": "do",
+              "message": "do",
+              "color": "green",
+              "type": "word",
+              "id": "b271",
+              "hidden": false,
+              "symbol": "symbols/11749.png"
+            },
+            {
+              "label": "go",
+              "message": "go",
+              "color": "green",
+              "type": "word",
+              "id": "b272",
+              "hidden": false,
+              "symbol": "symbols/8142.png"
+            },
+            {
+              "label": "look",
+              "message": "look",
+              "color": "green",
+              "type": "word",
+              "id": "b273",
+              "hidden": false,
+              "symbol": "symbols/2474.png"
+            },
+            {
+              "label": "put",
+              "message": "put",
+              "color": "green",
+              "type": "word",
+              "id": "b274",
+              "hidden": false,
+              "symbol": "symbols/6989.png"
+            },
+            {
+              "label": "open",
+              "message": "open",
+              "color": "green",
+              "type": "word",
+              "id": "b275",
+              "hidden": false,
+              "symbol": "symbols/24825.png"
+            },
+            {
+              "label": "turn",
+              "message": "turn",
+              "color": "green",
+              "type": "word",
+              "id": "b276",
+              "hidden": false,
+              "symbol": "symbols/6006.png"
+            },
+            {
+              "label": "help",
+              "message": "help",
+              "color": "green",
+              "type": "word",
+              "id": "b277",
+              "hidden": false,
+              "symbol": "symbols/12252.png"
+            },
+            {
+              "label": "stop",
+              "message": "stop",
+              "color": "green",
+              "type": "word",
+              "id": "b278",
+              "hidden": false,
+              "symbol": "symbols/7196.png"
+            },
+            {
+              "label": "make",
+              "message": "make",
+              "color": "green",
+              "type": "word",
+              "id": "b279",
+              "hidden": false,
+              "symbol": "symbols/2713.png"
+            },
+            {
+              "label": "is",
+              "message": "is",
+              "color": "green",
+              "type": "word",
+              "id": "b280",
+              "hidden": false,
+              "symbol": "symbols/5581.png"
+            },
+            {
+              "label": "can",
+              "message": "can",
+              "color": "green",
+              "type": "word",
+              "id": "b281",
+              "hidden": false,
+              "symbol": "symbols/11750.png"
+            },
+            {
+              "label": "more",
+              "message": "more",
+              "color": "blue",
+              "type": "word",
+              "id": "b282",
+              "hidden": false,
+              "symbol": "symbols/3220.png"
+            },
+            {
+              "label": "no",
+              "message": "no",
+              "color": "red",
+              "type": "word",
+              "id": "b283",
+              "hidden": false,
+              "symbol": "symbols/5526.png"
+            },
+            {
+              "label": "all done",
+              "message": "all done",
+              "color": "red",
+              "type": "word",
+              "id": "b284",
+              "hidden": false,
+              "symbol": "symbols/28429.png"
+            },
+            {
+              "label": "all",
+              "message": "all",
+              "color": "blue",
+              "type": "word",
+              "id": "b285",
+              "hidden": false,
+              "symbol": "symbols/5596.png"
+            },
+            {
+              "label": "good",
+              "message": "good",
+              "color": "blue",
+              "type": "word",
+              "id": "b286",
+              "hidden": false,
+              "symbol": "symbols/4581.png"
+            },
+            {
+              "label": "different",
+              "message": "different",
+              "color": "blue",
+              "type": "word",
+              "id": "b287",
+              "hidden": false,
+              "symbol": "symbols/4628.png"
+            },
+            {
+              "label": "same",
+              "message": "same",
+              "color": "blue",
+              "type": "word",
+              "id": "b288",
+              "hidden": false,
+              "symbol": "symbols/3423.png"
+            },
+            {
+              "label": "some",
+              "message": "some",
+              "color": "blue",
+              "type": "word",
+              "id": "b289",
+              "hidden": false,
+              "symbol": "symbols/5374.png"
+            },
+            {
+              "label": "here",
+              "message": "here",
+              "color": "purple",
+              "type": "word",
+              "id": "b290",
+              "hidden": false,
+              "symbol": "symbols/5382.png"
+            },
+            {
+              "label": "in",
+              "message": "in",
+              "color": "purple",
+              "type": "word",
+              "id": "b291",
+              "hidden": false,
+              "symbol": "symbols/5439.png"
+            },
+            {
+              "label": "on",
+              "message": "on",
+              "color": "purple",
+              "type": "word",
+              "id": "b292",
+              "hidden": false,
+              "symbol": "symbols/5451.png"
+            },
+            {
+              "label": "up",
+              "message": "up",
+              "color": "purple",
+              "type": "word",
+              "id": "b293",
+              "hidden": false,
+              "symbol": "symbols/5388.png"
+            },
+            {
+              "label": "what?",
+              "message": "what?",
+              "color": "purple",
+              "type": "word",
+              "id": "b294",
+              "hidden": false,
+              "symbol": "symbols/11351.png"
+            },
+            {
+              "label": "where?",
+              "message": "where?",
+              "color": "purple",
+              "type": "word",
+              "id": "b295",
+              "hidden": false,
+              "symbol": "symbols/7764.png"
+            },
+            {
+              "label": "who?",
+              "message": "who?",
+              "color": "purple",
+              "type": "word",
+              "id": "b296",
+              "hidden": false,
+              "symbol": "symbols/9853.png"
+            },
+            {
+              "label": "when?",
+              "message": "when?",
+              "color": "purple",
+              "type": "word",
+              "id": "b297",
+              "hidden": false,
+              "symbol": "symbols/22621.png"
+            }
+          ],
+          "fixedLayout": true
+        },
+        {
+          "id": "comecar",
+          "title": "Start talking",
+          "columns": 3,
+          "buttons": [
+            {
+              "label": "I want",
+              "message": "I want",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b298",
+              "hidden": false,
+              "symbol": "symbols/5441.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I don't want",
+              "message": "I don't want",
+              "color": "red",
+              "type": "wordlink",
+              "id": "b299",
+              "hidden": false,
+              "symbol": "symbols/5526.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I need",
+              "message": "I need",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b300",
+              "hidden": false,
+              "symbol": "symbols/37160.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I like",
+              "message": "I like",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b301",
+              "hidden": false,
+              "symbol": "symbols/37826.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I don't like",
+              "message": "I don't like",
+              "color": "red",
+              "type": "wordlink",
+              "id": "b302",
+              "hidden": false,
+              "symbol": "symbols/6155.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I feel",
+              "message": "I feel",
+              "color": "yellow",
+              "type": "wordlink",
+              "id": "b303",
+              "hidden": false,
+              "symbol": "symbols/30196.png",
+              "target": "sentimentos"
+            },
+            {
+              "label": "Something's wrong",
+              "message": "Something's wrong",
+              "color": "red",
+              "type": "wordlink",
+              "id": "b304",
+              "hidden": false,
+              "symbol": "symbols/5504.png",
+              "target": "corpo"
+            },
+            {
+              "label": "I have a question",
+              "message": "I have a question",
+              "color": "purple",
+              "type": "wordlink",
+              "id": "b305",
+              "hidden": false,
+              "symbol": "symbols/9847.png",
+              "target": "perguntas"
+            },
+            {
+              "label": "I think",
+              "message": "I think",
+              "color": "yellow",
+              "type": "wordlink",
+              "id": "b306",
+              "hidden": false,
+              "symbol": "symbols/8662.png",
+              "target": "inicio"
+            },
+            {
+              "label": "Let's go",
+              "message": "Let's go",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b307",
+              "hidden": false,
+              "symbol": "symbols/8142.png",
+              "target": "lugares"
+            },
+            {
+              "label": "I want to play",
+              "message": "I want to play",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b308",
+              "hidden": false,
+              "symbol": "symbols/23392.png",
+              "target": "brincar"
+            },
+            {
+              "label": "I want to eat",
+              "message": "I want to eat",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b309",
+              "hidden": false,
+              "symbol": "symbols/6456.png",
+              "target": "comida"
+            },
+            {
+              "label": "I have an idea",
+              "message": "I have an idea",
+              "color": "pink",
+              "type": "speak",
+              "id": "b310",
+              "hidden": false,
+              "symbol": "symbols/6019.png"
+            },
+            {
+              "label": "I want to tell you something",
+              "message": "I want to tell you something",
+              "color": "pink",
+              "type": "speak",
+              "id": "b311",
+              "hidden": false,
+              "symbol": "symbols/6517.png"
+            },
+            {
+              "label": "Wait, I'm not finished",
+              "message": "Wait, I'm not finished",
+              "color": "pink",
+              "type": "speak",
+              "id": "b312",
+              "hidden": false,
+              "symbol": "symbols/8109.png"
+            },
+            {
+              "label": "I want to change the subject",
+              "message": "I want to change the subject",
+              "color": "pink",
+              "type": "speak",
+              "id": "b313",
+              "hidden": false,
+              "symbol": "symbols/8053.png"
+            },
+            {
+              "label": "Can you say it again?",
+              "message": "Can you say it again?",
+              "color": "pink",
+              "type": "speak",
+              "id": "b314",
+              "hidden": false,
+              "symbol": "symbols/11752.png"
+            },
+            {
+              "label": "I don't understand",
+              "message": "I don't understand",
+              "color": "pink",
+              "type": "speak",
+              "id": "b315",
+              "hidden": false,
+              "symbol": "symbols/2352.png"
+            }
+          ]
+        }
+      ],
+      "settings": {
+        "method": "touch",
+        "holdMs": 650,
+        "scanMs": 1200,
+        "scanType": "auto",
+        "columns": 3,
+        "font": 19,
+        "rate": 1,
+        "pitch": 1,
+        "speakWords": false,
+        "contrast": false,
+        "language": "en"
+      },
+      "message": [],
+      "notes": [],
+      "routines": [
+        {
+          "title": "My day",
+          "done": 0,
+          "steps": [
+            {
+              "text": "Wake up",
+              "symbol": "symbols/8988.png"
+            },
+            {
+              "text": "Have breakfast",
+              "symbol": "symbols/24479.png"
+            },
+            {
+              "text": "Brush teeth",
+              "symbol": "symbols/2326.png"
+            },
+            {
+              "text": "Get dressed",
+              "symbol": "symbols/2781.png"
+            },
+            {
+              "text": "Leave home",
+              "symbol": "symbols/2806.png"
+            }
+          ]
+        },
+        {
+          "title": "Bedtime",
+          "done": 0,
+          "steps": [
+            {
+              "text": "Have dinner",
+              "symbol": "symbols/4593.png"
+            },
+            {
+              "text": "Take a bath",
+              "symbol": "symbols/6058.png"
+            },
+            {
+              "text": "Put on pajamas",
+              "symbol": "symbols/2522.png"
+            },
+            {
+              "text": "Brush teeth",
+              "symbol": "symbols/2326.png"
+            },
+            {
+              "text": "Read a story",
+              "symbol": "symbols/38631.png"
+            },
+            {
+              "text": "Sleep",
+              "symbol": "symbols/6479.png"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "starterVersion": 2
+}

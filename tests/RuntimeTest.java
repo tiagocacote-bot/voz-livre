@@ -43,7 +43,7 @@ public class RuntimeTest {
     ActivityController<MainActivity> c = Robolectric.buildActivity(MainActivity.class).setup();
     MainActivity a = c.get();
     assertEquals("inicio", a.current);
-    assertEquals(8, a.model.pages().length());
+    assertEquals(15, a.model.pages().length());
     assertTrue(a.grid.getChildCount() > 10);
     JSONObject page = a.model.page("inicio");
     for (String word : new String[] {"eu", "quero"}) {
@@ -209,6 +209,94 @@ public class RuntimeTest {
     down.recycle();up.recycle();c.pause().stop().destroy();
   }
 
+  static void idle(int ms) {
+    org.robolectric.Shadows.shadowOf(android.os.Looper.getMainLooper())
+        .idleFor(java.time.Duration.ofMillis(ms));
+  }
+
+  static boolean key(MainActivity a, int code) {
+    return a.dialogKey(code, new KeyEvent(KeyEvent.ACTION_DOWN, code));
+  }
+
+  @Test
+  public void scanInsideDialogs() throws Exception {
+    ActivityController<MainActivity> c = Robolectric.buildActivity(MainActivity.class).setup();
+    MainActivity a = c.get();
+    Model.put(a.model.settings(), "method", "scan");
+    Model.put(a.model.settings(), "scanType", "step");
+    a.build();
+    a.model.append("eu", "");
+    a.model.append("quero", "");
+    a.changed();
+    a.tools();
+    idle(400);
+    assertNotNull("tools dialog is open", a.topDialog());
+    assertFalse("a target is highlighted", a.dialogFocus.isEmpty());
+    if (a.dialogFocus.size() > 1) assertTrue(key(a, KeyEvent.KEYCODE_ENTER)); // enter the group
+    assertEquals(1, a.dialogFocus.size());
+    assertTrue(key(a, KeyEvent.KEYCODE_ENTER)); // first item: undo message
+    idle(400);
+    assertEquals("eu", a.model.text());
+    assertNull("list dialog closed after choosing", a.topDialog());
+    JSONObject draft = a.model.newButton();
+    a.symbols(draft);
+    idle(400);
+    assertEquals("hundreds of symbols: scanning starts by groups of 8", 8, a.dialogFocus.size());
+    key(a, KeyEvent.KEYCODE_SPACE); // next group
+    assertEquals(8, a.dialogFocus.size());
+    key(a, KeyEvent.KEYCODE_ENTER); // into the second group
+    assertEquals(1, a.dialogFocus.size());
+    key(a, KeyEvent.KEYCODE_ENTER); // choose its first symbol
+    idle(400);
+    assertFalse("a symbol was chosen", draft.optString("symbol").isEmpty());
+    a.settings();
+    idle(400);
+    for (int i = 0; i < 3; i++) key(a, KeyEvent.KEYCODE_SPACE);
+    assertFalse("settings dialog is scannable", a.dialogFocus.isEmpty());
+    c.pause().stop().destroy();
+  }
+
+  @Test
+  public void interfaceLanguage() throws Exception {
+    try {
+      ActivityController<MainActivity> c = Robolectric.buildActivity(MainActivity.class).setup();
+      MainActivity a = c.get();
+      Model.put(a.model.root, "uiLanguage", "en");
+      a.applyLanguage();
+      a.build();
+      assertEquals("Close", MainActivity.t("Fechar"));
+      boolean speak = false;
+      for (View v : a.targets) speak |= v instanceof Button && ((Button) v).getText().toString().equals("▶ Speak");
+      assertTrue("buttons follow the interface language", speak);
+      JSONObject english = new Model(repo.defaults("en")).profile();
+      a.model.newProfile("Test", english);
+      a.build();
+      assertEquals("en", a.lang());
+      assertEquals("en", a.voiceLocale().getLanguage());
+      c.pause().stop().destroy();
+    } finally {
+      I18n.use("pt", null);
+    }
+  }
+
+  @Test
+  public void wordFormsAndRoutines() throws Exception {
+    ActivityController<MainActivity> c = Robolectric.buildActivity(MainActivity.class).setup();
+    MainActivity a = c.get();
+    a.model.append("eu", "");
+    a.model.append("brincar", "");
+    a.changed();
+    a.wordForms(1);
+    idle(300);
+    assertNotNull("word forms dialog opens", a.topDialog());
+    assertEquals("symbols/2326.png", a.findSymbol("Escovar os dentes"));
+    JSONObject routine = a.model.profile().getJSONArray("routines").getJSONObject(0);
+    a.routine(routine);
+    idle(300);
+    assertNotNull(a.topDialog());
+    c.pause().stop().destroy();
+  }
+
   @Test
   public void importSnap() throws Exception {
     byte[] sample = Files.readAllBytes(Paths.get(System.getProperty("snap.sample")));
@@ -228,6 +316,25 @@ public class RuntimeTest {
     }
     assertTrue(blocked > 0);
     assertTrue(words > 0);
+    int photos = 0, colored = 0;
+    for (int i = 0; i < pages.length(); i++) {
+      JSONArray buttons = pages.getJSONObject(i).getJSONArray("buttons");
+      for (int j = 0; j < buttons.length(); j++) {
+        JSONObject b = buttons.getJSONObject(j);
+        if (b.optString("symbol").startsWith("user/")) {
+          photos++;
+          assertTrue(new java.io.File(repo.context.getFilesDir(), b.optString("symbol")).isFile());
+        }
+        if (!"blue".equals(b.optString("color")) && !"pink".equals(b.optString("color"))) colored++;
+      }
+    }
+    assertTrue("photos from the page set are imported", photos > 0);
+    assertTrue("button colors are kept", colored > 0);
+    JSONArray first = null;
+    for (int i = 0; i < pages.length(); i++)
+      if ("Medical Advocacy".equals(pages.getJSONObject(i).optString("title")))
+        first = pages.getJSONObject(i).getJSONArray("buttons");
+    assertEquals("original reading order", "Can you hear me?", first.getJSONObject(0).optString("label"));
     Model m = repo.load();
     m.newProfile("Importada", r.profile);
     Model.validate(m.root);
