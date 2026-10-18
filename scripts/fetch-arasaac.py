@@ -12,19 +12,26 @@ p=json.loads((a/'symbols-provenance.json').read_text(encoding='utf8'))
 ids=sorted({Path(rec['file']).stem for rec in p['records'] if Path(rec['file']).stem.isdigit()},key=int)
 # Starter words that had no ARASAAC pictogram in the prototype: take ARASAAC's best match.
 EXTRA=['comida','corpo','delicioso','não gostar','confortável','avó']
-def get(url):
-    for n in range(5):
+def get(url,tries=5):
+    for n in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'voz-livre'}),timeout=60) as f:return f.read()
         except Exception as e:
-            if n==4:raise
+            if n==tries-1:raise
             time.sleep(2**n)
 meta={}
 found={}
+missing=[]
 for term in EXTRA:
-    hits=json.loads(get('https://api.arasaac.org/v1/pictograms/pt/bestsearch/'+urllib.parse.quote(term)))
-    found[str(hits[0]['_id'])]=term
-    print('search',term,'->',hits[0]['_id'],flush=True)
+    hit=None
+    for kind in ('bestsearch','search'):
+        try:
+            hits=json.loads(get(f'https://api.arasaac.org/v1/pictograms/pt/{kind}/'+urllib.parse.quote(term),tries=2))
+            if hits:hit=hits[0]['_id'];break
+        except Exception as e:print('search failed',kind,term,e,flush=True)
+    if hit is None:missing.append(term);continue
+    found[str(hit)]=term
+    print('search',term,'->',hit,flush=True)
 ids+=[i for i in found if i not in ids]
 for i in ids:
     png=get(f'https://static.arasaac.org/pictograms/{i}/{i}_500.png')
@@ -35,5 +42,6 @@ for i in ids:
     info=json.loads(get(f'https://api.arasaac.org/v1/pictograms/pt/{i}'))
     meta[i]={'search':found.get(i),'keywords':[k.get('keyword') for k in info.get('keywords',[])],'url':f'https://arasaac.org/pictograms/pt/{i}'}
     print(i,meta[i]['keywords'][:3],flush=True)
+meta['_missing']=missing
 (r/'scripts/arasaac-meta.json').write_text(json.dumps(meta,ensure_ascii=False,indent=1)+'\n',encoding='utf8')
 print(len(ids),'pictograms')
