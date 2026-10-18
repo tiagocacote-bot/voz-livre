@@ -1,0 +1,18 @@
+{
+  "about": "Starter next-word suggestions (English). Each profile's own use takes priority.",
+  "next": {
+    "": ["I", "want", "no", "yes", "you", "need", "help", "more"],
+    "i": ["want", "need", "like", "am", "don't", "feel", "have"],
+    "you": ["want", "can", "like", "are"],
+    "want": ["to", "more", "water", "eat", "go", "play", "help", "stop"],
+    "need": ["help", "to", "the", "a"],
+    "to": ["go", "eat", "drink", "play", "sleep", "rest"],
+    "don't": ["want", "like", "know", "understand"],
+    "am": ["hungry", "thirsty", "tired", "happy", "sad", "in pain"],
+    "more": ["please", "water", "food", "time"],
+    "go": ["home", "out", "to", "outside"],
+    "can": ["I", "you", "help"],
+    "my": ["turn", "head", "tummy"],
+    "your": ["turn"]
+  }
+}

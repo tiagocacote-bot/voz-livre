@@ -1,0 +1,17 @@
+{
+  "about": "Sugerencias iniciales de la siguiente palabra (español). El uso de cada perfil tiene prioridad.",
+  "next": {
+    "": ["yo", "quiero", "no", "sí", "tú", "necesito", "ayuda", "más"],
+    "yo": ["quiero", "necesito", "estoy", "tengo", "no", "voy"],
+    "tú": ["quieres", "puedes", "estás"],
+    "quiero": ["comer", "beber", "agua", "ir", "jugar", "más", "dormir", "ayuda", "salir"],
+    "necesito": ["ayuda", "ir", "descansar", "el"],
+    "no": ["quiero", "me", "sé", "entiendo"],
+    "me": ["gusta", "duele", "ayudas"],
+    "estoy": ["cansado", "bien", "feliz", "triste", "mal"],
+    "tengo": ["hambre", "sed", "dolor", "miedo", "frío"],
+    "más": ["agua", "comida", "tiempo", "por favor"],
+    "mi": ["turno"],
+    "tu": ["turno"]
+  }
+}

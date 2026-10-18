@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
   JSONObject photoDraft = null;
   TextView photoLabel = null;
   String search = "";
+  Button moreButton;
   LinearLayout suggestionRow;
   final Button[] suggestions = new Button[4];
   int fixedTargets = 8;
@@ -71,12 +72,13 @@ public class MainActivity extends Activity {
       model = repo.load();
     } catch (Exception e) {
       new AlertDialog.Builder(this)
-          .setTitle("Não foi possível abrir o comunicador")
+          .setTitle(t("Não foi possível abrir o comunicador"))
           .setMessage(e.toString())
-          .setPositiveButton("Fechar", (d, w) -> finish())
+          .setPositiveButton(t("Fechar"), (d, w) -> finish())
           .show();
       return;
     }
+    applyLanguage();
     current = model.profile().optString("home");
     if (state != null) {
       String p = state.getString("page");
@@ -93,17 +95,79 @@ public class MainActivity extends Activity {
                   () -> {
                     if (status != null)
                       status.setText(
-                          voiceReady ? "Pronto para comunicar" : "Configure uma voz em Ajustes");
+                          voiceReady ? t("Pronto para comunicar") : t("Configure uma voz em Ajustes"));
                   });
             });
     if (repo.recovered)
       show(
           new AlertDialog.Builder(this)
-              .setTitle("Dados recuperados")
+              .setTitle(t("Dados recuperados"))
               .setMessage(
-                  "Foi necessário recuperar seus dados. Uma cópia do arquivo anterior foi"
-                      + " preservada no aparelho. Exporte um backup em Ajustes.")
-              .setPositiveButton("Entendi", null));
+                  t("Foi necessário recuperar seus dados. Uma cópia do arquivo anterior foi preservada no aparelho. Exporte um backup em Ajustes."))
+              .setPositiveButton(t("Entendi"), null));
+  }
+
+  static String t(String pt) {
+    return I18n.t(pt);
+  }
+
+  /** Interface language from the app setting (or the device), loaded from assets/i18n. */
+  void applyLanguage() {
+    String lang =
+        I18n.resolve(model.root.optString("uiLanguage", "auto"), Locale.getDefault().getLanguage());
+    JSONObject dictionary = null;
+    if (!"pt".equals(lang))
+      try {
+        dictionary =
+            new JSONObject(
+                new String(
+                    Repository.read(getAssets().open("i18n/" + lang + ".json"), 2000000),
+                    StandardCharsets.UTF_8));
+      } catch (Exception ignored) {
+      }
+    I18n.use(lang, dictionary);
+  }
+
+  /** Language of the active profile's board and voice: "pt", "en" or "es". */
+  String lang() {
+    return model.settings().optString("language", "pt");
+  }
+
+  boolean portuguese() {
+    return "pt".equals(lang());
+  }
+
+  Locale voiceLocale() {
+    switch (lang()) {
+      case "en":
+        return new Locale("en", "US");
+      case "es":
+        return new Locale("es", "ES");
+      default:
+        return new Locale("pt", "BR");
+    }
+  }
+
+  void languageSettings() {
+    String[] codes = {"auto", "pt", "en", "es"};
+    String[] names = {
+      t("Automático (idioma do aparelho)"), "Português (Brasil)", "English", "Español"
+    };
+    int selected = Math.max(0, Arrays.asList(codes).indexOf(model.root.optString("uiLanguage", "auto")));
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(t("Idioma do aplicativo"))
+            .setSingleChoiceItems(
+                names,
+                selected,
+                (d, i) -> {
+                  Model.put(model.root, "uiLanguage", codes[i]);
+                  save();
+                  applyLanguage();
+                  d.dismiss();
+                  build();
+                })
+            .setNegativeButton(t("Cancelar"), null));
   }
 
   int dp(float n) {
@@ -164,16 +228,16 @@ public class MainActivity extends Activity {
         () ->
             show(
                 new AlertDialog.Builder(this)
-                    .setTitle("Não foi possível concluir")
+                    .setTitle(t("Não foi possível concluir"))
                     .setMessage(e.getMessage() == null ? e.toString() : e.getMessage())
-                    .setPositiveButton("Entendi", null)));
+                    .setPositiveButton(t("Entendi"), null)));
   }
 
   void save() {
     try {
       repo.save(model);
     } catch (Exception e) {
-      status.setText("Não foi possível salvar — exporte um backup");
+      status.setText(t("Não foi possível salvar — exporte um backup"));
       error(e);
     }
   }
@@ -456,19 +520,19 @@ public class MainActivity extends Activity {
     setContentView(root);
     root.requestApplyInsets();
     header = row();
-    TextView brand = text("Voz Livre", 23);
+    TextView brand = text(t("Voz Livre"), 23);
     brand.setTypeface(null, Typeface.BOLD);
     header.addView(brand, new LinearLayout.LayoutParams(0, dp(50), 1));
-    Button profiles = action("Perfil ▾", () -> profiles());
+    Button profiles = action(t("Perfil ▾"), () -> profiles());
     header.addView(profiles);
-    Button settings = action("Ajustes", () -> settings());
+    Button settings = action(t("Ajustes"), () -> settings());
     header.addView(settings);
     root.addView(header);
     LinearLayout titleRow = row();
     pageTitle = text("", 18);
     pageTitle.setTypeface(null, Typeface.BOLD);
     titleRow.addView(pageTitle, new LinearLayout.LayoutParams(0, dp(40), 1));
-    Button ed = action(edit ? "Concluir edição" : "Editar", () -> toggleEdit());
+    Button ed = action(edit ? t("Concluir edição") : t("Editar"), () -> toggleEdit());
     titleRow.addView(ed);
     boolean compact = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     if (compact) {
@@ -487,7 +551,7 @@ public class MainActivity extends Activity {
     LinearLayout speech = row();
     Button speak =
         action(
-            "▶ Falar",
+            t("▶ Falar"),
             () -> {
               learn(model.text());
               speak(model.text(), false);
@@ -499,7 +563,7 @@ public class MainActivity extends Activity {
     addRowButton(
         speech,
         action(
-            "Parar",
+            t("Parar"),
             () -> {
               if (tts != null) tts.stop();
             }),
@@ -507,7 +571,7 @@ public class MainActivity extends Activity {
     addRowButton(
         speech,
         action(
-            "Apagar",
+            t("Apagar"),
             () -> {
               model.remove();
               changed();
@@ -516,7 +580,7 @@ public class MainActivity extends Activity {
     addRowButton(
         speech,
         action(
-            "Limpar",
+            t("Limpar"),
             () -> {
               model.clear();
               changed();
@@ -533,15 +597,16 @@ public class MainActivity extends Activity {
       int tint = contrast() ? Color.rgb(10, 45, 50) : Color.rgb(222, 242, 243);
       self[0].setBackground(shape(tint));
       colors.put(self[0], tint);
-      self[0].setContentDescription("Sugestão");
+      self[0].setContentDescription(t("Sugestão"));
       suggestions[i] = self[0];
       addRowButton(hints, self[0], 1);
     }
     if (suggestionRow != null) root.addView(suggestionRow);
-    addRowButton(nav, action("⌂ Início", () -> home()), 1);
-    addRowButton(nav, action("‹ Voltar", () -> goBack()), 1);
-    addRowButton(nav, action("Teclado", () -> keyboard()), 1);
-    addRowButton(nav, action("Mais ▾", () -> tools()), 1);
+    addRowButton(nav, action(t("⌂ Início"), () -> home()), 1);
+    addRowButton(nav, action(t("‹ Voltar"), () -> goBack()), 1);
+    addRowButton(nav, action(t("Teclado"), () -> keyboard()), 1);
+    moreButton = action(t("Mais ▾"), () -> tools());
+    addRowButton(nav, moreButton, 1);
     root.addView(nav);
     fixedTargets = targets.size();
     pageScroll = new ScrollView(this);
@@ -553,8 +618,8 @@ public class MainActivity extends Activity {
     status =
         text(
             edit
-                ? "Toque para editar; mantenha pressionado para mover ou copiar"
-                : "Salvo neste aparelho",
+                ? t("Toque para editar; mantenha pressionado para mover ou copiar")
+                : t("Salvo neste aparelho"),
             12);
     status.setPadding(dp(6), dp(4), 0, 0);
     root.addView(status);
@@ -571,7 +636,7 @@ public class MainActivity extends Activity {
     messageItems.removeAllViews();
     JSONArray a = model.message();
     if (a.length() == 0) {
-      TextView hint = text("Escolha palavras para montar sua mensagem", 17);
+      TextView hint = text(t("Escolha palavras para montar sua mensagem"), 17);
       hint.setPadding(dp(8), 0, dp(8), 0);
       messageItems.addView(hint);
     } else
@@ -588,7 +653,9 @@ public class MainActivity extends Activity {
         t.setGravity(Gravity.CENTER);
         t.setPadding(dp(7), 0, dp(7), 0);
         tile.addView(t);
-        tile.setContentDescription(token.optString("text"));
+        tile.setContentDescription(token.optString("text") + t(", mudar forma"));
+        final int index = i;
+        tile.setOnClickListener(v -> wordForms(index));
         messageItems.addView(tile);
       }
     messageScroll.post(() -> messageScroll.fullScroll(View.FOCUS_RIGHT));
@@ -599,13 +666,18 @@ public class MainActivity extends Activity {
     return model.settings().optBoolean("predict", true);
   }
 
+  String seedLanguage = null;
+
   JSONObject seed() {
-    if (seed == null)
+    if (seed == null || !lang().equals(seedLanguage))
       try {
+        seedLanguage = lang();
         seed =
             new JSONObject(
                 new String(
-                    Repository.read(getAssets().open("prediction.json"), 1000000),
+                    Repository.read(
+                        getAssets().open(portuguese() ? "prediction.json" : "prediction-" + lang() + ".json"),
+                        1000000),
                     StandardCharsets.UTF_8));
       } catch (Exception e) {
         seed = new JSONObject();
@@ -632,7 +704,73 @@ public class MainActivity extends Activity {
   List<String> predictions(String previous, String prefix) {
     ArrayList<String> words = new ArrayList<>();
     for (JSONObject b : vocabulary().values()) words.add(b.optString("message", b.optString("label")));
-    return Predictor.suggest(model.profile(), previous, prefix, words, seed(), suggestions.length);
+    List<String> raw = Predictor.suggest(model.profile(), previous, prefix, words, seed(), suggestions.length);
+    if (!portuguese() || Grammar.person(previous) < 0) return raw;
+    // After a subject, offer verbs already conjugated: "eu" → "brinco", not "brincar".
+    LinkedHashSet<String> agreed = new LinkedHashSet<>();
+    for (String w : raw) agreed.add(Grammar.agree(previous, w, verbs()));
+    return new ArrayList<>(agreed);
+  }
+
+  /** Infinitives on the person's pages, used to recognize conjugated forms. */
+  List<String> verbs() {
+    ArrayList<String> out = new ArrayList<>();
+    for (JSONObject b : vocabulary().values()) {
+      String m = b.optString("message", b.optString("label")).trim();
+      if (Grammar.infinitive(m)) out.add(m);
+    }
+    return out;
+  }
+
+  /** Word in the message as the person chose it, conjugated when automatic grammar is on. */
+  String agreed(String text) {
+    if (!portuguese() || !model.settings().optBoolean("grammarAuto")) return text;
+    return Grammar.agree(Predictor.last(model.text()), text, verbs());
+  }
+
+  void wordForms(int index) {
+    JSONArray message = model.message();
+    if (index < 0 || index >= message.length()) return;
+    if (!portuguese()) {
+      toast(t("As formas das palavras estão disponíveis para pranchas em português."));
+      return;
+    }
+    String text = message.optJSONObject(index).optString("text");
+    List<String> words = Predictor.words(text);
+    if (words.isEmpty()) return;
+    String word = words.get(words.size() - 1);
+    String before =
+        words.size() > 1
+            ? words.get(words.size() - 2)
+            : index > 0 ? Predictor.last(message.optJSONObject(index - 1).optString("text")) : "";
+    List<Grammar.Form> forms = Grammar.forms(word, before, verbs());
+    if (forms.isEmpty()) {
+      toast(t("Esta palavra não tem outras formas."));
+      return;
+    }
+    String[] items = new String[forms.size()];
+    for (int i = 0; i < items.length; i++)
+    {
+      StringBuilder label = new StringBuilder();
+      for (String part : forms.get(i).description.split(" · "))
+        label.append(label.length() == 0 ? "" : " · ").append(t(part));
+      items[i] = forms.get(i).text + "  ·  " + label;
+    }
+    int cut = text.toLowerCase(new Locale("pt", "BR")).lastIndexOf(word);
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(t("Formas de “") + word + "”")
+            .setItems(
+                items,
+                (d, i) -> {
+                  String chosen = forms.get(i).text;
+                  String replaced =
+                      cut >= 0 ? text.substring(0, cut) + chosen + text.substring(cut + word.length()) : chosen;
+                  model.replace(index, replaced);
+                  changed();
+                  if (model.settings().optBoolean("speakWords")) speak(chosen, false);
+                })
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void renderSuggestions() {
@@ -648,7 +786,7 @@ public class MainActivity extends Activity {
       String word = i < next.size() ? next.get(i) : "";
       suggestions[i].setText(word);
       suggestions[i].setTag(word);
-      suggestions[i].setContentDescription("Sugestão: " + word);
+      suggestions[i].setContentDescription(t("Sugestão: ") + word);
       suggestions[i].setVisibility(word.isEmpty() ? View.INVISIBLE : View.VISIBLE);
     }
   }
@@ -657,8 +795,8 @@ public class MainActivity extends Activity {
     if (word == null || word.trim().isEmpty()) return;
     JSONObject b = vocabulary().get(fold(word.trim()));
     try {
-      if (b != null) model.append(b.optString("message", b.optString("label")), b.optString("symbol"));
-      else model.append(word, "");
+      if (b != null) model.append(agreed(b.optString("message", b.optString("label"))), b.optString("symbol"));
+      else model.append(agreed(word), "");
       changed();
       if (model.settings().optBoolean("speakWords")) speak(word, false);
     } catch (Exception e) {
@@ -737,7 +875,7 @@ public class MainActivity extends Activity {
       current = model.profile().optString("home");
       page = model.page(current);
     }
-    pageTitle.setText(page.optString("title") + (edit ? " · edição" : ""));
+    pageTitle.setText(page.optString("title") + (edit ? t(" · edição") : ""));
     int cols = clamp(model.settings().optInt("columns", 3), 2, 6);
     grid.setColumnCount(cols);
     JSONArray buttons = page.optJSONArray("buttons");
@@ -782,7 +920,7 @@ public class MainActivity extends Activity {
       t.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
       card.addView(t, new LinearLayout.LayoutParams(-1, -2));
       card.setContentDescription(
-          b.optString("label") + (b.optString("type").equals("link") ? ", abrir página" : ""));
+          b.optString("label") + (b.optString("type").equals("link") ? t(", abrir página") : ""));
       card.setFocusable(true);
       card.setClickable(true);
       Runnable click =
@@ -808,7 +946,7 @@ public class MainActivity extends Activity {
       grid.addView(card, lp);
     }
     if (edit) {
-      Button add = action("+ Novo botão", () -> editButton(model.newButton(), true));
+      Button add = action(t("+ Novo botão"), () -> editButton(model.newButton(), true));
       GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
       lp.width = 0;
       lp.height = dp(125);
@@ -817,7 +955,7 @@ public class MainActivity extends Activity {
       grid.addView(add, lp);
     }
     if (!edit && grid.getChildCount() == 0) {
-      TextView empty = text("Nenhuma palavra aqui. Use Editar para adicionar.", 18);
+      TextView empty = text(t("Nenhuma palavra aqui. Use Editar para adicionar."), 18);
       grid.addView(empty);
     }
     scanner.reset(targets.size());
@@ -826,7 +964,7 @@ public class MainActivity extends Activity {
 
   void activate(JSONObject b) {
     if (b.optBoolean("disabled")) {
-      toast("Ação importada não reconhecida. Revise este botão em Editar antes de ativar.");
+      toast(t("Ação importada não reconhecida. Revise este botão em Editar antes de ativar."));
       return;
     }
     try {
@@ -838,7 +976,7 @@ public class MainActivity extends Activity {
           speak(b.optString("message", b.optString("label")), false);
           break;
         default:
-          model.append(b.optString("message", b.optString("label")), b.optString("symbol"));
+          model.append(agreed(b.optString("message", b.optString("label"))), b.optString("symbol"));
           changed();
           if (model.settings().optBoolean("speakWords")) speak(b.optString("message"), false);
       }
@@ -849,7 +987,7 @@ public class MainActivity extends Activity {
 
   void navigate(String page) {
     if (model.page(page) == null) {
-      toast("Esta página não foi encontrada. Você pode corrigir o destino em Editar.");
+      toast(t("Esta página não foi encontrada. Você pode corrigir o destino em Editar."));
       return;
     }
     back.push(current);
@@ -889,23 +1027,23 @@ public class MainActivity extends Activity {
     if (!edit && !pin.isEmpty()) {
       EditText input =
           field(
-              "Código de edição",
+              t("Código de edição"),
               "",
               android.text.InputType.TYPE_CLASS_NUMBER
                   | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
       show(
           new AlertDialog.Builder(this)
-              .setTitle("Entrar na edição")
+              .setTitle(t("Entrar na edição"))
               .setView(input)
               .setPositiveButton(
-                  "Entrar",
+                  t("Entrar"),
                   (d, w) -> {
                     if (pin.equals(input.getText().toString())) {
                       edit = true;
                       build();
-                    } else toast("Código incorreto.");
+                    } else toast(t("Código incorreto."));
                   })
-              .setNegativeButton("Cancelar", null));
+              .setNegativeButton(t("Cancelar"), null));
     } else {
       edit = !edit;
       build();
@@ -931,7 +1069,7 @@ public class MainActivity extends Activity {
               highlight(view);
               dwell =
                   () -> {
-                    if ((!paused || (view instanceof Button && ((Button)view).getText().toString().startsWith("Mais"))) && dialogCount == 0) {
+                    if ((!paused || view == moreButton) && dialogCount == 0) {
                       r.run();
                     }
                   };
@@ -956,7 +1094,7 @@ public class MainActivity extends Activity {
     if (edit || dialogCount > 0) return false;
     String method = model.settings().optString("method", "touch");
     if (paused)
-      return !(v instanceof Button && ((Button) v).getText().toString().startsWith("Mais"));
+      return v != moreButton;
     if (method.equals("touch") || method.equals("mouse") || method.equals("scan")) return false;
     if (e.getAction() == MotionEvent.ACTION_DOWN) {
       cancelTouch();
@@ -1071,7 +1209,7 @@ public class MainActivity extends Activity {
             || event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER)) {
       if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
         paused = false;
-        status.setText("Acesso retomado");
+        status.setText(t("Acesso retomado"));
         startScan();
       }
       return true;
@@ -1093,7 +1231,7 @@ public class MainActivity extends Activity {
   void configureVoice() {
     if (!voiceReady || tts == null) return;
     try {
-      tts.setLanguage(new Locale("pt", "BR"));
+      tts.setLanguage(voiceLocale());
       Set<Voice> voices = tts.getVoices();
       String chosen = model.settings().optString("voice");
       Voice best = null;
@@ -1103,8 +1241,8 @@ public class MainActivity extends Activity {
         }
       if (best == null && voices != null)
         for (Voice v : voices)
-          if (v.getLocale().getLanguage().equals("pt")
-              && v.getLocale().getCountry().equals("BR")
+          if (v.getLocale().getLanguage().equals(voiceLocale().getLanguage())
+              && (!portuguese() || v.getLocale().getCountry().equals("BR"))
               && !v.isNetworkConnectionRequired()) {
             best = v;
             break;
@@ -1113,14 +1251,14 @@ public class MainActivity extends Activity {
       tts.setSpeechRate((float) Math.max(.3, Math.min(2, model.settings().optDouble("rate", 1))));
       tts.setPitch((float) Math.max(.5, Math.min(2, model.settings().optDouble("pitch", 1))));
     } catch (Exception e) {
-      runOnUiThread(() -> toast("Não foi possível configurar esta voz."));
+      runOnUiThread(() -> toast(t("Não foi possível configurar esta voz.")));
     }
   }
 
   void speak(String s, boolean cue) {
     if (s.trim().isEmpty()) return;
     if (!voiceReady) {
-      toast("A voz ainda não está pronta. Verifique Ajustes → Voz.");
+      toast(t("A voz ainda não está pronta. Verifique Ajustes → Voz."));
       return;
     }
     configureVoice();
@@ -1135,7 +1273,7 @@ public class MainActivity extends Activity {
           null,
           Model.id());
     if (result == TextToSpeech.ERROR)
-      toast("A fala falhou. Verifique a voz nas configurações do Android.");
+      toast(t("A fala falhou. Verifique a voz nas configurações do Android."));
   }
 
   EditText field(String label, String value, int type) {
@@ -1193,7 +1331,7 @@ public class MainActivity extends Activity {
         return super.performClick();
       show(
           new AlertDialog.Builder(MainActivity.this)
-              .setTitle("Escolha")
+              .setTitle(t("Escolha"))
               .setSingleChoiceItems(
                   values,
                   getSelectedItemPosition(),
@@ -1201,7 +1339,7 @@ public class MainActivity extends Activity {
                     setSelection(which);
                     d.dismiss();
                   })
-              .setNegativeButton("Cancelar", null));
+              .setNegativeButton(t("Cancelar"), null));
       return true;
     }
   }
@@ -1218,20 +1356,20 @@ public class MainActivity extends Activity {
     }
     JSONObject draft = Model.copy(original);
     LinearLayout form = column();
-    label(form, "Texto do botão");
-    EditText name = field("Rótulo", draft.optString("label"), 1);
+    label(form, t("Texto do botão"));
+    EditText name = field(t("Rótulo"), draft.optString("label"), 1);
     form.addView(name);
-    label(form, "O que será falado");
+    label(form, t("O que será falado"));
     EditText message =
         field(
-            "Mensagem",
+            t("Mensagem"),
             draft.optString("message"),
             android.text.InputType.TYPE_CLASS_TEXT
                 | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
     form.addView(message);
-    String[] types = {"Adicionar à mensagem", "Falar diretamente", "Abrir página"};
+    String[] types = {t("Adicionar à mensagem"), t("Falar diretamente"), t("Abrir página")};
     String type = draft.optString("type");
-    label(form, "Ao tocar");
+    label(form, t("Ao tocar"));
     Spinner kind = spinner(types, type.equals("speak") ? 1 : type.equals("link") ? 2 : 0);
     form.addView(kind);
     String[] names = new String[model.pages().length()];
@@ -1241,27 +1379,27 @@ public class MainActivity extends Activity {
       names[i] = p.optString("title");
       if (p.optString("id").equals(draft.optString("target"))) targetIndex = i;
     }
-    label(form, "Página de destino (para Abrir página)");
+    label(form, t("Página de destino (para Abrir página)"));
     Spinner dest = spinner(names, targetIndex);
     form.addView(dest);
-    String[] palettes = {"Azul", "Amarelo", "Verde", "Laranja", "Rosa", "Roxo", "Vermelho"},
+    String[] palettes = {t("Azul"), t("Amarelo"), t("Verde"), t("Laranja"), t("Rosa"), t("Roxo"), t("Vermelho")},
         codes = {"blue", "yellow", "green", "orange", "pink", "purple", "red"};
-    label(form, "Cor");
+    label(form, t("Cor"));
     Spinner palette = spinner(palettes, Arrays.asList(codes).indexOf(draft.optString("color")));
     form.addView(palette);
     CheckBox hidden = new CheckBox(this);
-    hidden.setText("Ocultar no modo de comunicação");
+    hidden.setText(t("Ocultar no modo de comunicação"));
     hidden.setChecked(draft.optBoolean("hidden"));
     form.addView(hidden);
     photoLabel =
-        text(draft.optString("symbol").isEmpty() ? "Sem imagem" : "Imagem selecionada", 14);
+        text(draft.optString("symbol").isEmpty() ? t("Sem imagem") : t("Imagem selecionada"), 14);
     form.addView(photoLabel);
     LinearLayout imageRow = row();
-    addRowButton(imageRow, plain("Escolher símbolo", () -> symbols(draft)), 1);
+    addRowButton(imageRow, plain(t("Escolher símbolo"), () -> symbols(draft)), 1);
     addRowButton(
         imageRow,
         plain(
-            "Usar foto",
+            t("Usar foto"),
             () -> {
               photoDraft = draft;
               Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
@@ -1273,22 +1411,22 @@ public class MainActivity extends Activity {
     addRowButton(
         imageRow,
         plain(
-            "Sem imagem",
+            t("Sem imagem"),
             () -> {
               Model.put(draft, "symbol", "");
-              photoLabel.setText("Sem imagem");
+              photoLabel.setText(t("Sem imagem"));
             }),
         1);
     form.addView(imageRow);
     AlertDialog dialog =
         show(
             new AlertDialog.Builder(this)
-                .setTitle(fresh ? "Novo botão" : "Editar botão")
+                .setTitle(fresh ? t("Novo botão") : t("Editar botão"))
                 .setView(scroll(form))
-                .setPositiveButton("Salvar", null)
-                .setNegativeButton("Cancelar", null)
+                .setPositiveButton(t("Salvar"), null)
+                .setNegativeButton(t("Cancelar"), null)
                 .setNeutralButton(
-                    fresh ? "" : "Excluir",
+                    fresh ? "" : t("Excluir"),
                     fresh
                         ? null
                         : (d, w) -> {
@@ -1309,7 +1447,7 @@ public class MainActivity extends Activity {
         .setOnClickListener(
             v -> {
               if (name.getText().toString().trim().isEmpty()) {
-                name.setError("Digite um rótulo");
+                name.setError(t("Digite um rótulo"));
                 return;
               }
               model.beforeEdit();
@@ -1329,7 +1467,7 @@ public class MainActivity extends Activity {
               JSONArray a = model.page(current).optJSONArray("buttons");
               if (fresh) {
                 if (a.length() >= 600) {
-                  toast("Esta página está cheia.");
+                  toast(t("Esta página está cheia."));
                   return;
                 }
                 a.put(draft);
@@ -1354,7 +1492,7 @@ public class MainActivity extends Activity {
         new AlertDialog.Builder(this)
             .setTitle(button.optString("label"))
             .setItems(
-                new String[] {"Mover posição nesta página", "Copiar para outra página"},
+                new String[] {t("Mover posição nesta página"), t("Copiar para outra página")},
                 (d, option) -> {
                   JSONArray buttons = model.page(current).optJSONArray("buttons");
                   if (option == 0) {
@@ -1363,7 +1501,7 @@ public class MainActivity extends Activity {
                       positions[i] = (i + 1) + " · " + buttons.optJSONObject(i).optString("label");
                     show(
                         new AlertDialog.Builder(this)
-                            .setTitle("Trocar com qual posição?")
+                            .setTitle(t("Trocar com qual posição?"))
                             .setItems(
                                 positions,
                                 (x, pos) -> {
@@ -1382,21 +1520,21 @@ public class MainActivity extends Activity {
                                       error(e);
                                     }
                                 })
-                            .setNegativeButton("Cancelar", null));
+                            .setNegativeButton(t("Cancelar"), null));
                   } else {
                     String[] names = new String[model.pages().length()];
                     for (int i = 0; i < names.length; i++)
                       names[i] = model.pages().optJSONObject(i).optString("title");
                     show(
                         new AlertDialog.Builder(this)
-                            .setTitle("Copiar para")
+                            .setTitle(t("Copiar para"))
                             .setItems(
                                 names,
                                 (x, pos) -> {
                                   JSONArray a =
                                       model.pages().optJSONObject(pos).optJSONArray("buttons");
                                   if (a.length() >= 600) {
-                                    toast("Esta página está cheia.");
+                                    toast(t("Esta página está cheia."));
                                     return;
                                   }
                                   model.beforeEdit();
@@ -1406,22 +1544,61 @@ public class MainActivity extends Activity {
                                   save();
                                   renderPage();
                                 })
-                            .setNegativeButton("Cancelar", null));
+                            .setNegativeButton(t("Cancelar"), null));
                   }
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void symbols(JSONObject draft) {
-    try {
-      JSONArray all =
+    symbols(draft, null);
+  }
+
+  JSONArray symbolRecords = null;
+
+  JSONArray symbolRecords() throws Exception {
+    if (symbolRecords == null)
+      symbolRecords =
           new JSONObject(
                   new String(
                       Repository.read(getAssets().open("symbols-provenance.json"), 2000000),
                       StandardCharsets.UTF_8))
               .getJSONArray("records");
+    return symbolRecords;
+  }
+
+  /** Best bundled picture for a text: whole phrase first, then its longest word; ARASAAC first. */
+  String findSymbol(String text) {
+    try {
+      JSONArray all = symbolRecords();
+      String phrase = fold(text.trim().replaceAll("[.!?]+$", ""));
+      ArrayList<String> words = new ArrayList<>();
+      for (String w : phrase.split("[^\\p{L}]+")) if (w.length() > 2) words.add(w);
+      words.sort((x, y) -> y.length() - x.length());
+      ArrayList<String> wanted = new ArrayList<>();
+      wanted.add(phrase);
+      wanted.addAll(words);
+      for (String w : wanted)
+        for (int pass = 0; pass < 2; pass++)
+          for (int i = 0; i < all.length(); i++) {
+            JSONObject r = all.optJSONObject(i);
+            if ((pass == 0) != "ARASAAC".equals(r.optString("provider"))) continue;
+            if (fold(r.optString("search")).equals(w)) return r.optString("file");
+            JSONArray k = r.optJSONArray("keywords");
+            if (k != null)
+              for (int j = 0; j < k.length(); j++)
+                if (fold(k.optString(j)).equals(w)) return r.optString("file");
+          }
+    } catch (Exception ignored) {
+    }
+    return "";
+  }
+
+  void symbols(JSONObject draft, Runnable after) {
+    try {
+      JSONArray all = symbolRecords();
       LinearLayout form = column();
-      EditText query = field("Buscar símbolo", "", 1);
+      EditText query = field(t("Buscar símbolo"), "", 1);
       form.addView(query);
       GridLayout choices = new GridLayout(this);
       choices.setColumnCount(3);
@@ -1429,9 +1606,9 @@ public class MainActivity extends Activity {
       AlertDialog d =
           show(
               new AlertDialog.Builder(this)
-                  .setTitle("Símbolos disponíveis")
+                  .setTitle(t("Símbolos disponíveis"))
                   .setView(scroll(form))
-                  .setNegativeButton("Fechar", null));
+                  .setNegativeButton(t("Fechar"), null));
       Runnable update =
           () -> {
             choices.removeAllViews();
@@ -1453,8 +1630,9 @@ public class MainActivity extends Activity {
                   v -> {
                     Model.put(draft, "symbol", file);
                     if (photoLabel != null)
-                      photoLabel.setText("Símbolo: " + item.optString("search"));
+                      photoLabel.setText(t("Símbolo: ") + item.optString("search"));
                     d.dismiss();
+                    if (after != null) after.run();
                   });
               choices.addView(tile, new GridLayout.LayoutParams());
             }
@@ -1482,7 +1660,7 @@ public class MainActivity extends Activity {
     LinearLayout form = column();
     EditText input =
         field(
-            "Escreva sua mensagem",
+            t("Escreva sua mensagem"),
             "",
             android.text.InputType.TYPE_CLASS_TEXT
                 | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE
@@ -1527,7 +1705,7 @@ public class MainActivity extends Activity {
     addRowButton(
         controls,
         plain(
-            "Falar",
+            t("Falar"),
             () -> {
               learn(input.getText().toString());
               speak(input.getText().toString(), false);
@@ -1536,7 +1714,7 @@ public class MainActivity extends Activity {
     addRowButton(
         controls,
         plain(
-            "Apagar letra",
+            t("Apagar letra"),
             () -> {
               String s = input.getText().toString();
               if (!s.isEmpty()) input.setText(s.substring(0, s.offsetByCodePoints(s.length(), -1)));
@@ -1545,23 +1723,29 @@ public class MainActivity extends Activity {
     form.addView(controls);
     GridLayout keys = new GridLayout(this);
     keys.setColumnCount(6);
-    for (String k : "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Ç Ã É Í Ó Ú".split(" ")) {
+    String letters =
+        "en".equals(lang())
+            ? "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+            : "es".equals(lang())
+                ? "A B C D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z Á É Í Ó Ú"
+                : "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Ç Ã É Í Ó Ú";
+    for (String k : letters.split(" ")) {
       Button b =
           plain(
               k,
               () -> {
-                input.append(k.toLowerCase(new Locale("pt", "BR")));
+                input.append(k.toLowerCase(voiceLocale()));
               });
       keys.addView(b, new GridLayout.LayoutParams());
     }
     form.addView(keys);
-    form.addView(plain("Espaço", () -> input.append(" ")));
+    form.addView(plain(t("Espaço"), () -> input.append(" ")));
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Teclado")
+            .setTitle(t("Teclado"))
             .setView(scroll(form))
             .setPositiveButton(
-                "Adicionar à mensagem",
+                t("Adicionar à mensagem"),
                 (d, w) -> {
                   try {
                     model.append(input.getText().toString(), "");
@@ -1570,27 +1754,28 @@ public class MainActivity extends Activity {
                     error(e);
                   }
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void tools() {
     String[] opts = {
-      "Desfazer mensagem",
-      "Refazer mensagem",
-      "Pesquisar palavra",
-      "Salvar mensagem em botão",
-      "Notas e frases pessoais",
-      "Rotinas visuais",
-      "Temporizador",
-      "Quadro branco",
-      "Compartilhar mensagem",
-      "Pausar / retomar acesso",
-      "Desfazer última edição",
-      "Páginas"
+      t("Desfazer mensagem"),
+      t("Refazer mensagem"),
+      t("Pesquisar palavra"),
+      t("Salvar mensagem em botão"),
+      t("Notas e frases pessoais"),
+      t("Rotinas visuais"),
+      t("Temporizador"),
+      t("Quadro branco"),
+      t("Compartilhar mensagem"),
+      t("Pausar / retomar acesso"),
+      t("Desfazer última edição"),
+      t("Páginas"),
+      t("Mudar forma da última palavra")
     };
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Ferramentas")
+            .setTitle(t("Ferramentas"))
             .setItems(
                 opts,
                 (d, i) -> {
@@ -1607,7 +1792,7 @@ public class MainActivity extends Activity {
                       findWord();
                       break;
                     case 3:
-                      if (model.text().isEmpty()) toast("Monte uma mensagem primeiro.");
+                      if (model.text().isEmpty()) toast(t("Monte uma mensagem primeiro."));
                       else {
                         JSONObject b = model.newButton();
                         Model.put(b, "label", model.text());
@@ -1632,37 +1817,41 @@ public class MainActivity extends Activity {
                       Intent share = new Intent(Intent.ACTION_SEND);
                       share.setType("text/plain");
                       share.putExtra(Intent.EXTRA_TEXT, model.text());
-                      startActivity(Intent.createChooser(share, "Compartilhar mensagem"));
+                      startActivity(Intent.createChooser(share, t("Compartilhar mensagem")));
                       break;
                     case 9:
                       paused = !paused;
                       status.setText(
-                          paused ? "Acesso pausado — Mais ou acionador para retomar" : "Acesso retomado");
+                          paused ? t("Acesso pausado — Mais ou acionador para retomar") : t("Acesso retomado"));
                       startScan();
                       break;
                     case 10:
                       if (model.undoEdit()) {
                         save();
                         build();
-                      } else toast("Nenhuma edição para desfazer nesta sessão.");
+                      } else toast(t("Nenhuma edição para desfazer nesta sessão."));
                       break;
                     case 11:
                       pagesMenu();
                       break;
+                    case 12:
+                      if (model.message().length() == 0) toast(t("Monte uma mensagem primeiro."));
+                      else wordForms(model.message().length() - 1);
+                      break;
                   }
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void findWord() {
-    EditText q = field("Palavra", "", 1);
+    EditText q = field(t("Palavra"), "", 1);
     AlertDialog prompt =
         show(
             new AlertDialog.Builder(this)
-                .setTitle("Pesquisar em todas as páginas")
+                .setTitle(t("Pesquisar em todas as páginas"))
                 .setView(q)
                 .setPositiveButton(
-                    "Pesquisar",
+                    t("Pesquisar"),
                     (d, w) -> {
                       String needle = fold(q.getText().toString());
                       ArrayList<String> labels = new ArrayList<>(), dest = new ArrayList<>();
@@ -1677,24 +1866,24 @@ public class MainActivity extends Activity {
                                 b.optString("label")
                                     + " — "
                                     + p.optString("title")
-                                    + (b.optBoolean("hidden") ? " (oculto)" : ""));
+                                    + (b.optBoolean("hidden") ? t(" (oculto)") : ""));
                             dest.add(p.optString("id"));
                           }
                         }
                       }
-                      if (labels.isEmpty()) toast("Palavra não encontrada.");
+                      if (labels.isEmpty()) toast(t("Palavra não encontrada."));
                       else
                         show(
                             new AlertDialog.Builder(this)
-                                .setTitle("Onde está a palavra")
+                                .setTitle(t("Onde está a palavra"))
                                 .setItems(
                                     labels.toArray(new String[0]),
                                     (x, i) -> {
                                       navigate(dest.get(i));
                                     })
-                                .setNegativeButton("Fechar", null));
+                                .setNegativeButton(t("Fechar"), null));
                     })
-                .setNegativeButton("Cancelar", null));
+                .setNegativeButton(t("Cancelar"), null));
   }
 
   void pagesMenu() {
@@ -1712,18 +1901,18 @@ public class MainActivity extends Activity {
     for (int i = 0; i < names.length; i++) names[i] = pages.optJSONObject(i).optString("title");
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Suas páginas")
+            .setTitle(t("Suas páginas"))
             .setItems(names, (d, i) -> navigate(pages.optJSONObject(i).optString("id")))
             .setPositiveButton(
-                "+ Nova página",
+                t("+ Nova página"),
                 (d, w) -> {
-                  EditText input = field("Nome da página", "", 1);
+                  EditText input = field(t("Nome da página"), "", 1);
                   show(
                       new AlertDialog.Builder(this)
-                          .setTitle("Nova página")
+                          .setTitle(t("Nova página"))
                           .setView(input)
                           .setPositiveButton(
-                              "Criar",
+                              t("Criar"),
                               (x, y) -> {
                                 String name = input.getText().toString().trim();
                                 if (name.isEmpty()) return;
@@ -1742,18 +1931,18 @@ public class MainActivity extends Activity {
                                 save();
                                 build();
                               })
-                          .setNegativeButton("Cancelar", null));
+                          .setNegativeButton(t("Cancelar"), null));
                 })
             .setNeutralButton(
-                "Renomear atual",
+                t("Renomear atual"),
                 (d, w) -> {
-                  EditText input = field("Nome", model.page(current).optString("title"), 1);
+                  EditText input = field(t("Nome"), model.page(current).optString("title"), 1);
                   show(
                       new AlertDialog.Builder(this)
-                          .setTitle("Renomear página")
+                          .setTitle(t("Renomear página"))
                           .setView(input)
                           .setPositiveButton(
-                              "Salvar",
+                              t("Salvar"),
                               (x, y) -> {
                                 if (!input.getText().toString().trim().isEmpty()) {
                                   model.beforeEdit();
@@ -1765,9 +1954,9 @@ public class MainActivity extends Activity {
                                   renderPage();
                                 }
                               })
-                          .setNegativeButton("Cancelar", null));
+                          .setNegativeButton(t("Cancelar"), null));
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void profiles() {
@@ -1776,7 +1965,7 @@ public class MainActivity extends Activity {
     for (int i = 0; i < a.length(); i++) names[i] = a.optJSONObject(i).optString("name");
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Quem vai se comunicar?")
+            .setTitle(t("Quem vai se comunicar?"))
             .setItems(
                 names,
                 (d, i) -> {
@@ -1788,23 +1977,34 @@ public class MainActivity extends Activity {
                   build();
                 })
             .setPositiveButton(
-                "Novo perfil",
+                t("Novo perfil"),
                 (d, w) -> {
                   if (a.length() >= 16) {
-                    toast("Limite de 16 perfis.");
+                    toast(t("Limite de 16 perfis."));
                     return;
                   }
-                  EditText input = field("Nome do perfil", "", 1);
+                  LinearLayout form = column();
+                  EditText input = field(t("Nome do perfil"), "", 1);
+                  form.addView(input);
+                  label(form, t("Prancha inicial e voz"));
+                  String[] boards = {"pt", "en", "es"};
+                  Spinner board =
+                      spinner(
+                          new String[] {"Português (Brasil)", "English", "Español"},
+                          Math.max(0, Arrays.asList(boards).indexOf(I18n.language())));
+                  form.addView(board);
                   show(
                       new AlertDialog.Builder(this)
-                          .setTitle("Novo perfil")
-                          .setView(input)
+                          .setTitle(t("Novo perfil"))
+                          .setView(scroll(form))
                           .setPositiveButton(
-                              "Criar",
+                              t("Criar"),
                               (x, y) -> {
                                 if (input.getText().toString().trim().isEmpty()) return;
                                 try {
-                                  JSONObject template = new Model(repo.defaults()).profile();
+                                  JSONObject template =
+                                      new Model(repo.defaults(boards[board.getSelectedItemPosition()]))
+                                          .profile();
                                   model.newProfile(input.getText().toString(), template);
                                   current = model.profile().optString("home");
                                   back.clear();
@@ -1814,18 +2014,18 @@ public class MainActivity extends Activity {
                                   error(e);
                                 }
                               })
-                          .setNegativeButton("Cancelar", null));
+                          .setNegativeButton(t("Cancelar"), null));
                 })
             .setNeutralButton(
-                "Renomear",
+                t("Renomear"),
                 (d, w) -> {
-                  EditText input = field("Nome", model.profile().optString("name"), 1);
+                  EditText input = field(t("Nome"), model.profile().optString("name"), 1);
                   show(
                       new AlertDialog.Builder(this)
-                          .setTitle("Nome do perfil")
+                          .setTitle(t("Nome do perfil"))
                           .setView(input)
                           .setPositiveButton(
-                              "Salvar",
+                              t("Salvar"),
                               (x, y) -> {
                                 if (!input.getText().toString().trim().isEmpty()) {
                                   Model.put(
@@ -1833,9 +2033,9 @@ public class MainActivity extends Activity {
                                   save();
                                 }
                               })
-                          .setNegativeButton("Cancelar", null));
+                          .setNegativeButton(t("Cancelar"), null));
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void settings() {
@@ -1849,34 +2049,35 @@ public class MainActivity extends Activity {
   void unlock(Runnable task) {
     EditText code =
         field(
-            "Código de edição",
+            t("Código de edição"),
             "",
             android.text.InputType.TYPE_CLASS_NUMBER
                 | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Código de edição")
+            .setTitle(t("Código de edição"))
             .setView(code)
             .setPositiveButton(
-                "Continuar",
+                t("Continuar"),
                 (d, w) -> {
                   if (model.settings().optString("pin").equals(code.getText().toString()))
                     task.run();
-                  else toast("Código incorreto.");
+                  else toast(t("Código incorreto."));
                 })
-            .setNegativeButton("Cancelar", null));
+            .setNegativeButton(t("Cancelar"), null));
   }
 
   void settingsUnlocked() {
     String[] items = {
-      "Acesso: toque, permanência e varredura",
-      "Voz e velocidade",
-      "Tamanho da grade e letras",
-      "Exportar backup completo",
-      "Restaurar backup",
-      "Importar prancha TD Snap (experimental)",
-      "Código para proteger a edição",
-      "Sobre o Voz Livre"
+      t("Acesso: toque, permanência e varredura"),
+      t("Voz e velocidade"),
+      t("Tamanho da grade e letras"),
+      t("Exportar backup completo"),
+      t("Restaurar backup"),
+      t("Importar prancha TD Snap (experimental)"),
+      t("Código para proteger a edição"),
+      t("Sobre o Voz Livre"),
+      t("Idioma do aplicativo")
     };
     show(
         new AlertDialog.Builder(this)
@@ -1912,13 +2113,11 @@ public class MainActivity extends Activity {
                     case 5:
                       show(
                           new AlertDialog.Builder(this)
-                              .setTitle("Importação experimental")
+                              .setTitle(t("Importação experimental"))
                               .setMessage(
-                                  "Importa páginas, textos e links básicos de arquivos SPS/SPB."
-                                      + " Símbolos de bibliotecas privadas e ações especiais podem"
-                                      + " não ser transferidos. O original é preservado.")
-                              .setPositiveButton("Escolher cópia", (x, y) -> chooseImport(true))
-                              .setNegativeButton("Cancelar", null));
+                                  t("Importa páginas, textos, links, cores, a ordem dos botões e as fotos da prancha de arquivos SPS/SPB. Símbolos de bibliotecas comerciais e ações especiais não são transferidos. O original é preservado."))
+                              .setPositiveButton(t("Escolher cópia"), (x, y) -> chooseImport(true))
+                              .setNegativeButton(t("Cancelar"), null));
                       break;
                     case 6:
                       pinSettings();
@@ -1926,9 +2125,12 @@ public class MainActivity extends Activity {
                     case 7:
                       about();
                       break;
+                    case 8:
+                      languageSettings();
+                      break;
                   }
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void accessSettings() {
@@ -1937,45 +2139,43 @@ public class MainActivity extends Activity {
     String[]
         methods =
             {
-              "Toque direto",
-              "Manter pressionado",
-              "Selecionar ao soltar",
-              "Toque com pista auditiva",
-              "Permanência do ponteiro",
-              "Varredura"
+              t("Toque direto"),
+              t("Manter pressionado"),
+              t("Selecionar ao soltar"),
+              t("Toque com pista auditiva"),
+              t("Permanência do ponteiro"),
+              t("Varredura")
             },
         codes = {"touch", "hold", "release", "auditory", "mouse", "scan"};
-    label(form, "Como selecionar");
+    label(form, t("Como selecionar"));
     Spinner method = spinner(methods, Arrays.asList(codes).indexOf(s.optString("method")));
     form.addView(method);
-    label(form, "Tempo de permanência / pressão (milissegundos)");
-    EditText hold = field("200 a 5000", s.optInt("holdMs", 650) + "", 2);
+    label(form, t("Tempo de permanência / pressão (milissegundos)"));
+    EditText hold = field(t("200 a 5000"), s.optInt("holdMs", 650) + "", 2);
     form.addView(hold);
-    label(form, "Varredura");
+    label(form, t("Varredura"));
     Spinner scan =
         spinner(
             new String[] {
-              "Automática: Enter ou Espaço confirma",
-              "Dois acionadores: Espaço avança, Enter confirma"
+              t("Automática: Enter ou Espaço confirma"),
+              t("Dois acionadores: Espaço avança, Enter confirma")
             },
             s.optString("scanType").equals("step") ? 1 : 0);
     form.addView(scan);
-    label(form, "Velocidade de varredura (milissegundos)");
-    EditText speed = field("400 a 8000", s.optInt("scanMs", 1200) + "", 2);
+    label(form, t("Velocidade de varredura (milissegundos)"));
+    EditText speed = field(t("400 a 8000"), s.optInt("scanMs", 1200) + "", 2);
     form.addView(speed);
     TextView note =
         text(
-            "A varredura interna percorre a tela principal. Os diálogos usam os controles do"
-                + " Android e podem ser operados com Switch Access. Olhar exige um dispositivo que"
-                + " forneça ponteiro; não há calibração ocular por câmera nesta versão.",
+            t("A varredura percorre a tela principal e também as janelas: ajustes, edição, teclado, rotinas e listas. Em janelas com muitas opções, escolha primeiro o grupo e depois o item. Olhar exige um dispositivo que forneça ponteiro; não há calibração ocular por câmera nesta versão."),
             14);
     form.addView(note);
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Acesso")
+            .setTitle(t("Acesso"))
             .setView(scroll(form))
             .setPositiveButton(
-                "Salvar",
+                t("Salvar"),
                 (d, w) -> {
                   try {
                     Model.put(
@@ -1990,30 +2190,30 @@ public class MainActivity extends Activity {
                     save();
                     build();
                   } catch (NumberFormatException e) {
-                    toast("Digite os tempos em números.");
+                    toast(t("Digite os tempos em números."));
                   }
                 })
-            .setNegativeButton("Cancelar", null));
+            .setNegativeButton(t("Cancelar"), null));
   }
 
   void voiceSettings() {
     if (!voiceReady) {
       show(
           new AlertDialog.Builder(this)
-              .setTitle("Voz não disponível")
+              .setTitle(t("Voz não disponível"))
               .setMessage(
-                  "Configure uma voz em português no Android. Depois, feche e reabra o Voz Livre.")
+                  t("Configure no Android uma voz no idioma deste perfil. Depois, feche e reabra o Voz Livre."))
               .setPositiveButton(
-                  "Configurar no Android",
+                  t("Configurar no Android"),
                   (d, w) -> startActivity(new Intent("com.android.settings.TTS_SETTINGS")))
-              .setNegativeButton("Fechar", null));
+              .setNegativeButton(t("Fechar"), null));
       return;
     }
     JSONObject s = model.settings();
     ArrayList<Voice> voices = new ArrayList<>();
     Set<Voice> all = tts.getVoices();
     if (all != null)
-      for (Voice v : all) if (v.getLocale().getLanguage().equals("pt")) voices.add(v);
+      for (Voice v : all) if (v.getLocale().getLanguage().equals(voiceLocale().getLanguage())) voices.add(v);
     voices.sort(
         Comparator.comparing(Voice::isNetworkConnectionRequired).thenComparing(Voice::getName));
     LinearLayout form = column();
@@ -2022,28 +2222,28 @@ public class MainActivity extends Activity {
     for (int i = 0; i < voices.size(); i++) {
       Voice v = voices.get(i);
       names[i] =
-          v.getName() + (v.isNetworkConnectionRequired() ? " · precisa de internet" : " · local");
+          v.getName() + (v.isNetworkConnectionRequired() ? t(" · precisa de internet") : t(" · local"));
       if (v.getName().equals(s.optString("voice"))) selected = i;
     }
-    if (voices.isEmpty()) names[0] = "Voz padrão do sistema";
-    label(form, "Voz disponível no aparelho");
+    if (voices.isEmpty()) names[0] = t("Voz padrão do sistema");
+    label(form, t("Voz disponível no aparelho"));
     Spinner voice = spinner(names, selected);
     form.addView(voice);
-    label(form, "Velocidade (0,3 a 2)");
-    EditText rate = field("Velocidade", s.optDouble("rate", 1) + "", 8194);
+    label(form, t("Velocidade (0,3 a 2)"));
+    EditText rate = field(t("Velocidade"), s.optDouble("rate", 1) + "", 8194);
     form.addView(rate);
-    label(form, "Altura (0,5 a 2)");
-    EditText pitch = field("Altura", s.optDouble("pitch", 1) + "", 8194);
+    label(form, t("Altura (0,5 a 2)"));
+    EditText pitch = field(t("Altura"), s.optDouble("pitch", 1) + "", 8194);
     form.addView(pitch);
     CheckBox words = new CheckBox(this);
-    words.setText("Falar cada palavra ao adicionar");
+    words.setText(t("Falar cada palavra ao adicionar"));
     words.setChecked(s.optBoolean("speakWords"));
     form.addView(words);
     form.addView(
-        plain("Ouvir exemplo", () -> speak("Esta é a minha voz. Eu tenho algo a dizer.", false)));
+        plain(t("Ouvir exemplo"), () -> speak(t("Esta é a minha voz. Eu tenho algo a dizer."), false)));
     form.addView(
         plain(
-            "Configurar vozes no Android",
+            t("Configurar vozes no Android"),
             () -> {
               try {
                 startActivity(new Intent("com.android.settings.TTS_SETTINGS"));
@@ -2053,10 +2253,10 @@ public class MainActivity extends Activity {
             }));
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Sua voz")
+            .setTitle(t("Sua voz"))
             .setView(scroll(form))
             .setPositiveButton(
-                "Salvar",
+                t("Salvar"),
                 (d, w) -> {
                   try {
                     if (!voices.isEmpty())
@@ -2081,71 +2281,75 @@ public class MainActivity extends Activity {
                     save();
                     configureVoice();
                   } catch (Exception e) {
-                    toast("Digite valores numéricos para a voz.");
+                    toast(t("Digite valores numéricos para a voz."));
                   }
                 })
-            .setNegativeButton("Cancelar", null));
+            .setNegativeButton(t("Cancelar"), null));
   }
 
   void displaySettings() {
     JSONObject s = model.settings();
     LinearLayout form = column();
-    label(form, "Colunas (mudar pode alterar as posições)");
+    label(form, t("Colunas (mudar pode alterar as posições)"));
     Spinner cols =
         spinner(
-            new String[] {"2 colunas", "3 colunas", "4 colunas", "5 colunas", "6 colunas"},
+            new String[] {t("2 colunas"), t("3 colunas"), t("4 colunas"), t("5 colunas"), t("6 colunas")},
             clamp(s.optInt("columns", 3), 2, 6) - 2);
     form.addView(cols);
-    label(form, "Tamanho das letras");
+    label(form, t("Tamanho das letras"));
     Spinner font =
         spinner(
             new String[] {"17", "19", "22", "26", "30"},
             Math.max(0, Arrays.asList(17, 19, 22, 26, 30).indexOf(s.optInt("font", 19))));
     form.addView(font);
     CheckBox contrast = new CheckBox(this);
-    contrast.setText("Alto contraste");
+    contrast.setText(t("Alto contraste"));
     contrast.setChecked(s.optBoolean("contrast"));
     form.addView(contrast);
     CheckBox predict = new CheckBox(this);
-    predict.setText("Sugerir próximas palavras");
+    predict.setText(t("Sugerir próximas palavras"));
     predict.setChecked(predict());
     form.addView(predict);
+    CheckBox grammar = new CheckBox(this);
+    grammar.setText(t("Conjugar verbos pelo sujeito (eu + brincar → eu brinco)"));
+    grammar.setChecked(s.optBoolean("grammarAuto"));
+    form.addView(grammar);
     form.addView(
         plain(
-            "Esquecer palavras aprendidas",
+            t("Esquecer palavras aprendidas"),
             () ->
                 show(
                     new AlertDialog.Builder(this)
-                        .setTitle("Esquecer palavras aprendidas?")
+                        .setTitle(t("Esquecer palavras aprendidas?"))
                         .setMessage(
-                            "As sugestões deste perfil voltam ao início. Pranchas e mensagens não"
-                                + " são alteradas.")
+                            t("As sugestões deste perfil voltam ao início. Pranchas e mensagens não são alteradas."))
                         .setPositiveButton(
-                            "Esquecer",
+                            t("Esquecer"),
                             (x, y) -> {
                               Predictor.forget(model.profile());
                               save();
                               renderSuggestions();
                             })
-                        .setNegativeButton("Cancelar", null))));
-    label(form, "Imagens dos botões iniciais");
+                        .setNegativeButton(t("Cancelar"), null))));
+    label(form, t("Imagens dos botões iniciais"));
     boolean mulberry = "mulberry".equals(Model.symbolSet(model.root));
     Spinner set =
         spinner(
-            new String[] {"ARASAAC (pictogramas originais)", "Mulberry e desenhos próprios"},
+            new String[] {t("ARASAAC (pictogramas originais)"), t("Mulberry e desenhos próprios")},
             mulberry ? 1 : 0);
     form.addView(set);
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Grade e aparência")
+            .setTitle(t("Grade e aparência"))
             .setView(scroll(form))
             .setPositiveButton(
-                "Salvar",
+                t("Salvar"),
                 (d, w) -> {
                   Model.put(s, "columns", cols.getSelectedItemPosition() + 2);
                   Model.put(s, "font", Integer.parseInt(font.getSelectedItem().toString()));
                   Model.put(s, "contrast", contrast.isChecked());
                   Model.put(s, "predict", predict.isChecked());
+                  Model.put(s, "grammarAuto", grammar.isChecked());
                   if ((set.getSelectedItemPosition() == 1) != mulberry)
                     try {
                       model.beforeEdit();
@@ -2153,37 +2357,36 @@ public class MainActivity extends Activity {
                           Model.switchSymbols(
                               model.root, repo.legacy(), set.getSelectedItemPosition() == 0);
                       bitmapCache.clear();
-                      toast(n + " imagens trocadas. Fotos e símbolos escolhidos por você foram mantidos.");
+                      toast(n + t(" imagens trocadas. Fotos e símbolos escolhidos por você foram mantidos."));
                     } catch (Exception e) {
                       error(e);
                     }
                   save();
                   build();
                 })
-            .setNegativeButton("Cancelar", null));
+            .setNegativeButton(t("Cancelar"), null));
   }
 
   void pinSettings() {
     EditText input =
         field(
-            "Código numérico (vazio remove)",
+            t("Código numérico (vazio remove)"),
             model.settings().optString("pin"),
             android.text.InputType.TYPE_CLASS_NUMBER
                 | android.text.InputType.TYPE_NUMBER_VARIATION_PASSWORD);
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Proteção da edição")
+            .setTitle(t("Proteção da edição"))
             .setMessage(
-                "Este código evita edições por acidente. Ele não criptografa seus dados. Guarde seu"
-                    + " backup para recuperação.")
+                t("Este código evita edições por acidente. Ele não criptografa seus dados. Guarde seu backup para recuperação."))
             .setView(input)
             .setPositiveButton(
-                "Salvar",
+                t("Salvar"),
                 (d, w) -> {
                   Model.put(model.settings(), "pin", input.getText().toString());
                   save();
                 })
-            .setNegativeButton("Cancelar", null));
+            .setNegativeButton(t("Cancelar"), null));
   }
 
   boolean snapImport = false;
@@ -2202,38 +2405,38 @@ public class MainActivity extends Activity {
     for (int i = 0; i < titles.length; i++) titles[i] = notes.optJSONObject(i).optString("title");
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Notas pessoais")
+            .setTitle(t("Notas pessoais"))
             .setItems(titles, (d, i) -> noteEdit(notes.optJSONObject(i), false))
             .setPositiveButton(
-                "Nova nota",
+                t("Nova nota"),
                 (d, w) -> {
                   JSONObject n = new JSONObject();
-                  Model.put(n, "title", "Nova nota");
+                  Model.put(n, "title", t("Nova nota"));
                   Model.put(n, "text", model.text());
                   noteEdit(n, true);
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void noteEdit(JSONObject n, boolean fresh) {
     LinearLayout form = column();
-    EditText title = field("Título", n.optString("title"), 1),
+    EditText title = field(t("Título"), n.optString("title"), 1),
         content =
             field(
-                "Texto",
+                t("Texto"),
                 n.optString("text"),
                 android.text.InputType.TYPE_CLASS_TEXT
                     | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
     content.setMinLines(5);
     form.addView(title);
     form.addView(content);
-    form.addView(plain("Falar nota", () -> speak(content.getText().toString(), false)));
+    form.addView(plain(t("Falar nota"), () -> speak(content.getText().toString(), false)));
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Nota")
+            .setTitle(t("Nota"))
             .setView(scroll(form))
             .setPositiveButton(
-                "Salvar",
+                t("Salvar"),
                 (d, w) -> {
                   Model.put(n, "title", title.getText().toString());
                   Model.put(n, "text", content.getText().toString());
@@ -2241,7 +2444,7 @@ public class MainActivity extends Activity {
                   save();
                 })
             .setNeutralButton(
-                "Adicionar à mensagem",
+                t("Adicionar à mensagem"),
                 (d, w) -> {
                   try {
                     model.append(content.getText().toString(), "");
@@ -2250,7 +2453,7 @@ public class MainActivity extends Activity {
                     error(e);
                   }
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void routines() {
@@ -2259,33 +2462,38 @@ public class MainActivity extends Activity {
     for (int i = 0; i < names.length; i++) names[i] = routines.optJSONObject(i).optString("title");
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Rotinas visuais")
+            .setTitle(t("Rotinas visuais"))
             .setItems(names, (d, i) -> routine(routines.optJSONObject(i)))
             .setPositiveButton(
-                "Criar rotina",
+                t("Criar rotina"),
                 (d, w) -> {
                   LinearLayout form = column();
-                  EditText title = field("Nome", "Minha rotina", 1),
+                  EditText title = field(t("Nome"), t("Minha rotina"), 1),
                       steps =
                           field(
-                              "Uma etapa por linha",
-                              "Primeiro\nDepois",
+                              t("Uma etapa por linha"),
+                              t("Primeiro\nDepois"),
                               android.text.InputType.TYPE_CLASS_TEXT
                                   | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
                   form.addView(title);
                   form.addView(steps);
                   show(
                       new AlertDialog.Builder(this)
-                          .setTitle("Nova rotina")
+                          .setTitle(t("Nova rotina"))
                           .setView(scroll(form))
                           .setPositiveButton(
-                              "Criar",
+                              t("Criar"),
                               (x, y) -> {
                                 JSONObject r = new JSONObject();
                                 Model.put(r, "title", title.getText().toString());
                                 JSONArray a = new JSONArray();
                                 for (String t : steps.getText().toString().split("\n"))
-                                  if (!t.trim().isEmpty()) a.put(t.trim());
+                                  if (!t.trim().isEmpty()) {
+                                    JSONObject step = new JSONObject();
+                                    Model.put(step, "text", t.trim());
+                                    Model.put(step, "symbol", findSymbol(t));
+                                    a.put(step);
+                                  }
                                 if (a.length() == 0) return;
                                 Model.put(r, "steps", a);
                                 Model.put(r, "done", 0);
@@ -2293,9 +2501,23 @@ public class MainActivity extends Activity {
                                 save();
                                 routine(r);
                               })
-                          .setNegativeButton("Cancelar", null));
+                          .setNegativeButton(t("Cancelar"), null));
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
+  }
+
+  /** A routine step as {text, symbol}; steps saved before 0.3.0 are plain text. */
+  static JSONObject step(JSONArray steps, int i) {
+    JSONObject o = steps.optJSONObject(i);
+    if (o != null) return o;
+    o = new JSONObject();
+    Model.put(o, "text", steps.optString(i));
+    Model.put(o, "symbol", "");
+    try {
+      steps.put(i, o);
+    } catch (JSONException ignored) {
+    }
+    return o;
   }
 
   void routine(JSONObject r) {
@@ -2303,44 +2525,68 @@ public class MainActivity extends Activity {
     if (steps == null) return;
     LinearLayout form = column();
     int done = r.optInt("done");
+    AlertDialog[] self = new AlertDialog[1];
     for (int i = 0; i < steps.length(); i++) {
-      String text = (i < done ? "✓ " : i == done ? "→ " : "○ ") + steps.optString(i);
-      TextView t = text(text, 23);
-      t.setPadding(dp(8), dp(16), 0, dp(16));
-      form.addView(t);
+      JSONObject step = step(steps, i);
+      LinearLayout line = row();
+      line.setPadding(dp(4), dp(8), dp(4), dp(8));
+      line.setAlpha(i < done ? .45f : 1f);
+      TextView mark = text(i < done ? "✓" : i == done ? "→" : "○", 23);
+      line.addView(mark, new LinearLayout.LayoutParams(dp(34), -2));
+      ImageView img = image(step.optString("symbol"), 56);
+      if (img != null) line.addView(img);
+      TextView t = text(step.optString("text"), 23);
+      t.setPadding(dp(10), 0, 0, 0);
+      line.addView(t, new LinearLayout.LayoutParams(0, -2, 1));
+      line.setContentDescription(step.optString("text") + t(", trocar imagem"));
+      line.setClickable(true);
+      line.setOnClickListener(
+          v ->
+              symbols(
+                  step,
+                  () -> {
+                    save();
+                    if (self[0] != null) self[0].dismiss();
+                    routine(r);
+                  }));
+      form.addView(line);
     }
-    show(
+    TextView hint = text(t("Toque em uma etapa para trocar a imagem."), 13);
+    hint.setPadding(dp(4), dp(8), 0, 0);
+    form.addView(hint);
+    self[0] =
+        show(
         new AlertDialog.Builder(this)
             .setTitle(r.optString("title"))
             .setView(scroll(form))
             .setPositiveButton(
-                done >= steps.length() ? "Concluído" : "Próxima etapa",
+                done >= steps.length() ? t("Concluído") : t("Próxima etapa"),
                 (d, w) -> {
                   if (done < steps.length()) {
-                    speak(steps.optString(done), false);
+                    speak(step(steps, done).optString("text"), false);
                     Model.put(r, "done", done + 1);
                     save();
                     routine(r);
                   }
                 })
             .setNeutralButton(
-                "Recomeçar",
+                t("Recomeçar"),
                 (d, w) -> {
                   Model.put(r, "done", 0);
                   save();
                   routine(r);
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   void timer() {
-    EditText minutes = field("Minutos", "2", 2);
+    EditText minutes = field(t("Minutos"), "2", 2);
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Temporizador visual")
+            .setTitle(t("Temporizador visual"))
             .setView(minutes)
             .setPositiveButton(
-                "Começar",
+                t("Começar"),
                 (d, w) -> {
                   try {
                     long duration =
@@ -2356,9 +2602,9 @@ public class MainActivity extends Activity {
                     AlertDialog dialog =
                         show(
                             new AlertDialog.Builder(this)
-                                .setTitle("Tempo da atividade")
+                                .setTitle(t("Tempo da atividade"))
                                 .setView(scroll(form))
-                                .setNegativeButton("Encerrar", null));
+                                .setNegativeButton(t("Encerrar"), null));
                     CountDownTimer timer =
                         new CountDownTimer(duration, 250) {
                           public void onTick(long ms) {
@@ -2369,9 +2615,9 @@ public class MainActivity extends Activity {
                           }
 
                           public void onFinish() {
-                            time.setText("Terminou");
+                            time.setText(t("Terminou"));
                             progress.setProgress(0);
-                            speak("O tempo terminou", false);
+                            speak(t("O tempo terminou"), false);
                           }
                         };
                     dialog.setOnDismissListener(
@@ -2381,23 +2627,23 @@ public class MainActivity extends Activity {
                         });
                     timer.start();
                   } catch (Exception e) {
-                    toast("Digite o tempo em minutos.");
+                    toast(t("Digite o tempo em minutos."));
                   }
                 })
-            .setNegativeButton("Cancelar", null));
+            .setNegativeButton(t("Cancelar"), null));
   }
 
   void whiteboard() {
     LinearLayout form = column();
     Drawing drawing = new Drawing(this);
     form.addView(drawing, new LinearLayout.LayoutParams(-1, dp(360)));
-    form.addView(plain("Limpar desenho", () -> drawing.clear()));
+    form.addView(plain(t("Limpar desenho"), () -> drawing.clear()));
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Quadro branco")
+            .setTitle(t("Quadro branco"))
             .setView(scroll(form))
             .setPositiveButton(
-                "Salvar como botão",
+                t("Salvar como botão"),
                 (d, w) -> {
                   try {
                     String file = "user/" + Model.id() + ".png";
@@ -2412,15 +2658,15 @@ public class MainActivity extends Activity {
                       b.compress(Bitmap.CompressFormat.PNG, 100, out);
                     }
                     JSONObject button = model.newButton();
-                    Model.put(button, "label", "Meu desenho");
-                    Model.put(button, "message", "Meu desenho");
+                    Model.put(button, "label", t("Meu desenho"));
+                    Model.put(button, "message", t("Meu desenho"));
                     Model.put(button, "symbol", file);
                     editButton(button, true);
                   } catch (Exception e) {
                     error(e);
                   }
                 })
-            .setNegativeButton("Fechar", null));
+            .setNegativeButton(t("Fechar"), null));
   }
 
   static class Drawing extends View {
@@ -2434,7 +2680,7 @@ public class MainActivity extends Activity {
       pen.setStrokeWidth(7);
       pen.setStrokeCap(Paint.Cap.ROUND);
       setBackgroundColor(Color.WHITE);
-      setContentDescription("Área para desenho por toque");
+      setContentDescription(t("Área para desenho por toque"));
     }
 
     void clear() {
@@ -2470,24 +2716,10 @@ public class MainActivity extends Activity {
   void about() {
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Voz Livre " + BuildInfo.VERSION)
+            .setTitle(t("Voz Livre ") + BuildInfo.VERSION)
             .setMessage(
-                "Seu comunicador pessoal. Gratuito e de código aberto, sem anúncios. Funciona sem"
-                    + " conta e sem conexão para as pranchas e os recursos locais. A voz depende do"
-                    + " motor instalado no Android.\n\n"
-                    + "Aplicativo independente, sem vínculo com Tobii Dynavox. Não inclui PCS,"
-                    + " PODD, Gateway ou vozes comerciais.\n\n"
-                    + "Pictogramas: Sergio Palao. Origem: ARASAAC (arasaac.org). Licença: CC"
-                    + " BY-NC-SA 4.0. Propriedade: Governo de Aragão (Espanha). Uso não comercial.\n\n"
-                    + "Mulberry Symbols by Steve Lee (CC BY-SA 4.0), convertidos para PNG. "
-                    + "github.com/mulberrysymbols/mulberry-symbols. Licença: "
-                    + "creativecommons.org/licenses/by-sa/4.0/. Desenhos próprios e código: MIT.\n\n"
-                    + "Versão alfa: símbolos e vocabulário precisam de revisão individual. "
-                    + "Sem validação clínica. Os recursos de acesso precisam de testes em cada aparelho.\n\n"
-                    + "Esta primeira versão não inclui calibração ocular, sincronização em nuvem,"
-                    + " automação residencial nem atividades Boardmaker. Faça um backup das suas"
-                    + " personalizações em Ajustes.")
-            .setPositiveButton("Fechar", null));
+                t("Seu comunicador pessoal. Gratuito e de código aberto, sem anúncios. Funciona sem conta e sem conexão para as pranchas e os recursos locais. A voz depende do motor instalado no Android.\n\nAplicativo independente, sem vínculo com Tobii Dynavox. Não inclui PCS, PODD, Gateway ou vozes comerciais.\n\nPictogramas: Sergio Palao. Origem: ARASAAC (arasaac.org). Licença: CC BY-NC-SA 4.0. Propriedade: Governo de Aragão (Espanha). Uso não comercial.\n\nMulberry Symbols by Steve Lee (CC BY-SA 4.0), convertidos para PNG. github.com/mulberrysymbols/mulberry-symbols. Licença: creativecommons.org/licenses/by-sa/4.0/. Desenhos próprios e código: MIT.\n\nVersão alfa: símbolos e vocabulário precisam de revisão individual. Sem validação clínica. Os recursos de acesso precisam de testes em cada aparelho.\n\nEsta versão não inclui calibração ocular, sincronização em nuvem, automação residencial nem atividades Boardmaker. Faça um backup das suas personalizações em Ajustes."))
+            .setPositiveButton(t("Fechar"), null));
   }
 
   @Override
@@ -2513,7 +2745,7 @@ public class MainActivity extends Activity {
               try (InputStream in = getContentResolver().openInputStream(uri)) {
                 image = BitmapFactory.decodeStream(in, null, options);
               }
-              if (image == null) throw new IOException("Não foi possível abrir a imagem.");
+              if (image == null) throw new IOException(t("Não foi possível abrir a imagem."));
               String name = "user/" + Model.id() + ".jpg";
               try (FileOutputStream out = new FileOutputStream(new File(getFilesDir(), name))) {
                 image.compress(Bitmap.CompressFormat.JPEG, 85, out);
@@ -2522,7 +2754,7 @@ public class MainActivity extends Activity {
                   () -> {
                     if (draft != null) {
                       Model.put(draft, "symbol", name);
-                      if (photoLabel != null) photoLabel.setText("Foto selecionada");
+                      if (photoLabel != null) photoLabel.setText(t("Foto selecionada"));
                     }
                   });
             } catch (Exception e) {
@@ -2539,7 +2771,7 @@ public class MainActivity extends Activity {
                 try (OutputStream out = getContentResolver().openOutputStream(uri, "wt")) {
                   out.write(bytes);
                 }
-                runOnUiThread(() -> toast("Backup exportado com suas fotos e personalizações."));
+                runOnUiThread(() -> toast(t("Backup exportado com suas fotos e personalizações.")));
               } catch (Exception e) {
                 error(e);
               }
@@ -2559,15 +2791,15 @@ public class MainActivity extends Activity {
                     () ->
                         show(
                             new AlertDialog.Builder(this)
-                                .setTitle("Prancha lida")
+                                .setTitle(t("Prancha lida"))
                                 .setMessage(imported.summary)
                                 .setPositiveButton(
-                                    "Adicionar como perfil",
+                                    t("Adicionar como perfil"),
                                     (d, w) -> {
                                       try {
                                         if (model.root.optJSONArray("profiles").length() >= 16)
-                                          throw new IOException("Limite de perfis atingido.");
-                                        model.newProfile("Prancha importada", imported.profile);
+                                          throw new IOException(t("Limite de perfis atingido."));
+                                        model.newProfile(t("Prancha importada"), imported.profile);
                                         current = model.profile().optString("home");
                                         save();
                                         build();
@@ -2575,22 +2807,20 @@ public class MainActivity extends Activity {
                                         error(e);
                                       }
                                     })
-                                .setNegativeButton("Cancelar", null)));
+                                .setNegativeButton(t("Cancelar"), null)));
               } else {
                 Model loaded = repo.parseBackup(bytes);
                 runOnUiThread(
                     () ->
                         show(
                             new AlertDialog.Builder(this)
-                                .setTitle("Restaurar backup?")
+                                .setTitle(t("Restaurar backup?"))
                                 .setMessage(
-                                    "O arquivo contém "
+                                    t("O arquivo contém ")
                                         + loaded.root.optJSONArray("profiles").length()
-                                        + " perfil(is). A restauração substituirá os dados ativos"
-                                        + " deste aparelho. Exporte primeiro um backup se desejar"
-                                        + " conservar as alterações atuais.")
+                                        + t(" perfil(is). A restauração substituirá os dados ativos deste aparelho. Exporte primeiro um backup se desejar conservar as alterações atuais."))
                                 .setPositiveButton(
-                                    "Restaurar",
+                                    t("Restaurar"),
                                     (d, w) -> {
                                       try {
                                         Model restored = repo.restoreImages(bytes);
@@ -2601,12 +2831,12 @@ public class MainActivity extends Activity {
                                         edit = false;
                                         bitmapCache.clear();
                                         build();
-                                        toast("Backup restaurado.");
+                                        toast(t("Backup restaurado."));
                                       } catch (Exception e) {
                                         error(e);
                                       }
                                     })
-                                .setNegativeButton("Cancelar", null)));
+                                .setNegativeButton(t("Cancelar"), null)));
               }
             } catch (Exception e) {
               error(e);

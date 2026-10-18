@@ -1,5 +1,5 @@
 {
- "about": "Starter-button pictures: Mulberry/original drawing (0.1.1) and ARASAAC (0.1.0 prototype, 0.2.0+). Used to migrate saved data and to switch picture sets.",
+ "about": "Starter-button pictures: Mulberry/original drawing (0.1.1) and ARASAAC (0.1.0 prototype, 0.2.0+). since030 lists buttons first given ARASAAC pictures in 0.3.0.",
  "byButton": {
   "b1": [
    "symbols/original-self.png",
@@ -652,6 +652,18 @@
   "b166": [
    "symbols/original-choice.png",
    "symbols/17054.png"
+  ],
+  "b45": [
+   "symbols/mulberry-delicious_food.png",
+   "symbols/32340.png"
+  ],
+  "b61": [
+   "symbols/mulberry-relax_2___to.png",
+   "symbols/11248.png"
+  ],
+  "b80": [
+   "symbols/mulberry-grandmother.png",
+   "symbols/2243.png"
   ]
  },
  "bySymbol": {
@@ -786,5 +798,17 @@
   "symbols/original-work.png": "symbols/6624.png",
   "symbols/original-yes.png": "symbols/5584.png",
   "symbols/original-you.png": "symbols/6625.png"
- }
+ },
+ "since030": [
+  "b45",
+  "b61",
+  "b80"
+ ],
+ "pages030": [
+  "perguntas",
+  "escola",
+  "brincar",
+  "tempo",
+  "descricoes"
+ ]
 }

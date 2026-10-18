@@ -8,7 +8,7 @@
 
 Communication should not depend on income or device brand. Voz Livre is a free AAC app for Android, created to expand access for autistic people, other neurodivergent people and anyone who needs support to communicate — especially families who cannot afford an iPhone or iPad and only have Android devices. It offers a customizable communicator for affordable phones and tablets. It is and will stay free: no account, subscription or ads.
 
-**0.2.0 is an alpha.** The app and starter boards are currently in **Brazilian Portuguese**; this English README does not mean the interface is translated. The project owner reports that basic use of the previous version appeared to work on a Samsung Galaxy S24 FE and a Samsung SM-P619 tablet; app version, Android versions and tested features were not recorded. Broader accessibility testing is still needed. This is an independent project, not TD Snap, and is not affiliated with Tobii Dynavox. It does not reproduce all TD Snap features.
+**0.3.0 is an alpha.** The interface is available in Portuguese, English and Spanish, and a profile's starter board can be created in any of the three. The project owner reports that basic use of the previous version appeared to work on a Samsung Galaxy S24 FE and a Samsung SM-P619 tablet; app version, Android versions and tested features were not recorded. Broader accessibility testing is still needed. This is an independent project, not TD Snap, and is not affiliated with Tobii Dynavox. It does not reproduce all TD Snap features.
 
 ## Try it
 
@@ -19,21 +19,22 @@ Communication should not depend on income or device brand. Voz Livre is a free A
 
 ## Available in the alpha
 
-- Eight starter pages and 166 buttons with pictograms and text; compose a message and speak it aloud.
+- 13 starter pages and 261 buttons with pictograms and text: core words, food, feelings, people, actions, places, body, quick phrases, questions, school, play, time and days, colors and describing.
 - **Word prediction:** four next-word suggestions, also in the keyboard. Starts from Portuguese starter suggestions and learns, on the device only, from the messages each profile speaks. It can be turned off or cleared.
+- **Word forms (Portuguese boards):** tap a message word to conjugate a verb by subject and tense or change gender and number. Optional automatic agreement.
 - Edit pages, labels, spoken messages, colors, links and visibility; add personal photos through the system picker.
-- Separate local profiles, search, a keyboard, notes, text-based routines, timer and drawing.
-- Direct touch, hold-to-select, selection on release, auditory cues, pointer dwell and linear automatic/step scanning. These implementations still need testing with users and hardware.
+- Separate local profiles, search, a keyboard, notes, **visual routines with pictograms**, timer and drawing.
+- Direct touch, hold-to-select, selection on release, auditory cues, pointer dwell and automatic/step scanning — **also inside dialogs** (settings, editing, keyboard, lists), with group scanning when there are many options. These implementations still need testing with users and hardware.
 - Local JSON backup/restore including custom photos, message undo/redo and page edit undo.
-- Experimental `.spb`/`.sps` board import: a limited subset of text, page links and supported commands. Unsupported actions are disabled for review. Import does **not** preserve every layout, image or advanced action.
+- Experimental `.spb`/`.sps` board import: text, page links, colors, button order, hidden buttons and the board's own photos. Unsupported actions are disabled for review. Commercial library symbols (PCS etc.) are not copied.
 
 ## Pictures
 
-Starter buttons use **ARASAAC pictograms**, as in the original prototype (163 of 166 buttons; three keep Mulberry or original drawings where no suitable ARASAAC pictogram exists). Updating from 0.1.1 switches the starter buttons back to ARASAAC automatically, keeping personal photos and hand-picked symbols. Settings can switch the starter buttons back to Mulberry and original drawings; both sets remain available in the symbol picker.
+Starter buttons use **ARASAAC pictograms**, as in the original prototype. Updating from 0.1.1 switches the starter buttons back to ARASAAC automatically, keeping personal photos and hand-picked symbols. Settings can switch the starter buttons back to Mulberry and original drawings; both sets remain available in the symbol picker.
 
 ## Current limits
 
-There is no calibrated eye tracking, cloud sync, full grammatical prediction, home automation, Boardmaker activities or commercial PCS/PODD/Gateway vocabulary. Scanning does not cover every dialog and editing screen. Android Switch Access compatibility, external switches, pointer access and speech engines need physical-device validation. Automated tests are not evidence of clinical suitability or safe reliance as someone's only means of communication. Vocabulary, suggestions and symbol mappings are an editable starting point, not a validated AAC vocabulary.
+There is no calibrated eye tracking, cloud sync, home automation, Boardmaker activities or commercial PCS/PODD/Gateway vocabulary. Word forms and conjugated suggestions are Portuguese-only; symbol search uses Portuguese keywords. Android Switch Access compatibility, external switches, pointer access and speech engines need physical-device validation. Automated tests are not evidence of clinical suitability or safe reliance as someone's only means of communication. Vocabulary, suggestions and symbol mappings are an editable starting point, not a validated AAC vocabulary.
 
 ![Voz Livre — Android](docs/images/paisagem.png)
 

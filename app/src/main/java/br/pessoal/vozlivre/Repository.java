@@ -25,7 +25,7 @@ final class Repository {
       byte[] b = new byte[8192];
       int n;
       while ((n = in.read(b)) != -1) {
-        if (out.size() + n > max) throw new IOException("Arquivo muito grande.");
+        if (out.size() + n > max) throw new IOException(I18n.t("Arquivo muito grande."));
         out.write(b, 0, n);
       }
       return out.toByteArray();
@@ -33,8 +33,13 @@ final class Repository {
   }
 
   String defaults() throws IOException {
-    return new String(
-        read(context.getAssets().open("default.json"), 8000000), StandardCharsets.UTF_8);
+    return defaults("pt");
+  }
+
+  /** Starter board: Portuguese (default.json), English or Spanish (default-en/es.json). */
+  String defaults(String language) throws IOException {
+    String name = "pt".equals(language) ? "default.json" : "default-" + language + ".json";
+    return new String(read(context.getAssets().open(name), 8000000), StandardCharsets.UTF_8);
   }
 
   JSONObject legacy() throws IOException, JSONException {
@@ -46,11 +51,12 @@ final class Repository {
 
   /** Data saved before 0.2.0 has no symbol set: move its starter buttons to ARASAAC. */
   Model upgrade(Model m) {
-    if (Model.symbolSet(m.root).isEmpty())
-      try {
-        Model.switchSymbols(m.root, legacy(), true);
-      } catch (Exception ignored) {
-      }
+    try {
+      JSONObject legacy = legacy();
+      if (Model.symbolSet(m.root).isEmpty()) Model.switchSymbols(m.root, legacy, true);
+      Model.upgradeStarter(m.root, new JSONObject(defaults()), legacy);
+    } catch (Exception ignored) {
+    }
     return m;
   }
 
@@ -95,7 +101,7 @@ final class Repository {
       out.write(m.root.toString().getBytes(StandardCharsets.UTF_8));
       state.finishWrite(out);
       if (new File(state.getBaseFile().getPath() + ".new").exists())
-        throw new IOException("Não foi possível confirmar a gravação dos dados.");
+        throw new IOException(I18n.t("Não foi possível confirmar a gravação dos dados."));
     } catch (Exception e) {
       if (out != null) state.failWrite(out);
       throw e;
@@ -133,13 +139,12 @@ final class Repository {
     }
     int total = 0;
     for (String s : needed) {
-      if (!safe(s)) throw new IOException("Imagem inválida.");
+      if (!safe(s)) throw new IOException(I18n.t("Imagem inválida."));
       byte[] b = read(new FileInputStream(new File(context.getFilesDir(), s)), 4000000);
       total += b.length;
       if (total > 16000000)
         throw new IOException(
-            "As fotos ultrapassam o limite de 16 MB do backup. Reduza as imagens antes de"
-                + " exportar.");
+            I18n.t("As fotos ultrapassam o limite de 16 MB do backup. Reduza as imagens antes de exportar."));
       Model.put(images, s, Base64.encodeToString(b, Base64.NO_WRAP));
     }
     Model.put(root, "images", images);
@@ -160,11 +165,11 @@ final class Repository {
       int total = 0;
       while (keys.hasNext()) {
         String k = keys.next();
-        if (!k.startsWith("user/") || !safe(k)) throw new IOException("Caminho de foto inválido.");
+        if (!k.startsWith("user/") || !safe(k)) throw new IOException(I18n.t("Caminho de foto inválido."));
         byte[] b = Base64.decode(images.getString(k), Base64.DEFAULT);
         total += b.length;
         if (b.length > 4000000 || total > 16000000)
-          throw new IOException("Limite de imagens excedido.");
+          throw new IOException(I18n.t("Limite de imagens excedido."));
       }
     }
     return new Model(r.toString());
@@ -179,7 +184,7 @@ final class Repository {
     Iterator<String> keys = images.keys();
     while (keys.hasNext()) {
       String k = keys.next();
-      if (!k.startsWith("user/") || !safe(k)) throw new IOException("Imagem inválida.");
+      if (!k.startsWith("user/") || !safe(k)) throw new IOException(I18n.t("Imagem inválida."));
       String suffix = k.substring(k.lastIndexOf('.'));
       String newName = "user/" + Model.id() + suffix;
       write(

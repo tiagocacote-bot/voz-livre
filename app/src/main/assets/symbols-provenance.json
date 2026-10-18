@@ -4257,6 +4257,1148 @@
       "author": "Sergio Palao",
       "license": "CC BY-NC-SA 4.0",
       "sha256": "a0ce4e01d8946f003ce8a90e93fbb077f522ae407211ffdc13b87950b85084f5"
+    },
+    {
+      "search": "bonito",
+      "keywords": [
+        "bonito",
+        "belo",
+        "bonita",
+        "bela",
+        "formosa",
+        "lindo",
+        "linda",
+        "formoso"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11194.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11194",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "20e8a4ab3c2c99af2ca53062483b91184dabe2f28badd88421247d8c4acb5def"
+    },
+    {
+      "search": "confortável",
+      "keywords": [
+        "cómodo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11248.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11248",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e54000d043c89d73bf4a8e5f3dfb6901121ecc5d569e374bc222fdafb7747202"
+    },
+    {
+      "search": "o quê",
+      "keywords": [
+        "que"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11351.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11351",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1fe6bec29c2c4d422c29b5ee0d7c1ff99a08c98c97115243bb63819023606d6f"
+    },
+    {
+      "search": "Posso ir",
+      "keywords": [
+        "poder"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11750.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11750",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "14e33d0c1ac7638699ed7fbf4ef894db38b198d9663365e91c82badba600748d"
+    },
+    {
+      "search": "Perguntas",
+      "keywords": [
+        "como"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/12313.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/12313",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e0f8169d3ff6661ba0f64abe9ba4dad8377be2851ca2ec99decb29905129f9ab"
+    },
+    {
+      "search": "esconde-esconde",
+      "keywords": [
+        "esconderijo",
+        "escondidas"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/21845.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/21845",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5cdaf3c8a5f43a9dd87af445e3c20a7cd4f38bd973144184d97e653018b07bcf"
+    },
+    {
+      "search": "videogame",
+      "keywords": [
+        "videojogo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/21945.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/21945",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9d5fe9e7472a81c863827413f41365f1e3fb27a9864130c644b402524944bb05"
+    },
+    {
+      "search": "avó",
+      "keywords": [
+        "avó",
+        "vovó"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2243.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2243",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "829dc1309c5a40bd2fec4e575dfe618acac8fec19635e659fd680d1b2f7a82aa"
+    },
+    {
+      "search": "quando",
+      "keywords": [
+        "quando"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/22621.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/22621",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9df5bcca0196602229a4e8d15fa6c501234b02fffd2804b3a9fadaaea229563d"
+    },
+    {
+      "search": "caneta",
+      "keywords": [
+        "caneta",
+        "esferográfica"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2282.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2282",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c144ef99344c07958253c4048bc81e49c501971b5258eae1255762408f44dda1"
+    },
+    {
+      "search": "cantar",
+      "keywords": [
+        "cantar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2315.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2315",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4cec14af4445b757c34bc12451a22dbfe33648353937663eb2e15dd471ddd565"
+    },
+    {
+      "search": "carrinho",
+      "keywords": [
+        "carrinho de brincar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2340.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2340",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "881b824870614ae0394af1c785c9dc2e119aa6b9ba78679755f4dea2e4a82877"
+    },
+    {
+      "search": "pintar",
+      "keywords": [
+        "pintar",
+        "colorir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2348.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2348",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9450f99dde5c0abeda0f6e42acecba20f6dc068404ed576cd88eaee8cee6998a"
+    },
+    {
+      "search": "caderno",
+      "keywords": [
+        "caderno"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2359.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2359",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "01af5ac2e2c1df95fb9533488b16e43eb4834ee89ab602ea7759b4e1fe37ae45"
+    },
+    {
+      "search": "escrever",
+      "keywords": [
+        "escrever",
+        "escrita"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2380.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2380",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d561f54a274a3a906df8c671ab34d27b33fe225e4eb51085b2cadd6215a38327"
+    },
+    {
+      "search": "borracha",
+      "keywords": [
+        "borracha"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2409.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2409",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c74518aa72ebb7869ce5f48dcb80c40ec1fbc14e54f26bfd0900f642c08ddb14"
+    },
+    {
+      "search": "Posso brincar",
+      "keywords": [
+        "jogar",
+        "brincar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2439.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2439",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9538e7af69d66c7a76b31ec3f77b2ceb1969417a0b13e54d991a416b73ebe028"
+    },
+    {
+      "search": "lápis",
+      "keywords": [
+        "lápis"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2440.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2440",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "583155dc73542be17d31e845da5ac672e4bc36d26cdf0c69258ad73d67b5a2e8"
+    },
+    {
+      "search": "livro",
+      "keywords": [
+        "livro"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2450.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2450",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "cd309bda9e14381b83ba0d2dce904b603c0681c61c5ecf4281e3b2c42577a30e"
+    },
+    {
+      "search": "professora",
+      "keywords": [
+        "professora"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2456.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2456",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9b96e2baa712cc1d8a38d98ad36b238ba81ede31165251a717b3a4412a26b00e"
+    },
+    {
+      "search": "quanto",
+      "keywords": [
+        "Quantos são?",
+        "quantos são",
+        "quantidade",
+        "quantos?",
+        "quantos"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/24731.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/24731",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "393b1e323437f1d22494e85a99a3e5d34f5955b6409074fca4c1178bf05ebe48"
+    },
+    {
+      "search": "mochila",
+      "keywords": [
+        "mochila"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2475.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2475",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "559baea073b5590ff283355c9f816455f85a44588a14cf54ad48a06faae49281"
+    },
+    {
+      "search": "por quê",
+      "keywords": [
+        "porquê"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/24763.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/24763",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1e40d2a0e786bc4b44116932eaa74864ad611e4054b11a5ad7f9ccbde17bf8f4"
+    },
+    {
+      "search": "boneca",
+      "keywords": [
+        "boneca"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2482.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2482",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b6d310529a2915efc2748698d2fdd52d4b78ff015ee43d9eefce54d8e771fb75"
+    },
+    {
+      "search": "computador",
+      "keywords": [
+        "computador"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2487.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2487",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a910317c342d374546e122c07a19744b646023858a6823be068882ff27ca08fd"
+    },
+    {
+      "search": "cola",
+      "keywords": [
+        "cola"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2510.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2510",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f630f191369d57429a488986150fe108af257117bfe2a4a50796acaef94a3e43"
+    },
+    {
+      "search": "pijama",
+      "keywords": [
+        "pijama"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2522.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2522",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e731b793b0fc8fed43602c351d6b568bfb8b34df40f264c14c02310798a683c6"
+    },
+    {
+      "search": "massinha",
+      "keywords": [
+        "plasticina"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2529.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2529",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "61b8e87ee2c53f109152dd14b4d9f6b1acb1e89f7ea4dede5ba3ef949ea656a5"
+    },
+    {
+      "search": "Que horas são",
+      "keywords": [
+        "relógio"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2549.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2549",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9b125b4184b494001c68bce77a3becbb27ed3a6e05ad1799c8a4682921232cc2"
+    },
+    {
+      "search": "já",
+      "keywords": [
+        "já"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/25736.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/25736",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "14cfe28eb39054d0af06d14e123be8586da3d02d8302e55e3dde3e52dfff6498"
+    },
+    {
+      "search": "tesoura",
+      "keywords": [
+        "tesoura"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2591.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2591",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "404f763c0dc164ee9894b417903118708a3ea29589457c3fccbedc04e232e8ab"
+    },
+    {
+      "search": "qual",
+      "keywords": [
+        "qual"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/26022.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/26022",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "15b6c3dbdca316943567d8f08e2b1d1a76190f739b7f4ad8bc8f76a74f214fad"
+    },
+    {
+      "search": "quebra-cabeça",
+      "keywords": [
+        "quebra-cabeças"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/26403.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/26403",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "6c5402bb3d50a6f7d68cbb98080c0fc1004e226e4add6a170138ab906e5ba8b8"
+    },
+    {
+      "search": "amarelo",
+      "keywords": [
+        "amarelo",
+        "amarela"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2648.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2648",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f8e89ca35685901a5f678fab6c0f0937fc36b5dab2eb040b343ccf1d94e199cd"
+    },
+    {
+      "search": "dançar",
+      "keywords": [
+        "baile",
+        "bailar",
+        "dançar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2652.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2652",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "0256196fde677e80dd42c8dff11c5dad14f43896bd0040769887f3ab15a6d3d6"
+    },
+    {
+      "search": "branco",
+      "keywords": [
+        "branco",
+        "branca"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2662.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2662",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "3023582d668600b3d74d53fbd4a4b2f7658cf93d7c763303ec595b02e3a99d22"
+    },
+    {
+      "search": "correr",
+      "keywords": [
+        "correr"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2719.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2719",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "8fd32aa9d19da5dd309649bba48e4934cb0b0747a84a643524f60e8399c57426"
+    },
+    {
+      "search": "vestir",
+      "keywords": [
+        "vestir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2781.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2781",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "de0bf1a3564c6357e2d738addf7ce47ea544481fff4edb2c89b518ea89beee59"
+    },
+    {
+      "search": "pular",
+      "keywords": [
+        "saltar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2804.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2804",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4b331ae59afb6faa6f50a2b2a9fe266e97039dfc239f014ab2b7cb7433642623"
+    },
+    {
+      "search": "rosa",
+      "keywords": [
+        "rosa",
+        "cor de rosa"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2807.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2807",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5eabb04cd320c5c7d36be3f7629a8dee57d3c998c6a25ba4d092a13f1d7ca353"
+    },
+    {
+      "search": "Cores e descrições",
+      "keywords": [
+        "vermelho"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2808.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2808",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7824ed541be315951510db14e3f96737a0f1d812e5562001ed0b113da8b4c0e7"
+    },
+    {
+      "search": "preto",
+      "keywords": [
+        "preto",
+        "preta"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2886.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2886",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d9bde085c5a4a2b37cad0599e7619d4c9dd0124a773a56abc5f6bea5beafd90c"
+    },
+    {
+      "search": "aniversário",
+      "keywords": [
+        "aniversário"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3087.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3087",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "876093fb2c16597709920263458d8a9f5ce7f9dcf22a99eef349bc17268e1d30"
+    },
+    {
+      "search": "férias",
+      "keywords": [
+        "férias"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3166.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3166",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7f8081164fc69885815b0ab8dbc3edf015a26d7461e9d1aa98a18dd58acf5257"
+    },
+    {
+      "search": "de manhã",
+      "keywords": [
+        "amanhecer"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3175.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3175",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "943c0f208edf3d045b12f6801b8766c93b68ed4926316fd3ac633c8f8c7eb166"
+    },
+    {
+      "search": "de tarde",
+      "keywords": [
+        "entardecer",
+        "anoitecer"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3176.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3176",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "0ce91d5d1f52540dd934a6a65c361dcca9e9cbfd942ed532f497d01f54555a81"
+    },
+    {
+      "search": "gostoso",
+      "keywords": [
+        "agradável",
+        "saboroso",
+        "saborosa"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32340.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32340",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c13224244d69a18dd5656452b094921f008286cee30082d51ff01a0badb714cd"
+    },
+    {
+      "search": "bola",
+      "keywords": [
+        "bola",
+        "bola de praia"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3241.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3241",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "46e51b65f0c4ade851956d1bd311615c7cd99be4b90a541052e601112b127792"
+    },
+    {
+      "search": "azul",
+      "keywords": [
+        "azul"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3355.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3355",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f3145ac75ae019259b7f663b4d30e68d32a7d9e4b10cd9e2f2b08a04abd1913b"
+    },
+    {
+      "search": "igual",
+      "keywords": [
+        "igual",
+        "="
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3423.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3423",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "cd67420282720a14a0cce6ebc0826f092b9cd0299046b63b9d46d7646c12b88f"
+    },
+    {
+      "search": "Sua vez",
+      "keywords": [
+        "mudança de turno"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/34713.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/34713",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d722cdc687323b0928255d37336b437abf1cf0c3805e025da7cdc55a10db8e37"
+    },
+    {
+      "search": "contar um conto",
+      "keywords": [
+        "contar um conto",
+        "contar uma história",
+        "narrar",
+        "contador de histórias"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/38631.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/38631",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "50a4c7991dce388bf27cc0b25ac580f227bca0a1983fc42404b0651ce02a1b54"
+    },
+    {
+      "search": "colega",
+      "keywords": [
+        "companheiro",
+        "colega"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/39421.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/39421",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d428633e2aedc499f709a87ab63783003e4df42a78d5a2c800fc2147fb0a9c74"
+    },
+    {
+      "search": "Você pode me ajudar",
+      "keywords": [
+        "ajudar",
+        "apoiar",
+        "cooperar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4570.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4570",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "743cabc898ef3deb1f154670d59b5cc1aa34cd0a1d987ac2ae346a0d9625c655"
+    },
+    {
+      "search": "jantar",
+      "keywords": [
+        "jantar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4593.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4593",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "69a00b09204f4ff9073ed19bea7ce25bb54c3cf28178088a9fe1840f33945b09"
+    },
+    {
+      "search": "balanço",
+      "keywords": [
+        "baloiço"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4608.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4608",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4a4a9ff54bf779e19824a73da58ddb575345b61527fabd48c996955e8f9b2245"
+    },
+    {
+      "search": "feio",
+      "keywords": [
+        "feio"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4648.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4648",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d38eab8eb79e0a180b34a7f0bd2e3094a1f66cbb1e3d750461e79f983491bcbd"
+    },
+    {
+      "search": "grande",
+      "keywords": [
+        "grande",
+        "maior"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4658.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4658",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2ae3690d0c048c9fce08567e77ae28881a2f4efd575ed7444d8e05b1f3e41004"
+    },
+    {
+      "search": "devagar",
+      "keywords": [
+        "lento",
+        "devagar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4676.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4676",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c3e7f4923f3c2c34563a333a07bf665f51bfe8f7c0f13b7d4a767213b13e47f9"
+    },
+    {
+      "search": "lanche",
+      "keywords": [
+        "lanche",
+        "merenda"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4695.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4695",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7377a528afccc5312fbe595a34ffd568bb1a1d812f1453113b0c8a86eb3766ab"
+    },
+    {
+      "search": "novo",
+      "keywords": [
+        "novo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4705.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4705",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a0f11af8d4ea39a89921d643c01893f394b627711e0ae98b1635623b9f1e5735"
+    },
+    {
+      "search": "pequeno",
+      "keywords": [
+        "pequeno",
+        "menor",
+        "pequena"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4716.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4716",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "adfe4a5b9510a661638c8c8e1358719714197751daae1fa2197c6e66ec15ea9e"
+    },
+    {
+      "search": "escorregador",
+      "keywords": [
+        "escorrega"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4759.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4759",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9f4546072fc3f3a5d2158551b4afd5c0f12ac6317e4554213b9b010b9a78ecce"
+    },
+    {
+      "search": "velho",
+      "keywords": [
+        "desgastado",
+        "velho",
+        "gasto"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4770.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4770",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "86d08d2affc8e5f45a25ee83176c27fb0f36c5024916dec1c21bbc001ea1c79b"
+    },
+    {
+      "search": "verde",
+      "keywords": [
+        "verde",
+        "verde claro"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4886.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4886",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "16bce1847d8ed16d4efd0920730d29d6b1b127328bfc394134e34b59f47f3436"
+    },
+    {
+      "search": "blocos",
+      "keywords": [
+        "peças de lego",
+        "construções",
+        "blocos",
+        "jogo de construções"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4935.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4935",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "db21466d7568b10a883b80938a98f353b9076d7b5198be4ff276e1038c7fcd10"
+    },
+    {
+      "search": "rápido",
+      "keywords": [
+        "rápido",
+        "veloz",
+        "depressa"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5306.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5306",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "95a345e52866e13b510573ff614cf0b43fb5f26fc29ac97f3ebf85b8cab3d8e9"
+    },
+    {
+      "search": "Terminei",
+      "keywords": [
+        "acabar",
+        "fim",
+        "terminar",
+        "finalizar",
+        "final"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5358.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5358",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1264be179f8a30f99d29dcd871c52e67fd699f686ff2d3bdfeb736fbc5734ff3"
+    },
+    {
+      "search": "muito",
+      "keywords": [
+        "muito"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5521.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5521",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7608241b0928cc5425fa273ac98c475874572962a303a6ca78f4bd311656a7e2"
+    },
+    {
+      "search": "pouco",
+      "keywords": [
+        "pouco"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5546.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5546",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "8560b3268afadb57c6363c894637836e96189b87d4e3f77d1491d8da0a72e4b1"
+    },
+    {
+      "search": "aula",
+      "keywords": [
+        "sala de aula"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5913.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5913",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c34114d426a2cfa54e80c872883fc3ddadc9156c316dc673aa740663e0dfa495"
+    },
+    {
+      "search": "recreio",
+      "keywords": [
+        "recreio",
+        "pátio"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6204.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6204",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "27e202a35f140cf4e729558ce73359b5ccd5666f60b8fb5b27623b6e5c94d9d1"
+    },
+    {
+      "search": "ontem",
+      "keywords": [
+        "ontem"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6926.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6926",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "62f95dd57e4306ac71d051714c3cf96de1c82899cfee61bfb48c75e4bdd7388c"
+    },
+    {
+      "search": "Tempo e dias",
+      "keywords": [
+        "hoje"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7131.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7131",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5ce1e8b7d6712d23158dab6ac25f0c046276a2e177c40265730a2c5fedc46576"
+    },
+    {
+      "search": "amanhã",
+      "keywords": [
+        "amanhã"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7152.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7152",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "23d31b7b77b091f820d70b7a73cc4a145f4afd9297dd32b467a440811b37b27d"
+    },
+    {
+      "search": "Minha vez",
+      "keywords": [
+        "a minha vez",
+        "é a minha vez",
+        "vez",
+        "turno"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7158.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7158",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "39c7bc9f91d7f0476d53477fa93c128bff5dc1d3d5ca976a90d1999f6142bed1"
+    },
+    {
+      "search": "de noite",
+      "keywords": [
+        "noite"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7181.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7181",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "59663c3f7c8b9705c9cb12bcad0bf39dc79db1efe661c74bbf54c7e476d658d0"
+    },
+    {
+      "search": "semana",
+      "keywords": [
+        "semana"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7244.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7244",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ab0e5bbe304175a2c34ac8fb2b968b2711ca5beff95852aae5cf9c734f1723f2"
+    },
+    {
+      "search": "onde",
+      "keywords": [
+        "onde",
+        "onde?"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7764.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7764",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "61df418ba3ef74e3444f8d1ef374bff6791e498f2dce451b4676ffd1bfd12ced"
+    },
+    {
+      "search": "desenho animado",
+      "keywords": [
+        "desenhos animados"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8089.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8089",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "36690634de34599bcc25f5b404a8465a6f55a75e183dac64692792ef0860ab6e"
+    },
+    {
+      "search": "acordar",
+      "keywords": [
+        "acordar",
+        "espreguiçar",
+        "espreguiçar-se"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8988.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8988",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "8acb19b022201c28852218b0e39ddbaad81630a279e0b7efca174e41cd8acbd3"
+    },
+    {
+      "search": "tablet",
+      "keywords": [
+        "tablet pc",
+        "tablet",
+        "computador híbrido"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/9165.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/9165",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7f466873c42d0f421590bfe2417069328dfeb34d0a810f72d26b3e577a7b762f"
+    },
+    {
+      "search": "quem",
+      "keywords": [
+        "quem",
+        "desconhecido",
+        "quem é?",
+        "quem é ele?"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/9853.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/9853",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "8cc7e77e70fd451716e6cfa88dab479100a3116828348aa741c41ee45311bdf3"
     }
   ],
   "arasaac": {

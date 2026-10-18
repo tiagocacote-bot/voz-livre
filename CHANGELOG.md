@@ -1,5 +1,16 @@
 # Changes
 
+## 0.3.0 — varredura nas janelas, gramática, idiomas e mais vocabulário
+
+- **Varredura em todas as janelas:** ajustes, edição, teclado, rotinas, listas e menus de escolha agora podem ser usados com acionador. Em janelas com muitas opções, a varredura passa primeiro por grupos de 8 e depois pelos itens do grupo escolhido. Perfil, Ajustes, Editar e "+ Novo botão" também entram na varredura, inclusive no modo de edição.
+- **Rotinas com pictogramas:** cada etapa ganha uma imagem escolhida automaticamente pelo texto; toque na etapa para trocar. Duas rotinas iniciais: "Meu dia" e "Hora de dormir". Rotinas antigas continuam funcionando.
+- **Gramática (pranchas em português):** toque em uma palavra da mensagem (ou **Mais → Mudar forma da última palavra**) para escolher outra forma: conjugação por sujeito e tempo (eu brinco, brinquei, brincava, brincarei), gênero e número (cansado, cansada, cansados). As sugestões já vêm conjugadas depois de "eu", "você", "nós"… A conjugação automática é opcional nos ajustes.
+- **Idiomas:** interface em português, inglês e espanhol (automático pelo idioma do aparelho ou escolhido em **Ajustes → Idioma do aplicativo**). Um perfil novo pode começar com a prancha inicial em inglês ou espanhol, com voz e teclado do idioma.
+- **Mais vocabulário:** 5 páginas novas com 90 botões ARASAAC — Perguntas, Escola, Brincadeiras, Tempo e dias, Cores e descrições (261 botões no total). Quem já usa o app recebe as páginas novas uma vez, sem mexer nas suas páginas. "Gostoso", "confortável" e "avó" ganharam pictogramas ARASAAC.
+- **Importação do TD Snap melhorada:** mantém a ordem dos botões, as cores, os botões ocultos e importa as fotos da própria prancha. Símbolos de bibliotecas comerciais (como PCS) continuam sem ser copiados.
+
+- *English:* scanning inside every dialog (with group scanning), visual routines with pictograms, Portuguese word forms and verb agreement, English and Spanish interface and starter boards, five new ARASAAC pages (261 buttons), and a better TD Snap import (order, colors, hidden buttons, page-set photos).
+
 ## 0.2.0 — pictogramas ARASAAC e previsão de palavras
 
 - Os botões iniciais voltam a usar os pictogramas ARASAAC do protótipo original (163 de 166 botões). Quem atualiza da 0.1.1 tem os botões iniciais trocados automaticamente; fotos pessoais e símbolos escolhidos à mão são mantidos. Em **Ajustes → Tamanho da grade e letras** é possível voltar para Mulberry e desenhos próprios.
