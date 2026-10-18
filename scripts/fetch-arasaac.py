@@ -34,7 +34,24 @@ for term in EXTRA:
     found[str(hit)]=term
     print('search',term,'->',hit,flush=True)
 ids+=[i for i in found if i not in ids]
+terms=json.loads((r/'scripts/arasaac-terms.json').read_text(encoding='utf8'))['terms']
+picked={}
+for label,term in terms.items():
+    hit=None
+    for kind in ('bestsearch','search'):
+        try:
+            hits=json.loads(get(f'https://api.arasaac.org/v1/pictograms/es/{kind}/'+urllib.parse.quote(term),tries=2))
+            if hits:hit=str(hits[0]['_id']);break
+        except Exception as e:print('search failed',kind,term,e,flush=True)
+    if hit is None:missing.append(label);continue
+    picked[label]=hit
+    if hit not in ids:ids.append(hit)
+    found.setdefault(hit,label)
+    print('term',label,term,'->',hit,flush=True)
+old=json.loads((r/'scripts/arasaac-meta.json').read_text(encoding='utf8')) if (r/'scripts/arasaac-meta.json').exists() else {}
 for i in ids:
+    if (a/'symbols'/f'{i}.png').exists() and i in old and i not in picked.values():
+        meta[i]=old[i];continue
     png=get(f'https://static.arasaac.org/pictograms/{i}/{i}_500.png')
     im=Image.open(io.BytesIO(png)).convert('RGBA')
     im.thumbnail((256,256),Image.LANCZOS)
@@ -44,5 +61,6 @@ for i in ids:
     meta[i]={'search':found.get(i),'keywords':[k.get('keyword') for k in info.get('keywords',[])],'url':f'https://arasaac.org/pictograms/pt/{i}'}
     print(i,meta[i]['keywords'][:3],flush=True)
 meta['_missing']=missing
+meta['_terms']=picked
 (r/'scripts/arasaac-meta.json').write_text(json.dumps(meta,ensure_ascii=False,indent=1)+'\n',encoding='utf8')
 print(len(ids),'pictograms')
