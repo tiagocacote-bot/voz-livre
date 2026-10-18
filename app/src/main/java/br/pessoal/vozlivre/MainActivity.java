@@ -876,7 +876,14 @@ public class MainActivity extends Activity {
       page = model.page(current);
     }
     pageTitle.setText(page.optString("title") + (edit ? t(" · edição") : ""));
-    int cols = clamp(model.settings().optInt("columns", 3), 2, 6);
+    // Core pages keep their own grid so every word stays in the same place (motor planning).
+    int cols =
+        clamp(
+            page.optBoolean("fixedLayout")
+                ? page.optInt("columns", 6)
+                : model.settings().optInt("columns", 3),
+            2,
+            8);
     grid.setColumnCount(cols);
     JSONArray buttons = page.optJSONArray("buttons");
     for (int i = 0; i < buttons.length(); i++) {
@@ -913,7 +920,7 @@ public class MainActivity extends Activity {
       String label =
           (b.optBoolean("disabled") ? "⚠ " : "")
               + b.optString("label")
-              + ("link".equals(b.optString("type")) ? " ›" : "");
+              + ("link".equals(b.optString("type")) || "wordlink".equals(b.optString("type")) ? " ›" : "");
       TextView t = text(label, clamp(model.settings().optInt("font", 19), 15, 30));
       t.setGravity(Gravity.CENTER);
       t.setMaxLines(3);
@@ -974,6 +981,13 @@ public class MainActivity extends Activity {
           break;
         case "speak":
           speak(b.optString("message", b.optString("label")), false);
+          break;
+        case "wordlink":
+          // Sentence starter: add its words, then open the page with what usually follows.
+          model.append(b.optString("message", b.optString("label")), b.optString("symbol"));
+          changed();
+          if (model.settings().optBoolean("speakWords")) speak(b.optString("message"), false);
+          if (model.page(b.optString("target")) != null) navigate(b.optString("target"));
           break;
         default:
           model.append(agreed(b.optString("message", b.optString("label"))), b.optString("symbol"));
@@ -1367,10 +1381,15 @@ public class MainActivity extends Activity {
             android.text.InputType.TYPE_CLASS_TEXT
                 | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
     form.addView(message);
-    String[] types = {t("Adicionar à mensagem"), t("Falar diretamente"), t("Abrir página")};
+    String[] types = {
+      t("Adicionar à mensagem"), t("Falar diretamente"), t("Abrir página"), t("Adicionar e abrir página")
+    };
     String type = draft.optString("type");
     label(form, t("Ao tocar"));
-    Spinner kind = spinner(types, type.equals("speak") ? 1 : type.equals("link") ? 2 : 0);
+    Spinner kind =
+        spinner(
+            types,
+            type.equals("speak") ? 1 : type.equals("link") ? 2 : type.equals("wordlink") ? 3 : 0);
     form.addView(kind);
     String[] names = new String[model.pages().length()];
     int targetIndex = 0;
@@ -1379,7 +1398,7 @@ public class MainActivity extends Activity {
       names[i] = p.optString("title");
       if (p.optString("id").equals(draft.optString("target"))) targetIndex = i;
     }
-    label(form, t("Página de destino (para Abrir página)"));
+    label(form, t("Página de destino (para abrir página)"));
     Spinner dest = spinner(names, targetIndex);
     form.addView(dest);
     String[] palettes = {t("Azul"), t("Amarelo"), t("Verde"), t("Laranja"), t("Rosa"), t("Roxo"), t("Vermelho")},
@@ -1456,7 +1475,7 @@ public class MainActivity extends Activity {
               Model.put(
                   draft,
                   "type",
-                  new String[] {"word", "speak", "link"}[kind.getSelectedItemPosition()]);
+                  new String[] {"word", "speak", "link", "wordlink"}[kind.getSelectedItemPosition()]);
               Model.put(
                   draft,
                   "target",

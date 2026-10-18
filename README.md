@@ -19,7 +19,7 @@ Communication should not depend on income or device brand. Voz Livre is a free A
 
 ## Available in the alpha
 
-- 13 starter pages and 261 buttons with pictograms and text: core words, food, feelings, people, actions, places, body, quick phrases, questions, school, play, time and days, colors and describing.
+- 15 starter pages and 317 buttons with pictograms and text: **Core** (36 essential words in fixed positions), **Start talking** (sentence starters by communicative intent), core words, food, feelings, people, actions, places, body, quick phrases, questions, school, play, time and days, colors and describing.
 - **Word prediction:** four next-word suggestions, also in the keyboard. Starts from Portuguese starter suggestions and learns, on the device only, from the messages each profile speaks. It can be turned off or cleared.
 - **Word forms (Portuguese boards):** tap a message word to conjugate a verb by subject and tense or change gender and number. Optional automatic agreement.
 - Edit pages, labels, spoken messages, colors, links and visibility; add personal photos through the system picker.
@@ -27,6 +27,10 @@ Communication should not depend on income or device brand. Voz Livre is a free A
 - Direct touch, hold-to-select, selection on release, auditory cues, pointer dwell and automatic/step scanning — **also inside dialogs** (settings, editing, keyboard, lists), with group scanning when there are many options. These implementations still need testing with users and hardware.
 - Local JSON backup/restore including custom photos, message undo/redo and page edit undo.
 - Experimental `.spb`/`.sps` board import: text, page links, colors, button order, hidden buttons and the board's own photos. Unsupported actions are disabled for review. Commercial library symbols (PCS etc.) are not copied.
+
+## Vocabulary
+
+The starter vocabulary is original and open, built on public AAC principles — core vocabulary, fixed positions for motor planning, pragmatic organization and Fitzgerald-key colors — without copying commercial products such as PCS, PODD or Gateway. Details and sources: [docs/VOCABULARIO.md](docs/VOCABULARIO.md).
 
 ## Pictures
 

@@ -59,7 +59,6 @@
   "Falar diretamente": "Hablar directamente",
   "Abrir página": "Abrir página",
   "Ao tocar": "Al tocar",
-  "Página de destino (para Abrir página)": "Página de destino (para Abrir página)",
   "Azul": "Azul",
   "Amarelo": "Amarillo",
   "Verde": "Verde",
@@ -292,6 +291,8 @@
   "eu": "yo",
   "você/ele/ela": "tú/él/ella",
   "nós": "nosotros",
-  "vocês/eles/elas": "ustedes/ellos"
+  "vocês/eles/elas": "ustedes/ellos",
+  "Adicionar e abrir página": "Añadir y abrir página",
+  "Página de destino (para abrir página)": "Página de destino (para abrir una página)"
  }
 }

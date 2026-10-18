@@ -149,6 +149,26 @@
               "symbol": "symbols/32749.png"
             },
             {
+              "label": "Core",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b317",
+              "hidden": false,
+              "symbol": "symbols/5596.png",
+              "target": "nucleo"
+            },
+            {
+              "label": "Start talking",
+              "message": "",
+              "color": "pink",
+              "type": "link",
+              "id": "b316",
+              "hidden": false,
+              "symbol": "symbols/6517.png",
+              "target": "comecar"
+            },
+            {
               "label": "Food and drink",
               "message": "",
               "target": "comida",
@@ -2467,6 +2487,519 @@
             }
           ],
           "columns": 3
+        },
+        {
+          "id": "nucleo",
+          "title": "Core",
+          "columns": 6,
+          "buttons": [
+            {
+              "label": "I",
+              "message": "I",
+              "color": "yellow",
+              "type": "word",
+              "id": "b262",
+              "hidden": false,
+              "symbol": "symbols/6632.png"
+            },
+            {
+              "label": "you",
+              "message": "you",
+              "color": "yellow",
+              "type": "word",
+              "id": "b263",
+              "hidden": false,
+              "symbol": "symbols/6625.png"
+            },
+            {
+              "label": "he",
+              "message": "he",
+              "color": "yellow",
+              "type": "word",
+              "id": "b264",
+              "hidden": false,
+              "symbol": "symbols/6480.png"
+            },
+            {
+              "label": "she",
+              "message": "she",
+              "color": "yellow",
+              "type": "word",
+              "id": "b265",
+              "hidden": false,
+              "symbol": "symbols/7028.png"
+            },
+            {
+              "label": "this",
+              "message": "this",
+              "color": "yellow",
+              "type": "word",
+              "id": "b266",
+              "hidden": false,
+              "symbol": "symbols/7095.png"
+            },
+            {
+              "label": "that",
+              "message": "that",
+              "color": "yellow",
+              "type": "word",
+              "id": "b267",
+              "hidden": false,
+              "symbol": "symbols/6906.png"
+            },
+            {
+              "label": "want",
+              "message": "want",
+              "color": "green",
+              "type": "word",
+              "id": "b268",
+              "hidden": false,
+              "symbol": "symbols/5441.png"
+            },
+            {
+              "label": "like",
+              "message": "like",
+              "color": "green",
+              "type": "word",
+              "id": "b269",
+              "hidden": false,
+              "symbol": "symbols/37826.png"
+            },
+            {
+              "label": "take",
+              "message": "take",
+              "color": "green",
+              "type": "word",
+              "id": "b270",
+              "hidden": false,
+              "symbol": "symbols/10148.png"
+            },
+            {
+              "label": "do",
+              "message": "do",
+              "color": "green",
+              "type": "word",
+              "id": "b271",
+              "hidden": false,
+              "symbol": "symbols/11749.png"
+            },
+            {
+              "label": "go",
+              "message": "go",
+              "color": "green",
+              "type": "word",
+              "id": "b272",
+              "hidden": false,
+              "symbol": "symbols/8142.png"
+            },
+            {
+              "label": "look",
+              "message": "look",
+              "color": "green",
+              "type": "word",
+              "id": "b273",
+              "hidden": false,
+              "symbol": "symbols/2474.png"
+            },
+            {
+              "label": "put",
+              "message": "put",
+              "color": "green",
+              "type": "word",
+              "id": "b274",
+              "hidden": false,
+              "symbol": "symbols/6989.png"
+            },
+            {
+              "label": "open",
+              "message": "open",
+              "color": "green",
+              "type": "word",
+              "id": "b275",
+              "hidden": false,
+              "symbol": "symbols/24825.png"
+            },
+            {
+              "label": "turn",
+              "message": "turn",
+              "color": "green",
+              "type": "word",
+              "id": "b276",
+              "hidden": false,
+              "symbol": "symbols/6006.png"
+            },
+            {
+              "label": "help",
+              "message": "help",
+              "color": "green",
+              "type": "word",
+              "id": "b277",
+              "hidden": false,
+              "symbol": "symbols/12252.png"
+            },
+            {
+              "label": "stop",
+              "message": "stop",
+              "color": "green",
+              "type": "word",
+              "id": "b278",
+              "hidden": false,
+              "symbol": "symbols/7196.png"
+            },
+            {
+              "label": "make",
+              "message": "make",
+              "color": "green",
+              "type": "word",
+              "id": "b279",
+              "hidden": false,
+              "symbol": "symbols/2713.png"
+            },
+            {
+              "label": "is",
+              "message": "is",
+              "color": "green",
+              "type": "word",
+              "id": "b280",
+              "hidden": false,
+              "symbol": "symbols/5581.png"
+            },
+            {
+              "label": "can",
+              "message": "can",
+              "color": "green",
+              "type": "word",
+              "id": "b281",
+              "hidden": false,
+              "symbol": "symbols/11750.png"
+            },
+            {
+              "label": "more",
+              "message": "more",
+              "color": "blue",
+              "type": "word",
+              "id": "b282",
+              "hidden": false,
+              "symbol": "symbols/3220.png"
+            },
+            {
+              "label": "no",
+              "message": "no",
+              "color": "red",
+              "type": "word",
+              "id": "b283",
+              "hidden": false,
+              "symbol": "symbols/5526.png"
+            },
+            {
+              "label": "all done",
+              "message": "all done",
+              "color": "red",
+              "type": "word",
+              "id": "b284",
+              "hidden": false,
+              "symbol": "symbols/28429.png"
+            },
+            {
+              "label": "all",
+              "message": "all",
+              "color": "blue",
+              "type": "word",
+              "id": "b285",
+              "hidden": false,
+              "symbol": "symbols/5596.png"
+            },
+            {
+              "label": "good",
+              "message": "good",
+              "color": "blue",
+              "type": "word",
+              "id": "b286",
+              "hidden": false,
+              "symbol": "symbols/4581.png"
+            },
+            {
+              "label": "different",
+              "message": "different",
+              "color": "blue",
+              "type": "word",
+              "id": "b287",
+              "hidden": false,
+              "symbol": "symbols/4628.png"
+            },
+            {
+              "label": "same",
+              "message": "same",
+              "color": "blue",
+              "type": "word",
+              "id": "b288",
+              "hidden": false,
+              "symbol": "symbols/3423.png"
+            },
+            {
+              "label": "some",
+              "message": "some",
+              "color": "blue",
+              "type": "word",
+              "id": "b289",
+              "hidden": false,
+              "symbol": "symbols/5374.png"
+            },
+            {
+              "label": "here",
+              "message": "here",
+              "color": "purple",
+              "type": "word",
+              "id": "b290",
+              "hidden": false,
+              "symbol": "symbols/5382.png"
+            },
+            {
+              "label": "in",
+              "message": "in",
+              "color": "purple",
+              "type": "word",
+              "id": "b291",
+              "hidden": false,
+              "symbol": "symbols/5439.png"
+            },
+            {
+              "label": "on",
+              "message": "on",
+              "color": "purple",
+              "type": "word",
+              "id": "b292",
+              "hidden": false,
+              "symbol": "symbols/5451.png"
+            },
+            {
+              "label": "up",
+              "message": "up",
+              "color": "purple",
+              "type": "word",
+              "id": "b293",
+              "hidden": false,
+              "symbol": "symbols/5388.png"
+            },
+            {
+              "label": "what?",
+              "message": "what?",
+              "color": "purple",
+              "type": "word",
+              "id": "b294",
+              "hidden": false,
+              "symbol": "symbols/11351.png"
+            },
+            {
+              "label": "where?",
+              "message": "where?",
+              "color": "purple",
+              "type": "word",
+              "id": "b295",
+              "hidden": false,
+              "symbol": "symbols/7764.png"
+            },
+            {
+              "label": "who?",
+              "message": "who?",
+              "color": "purple",
+              "type": "word",
+              "id": "b296",
+              "hidden": false,
+              "symbol": "symbols/9853.png"
+            },
+            {
+              "label": "when?",
+              "message": "when?",
+              "color": "purple",
+              "type": "word",
+              "id": "b297",
+              "hidden": false,
+              "symbol": "symbols/22621.png"
+            }
+          ],
+          "fixedLayout": true
+        },
+        {
+          "id": "comecar",
+          "title": "Start talking",
+          "columns": 3,
+          "buttons": [
+            {
+              "label": "I want",
+              "message": "I want",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b298",
+              "hidden": false,
+              "symbol": "symbols/5441.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I don't want",
+              "message": "I don't want",
+              "color": "red",
+              "type": "wordlink",
+              "id": "b299",
+              "hidden": false,
+              "symbol": "symbols/5526.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I need",
+              "message": "I need",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b300",
+              "hidden": false,
+              "symbol": "symbols/37160.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I like",
+              "message": "I like",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b301",
+              "hidden": false,
+              "symbol": "symbols/37826.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I don't like",
+              "message": "I don't like",
+              "color": "red",
+              "type": "wordlink",
+              "id": "b302",
+              "hidden": false,
+              "symbol": "symbols/6155.png",
+              "target": "inicio"
+            },
+            {
+              "label": "I feel",
+              "message": "I feel",
+              "color": "yellow",
+              "type": "wordlink",
+              "id": "b303",
+              "hidden": false,
+              "symbol": "symbols/30196.png",
+              "target": "sentimentos"
+            },
+            {
+              "label": "Something's wrong",
+              "message": "Something's wrong",
+              "color": "red",
+              "type": "wordlink",
+              "id": "b304",
+              "hidden": false,
+              "symbol": "symbols/5504.png",
+              "target": "corpo"
+            },
+            {
+              "label": "I have a question",
+              "message": "I have a question",
+              "color": "purple",
+              "type": "wordlink",
+              "id": "b305",
+              "hidden": false,
+              "symbol": "symbols/9847.png",
+              "target": "perguntas"
+            },
+            {
+              "label": "I think",
+              "message": "I think",
+              "color": "yellow",
+              "type": "wordlink",
+              "id": "b306",
+              "hidden": false,
+              "symbol": "symbols/8662.png",
+              "target": "inicio"
+            },
+            {
+              "label": "Let's go",
+              "message": "Let's go",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b307",
+              "hidden": false,
+              "symbol": "symbols/8142.png",
+              "target": "lugares"
+            },
+            {
+              "label": "I want to play",
+              "message": "I want to play",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b308",
+              "hidden": false,
+              "symbol": "symbols/23392.png",
+              "target": "brincar"
+            },
+            {
+              "label": "I want to eat",
+              "message": "I want to eat",
+              "color": "green",
+              "type": "wordlink",
+              "id": "b309",
+              "hidden": false,
+              "symbol": "symbols/6456.png",
+              "target": "comida"
+            },
+            {
+              "label": "I have an idea",
+              "message": "I have an idea",
+              "color": "pink",
+              "type": "speak",
+              "id": "b310",
+              "hidden": false,
+              "symbol": "symbols/6019.png"
+            },
+            {
+              "label": "I want to tell you something",
+              "message": "I want to tell you something",
+              "color": "pink",
+              "type": "speak",
+              "id": "b311",
+              "hidden": false,
+              "symbol": "symbols/6517.png"
+            },
+            {
+              "label": "Wait, I'm not finished",
+              "message": "Wait, I'm not finished",
+              "color": "pink",
+              "type": "speak",
+              "id": "b312",
+              "hidden": false,
+              "symbol": "symbols/8109.png"
+            },
+            {
+              "label": "I want to change the subject",
+              "message": "I want to change the subject",
+              "color": "pink",
+              "type": "speak",
+              "id": "b313",
+              "hidden": false,
+              "symbol": "symbols/8053.png"
+            },
+            {
+              "label": "Can you say it again?",
+              "message": "Can you say it again?",
+              "color": "pink",
+              "type": "speak",
+              "id": "b314",
+              "hidden": false,
+              "symbol": "symbols/11752.png"
+            },
+            {
+              "label": "I don't understand",
+              "message": "I don't understand",
+              "color": "pink",
+              "type": "speak",
+              "id": "b315",
+              "hidden": false,
+              "symbol": "symbols/2352.png"
+            }
+          ]
         }
       ],
       "settings": {

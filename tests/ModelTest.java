@@ -202,13 +202,13 @@ public class ModelTest {
     JSONArray oldPages = old020.getJSONArray("profiles").getJSONObject(0).getJSONArray("pages");
     for (int i = oldPages.length() - 1; i >= 0; i--) {
       String id = oldPages.getJSONObject(i).optString("id");
-      if (java.util.Arrays.asList("perguntas", "escola", "brincar", "tempo", "descricoes", "lugares").contains(id))
+      if (java.util.Arrays.asList("perguntas", "escola", "brincar", "tempo", "descricoes", "nucleo", "comecar", "lugares").contains(id))
         oldPages.remove(i);
     }
     JSONArray oldHome = oldPages.getJSONObject(0).getJSONArray("buttons");
     for (int i = oldHome.length() - 1; i >= 0; i--)
       if (oldHome.getJSONObject(i).has("target")
-          && java.util.Arrays.asList("perguntas", "escola", "brincar", "tempo", "descricoes").contains(oldHome.getJSONObject(i).optString("target")))
+          && java.util.Arrays.asList("perguntas", "escola", "brincar", "tempo", "descricoes", "nucleo", "comecar").contains(oldHome.getJSONObject(i).optString("target")))
         oldHome.remove(i);
     for (int i = 0; i < oldPages.length(); i++) {
       JSONArray bs = oldPages.getJSONObject(i).getJSONArray("buttons");
@@ -217,8 +217,8 @@ public class ModelTest {
           Model.put(bs.getJSONObject(j), "symbol", "symbols/mulberry-delicious_food.png");
     }
     int homeBefore = oldHome.length();
-    check(Model.upgradeStarter(old020, defaults, legacy) == 5, "acrescenta as 5 páginas novas");
-    check(oldHome.length() == homeBefore + 5, "liga as páginas novas no início");
+    check(Model.upgradeStarter(old020, defaults, legacy) == 7, "acrescenta as 7 páginas novas");
+    check(oldHome.length() == homeBefore + 7, "liga as páginas novas no início");
     boolean placesBack = false, fixedSymbol = false;
     for (int i = 0; i < oldPages.length(); i++) {
       placesBack |= oldPages.getJSONObject(i).optString("id").equals("lugares");

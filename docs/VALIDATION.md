@@ -1,6 +1,6 @@
 # Alpha validation — 0.3.0 (2026-10-18)
 
-- GitHub Actions (Windows) on every push: asset checks (261 buttons, 358 PNGs including 224 ARASAAC pictograms, licenses and hashes, migration tables, English/Spanish boards in sync, every interface string translated), 67 model/grammar/prediction/migration/i18n assertions, APK build, and the Robolectric runtime suite on APIs 28 and 35 — now including dialog scanning, interface language, word forms, routines and an improved TD Snap import check — plus render checks.
+- GitHub Actions (Windows) on every push: asset checks (317 buttons, 378 PNGs including 244 ARASAAC pictograms, licenses and hashes, migration tables, English/Spanish boards in sync, every interface string translated), 67 model/grammar/prediction/migration/i18n assertions, APK build, and the Robolectric runtime suite on APIs 28 and 35 — now including dialog scanning, interface language, word forms, routines and an improved TD Snap import check — plus render checks.
 - Not yet tested on a physical device: scanning inside dialogs with real switches, Spanish/English voices, the 0.2.0 → 0.3.0 page upgrade. Please report results (device, Android version, access method).
 
 ## Previous: 0.2.0 (2026-10-18)

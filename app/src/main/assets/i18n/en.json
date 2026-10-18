@@ -59,7 +59,6 @@
   "Falar diretamente": "Speak right away",
   "Abrir página": "Open page",
   "Ao tocar": "When tapped",
-  "Página de destino (para Abrir página)": "Destination page (for Open page)",
   "Azul": "Blue",
   "Amarelo": "Yellow",
   "Verde": "Green",
@@ -292,6 +291,8 @@
   "eu": "I",
   "você/ele/ela": "you/he/she",
   "nós": "we",
-  "vocês/eles/elas": "you all/they"
+  "vocês/eles/elas": "you all/they",
+  "Adicionar e abrir página": "Add and open page",
+  "Página de destino (para abrir página)": "Destination page (to open a page)"
  }
 }

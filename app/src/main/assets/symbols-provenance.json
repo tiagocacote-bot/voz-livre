@@ -4177,19 +4177,6 @@
       "sha256": "2f8aac0bfaddbb691f898ad09fb8320ac0ec95f4f5c031063565939569596d1b"
     },
     {
-      "search": "picante",
-      "keywords": [
-        "picante"
-      ],
-      "provider": "ARASAAC",
-      "file": "symbols/37834.png",
-      "source": null,
-      "url": "https://arasaac.org/pictograms/pt/37834",
-      "author": "Sergio Palao",
-      "license": "CC BY-NC-SA 4.0",
-      "sha256": "a8ea7d905b01408a30c5b8684bdffe31f080201f817e4d1ff0716aab4c06f233"
-    },
-    {
       "search": "quero companhia",
       "keywords": [
         "companhia de teatro"
@@ -5399,6 +5386,308 @@
       "author": "Sergio Palao",
       "license": "CC BY-NC-SA 4.0",
       "sha256": "8cc7e77e70fd451716e6cfa88dab479100a3116828348aa741c41ee45311bdf3"
+    },
+    {
+      "search": "fazer",
+      "keywords": [
+        "fazer"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11749.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11749",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "daee81daaa0c88bdf34731f7e70ddd3ad51284c38ebe58102ba87df1c6238e1e"
+    },
+    {
+      "search": "olhar",
+      "keywords": [
+        "ver",
+        "olhar",
+        "observar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2474.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2474",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "78e90e685f7c08a409612b1c710404eb993406e6a1b77d4d606f60c903fd24f3"
+    },
+    {
+      "search": "montar",
+      "keywords": [
+        "construir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2713.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2713",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2fc1a891b5a9c2fe6af50bbf37894d76311dd76c1f496c24c2d7f688364f9593"
+    },
+    {
+      "search": "Estou sentindo",
+      "keywords": [
+        "sentir",
+        "sentidos",
+        "perceber"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/30196.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/30196",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f445bc183a0ca78d92fbd716543ebd4dfc5fd1e951b54fa74416c303277ae721"
+    },
+    {
+      "search": "bom",
+      "keywords": [
+        "bom"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4581.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4581",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5cc09936b8c104315292f22fb5cd8026c2c88ff7ea7a32c88b33e04ab5c5dced"
+    },
+    {
+      "search": "diferente",
+      "keywords": [
+        "desigual",
+        "diferente",
+        "vários",
+        "distinto",
+        "distinta"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4628.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4628",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "951d3d353b0fffb584894f34435b95e0a4de00b6002c4cad47468f6104e760c3"
+    },
+    {
+      "search": "algum",
+      "keywords": [
+        "alguma",
+        "algum",
+        "vários",
+        "várias"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5374.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5374",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f51c4379ffd3588751391e08595b73d388b366b881e170098b33fee7eb9db916"
+    },
+    {
+      "search": "para cima",
+      "keywords": [
+        "em cima",
+        "por cima",
+        "sobre"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5388.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5388",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9afd1362d840799f2c12d5f74d0c94f51905cabd7eccad74e2edb2b1ad5c57d4"
+    },
+    {
+      "search": "dentro",
+      "keywords": [
+        "dentro",
+        "conteúdo",
+        "contido"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5439.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5439",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ad1316d44cf090c325222398567d3096dd62234582826fc91a797469486953b1"
+    },
+    {
+      "search": "em cima",
+      "keywords": [
+        "em cima",
+        "sobre"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5451.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5451",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "641b5ecfaa5b02314b7f81a4af0787a9beee0c9aa9227ed4e170f909b6d0e0a8"
+    },
+    {
+      "search": "é",
+      "keywords": [
+        "ser"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5581.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5581",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "bbea17a436f2a3b4f43e1f53b8ec9197f225acc4167752259740f308f48fdd90"
+    },
+    {
+      "search": "Núcleo",
+      "keywords": [
+        "tudo",
+        "todo",
+        "toda"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5596.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5596",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1c41a8b6801c1a3e766b4e9e3287e80435ac60fce3d47f9225263702b462215e"
+    },
+    {
+      "search": "virar",
+      "keywords": [
+        "girar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6006.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6006",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "fefa72ee0f4fdbc907d165f78d17f49b63d68261101119a011055b3dfd4fef4c"
+    },
+    {
+      "search": "Tenho uma ideia",
+      "keywords": [
+        "ter uma ideia",
+        "encontrar",
+        "inventar",
+        "descobrir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6019.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6019",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "67b959d6689e6ff656888bdecc73db4ea3b25f2c316594e3e64342d1b3b93c8a"
+    },
+    {
+      "search": "aquilo",
+      "keywords": [
+        "aquele",
+        "aquela",
+        "aquilo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6906.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6906",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "48cf7968b7939cf092291b753ba75928346172c6c25f13f3717d2c65dbfee622"
+    },
+    {
+      "search": "isso",
+      "keywords": [
+        "este",
+        "esta",
+        "isto"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7095.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7095",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d237c6cfcefa8f39f54c34ae8a8f716eb93b519543fdde4124da8a3fb50c64ee"
+    },
+    {
+      "search": "Quero mudar de assunto",
+      "keywords": [
+        "mudar",
+        "trocar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8053.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8053",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c54e382cadfa0babbb95c5a6f2671768e7a261b53ff5c7cae550221fdaa98dff"
+    },
+    {
+      "search": "Espera, ainda não terminei",
+      "keywords": [
+        "esperar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8109.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8109",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4795b0c16fae2ff69299088d282c67ae96bb4e3a84285e71b69c40cd449c8c9e"
+    },
+    {
+      "search": "Eu acho que",
+      "keywords": [
+        "pensar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8662.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8662",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b60090fb3dd2d70751c56ab38bf2b81205992186d8790b97f31b14d233ae6aca"
+    },
+    {
+      "search": "colocar",
+      "keywords": [
+        "por",
+        "colocar",
+        "situar",
+        "pôr"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6989.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6989",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ff16fb2a3afb40e76da4f6b1f626f576e343df6720c468493ef4fe55ec5ae35c"
+    },
+    {
+      "search": "picante",
+      "keywords": [
+        "picante"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/37834.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/37834",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a8ea7d905b01408a30c5b8684bdffe31f080201f817e4d1ff0716aab4c06f233"
     }
   ],
   "arasaac": {

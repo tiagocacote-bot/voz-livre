@@ -12,11 +12,17 @@ for rec in p['records']:
     else:assert hashlib.sha256((r/rec['source']).read_bytes()).hexdigest()==rec['sourceSha256'],rec['source']
     if rec.get('aliasOf'):assert (a/rec['file']).read_bytes()==(a/rec['aliasOf']).read_bytes()
 documented={rec['file'] for rec in p['records']}
+# Files shipped in earlier versions stay available: saved boards and backups may point to them.
+legacy_files={'symbols/'+n for n in json.loads((r/'scripts/shipped-symbols.json').read_text(encoding='utf8'))}
+assert legacy_files<=documented,sorted(legacy_files-documented)[:5]
 assert {'symbols/'+f.name for f in (a/'symbols').iterdir()}==documented
 board=json.loads((a/'default.json').read_text(encoding='utf8'))
 assert board['symbolSet']=='arasaac'
 buttons=[b for profile in board['profiles'] for page in profile['pages'] for b in page['buttons']]
-assert len(buttons)==261 and board['starterVersion']==2
+assert len(buttons)==317 and board['starterVersion']==2
+for b in buttons:
+    assert b['type'] in ('word','speak','link','wordlink'),b['label']
+    if b['type'] in ('link','wordlink'):assert b['target'] in {pg['id'] for pg in board['profiles'][0]['pages']},b['label']
 for b in buttons:assert b['symbol'] in documented,b['label']
 for profile in board['profiles']:
     for routine in profile['routines']:

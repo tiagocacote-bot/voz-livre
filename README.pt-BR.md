@@ -19,7 +19,7 @@ A comunicação não deveria depender da renda ou da marca de um aparelho. O Voz
 
 ## Recursos desta versão
 
-- 13 páginas iniciais e 261 botões com pictogramas e texto para montar e falar mensagens: palavras principais, comida, sentimentos, pessoas, ações, lugares, corpo, frases rápidas, perguntas, escola, brincadeiras, tempo e dias, cores e descrições.
+- 15 páginas iniciais e 317 botões com pictogramas e texto para montar e falar mensagens: **Núcleo** (36 palavras essenciais em posições fixas), **Começar a falar** (inícios de frase por intenção), palavras principais, comida, sentimentos, pessoas, ações, lugares, corpo, frases rápidas, perguntas, escola, brincadeiras, tempo e dias, cores e descrições.
 - **Previsão de palavras:** quatro sugestões da próxima palavra, também no teclado. Começa com sugestões em português e aprende, só no aparelho, com as mensagens que cada perfil fala. Pode ser desligada ou apagada em **Ajustes → Tamanho da grade e letras**.
 - **Formas das palavras:** toque numa palavra da mensagem para conjugar o verbo (eu brinco, brinquei, brincarei) ou mudar gênero e número (cansado, cansada, cansados). Conjugação automática opcional.
 - Edição de páginas, textos, fala, cores, links e visibilidade; fotos próprias pelo seletor do Android.
@@ -27,6 +27,10 @@ A comunicação não deveria depender da renda ou da marca de um aparelho. O Voz
 - Toque direto, tempo de permanência no toque, seleção ao soltar, pistas auditivas, permanência do ponteiro e varredura automática ou por passos — **também dentro das janelas** (ajustes, edição, teclado, listas), com varredura por grupos quando há muitas opções. Precisam de testes com usuários e equipamentos.
 - Backup e restauração em JSON com fotos, desfazer/refazer mensagens e desfazer edição de páginas.
 - Importação experimental de `.spb`/`.sps`: textos, links, cores, ordem dos botões, botões ocultos e fotos da própria prancha. Ações sem suporte ficam desativadas para revisão. Símbolos de bibliotecas comerciais (PCS etc.) não são copiados.
+
+## Vocabulário
+
+O vocabulário inicial é original e aberto, baseado em princípios públicos de CAA — vocabulário núcleo, posições fixas para memória motora, organização pragmática e cores por classe de palavra — sem copiar produtos comerciais como PCS, PODD ou Gateway. Detalhes e fontes em [docs/VOCABULARIO.md](docs/VOCABULARIO.md).
 
 ## Imagens
 

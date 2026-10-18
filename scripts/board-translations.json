@@ -1,88 +1,1243 @@
 {
  "about": "Starter board translations: Portuguese text -> [English, Spanish]. Run python scripts/build-boards.py after editing default.json or this file.",
- "profile": {"en": {"name": "My communicator", "language": "en"}, "es": {"name": "Mi comunicador", "language": "es"}},
+ "profile": {
+  "en": {
+   "name": "My communicator",
+   "language": "en"
+  },
+  "es": {
+   "name": "Mi comunicador",
+   "language": "es"
+  }
+ },
  "text": {
-  "Meu comunicador": ["My communicator", "Mi comunicador"],
-  "Palavras principais": ["Core words", "Palabras principales"],
-  "eu": ["I", "yo"], "quero": ["want", "quiero"], "não": ["no", "no"], "você": ["you", "tú"],
-  "preciso": ["need", "necesito"], "sim": ["yes", "sí"], "mais": ["more", "más"], "ajuda": ["help", "ayuda"],
-  "parar": ["stop", "parar"], "gosto": ["like", "me gusta"], "ir": ["go", "ir"], "ter": ["have", "tener"],
-  "aqui": ["here", "aquí"], "agora": ["now", "ahora"], "depois": ["later", "después"],
-  "Comer e beber": ["Food and drink", "Comer y beber"], "Sentimentos": ["Feelings", "Sentimientos"],
-  "Pessoas": ["People", "Personas"], "Fazer": ["Do", "Hacer"], "Lugares": ["Places", "Lugares"],
-  "Meu corpo": ["My body", "Mi cuerpo"], "Frases rápidas": ["Quick phrases", "Frases rápidas"],
-  "Perguntas": ["Questions", "Preguntas"], "Escola": ["School", "Escuela"], "Brincadeiras": ["Play", "Juegos"],
-  "Tempo e dias": ["Time and days", "Tiempo y días"], "Cores e descrições": ["Colors and describing", "Colores y descripciones"],
-  "água": ["water", "agua"], "comer": ["eat", "comer"], "beber": ["drink", "beber"], "pão": ["bread", "pan"],
-  "arroz": ["rice", "arroz"], "feijão": ["beans", "frijoles"], "carne": ["meat", "carne"], "frango": ["chicken", "pollo"],
-  "ovo": ["egg", "huevo"], "leite": ["milk", "leche"], "suco": ["juice", "jugo"], "banana": ["banana", "plátano"],
-  "maçã": ["apple", "manzana"], "biscoito": ["cookie", "galleta"], "café": ["coffee", "café"], "sopa": ["soup", "sopa"],
-  "macarrão": ["pasta", "pasta"], "fruta": ["fruit", "fruta"], "fome": ["hungry", "hambre"], "sede": ["thirsty", "sed"],
-  "quente": ["hot", "caliente"], "frio": ["cold", "frío"], "gostoso": ["yummy", "rico"], "acabou": ["all done", "se acabó"],
-  "Como estou": ["How I feel", "Cómo estoy"], "feliz": ["happy", "feliz"], "triste": ["sad", "triste"],
-  "cansado": ["tired", "cansado"], "com dor": ["in pain", "con dolor"], "com medo": ["scared", "con miedo"],
-  "bravo": ["angry", "enojado"], "calmo": ["calm", "tranquilo"], "animado": ["excited", "emocionado"],
-  "sozinho": ["alone", "solo"], "confuso": ["confused", "confundido"], "bem": ["good", "bien"], "mal": ["bad", "mal"],
-  "não gosto": ["don't like", "no me gusta"], "confortável": ["comfortable", "cómodo"], "desconfortável": ["uncomfortable", "incómodo"],
-  "quero descansar": ["I want to rest", "quiero descansar"], "quero companhia": ["I want company", "quiero compañía"],
-  "ele": ["he", "él"], "ela": ["she", "ella"], "nós": ["we", "nosotros"], "mamãe": ["mom", "mamá"], "papai": ["dad", "papá"],
-  "irmão": ["brother", "hermano"], "irmã": ["sister", "hermana"], "amigo": ["friend", "amigo"], "amiga": ["friend", "amiga"],
-  "família": ["family", "familia"], "professor": ["teacher", "maestro"], "médico": ["doctor", "médico"],
-  "cuidador": ["caregiver", "cuidador"], "avó": ["grandma", "abuela"], "avô": ["grandpa", "abuelo"],
-  "todo mundo": ["everyone", "todos"], "O que quero fazer": ["What I want to do", "Lo que quiero hacer"],
-  "brincar": ["play", "jugar"], "dormir": ["sleep", "dormir"], "andar": ["walk", "caminar"], "sentar": ["sit", "sentarse"],
-  "levantar": ["get up", "levantarse"], "tomar banho": ["take a bath", "bañarse"], "escovar os dentes": ["brush teeth", "cepillarse los dientes"],
-  "ler": ["read", "leer"], "desenhar": ["draw", "dibujar"], "ouvir música": ["listen to music", "escuchar música"],
-  "assistir": ["watch", "ver"], "conversar": ["talk", "conversar"], "abraçar": ["hug", "abrazar"], "esperar": ["wait", "esperar"],
-  "abrir": ["open", "abrir"], "fechar": ["close", "cerrar"], "pegar": ["take", "agarrar"], "dar": ["give", "dar"],
-  "comprar": ["buy", "comprar"], "estudar": ["study", "estudiar"], "trabalhar": ["work", "trabajar"], "sair": ["go out", "salir"],
-  "voltar": ["come back", "volver"], "escolher": ["choose", "elegir"], "casa": ["home", "casa"], "banheiro": ["bathroom", "baño"],
-  "quarto": ["bedroom", "habitación"], "cozinha": ["kitchen", "cocina"], "escola": ["school", "escuela"], "parque": ["park", "parque"],
-  "hospital": ["hospital", "hospital"], "mercado": ["market", "mercado"], "rua": ["street", "calle"], "carro": ["car", "coche"],
-  "praia": ["beach", "playa"], "piscina": ["pool", "piscina"], "restaurante": ["restaurant", "restaurante"], "farmácia": ["pharmacy", "farmacia"],
-  "trabalho": ["work", "trabajo"], "jardim": ["garden", "jardín"], "sala": ["living room", "sala"], "cama": ["bed", "cama"],
-  "Meu corpo e cuidados": ["My body and care", "Mi cuerpo y cuidados"], "cabeça": ["head", "cabeza"], "barriga": ["tummy", "barriga"],
-  "braço": ["arm", "brazo"], "perna": ["leg", "pierna"], "mão": ["hand", "mano"], "pé": ["foot", "pie"], "costas": ["back", "espalda"],
-  "boca": ["mouth", "boca"], "dente": ["tooth", "diente"], "olho": ["eye", "ojo"], "ouvido": ["ear", "oído"], "nariz": ["nose", "nariz"],
-  "dor": ["pain", "dolor"], "coceira": ["itchy", "picazón"], "calor": ["hot", "calor"], "remédio": ["medicine", "medicina"],
-  "respirar": ["breathe", "respirar"], "posição": ["position", "posición"], "roupa": ["clothes", "ropa"], "óculos": ["glasses", "gafas"],
-  "cadeira": ["chair", "silla"], "Preciso de ajuda": ["I need help", "Necesito ayuda"], "Quero falar uma coisa": ["I want to say something", "Quiero decir algo"],
-  "Espere, estou falando": ["Wait, I'm talking", "Espera, estoy hablando"], "Sim": ["Yes", "Sí"], "Não": ["No", "No"],
-  "Não entendi": ["I don't understand", "No entendí"], "Pode repetir?": ["Can you say it again?", "¿Puedes repetir?"],
-  "Quero ir ao banheiro": ["I need the bathroom", "Quiero ir al baño"], "Estou com dor": ["I'm in pain", "Tengo dolor"],
-  "Quero mudar de posição": ["I want to change position", "Quiero cambiar de posición"], "Por favor": ["Please", "Por favor"],
-  "Obrigado": ["Thank you", "Gracias"], "Bom dia": ["Good morning", "Buenos días"], "Tudo bem?": ["How are you?", "¿Qué tal?"],
-  "Quero ficar sozinho": ["I want to be alone", "Quiero estar solo"], "Quero companhia": ["I want company", "Quiero compañía"],
-  "Essa não foi minha escolha": ["That was not my choice", "Esa no fue mi elección"], "Quero outra coisa": ["I want something else", "Quiero otra cosa"],
-  "o quê?": ["what?", "¿qué?"], "quem?": ["who?", "¿quién?"], "onde?": ["where?", "¿dónde?"], "quando?": ["when?", "¿cuándo?"],
-  "por quê?": ["why?", "¿por qué?"], "como?": ["how?", "¿cómo?"], "qual?": ["which?", "¿cuál?"], "quanto?": ["how much?", "¿cuánto?"],
-  "O que é isso?": ["What is that?", "¿Qué es eso?"], "Onde está?": ["Where is it?", "¿Dónde está?"], "Posso ir?": ["Can I go?", "¿Puedo ir?"],
-  "Posso brincar?": ["Can I play?", "¿Puedo jugar?"], "Que horas são?": ["What time is it?", "¿Qué hora es?"],
-  "Você pode me ajudar?": ["Can you help me?", "¿Me puedes ayudar?"], "Por que não?": ["Why not?", "¿Por qué no?"],
-  "Quem é você?": ["Who are you?", "¿Quién eres?"], "Vamos?": ["Shall we go?", "¿Vamos?"], "Acabou?": ["Is it over?", "¿Se acabó?"],
-  "professora": ["teacher", "maestra"], "colega": ["classmate", "compañero"], "livro": ["book", "libro"], "caderno": ["notebook", "cuaderno"],
-  "lápis": ["pencil", "lápiz"], "caneta": ["pen", "bolígrafo"], "borracha": ["eraser", "goma"], "mochila": ["backpack", "mochila"],
-  "tesoura": ["scissors", "tijeras"], "cola": ["glue", "pegamento"], "pintar": ["paint", "pintar"], "escrever": ["write", "escribir"],
-  "aula": ["class", "clase"], "recreio": ["recess", "recreo"], "lanche": ["snack", "merienda"], "computador": ["computer", "computadora"],
-  "Terminei": ["I'm done", "Terminé"], "Não sei": ["I don't know", "No sé"], "bola": ["ball", "pelota"], "boneca": ["doll", "muñeca"],
-  "carrinho": ["toy car", "carrito"], "quebra-cabeça": ["puzzle", "rompecabezas"], "blocos": ["blocks", "bloques"],
-  "massinha": ["play dough", "plastilina"], "balanço": ["swing", "columpio"], "escorregador": ["slide", "tobogán"],
-  "videogame": ["video game", "videojuego"], "tablet": ["tablet", "tableta"], "dançar": ["dance", "bailar"], "pular": ["jump", "saltar"],
-  "correr": ["run", "correr"], "esconde-esconde": ["hide and seek", "escondite"], "desenho animado": ["cartoons", "dibujos animados"],
-  "cantar": ["sing", "cantar"], "Minha vez": ["My turn", "Mi turno"], "Sua vez": ["Your turn", "Tu turno"],
-  "hoje": ["today", "hoy"], "amanhã": ["tomorrow", "mañana"], "ontem": ["yesterday", "ayer"], "de manhã": ["in the morning", "por la mañana"],
-  "de tarde": ["in the afternoon", "por la tarde"], "de noite": ["at night", "por la noche"], "já": ["already", "ya"],
-  "ainda não": ["not yet", "todavía no"], "segunda-feira": ["Monday", "lunes"], "terça-feira": ["Tuesday", "martes"],
-  "quarta-feira": ["Wednesday", "miércoles"], "quinta-feira": ["Thursday", "jueves"], "sexta-feira": ["Friday", "viernes"],
-  "sábado": ["Saturday", "sábado"], "domingo": ["Sunday", "domingo"], "semana": ["week", "semana"], "aniversário": ["birthday", "cumpleaños"],
-  "férias": ["vacation", "vacaciones"], "grande": ["big", "grande"], "pequeno": ["small", "pequeño"], "muito": ["a lot", "mucho"],
-  "pouco": ["a little", "poco"], "bonito": ["pretty", "bonito"], "feio": ["ugly", "feo"], "novo": ["new", "nuevo"], "velho": ["old", "viejo"],
-  "rápido": ["fast", "rápido"], "devagar": ["slow", "despacio"], "vermelho": ["red", "rojo"], "azul": ["blue", "azul"],
-  "verde": ["green", "verde"], "amarelo": ["yellow", "amarillo"], "preto": ["black", "negro"], "branco": ["white", "blanco"],
-  "rosa": ["pink", "rosa"], "igual": ["same", "igual"], "Meu dia": ["My day", "Mi día"], "Acordar": ["Wake up", "Despertarse"],
-  "Tomar café": ["Have breakfast", "Desayunar"], "Escovar os dentes": ["Brush teeth", "Cepillarse los dientes"],
-  "Vestir a roupa": ["Get dressed", "Vestirse"], "Sair de casa": ["Leave home", "Salir de casa"], "Hora de dormir": ["Bedtime", "Hora de dormir"],
-  "Jantar": ["Have dinner", "Cenar"], "Tomar banho": ["Take a bath", "Bañarse"], "Vestir o pijama": ["Put on pajamas", "Ponerse el pijama"],
-  "Contar uma história": ["Read a story", "Contar un cuento"], "Dormir": ["Sleep", "Dormir"]
+  "Meu comunicador": [
+   "My communicator",
+   "Mi comunicador"
+  ],
+  "Palavras principais": [
+   "Core words",
+   "Palabras principales"
+  ],
+  "eu": [
+   "I",
+   "yo"
+  ],
+  "quero": [
+   "want",
+   "quiero"
+  ],
+  "não": [
+   "no",
+   "no"
+  ],
+  "você": [
+   "you",
+   "tú"
+  ],
+  "preciso": [
+   "need",
+   "necesito"
+  ],
+  "sim": [
+   "yes",
+   "sí"
+  ],
+  "mais": [
+   "more",
+   "más"
+  ],
+  "ajuda": [
+   "help",
+   "ayuda"
+  ],
+  "parar": [
+   "stop",
+   "parar"
+  ],
+  "gosto": [
+   "like",
+   "me gusta"
+  ],
+  "ir": [
+   "go",
+   "ir"
+  ],
+  "ter": [
+   "have",
+   "tener"
+  ],
+  "aqui": [
+   "here",
+   "aquí"
+  ],
+  "agora": [
+   "now",
+   "ahora"
+  ],
+  "depois": [
+   "later",
+   "después"
+  ],
+  "Comer e beber": [
+   "Food and drink",
+   "Comer y beber"
+  ],
+  "Sentimentos": [
+   "Feelings",
+   "Sentimientos"
+  ],
+  "Pessoas": [
+   "People",
+   "Personas"
+  ],
+  "Fazer": [
+   "Do",
+   "Hacer"
+  ],
+  "Lugares": [
+   "Places",
+   "Lugares"
+  ],
+  "Meu corpo": [
+   "My body",
+   "Mi cuerpo"
+  ],
+  "Frases rápidas": [
+   "Quick phrases",
+   "Frases rápidas"
+  ],
+  "Perguntas": [
+   "Questions",
+   "Preguntas"
+  ],
+  "Escola": [
+   "School",
+   "Escuela"
+  ],
+  "Brincadeiras": [
+   "Play",
+   "Juegos"
+  ],
+  "Tempo e dias": [
+   "Time and days",
+   "Tiempo y días"
+  ],
+  "Cores e descrições": [
+   "Colors and describing",
+   "Colores y descripciones"
+  ],
+  "água": [
+   "water",
+   "agua"
+  ],
+  "comer": [
+   "eat",
+   "comer"
+  ],
+  "beber": [
+   "drink",
+   "beber"
+  ],
+  "pão": [
+   "bread",
+   "pan"
+  ],
+  "arroz": [
+   "rice",
+   "arroz"
+  ],
+  "feijão": [
+   "beans",
+   "frijoles"
+  ],
+  "carne": [
+   "meat",
+   "carne"
+  ],
+  "frango": [
+   "chicken",
+   "pollo"
+  ],
+  "ovo": [
+   "egg",
+   "huevo"
+  ],
+  "leite": [
+   "milk",
+   "leche"
+  ],
+  "suco": [
+   "juice",
+   "jugo"
+  ],
+  "banana": [
+   "banana",
+   "plátano"
+  ],
+  "maçã": [
+   "apple",
+   "manzana"
+  ],
+  "biscoito": [
+   "cookie",
+   "galleta"
+  ],
+  "café": [
+   "coffee",
+   "café"
+  ],
+  "sopa": [
+   "soup",
+   "sopa"
+  ],
+  "macarrão": [
+   "pasta",
+   "pasta"
+  ],
+  "fruta": [
+   "fruit",
+   "fruta"
+  ],
+  "fome": [
+   "hungry",
+   "hambre"
+  ],
+  "sede": [
+   "thirsty",
+   "sed"
+  ],
+  "quente": [
+   "hot",
+   "caliente"
+  ],
+  "frio": [
+   "cold",
+   "frío"
+  ],
+  "gostoso": [
+   "yummy",
+   "rico"
+  ],
+  "acabou": [
+   "all done",
+   "se acabó"
+  ],
+  "Como estou": [
+   "How I feel",
+   "Cómo estoy"
+  ],
+  "feliz": [
+   "happy",
+   "feliz"
+  ],
+  "triste": [
+   "sad",
+   "triste"
+  ],
+  "cansado": [
+   "tired",
+   "cansado"
+  ],
+  "com dor": [
+   "in pain",
+   "con dolor"
+  ],
+  "com medo": [
+   "scared",
+   "con miedo"
+  ],
+  "bravo": [
+   "angry",
+   "enojado"
+  ],
+  "calmo": [
+   "calm",
+   "tranquilo"
+  ],
+  "animado": [
+   "excited",
+   "emocionado"
+  ],
+  "sozinho": [
+   "alone",
+   "solo"
+  ],
+  "confuso": [
+   "confused",
+   "confundido"
+  ],
+  "bem": [
+   "good",
+   "bien"
+  ],
+  "mal": [
+   "bad",
+   "mal"
+  ],
+  "não gosto": [
+   "don't like",
+   "no me gusta"
+  ],
+  "confortável": [
+   "comfortable",
+   "cómodo"
+  ],
+  "desconfortável": [
+   "uncomfortable",
+   "incómodo"
+  ],
+  "quero descansar": [
+   "I want to rest",
+   "quiero descansar"
+  ],
+  "quero companhia": [
+   "I want company",
+   "quiero compañía"
+  ],
+  "ele": [
+   "he",
+   "él"
+  ],
+  "ela": [
+   "she",
+   "ella"
+  ],
+  "nós": [
+   "we",
+   "nosotros"
+  ],
+  "mamãe": [
+   "mom",
+   "mamá"
+  ],
+  "papai": [
+   "dad",
+   "papá"
+  ],
+  "irmão": [
+   "brother",
+   "hermano"
+  ],
+  "irmã": [
+   "sister",
+   "hermana"
+  ],
+  "amigo": [
+   "friend",
+   "amigo"
+  ],
+  "amiga": [
+   "friend",
+   "amiga"
+  ],
+  "família": [
+   "family",
+   "familia"
+  ],
+  "professor": [
+   "teacher",
+   "maestro"
+  ],
+  "médico": [
+   "doctor",
+   "médico"
+  ],
+  "cuidador": [
+   "caregiver",
+   "cuidador"
+  ],
+  "avó": [
+   "grandma",
+   "abuela"
+  ],
+  "avô": [
+   "grandpa",
+   "abuelo"
+  ],
+  "todo mundo": [
+   "everyone",
+   "todos"
+  ],
+  "O que quero fazer": [
+   "What I want to do",
+   "Lo que quiero hacer"
+  ],
+  "brincar": [
+   "play",
+   "jugar"
+  ],
+  "dormir": [
+   "sleep",
+   "dormir"
+  ],
+  "andar": [
+   "walk",
+   "caminar"
+  ],
+  "sentar": [
+   "sit",
+   "sentarse"
+  ],
+  "levantar": [
+   "get up",
+   "levantarse"
+  ],
+  "tomar banho": [
+   "take a bath",
+   "bañarse"
+  ],
+  "escovar os dentes": [
+   "brush teeth",
+   "cepillarse los dientes"
+  ],
+  "ler": [
+   "read",
+   "leer"
+  ],
+  "desenhar": [
+   "draw",
+   "dibujar"
+  ],
+  "ouvir música": [
+   "listen to music",
+   "escuchar música"
+  ],
+  "assistir": [
+   "watch",
+   "ver"
+  ],
+  "conversar": [
+   "talk",
+   "conversar"
+  ],
+  "abraçar": [
+   "hug",
+   "abrazar"
+  ],
+  "esperar": [
+   "wait",
+   "esperar"
+  ],
+  "abrir": [
+   "open",
+   "abrir"
+  ],
+  "fechar": [
+   "close",
+   "cerrar"
+  ],
+  "pegar": [
+   "take",
+   "agarrar"
+  ],
+  "dar": [
+   "give",
+   "dar"
+  ],
+  "comprar": [
+   "buy",
+   "comprar"
+  ],
+  "estudar": [
+   "study",
+   "estudiar"
+  ],
+  "trabalhar": [
+   "work",
+   "trabajar"
+  ],
+  "sair": [
+   "go out",
+   "salir"
+  ],
+  "voltar": [
+   "come back",
+   "volver"
+  ],
+  "escolher": [
+   "choose",
+   "elegir"
+  ],
+  "casa": [
+   "home",
+   "casa"
+  ],
+  "banheiro": [
+   "bathroom",
+   "baño"
+  ],
+  "quarto": [
+   "bedroom",
+   "habitación"
+  ],
+  "cozinha": [
+   "kitchen",
+   "cocina"
+  ],
+  "escola": [
+   "school",
+   "escuela"
+  ],
+  "parque": [
+   "park",
+   "parque"
+  ],
+  "hospital": [
+   "hospital",
+   "hospital"
+  ],
+  "mercado": [
+   "market",
+   "mercado"
+  ],
+  "rua": [
+   "street",
+   "calle"
+  ],
+  "carro": [
+   "car",
+   "coche"
+  ],
+  "praia": [
+   "beach",
+   "playa"
+  ],
+  "piscina": [
+   "pool",
+   "piscina"
+  ],
+  "restaurante": [
+   "restaurant",
+   "restaurante"
+  ],
+  "farmácia": [
+   "pharmacy",
+   "farmacia"
+  ],
+  "trabalho": [
+   "work",
+   "trabajo"
+  ],
+  "jardim": [
+   "garden",
+   "jardín"
+  ],
+  "sala": [
+   "living room",
+   "sala"
+  ],
+  "cama": [
+   "bed",
+   "cama"
+  ],
+  "Meu corpo e cuidados": [
+   "My body and care",
+   "Mi cuerpo y cuidados"
+  ],
+  "cabeça": [
+   "head",
+   "cabeza"
+  ],
+  "barriga": [
+   "tummy",
+   "barriga"
+  ],
+  "braço": [
+   "arm",
+   "brazo"
+  ],
+  "perna": [
+   "leg",
+   "pierna"
+  ],
+  "mão": [
+   "hand",
+   "mano"
+  ],
+  "pé": [
+   "foot",
+   "pie"
+  ],
+  "costas": [
+   "back",
+   "espalda"
+  ],
+  "boca": [
+   "mouth",
+   "boca"
+  ],
+  "dente": [
+   "tooth",
+   "diente"
+  ],
+  "olho": [
+   "eye",
+   "ojo"
+  ],
+  "ouvido": [
+   "ear",
+   "oído"
+  ],
+  "nariz": [
+   "nose",
+   "nariz"
+  ],
+  "dor": [
+   "pain",
+   "dolor"
+  ],
+  "coceira": [
+   "itchy",
+   "picazón"
+  ],
+  "calor": [
+   "hot",
+   "calor"
+  ],
+  "remédio": [
+   "medicine",
+   "medicina"
+  ],
+  "respirar": [
+   "breathe",
+   "respirar"
+  ],
+  "posição": [
+   "position",
+   "posición"
+  ],
+  "roupa": [
+   "clothes",
+   "ropa"
+  ],
+  "óculos": [
+   "glasses",
+   "gafas"
+  ],
+  "cadeira": [
+   "chair",
+   "silla"
+  ],
+  "Preciso de ajuda": [
+   "I need help",
+   "Necesito ayuda"
+  ],
+  "Quero falar uma coisa": [
+   "I want to say something",
+   "Quiero decir algo"
+  ],
+  "Espere, estou falando": [
+   "Wait, I'm talking",
+   "Espera, estoy hablando"
+  ],
+  "Sim": [
+   "Yes",
+   "Sí"
+  ],
+  "Não": [
+   "No",
+   "No"
+  ],
+  "Não entendi": [
+   "I don't understand",
+   "No entendí"
+  ],
+  "Pode repetir?": [
+   "Can you say it again?",
+   "¿Puedes repetir?"
+  ],
+  "Quero ir ao banheiro": [
+   "I need the bathroom",
+   "Quiero ir al baño"
+  ],
+  "Estou com dor": [
+   "I'm in pain",
+   "Tengo dolor"
+  ],
+  "Quero mudar de posição": [
+   "I want to change position",
+   "Quiero cambiar de posición"
+  ],
+  "Por favor": [
+   "Please",
+   "Por favor"
+  ],
+  "Obrigado": [
+   "Thank you",
+   "Gracias"
+  ],
+  "Bom dia": [
+   "Good morning",
+   "Buenos días"
+  ],
+  "Tudo bem?": [
+   "How are you?",
+   "¿Qué tal?"
+  ],
+  "Quero ficar sozinho": [
+   "I want to be alone",
+   "Quiero estar solo"
+  ],
+  "Quero companhia": [
+   "I want company",
+   "Quiero compañía"
+  ],
+  "Essa não foi minha escolha": [
+   "That was not my choice",
+   "Esa no fue mi elección"
+  ],
+  "Quero outra coisa": [
+   "I want something else",
+   "Quiero otra cosa"
+  ],
+  "o quê?": [
+   "what?",
+   "¿qué?"
+  ],
+  "quem?": [
+   "who?",
+   "¿quién?"
+  ],
+  "onde?": [
+   "where?",
+   "¿dónde?"
+  ],
+  "quando?": [
+   "when?",
+   "¿cuándo?"
+  ],
+  "por quê?": [
+   "why?",
+   "¿por qué?"
+  ],
+  "como?": [
+   "how?",
+   "¿cómo?"
+  ],
+  "qual?": [
+   "which?",
+   "¿cuál?"
+  ],
+  "quanto?": [
+   "how much?",
+   "¿cuánto?"
+  ],
+  "O que é isso?": [
+   "What is that?",
+   "¿Qué es eso?"
+  ],
+  "Onde está?": [
+   "Where is it?",
+   "¿Dónde está?"
+  ],
+  "Posso ir?": [
+   "Can I go?",
+   "¿Puedo ir?"
+  ],
+  "Posso brincar?": [
+   "Can I play?",
+   "¿Puedo jugar?"
+  ],
+  "Que horas são?": [
+   "What time is it?",
+   "¿Qué hora es?"
+  ],
+  "Você pode me ajudar?": [
+   "Can you help me?",
+   "¿Me puedes ayudar?"
+  ],
+  "Por que não?": [
+   "Why not?",
+   "¿Por qué no?"
+  ],
+  "Quem é você?": [
+   "Who are you?",
+   "¿Quién eres?"
+  ],
+  "Vamos?": [
+   "Shall we go?",
+   "¿Vamos?"
+  ],
+  "Acabou?": [
+   "Is it over?",
+   "¿Se acabó?"
+  ],
+  "professora": [
+   "teacher",
+   "maestra"
+  ],
+  "colega": [
+   "classmate",
+   "compañero"
+  ],
+  "livro": [
+   "book",
+   "libro"
+  ],
+  "caderno": [
+   "notebook",
+   "cuaderno"
+  ],
+  "lápis": [
+   "pencil",
+   "lápiz"
+  ],
+  "caneta": [
+   "pen",
+   "bolígrafo"
+  ],
+  "borracha": [
+   "eraser",
+   "goma"
+  ],
+  "mochila": [
+   "backpack",
+   "mochila"
+  ],
+  "tesoura": [
+   "scissors",
+   "tijeras"
+  ],
+  "cola": [
+   "glue",
+   "pegamento"
+  ],
+  "pintar": [
+   "paint",
+   "pintar"
+  ],
+  "escrever": [
+   "write",
+   "escribir"
+  ],
+  "aula": [
+   "class",
+   "clase"
+  ],
+  "recreio": [
+   "recess",
+   "recreo"
+  ],
+  "lanche": [
+   "snack",
+   "merienda"
+  ],
+  "computador": [
+   "computer",
+   "computadora"
+  ],
+  "Terminei": [
+   "I'm done",
+   "Terminé"
+  ],
+  "Não sei": [
+   "I don't know",
+   "No sé"
+  ],
+  "bola": [
+   "ball",
+   "pelota"
+  ],
+  "boneca": [
+   "doll",
+   "muñeca"
+  ],
+  "carrinho": [
+   "toy car",
+   "carrito"
+  ],
+  "quebra-cabeça": [
+   "puzzle",
+   "rompecabezas"
+  ],
+  "blocos": [
+   "blocks",
+   "bloques"
+  ],
+  "massinha": [
+   "play dough",
+   "plastilina"
+  ],
+  "balanço": [
+   "swing",
+   "columpio"
+  ],
+  "escorregador": [
+   "slide",
+   "tobogán"
+  ],
+  "videogame": [
+   "video game",
+   "videojuego"
+  ],
+  "tablet": [
+   "tablet",
+   "tableta"
+  ],
+  "dançar": [
+   "dance",
+   "bailar"
+  ],
+  "pular": [
+   "jump",
+   "saltar"
+  ],
+  "correr": [
+   "run",
+   "correr"
+  ],
+  "esconde-esconde": [
+   "hide and seek",
+   "escondite"
+  ],
+  "desenho animado": [
+   "cartoons",
+   "dibujos animados"
+  ],
+  "cantar": [
+   "sing",
+   "cantar"
+  ],
+  "Minha vez": [
+   "My turn",
+   "Mi turno"
+  ],
+  "Sua vez": [
+   "Your turn",
+   "Tu turno"
+  ],
+  "hoje": [
+   "today",
+   "hoy"
+  ],
+  "amanhã": [
+   "tomorrow",
+   "mañana"
+  ],
+  "ontem": [
+   "yesterday",
+   "ayer"
+  ],
+  "de manhã": [
+   "in the morning",
+   "por la mañana"
+  ],
+  "de tarde": [
+   "in the afternoon",
+   "por la tarde"
+  ],
+  "de noite": [
+   "at night",
+   "por la noche"
+  ],
+  "já": [
+   "already",
+   "ya"
+  ],
+  "ainda não": [
+   "not yet",
+   "todavía no"
+  ],
+  "segunda-feira": [
+   "Monday",
+   "lunes"
+  ],
+  "terça-feira": [
+   "Tuesday",
+   "martes"
+  ],
+  "quarta-feira": [
+   "Wednesday",
+   "miércoles"
+  ],
+  "quinta-feira": [
+   "Thursday",
+   "jueves"
+  ],
+  "sexta-feira": [
+   "Friday",
+   "viernes"
+  ],
+  "sábado": [
+   "Saturday",
+   "sábado"
+  ],
+  "domingo": [
+   "Sunday",
+   "domingo"
+  ],
+  "semana": [
+   "week",
+   "semana"
+  ],
+  "aniversário": [
+   "birthday",
+   "cumpleaños"
+  ],
+  "férias": [
+   "vacation",
+   "vacaciones"
+  ],
+  "grande": [
+   "big",
+   "grande"
+  ],
+  "pequeno": [
+   "small",
+   "pequeño"
+  ],
+  "muito": [
+   "a lot",
+   "mucho"
+  ],
+  "pouco": [
+   "a little",
+   "poco"
+  ],
+  "bonito": [
+   "pretty",
+   "bonito"
+  ],
+  "feio": [
+   "ugly",
+   "feo"
+  ],
+  "novo": [
+   "new",
+   "nuevo"
+  ],
+  "velho": [
+   "old",
+   "viejo"
+  ],
+  "rápido": [
+   "fast",
+   "rápido"
+  ],
+  "devagar": [
+   "slow",
+   "despacio"
+  ],
+  "vermelho": [
+   "red",
+   "rojo"
+  ],
+  "azul": [
+   "blue",
+   "azul"
+  ],
+  "verde": [
+   "green",
+   "verde"
+  ],
+  "amarelo": [
+   "yellow",
+   "amarillo"
+  ],
+  "preto": [
+   "black",
+   "negro"
+  ],
+  "branco": [
+   "white",
+   "blanco"
+  ],
+  "rosa": [
+   "pink",
+   "rosa"
+  ],
+  "igual": [
+   "same",
+   "igual"
+  ],
+  "Meu dia": [
+   "My day",
+   "Mi día"
+  ],
+  "Acordar": [
+   "Wake up",
+   "Despertarse"
+  ],
+  "Tomar café": [
+   "Have breakfast",
+   "Desayunar"
+  ],
+  "Escovar os dentes": [
+   "Brush teeth",
+   "Cepillarse los dientes"
+  ],
+  "Vestir a roupa": [
+   "Get dressed",
+   "Vestirse"
+  ],
+  "Sair de casa": [
+   "Leave home",
+   "Salir de casa"
+  ],
+  "Hora de dormir": [
+   "Bedtime",
+   "Hora de dormir"
+  ],
+  "Jantar": [
+   "Have dinner",
+   "Cenar"
+  ],
+  "Tomar banho": [
+   "Take a bath",
+   "Bañarse"
+  ],
+  "Vestir o pijama": [
+   "Put on pajamas",
+   "Ponerse el pijama"
+  ],
+  "Contar uma história": [
+   "Read a story",
+   "Contar un cuento"
+  ],
+  "Dormir": [
+   "Sleep",
+   "Dormir"
+  ],
+  "Núcleo": [
+   "Core",
+   "Núcleo"
+  ],
+  "Começar a falar": [
+   "Start talking",
+   "Empezar a hablar"
+  ],
+  "isso": [
+   "this",
+   "esto"
+  ],
+  "aquilo": [
+   "that",
+   "eso"
+  ],
+  "fazer": [
+   "do",
+   "hacer"
+  ],
+  "olhar": [
+   "look",
+   "mirar"
+  ],
+  "colocar": [
+   "put",
+   "poner"
+  ],
+  "virar": [
+   "turn",
+   "girar"
+  ],
+  "ajudar": [
+   "help",
+   "ayudar"
+  ],
+  "montar": [
+   "make",
+   "construir"
+  ],
+  "é": [
+   "is",
+   "es"
+  ],
+  "pode": [
+   "can",
+   "puede"
+  ],
+  "tudo": [
+   "all",
+   "todo"
+  ],
+  "bom": [
+   "good",
+   "bueno"
+  ],
+  "diferente": [
+   "different",
+   "diferente"
+  ],
+  "algum": [
+   "some",
+   "algún"
+  ],
+  "dentro": [
+   "in",
+   "dentro"
+  ],
+  "em cima": [
+   "on",
+   "encima"
+  ],
+  "para cima": [
+   "up",
+   "arriba"
+  ],
+  "Eu quero": [
+   "I want",
+   "Yo quiero"
+  ],
+  "Eu não quero": [
+   "I don't want",
+   "No quiero"
+  ],
+  "Eu preciso": [
+   "I need",
+   "Necesito"
+  ],
+  "Eu gosto de": [
+   "I like",
+   "Me gusta"
+  ],
+  "Eu não gosto de": [
+   "I don't like",
+   "No me gusta"
+  ],
+  "Estou sentindo": [
+   "I feel",
+   "Me siento"
+  ],
+  "Algo está errado": [
+   "Something's wrong",
+   "Algo está mal"
+  ],
+  "Tenho uma pergunta": [
+   "I have a question",
+   "Tengo una pregunta"
+  ],
+  "Eu acho que": [
+   "I think",
+   "Creo que"
+  ],
+  "Vamos": [
+   "Let's go",
+   "Vamos"
+  ],
+  "Eu quero brincar de": [
+   "I want to play",
+   "Quiero jugar a"
+  ],
+  "Eu quero comer": [
+   "I want to eat",
+   "Quiero comer"
+  ],
+  "Tenho uma ideia": [
+   "I have an idea",
+   "Tengo una idea"
+  ],
+  "Quero contar uma coisa": [
+   "I want to tell you something",
+   "Quiero contarte algo"
+  ],
+  "Espera, ainda não terminei": [
+   "Wait, I'm not finished",
+   "Espera, todavía no terminé"
+  ],
+  "Quero mudar de assunto": [
+   "I want to change the subject",
+   "Quiero cambiar de tema"
+  ]
  }
 }
