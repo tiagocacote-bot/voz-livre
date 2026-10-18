@@ -313,6 +313,9 @@ public class MainActivity extends Activity {
     for (int i = 0; i < suggestions.length; i++) {
       Button[] self = new Button[1];
       self[0] = action("", () -> pick(String.valueOf(self[0].getTag())));
+      int tint = contrast() ? Color.rgb(10, 45, 50) : Color.rgb(222, 242, 243);
+      self[0].setBackground(shape(tint));
+      colors.put(self[0], tint);
       self[0].setContentDescription("Sugestão");
       suggestions[i] = self[0];
       addRowButton(hints, self[0], 1);
