@@ -21,6 +21,17 @@ To reuse tools or a private signing directory outside the repository:
 ./build.ps1 -ToolsDirectory C:/dev/android-tools -SigningDirectory C:/private/voz-livre-signing -PythonPath python
 ```
 
+## Publishing a release
+
+Releases are built by `.github/workflows/release.yml` when a tag matching the app version is pushed (for example `git tag v0.2.0 && git push origin v0.2.0`), or by running the workflow manually with an existing tag. It runs the checks, signs the APK with the repository signing key and publishes `Voz-Livre-<version>.apk`, `Voz-Livre.apk` and `SHA256SUMS.txt`. The fixed link https://github.com/tiagocacote-bot/voz-livre/releases/latest/download/Voz-Livre.apk always serves the newest release.
+
+The signing key is the one `build.ps1` created in `signing/`. Store it as repository secrets under **Settings → Secrets and variables → Actions**:
+
+- `SIGNING_KEY_BASE64`: output of `[Convert]::ToBase64String([IO.File]::ReadAllBytes("signing\vozlivre.p12"))`
+- `SIGNING_PASSWORD`: contents of `signing/password.txt`
+
+The workflow refuses to publish if the certificate differs from the previous release's APK, because installed apps could not update. Keep an offline backup of `signing/`: if the key is lost, users must uninstall to move to a new key.
+
 ## Android Studio alternative
 
 The project also includes standard Gradle configuration: AGP 8.7.3, JDK 17, compile/target SDK 35, minimum SDK 26, Java 8 source. Open the root in Android Studio and install SDK 35. A Gradle wrapper is not included; use a compatible Gradle 8.9 installation or your IDE. This alternative was not used to produce the published alpha APK.
@@ -45,10 +56,12 @@ Use a short checkout path on Windows: native SQLite test files can exceed Window
 
 ## Artwork sources
 
-Bundled PNGs and SVGs are ready to use; no graphics package is required to build the APK. To edit a symbol, edit its SVG in `artwork/`, then run `npm install` and `npm run symbols`. Sharp 0.35.5 is a development dependency. The renderer updates aliases and provenance hashes; review the visual changes and preserve the per-record licenses. New symbol mappings also require updating the board and provenance records.
+Bundled PNGs and SVGs are ready to use; no graphics package is required to build the APK. ARASAAC pictograms (`symbols/<id>.png`) are downloaded by `scripts/fetch-arasaac.py` (manual workflow **Fetch ARASAAC pictograms**); update their hashes in `symbols-provenance.json` afterwards. `app/src/main/assets/legacy-symbols.json` maps each starter button between its Mulberry/original and ARASAAC pictures for migration and the picture-set setting. To edit a symbol, edit its SVG in `artwork/`, then run `npm install` and `npm run symbols`. Sharp 0.35.5 is a development dependency. The renderer updates aliases and provenance hashes; review the visual changes and preserve the per-record licenses. New symbol mappings also require updating the board and provenance records.
 
 ## Português
 
 No Windows x64, instale Node.js 24 e Python 3 e execute os quatro comandos da primeira seção. O APK vai para `build/`. As ferramentas são verificadas por hash e ficam em `.toolchain/`. A chave e a senha de assinatura ficam em `signing/`: não publique esses arquivos. Cada chave identifica uma linha de atualizações diferente.
 
-As imagens já estão prontas para compilar. Os SVGs editáveis ficam em `artwork/`; preserve os créditos e a licença de cada imagem. Os testes de modelo, ativos e simulação Android não substituem testes no aparelho e com a pessoa que utilizará CAA.
+Para publicar uma versão, crie a tag `v<versão>`; a Action **Release APK** assina com a chave guardada nos secrets `SIGNING_KEY_BASE64` e `SIGNING_PASSWORD` e publica `Voz-Livre.apk`. Guarde uma cópia da pasta `signing/` fora do computador.
+
+As imagens já estão prontas para compilar. Os pictogramas ARASAAC vêm de `scripts/fetch-arasaac.py`. Os SVGs editáveis ficam em `artwork/`; preserve os créditos e a licença de cada imagem. Os testes de modelo, ativos e simulação Android não substituem testes no aparelho e com a pessoa que utilizará CAA.

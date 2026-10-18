@@ -1,0 +1,52 @@
+name: Update screenshots
+# Renders the starter board with Robolectric and commits docs/images/*.png.
+on:
+  workflow_dispatch:
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/screenshots.yml']
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - run: node setup-tools.mjs
+      - run: ./build.ps1
+      - name: Resolve Robolectric test dependencies
+        shell: pwsh
+        run: |
+          $deps = Join-Path $PWD 'build/robo-deps'
+          mvn -q -B -f tests/pom.xml dependency:copy-dependencies -DincludeScope=test "-DoutputDirectory=$deps"
+          if ($LASTEXITCODE -ne 0) { throw 'Maven failed' }
+          Get-ChildItem $deps -Filter *.aar | ForEach-Object {
+            $zip = Join-Path $env:RUNNER_TEMP ($_.BaseName + '.zip')
+            Copy-Item $_.FullName $zip
+            $out = Join-Path $env:RUNNER_TEMP $_.BaseName
+            Expand-Archive $zip $out -Force
+            Copy-Item (Join-Path $out 'classes.jar') (Join-Path $deps ($_.BaseName + '-classes.jar'))
+          }
+          New-Item -ItemType Directory -Force .test-fixtures | Out-Null
+          Invoke-WebRequest 'https://raw.githubusercontent.com/willwade/AACProcessors/9e538963b236b84afce1ecf94980506d9a9bcd64/examples/demofiles/Medical%20Advocacy.spb' -OutFile .test-fixtures/sample.spb
+          if ((Get-FileHash .test-fixtures/sample.spb -Algorithm SHA256).Hash -ne 'D2D6895D4FDC3C258EB971C05330CF34E446EC25DA016643F3DDE26BA0C98836') { throw 'Unexpected fixture hash' }
+      - run: ./tests/run-runtime.ps1
+      - name: Commit screenshots
+        shell: pwsh
+        run: |
+          Copy-Item build/inicio.png, build/comida.png, build/paisagem.png docs/images/ -Force
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/images
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) { 'No changes'; exit 0 }
+          git commit -m 'Update simulated screenshots'
+          git pull --rebase origin $env:GITHUB_REF_NAME
+          git push origin "HEAD:$env:GITHUB_REF_NAME"
+          if ($LASTEXITCODE -ne 0) { throw 'Push failed' }
