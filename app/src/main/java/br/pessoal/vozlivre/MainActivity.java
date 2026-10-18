@@ -553,8 +553,13 @@ public class MainActivity extends Activity {
         action(
             t("▶ Falar"),
             () -> {
-              learn(model.text());
-              speak(model.text(), false);
+              String said = model.text();
+              learn(said);
+              if (!said.trim().isEmpty()) {
+                model.addHistory(said);
+                save();
+              }
+              speak(said, false);
             });
     speak.setTextColor(Color.WHITE);
     speak.setBackground(shape(teal));
@@ -1797,7 +1802,8 @@ public class MainActivity extends Activity {
       t("Pausar / retomar acesso"),
       t("Desfazer última edição"),
       t("Páginas"),
-      t("Mudar forma da última palavra")
+      t("Mudar forma da última palavra"),
+      t("Histórico de mensagens")
     };
     show(
         new AlertDialog.Builder(this)
@@ -1864,7 +1870,51 @@ public class MainActivity extends Activity {
                       if (model.message().length() == 0) toast(t("Monte uma mensagem primeiro."));
                       else wordForms(model.message().length() - 1);
                       break;
+                    case 13:
+                      history();
+                      break;
                   }
+                })
+            .setNegativeButton(t("Fechar"), null));
+  }
+
+  void history() {
+    JSONArray a = model.history();
+    if (a.length() == 0) {
+      show(
+          new AlertDialog.Builder(this)
+              .setTitle(t("Histórico de mensagens"))
+              .setMessage(t("Ainda não há mensagens faladas."))
+              .setPositiveButton(t("Fechar"), null));
+      return;
+    }
+    String[] items = new String[a.length()];
+    for (int i = 0; i < a.length(); i++) items[i] = a.optJSONObject(i).optString("text");
+    // Newest first.
+    for (int i = 0; i < items.length / 2; i++) {
+      String swap = items[i];
+      items[i] = items[items.length - 1 - i];
+      items[items.length - 1 - i] = swap;
+    }
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(t("Histórico de mensagens"))
+            .setMessage(t("Toque em uma mensagem para colocá-la de novo na barra."))
+            .setItems(
+                items,
+                (d, i) -> {
+                  try {
+                    model.append(items[i], "");
+                    changed();
+                  } catch (Exception e) {
+                    error(e);
+                  }
+                })
+            .setNeutralButton(
+                t("Limpar histórico"),
+                (d, w) -> {
+                  model.clearHistory();
+                  save();
                 })
             .setNegativeButton(t("Fechar"), null));
   }
@@ -2122,16 +2172,7 @@ public class MainActivity extends Activity {
                       displaySettings();
                       break;
                     case 3:
-                      Intent out = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-                      out.setType("application/json");
-                      out.addCategory(Intent.CATEGORY_OPENABLE);
-                      out.putExtra(
-                          Intent.EXTRA_TITLE,
-                          "Voz-Livre-"
-                              + new java.text.SimpleDateFormat("yyyy-MM-dd", Locale.ROOT)
-                                  .format(new Date())
-                              + ".vozlivre.json");
-                      startActivityForResult(out, EXPORT);
+                      exportBackup();
                       break;
                     case 4:
                       chooseImport(false);
@@ -2417,6 +2458,119 @@ public class MainActivity extends Activity {
                 (d, w) -> {
                   Model.put(model.settings(), "pin", input.getText().toString());
                   save();
+                })
+            .setNegativeButton(t("Cancelar"), null));
+  }
+
+  String pendingPassword = null;
+
+  /** Export a backup, optionally protected by a password. */
+  void exportBackup() {
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(t("Proteger o backup com senha?"))
+            .setMessage(
+                t("A senha protege apenas a cópia exportada. Guarde-a: sem ela o backup não pode ser restaurado."))
+            .setPositiveButton(
+                t("Com senha"),
+                (d, w) -> {
+                  EditText input =
+                      field(
+                          t("Senha"),
+                          "",
+                          android.text.InputType.TYPE_CLASS_TEXT
+                              | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                  show(
+                      new AlertDialog.Builder(this)
+                          .setTitle(t("Senha do backup"))
+                          .setView(input)
+                          .setPositiveButton(
+                              t("Continuar"),
+                              (x, y) -> {
+                                String password = input.getText().toString();
+                                if (password.length() < 4) {
+                                  toast(t("Use pelo menos 4 caracteres."));
+                                  return;
+                                }
+                                pendingPassword = password;
+                                startExport();
+                              })
+                          .setNegativeButton(t("Cancelar"), null));
+                })
+            .setNeutralButton(
+                t("Sem senha"),
+                (d, w) -> {
+                  pendingPassword = null;
+                  startExport();
+                })
+            .setNegativeButton(t("Cancelar"), null));
+  }
+
+  void startExport() {
+    Intent out = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+    out.setType("application/json");
+    out.addCategory(Intent.CATEGORY_OPENABLE);
+    out.putExtra(
+        Intent.EXTRA_TITLE,
+        "Voz-Livre-"
+            + new java.text.SimpleDateFormat("yyyy-MM-dd", Locale.ROOT).format(new Date())
+            + ".vozlivre.json");
+    startActivityForResult(out, EXPORT);
+  }
+
+  void askBackupPassword(byte[] encrypted) {
+    EditText input =
+        field(
+            t("Senha do backup"),
+            "",
+            android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(t("Backup protegido"))
+            .setMessage(t("Digite a senha usada ao exportar este backup."))
+            .setView(input)
+            .setPositiveButton(
+                t("Continuar"),
+                (d, w) -> {
+                  String password = input.getText().toString();
+                  io.execute(
+                      () -> {
+                        try {
+                          byte[] plain = Crypto.decrypt(encrypted, password);
+                          Model loaded = repo.parseBackup(plain);
+                          runOnUiThread(() -> confirmRestore(loaded, plain));
+                        } catch (Exception e) {
+                          runOnUiThread(() -> error(e));
+                        }
+                      });
+                })
+            .setNegativeButton(t("Cancelar"), null));
+  }
+
+  void confirmRestore(Model loaded, byte[] bytes) {
+    show(
+        new AlertDialog.Builder(this)
+            .setTitle(t("Restaurar backup?"))
+            .setMessage(
+                t("O arquivo contém ")
+                    + loaded.root.optJSONArray("profiles").length()
+                    + t(" perfil(is). A restauração substituirá os dados ativos deste aparelho. Exporte primeiro um backup se desejar conservar as alterações atuais."))
+            .setPositiveButton(
+                t("Restaurar"),
+                (d, w) -> {
+                  try {
+                    Model restored = repo.restoreImages(bytes);
+                    repo.save(restored);
+                    model = restored;
+                    current = model.profile().optString("home");
+                    back.clear();
+                    edit = false;
+                    bitmapCache.clear();
+                    build();
+                    toast(t("Backup restaurado."));
+                  } catch (Exception e) {
+                    error(e);
+                  }
                 })
             .setNegativeButton(t("Cancelar"), null));
   }
@@ -2796,11 +2950,14 @@ public class MainActivity extends Activity {
     } else if (request == EXPORT) {
       try {
         Model snapshot = new Model(model.root.toString());
+        String password = pendingPassword;
+        pendingPassword = null;
         io.execute(
             () -> {
               try {
                 byte[] bytes = repo.backup(snapshot);
-                try (OutputStream out = getContentResolver().openOutputStream(uri, "wt")) {
+                if (password != null && !password.isEmpty()) bytes = Crypto.encrypt(bytes, password);
+                try (OutputStream out = getContentResolver().openOutputStream(uri, "w")) {
                   out.write(bytes);
                 }
                 runOnUiThread(() -> toast(t("Backup exportado com suas fotos e personalizações.")));
@@ -2840,35 +2997,11 @@ public class MainActivity extends Activity {
                                       }
                                     })
                                 .setNegativeButton(t("Cancelar"), null)));
+              } else if (Crypto.encrypted(bytes)) {
+                runOnUiThread(() -> askBackupPassword(bytes));
               } else {
                 Model loaded = repo.parseBackup(bytes);
-                runOnUiThread(
-                    () ->
-                        show(
-                            new AlertDialog.Builder(this)
-                                .setTitle(t("Restaurar backup?"))
-                                .setMessage(
-                                    t("O arquivo contém ")
-                                        + loaded.root.optJSONArray("profiles").length()
-                                        + t(" perfil(is). A restauração substituirá os dados ativos deste aparelho. Exporte primeiro um backup se desejar conservar as alterações atuais."))
-                                .setPositiveButton(
-                                    t("Restaurar"),
-                                    (d, w) -> {
-                                      try {
-                                        Model restored = repo.restoreImages(bytes);
-                                        repo.save(restored);
-                                        model = restored;
-                                        current = model.profile().optString("home");
-                                        back.clear();
-                                        edit = false;
-                                        bitmapCache.clear();
-                                        build();
-                                        toast(t("Backup restaurado."));
-                                      } catch (Exception e) {
-                                        error(e);
-                                      }
-                                    })
-                                .setNegativeButton(t("Cancelar"), null)));
+                runOnUiThread(() -> confirmRestore(loaded, bytes));
               }
             } catch (Exception e) {
               error(e);

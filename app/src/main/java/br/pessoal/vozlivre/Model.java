@@ -137,6 +137,34 @@ public final class Model {
     }
   }
 
+  /** Local history of spoken messages for this profile (newest last, kept on the device). */
+  public JSONArray history() {
+    JSONArray a = profile().optJSONArray("history");
+    if (a == null) {
+      a = new JSONArray();
+      put(profile(), "history", a);
+    }
+    return a;
+  }
+
+  public void addHistory(String text) {
+    if (text == null || text.trim().isEmpty()) return;
+    JSONArray a = history();
+    try {
+      JSONObject e = new JSONObject();
+      String trimmed = text.trim();
+      put(e, "text", trimmed.length() > 2000 ? trimmed.substring(0, 2000) : trimmed);
+      put(e, "time", System.currentTimeMillis());
+      a.put(e);
+      while (a.length() > 100) a.remove(0);
+    } catch (JSONException ignored) {
+    }
+  }
+
+  public void clearHistory() {
+    put(profile(), "history", new JSONArray());
+  }
+
   public void beforeEdit() {
     edits.push(root.toString());
     while (edits.size() > 20) edits.removeLast();
