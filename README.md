@@ -1,3 +1,5 @@
+<img src="docs/store/galaxy/icon-512.png" alt="Voz Livre icon: speech bubble with the rainbow infinity" width="96" align="right">
+
 # Voz Livre — Free Voice
 
 **Free, open-source augmentative and alternative communication (AAC) for Android.**

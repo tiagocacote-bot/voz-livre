@@ -1,5 +1,10 @@
 # Changes
 
+## 0.3.1 — novo ícone
+
+- Novo ícone: um balão de fala (comunicação) com o símbolo do infinito nas cores do arco-íris (neurodiversidade), escolhido pela própria comunidade autista e neurodivergente — no lugar da peça de quebra-cabeça, que muitas pessoas autistas rejeitam. Ícone adaptativo: fica bem em telas com ícones redondos, quadrados ou arredondados.
+- *English:* new adaptive icon — a speech bubble holding the rainbow infinity symbol of neurodiversity.
+
 ## 0.3.0 — varredura nas janelas, gramática, idiomas e mais vocabulário
 
 - **Varredura em todas as janelas:** ajustes, edição, teclado, rotinas, listas e menus de escolha agora podem ser usados com acionador. Em janelas com muitas opções, a varredura passa primeiro por grupos de 8 e depois pelos itens do grupo escolhido. Perfil, Ajustes, Editar e "+ Novo botão" também entram na varredura, inclusive no modo de edição.

@@ -1,3 +1,5 @@
+<img src="docs/store/galaxy/icon-512.png" alt="Ícone do Voz Livre: balão de fala com o infinito do arco-íris" width="96" align="right">
+
 # Voz Livre — Free Voice
 
 **Comunicação Aumentativa e Alternativa (CAA) gratuita e de código aberto para Android.**

@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <!-- Scaled into the adaptive-icon safe zone so round and squircle masks never cut the bubble. -->
+    <group android:scaleX="0.7" android:scaleY="0.7" android:pivotX="54" android:pivotY="55">
+        <path android:fillColor="#FFFFFF" android:pathData="M33,22H75A13,13 0,0 1,88 35V61A13,13 0,0 1,75 74H46L28,88L31,74H33A13,13 0,0 1,20 61V35A13,13 0,0 1,33 22Z" />
+        <path android:fillColor="#00000000" android:strokeWidth="7.5" android:strokeLineCap="round" android:pathData="M54,48C61,38 77,38 77,48C77,58 61,58 54,48C47,38 31,38 31,48C31,58 47,58 54,48Z">
+            <aapt:attr name="android:strokeColor">
+                <gradient android:type="linear" android:startX="27" android:startY="48" android:endX="81" android:endY="48">
+                    <item android:offset="0" android:color="#E40303" />
+                    <item android:offset="0.2" android:color="#FF8C00" />
+                    <item android:offset="0.4" android:color="#FFD600" />
+                    <item android:offset="0.6" android:color="#00A046" />
+                    <item android:offset="0.8" android:color="#005ADC" />
+                    <item android:offset="1" android:color="#7828AA" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+</vector>
