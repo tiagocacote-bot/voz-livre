@@ -155,7 +155,7 @@ public class RuntimeTest {
     assertTrue(a.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_SPACE)));
     assertEquals(old + 1, a.scanner.selected());
     // Select the first word via scanner action, without depending on the current visual card order.
-    for (int i = 8; i < a.targets.size(); i++)
+    for (int i = a.fixedTargets; i < a.targets.size(); i++)
       if ("eu".equals(a.targets.get(i).getContentDescription())) {
         while (a.scanner.selected() != i) a.scanner.next();
         a.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));

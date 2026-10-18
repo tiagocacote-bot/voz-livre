@@ -46,13 +46,17 @@ public class MainActivity extends Activity {
   JSONObject photoDraft = null;
   TextView photoLabel = null;
   String search = "";
+  LinearLayout suggestionRow;
+  final Button[] suggestions = new Button[4];
+  int fixedTargets = 8;
+  JSONObject seed = null;
   static final int EXPORT = 10, IMPORT = 11, PHOTO = 12;
   final int ink = Color.rgb(21, 48, 65), teal = Color.rgb(8, 127, 140);
   final Runnable scanTick =
       new Runnable() {
         public void run() {
           if (activeScan() && "auto".equals(model.settings().optString("scanType", "auto"))) {
-            focus(scanner.next());
+            focus(nextTarget());
             handler.postDelayed(this, clamp(model.settings().optInt("scanMs", 1200), 400, 8000));
           }
         }
@@ -264,7 +268,13 @@ public class MainActivity extends Activity {
     messageScroll.addView(messageItems);
     root.addView(messageScroll, new LinearLayout.LayoutParams(-1, dp(compact ? 72 : 92)));
     LinearLayout speech = row();
-    Button speak = action("▶ Falar", () -> speak(model.text(), false));
+    Button speak =
+        action(
+            "▶ Falar",
+            () -> {
+              learn(model.text());
+              speak(model.text(), false);
+            });
     speak.setTextColor(Color.WHITE);
     speak.setBackground(shape(teal));
     colors.put(speak, teal);
@@ -297,11 +307,23 @@ public class MainActivity extends Activity {
         1);
     root.addView(speech);
     LinearLayout nav = row();
+    // Landscape has little height: suggestions share the navigation row.
+    suggestionRow = compact ? null : row();
+    LinearLayout hints = compact ? nav : suggestionRow;
+    for (int i = 0; i < suggestions.length; i++) {
+      Button[] self = new Button[1];
+      self[0] = action("", () -> pick(String.valueOf(self[0].getTag())));
+      self[0].setContentDescription("Sugestão");
+      suggestions[i] = self[0];
+      addRowButton(hints, self[0], 1);
+    }
+    if (suggestionRow != null) root.addView(suggestionRow);
     addRowButton(nav, action("⌂ Início", () -> home()), 1);
     addRowButton(nav, action("‹ Voltar", () -> goBack()), 1);
     addRowButton(nav, action("Teclado", () -> keyboard()), 1);
     addRowButton(nav, action("Mais ▾", () -> tools()), 1);
     root.addView(nav);
+    fixedTargets = targets.size();
     pageScroll = new ScrollView(this);
     pageScroll.setFillViewport(false);
     grid = new GridLayout(this);
@@ -350,6 +372,85 @@ public class MainActivity extends Activity {
         messageItems.addView(tile);
       }
     messageScroll.post(() -> messageScroll.fullScroll(View.FOCUS_RIGHT));
+    renderSuggestions();
+  }
+
+  boolean predict() {
+    return model.settings().optBoolean("predict", true);
+  }
+
+  JSONObject seed() {
+    if (seed == null)
+      try {
+        seed =
+            new JSONObject(
+                new String(
+                    Repository.read(getAssets().open("prediction.json"), 1000000),
+                    StandardCharsets.UTF_8));
+      } catch (Exception e) {
+        seed = new JSONObject();
+      }
+    return seed;
+  }
+
+  /** Word buttons of the active profile, keyed by folded message. */
+  Map<String, JSONObject> vocabulary() {
+    Map<String, JSONObject> words = new LinkedHashMap<>();
+    JSONArray pages = model.pages();
+    for (int i = 0; i < pages.length(); i++) {
+      JSONArray a = pages.optJSONObject(i).optJSONArray("buttons");
+      for (int j = 0; j < a.length(); j++) {
+        JSONObject b = a.optJSONObject(j);
+        String m = b.optString("message", b.optString("label")).trim();
+        if ("word".equals(b.optString("type", "word")) && !b.optBoolean("hidden") && !m.isEmpty())
+          words.putIfAbsent(fold(m), b);
+      }
+    }
+    return words;
+  }
+
+  List<String> predictions(String previous, String prefix) {
+    ArrayList<String> words = new ArrayList<>();
+    for (JSONObject b : vocabulary().values()) words.add(b.optString("message", b.optString("label")));
+    return Predictor.suggest(model.profile(), previous, prefix, words, seed(), suggestions.length);
+  }
+
+  void renderSuggestions() {
+    if (suggestions[0] == null) return;
+    boolean on = predict();
+    if (suggestionRow != null) suggestionRow.setVisibility(on ? View.VISIBLE : View.GONE);
+    if (!on) {
+      for (Button b : suggestions) b.setVisibility(View.GONE);
+      return;
+    }
+    List<String> next = predictions(Predictor.last(model.text()), "");
+    for (int i = 0; i < suggestions.length; i++) {
+      String word = i < next.size() ? next.get(i) : "";
+      suggestions[i].setText(word);
+      suggestions[i].setTag(word);
+      suggestions[i].setContentDescription("Sugestão: " + word);
+      suggestions[i].setVisibility(word.isEmpty() ? View.INVISIBLE : View.VISIBLE);
+    }
+  }
+
+  void pick(String word) {
+    if (word == null || word.trim().isEmpty()) return;
+    JSONObject b = vocabulary().get(fold(word.trim()));
+    try {
+      if (b != null) model.append(b.optString("message", b.optString("label")), b.optString("symbol"));
+      else model.append(word, "");
+      changed();
+      if (model.settings().optBoolean("speakWords")) speak(word, false);
+    } catch (Exception e) {
+      error(e);
+    }
+  }
+
+  void learn(String text) {
+    if (predict() && !text.trim().isEmpty()) {
+      Predictor.learn(model.profile(), text);
+      save();
+    }
   }
 
   int categoryColor(String c) {
@@ -405,7 +506,7 @@ public class MainActivity extends Activity {
     int cardBase = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE ? 64 : 90;
     float cardScale = cardBase == 64 ? 3f : 3.5f;
     cancelTouch();
-    while (targets.size() > 8) {
+    while (targets.size() > fixedTargets) {
       int i = targets.size() - 1;
       colors.remove(targets.remove(i));
       targetActions.remove(i);
@@ -712,6 +813,15 @@ public class MainActivity extends Activity {
         && "scan".equals(model.settings().optString("method"));
   }
 
+  /** Next scan target that is on screen; skips empty suggestions and hidden rows. */
+  int nextTarget() {
+    for (int n = 0; n < scanner.size(); n++) {
+      int i = scanner.next();
+      if (i >= 0 && i < targets.size() && targets.get(i).isShown()) return i;
+    }
+    return -1;
+  }
+
   void focus(int i) {
     if (i >= 0 && i < targets.size()) highlight(targets.get(i));
   }
@@ -719,7 +829,7 @@ public class MainActivity extends Activity {
   void startScan() {
     handler.removeCallbacks(scanTick);
     if (activeScan()) {
-      if (scanner.selected() < 0) focus(scanner.next());
+      if (scanner.selected() < 0) focus(nextTarget());
       if ("auto".equals(model.settings().optString("scanType", "auto")))
         handler.postDelayed(scanTick, clamp(model.settings().optInt("scanMs", 1200), 400, 8000));
     }
@@ -753,7 +863,7 @@ public class MainActivity extends Activity {
             || event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER)) {
       if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
         if ("step".equals(model.settings().optString("scanType"))
-            && event.getKeyCode() == KeyEvent.KEYCODE_SPACE) focus(scanner.next());
+            && event.getKeyCode() == KeyEvent.KEYCODE_SPACE) focus(nextTarget());
         else selectScan();
       }
       return true;
@@ -1132,8 +1242,50 @@ public class MainActivity extends Activity {
                 | android.text.InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
     input.setMinLines(3);
     form.addView(input);
+    if (predict()) {
+      LinearLayout hints = row();
+      Button[] options = new Button[suggestions.length];
+      Runnable refresh =
+          () -> {
+            String typed = input.getText().toString();
+            int cut = typed.lastIndexOf(' ') + 1;
+            String before = typed.substring(0, cut);
+            String previous = Predictor.last(before.isEmpty() ? model.text() : before);
+            List<String> next = predictions(previous, typed.substring(cut));
+            for (int i = 0; i < options.length; i++) {
+              String word = i < next.size() ? next.get(i) : "";
+              options[i].setText(word);
+              options[i].setVisibility(word.isEmpty() ? View.INVISIBLE : View.VISIBLE);
+            }
+          };
+      for (int i = 0; i < options.length; i++) {
+        Button[] self = new Button[1];
+        self[0] =
+            plain(
+                "",
+                () -> {
+                  String typed = input.getText().toString();
+                  input.setText(
+                      typed.substring(0, typed.lastIndexOf(' ') + 1) + self[0].getText() + " ");
+                  input.setSelection(input.getText().length());
+                });
+        options[i] = self[0];
+        addRowButton(hints, self[0], 1);
+      }
+      form.addView(hints);
+      input.addTextChangedListener(watcher(refresh));
+      refresh.run();
+    }
     LinearLayout controls = row();
-    addRowButton(controls, plain("Falar", () -> speak(input.getText().toString(), false)), 1);
+    addRowButton(
+        controls,
+        plain(
+            "Falar",
+            () -> {
+              learn(input.getText().toString());
+              speak(input.getText().toString(), false);
+            }),
+        1);
     addRowButton(
         controls,
         plain(
@@ -1707,6 +1859,35 @@ public class MainActivity extends Activity {
     contrast.setText("Alto contraste");
     contrast.setChecked(s.optBoolean("contrast"));
     form.addView(contrast);
+    CheckBox predict = new CheckBox(this);
+    predict.setText("Sugerir próximas palavras");
+    predict.setChecked(predict());
+    form.addView(predict);
+    form.addView(
+        plain(
+            "Esquecer palavras aprendidas",
+            () ->
+                show(
+                    new AlertDialog.Builder(this)
+                        .setTitle("Esquecer palavras aprendidas?")
+                        .setMessage(
+                            "As sugestões deste perfil voltam ao início. Pranchas e mensagens não"
+                                + " são alteradas.")
+                        .setPositiveButton(
+                            "Esquecer",
+                            (x, y) -> {
+                              Predictor.forget(model.profile());
+                              save();
+                              renderSuggestions();
+                            })
+                        .setNegativeButton("Cancelar", null))));
+    label(form, "Imagens dos botões iniciais");
+    boolean mulberry = "mulberry".equals(Model.symbolSet(model.root));
+    Spinner set =
+        spinner(
+            new String[] {"ARASAAC (pictogramas originais)", "Mulberry e desenhos próprios"},
+            mulberry ? 1 : 0);
+    form.addView(set);
     show(
         new AlertDialog.Builder(this)
             .setTitle("Grade e aparência")
@@ -1717,6 +1898,18 @@ public class MainActivity extends Activity {
                   Model.put(s, "columns", cols.getSelectedItemPosition() + 2);
                   Model.put(s, "font", Integer.parseInt(font.getSelectedItem().toString()));
                   Model.put(s, "contrast", contrast.isChecked());
+                  Model.put(s, "predict", predict.isChecked());
+                  if ((set.getSelectedItemPosition() == 1) != mulberry)
+                    try {
+                      model.beforeEdit();
+                      int n =
+                          Model.switchSymbols(
+                              model.root, repo.legacy(), set.getSelectedItemPosition() == 0);
+                      bitmapCache.clear();
+                      toast(n + " imagens trocadas. Fotos e símbolos escolhidos por você foram mantidos.");
+                    } catch (Exception e) {
+                      error(e);
+                    }
                   save();
                   build();
                 })
@@ -2031,12 +2224,15 @@ public class MainActivity extends Activity {
   void about() {
     show(
         new AlertDialog.Builder(this)
-            .setTitle("Voz Livre 0.1.1")
+            .setTitle("Voz Livre " + BuildInfo.VERSION)
             .setMessage(
-                "Seu comunicador pessoal. Funciona sem conta e sem conexão para as pranchas e os"
-                    + " recursos locais. A voz depende do motor instalado no Android.\n\n"
+                "Seu comunicador pessoal. Gratuito e de código aberto, sem anúncios. Funciona sem"
+                    + " conta e sem conexão para as pranchas e os recursos locais. A voz depende do"
+                    + " motor instalado no Android.\n\n"
                     + "Aplicativo independente, sem vínculo com Tobii Dynavox. Não inclui PCS,"
                     + " PODD, Gateway ou vozes comerciais.\n\n"
+                    + "Pictogramas: Sergio Palao. Origem: ARASAAC (arasaac.org). Licença: CC"
+                    + " BY-NC-SA 4.0. Propriedade: Governo de Aragão (Espanha). Uso não comercial.\n\n"
                     + "Mulberry Symbols by Steve Lee (CC BY-SA 4.0), convertidos para PNG. "
                     + "github.com/mulberrysymbols/mulberry-symbols. Licença: "
                     + "creativecommons.org/licenses/by-sa/4.0/. Desenhos próprios e código: MIT.\n\n"

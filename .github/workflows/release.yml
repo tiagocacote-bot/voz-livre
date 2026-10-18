@@ -1,0 +1,89 @@
+name: Release APK
+# Push a tag such as v0.2.0 (matching versionName) to build, sign and publish.
+# The APK is also published as Voz-Livre.apk so this link always serves the newest release:
+# https://github.com/tiagocacote-bot/voz-livre/releases/latest/download/Voz-Livre.apk
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing tag to (re)publish, e.g. v0.2.0'
+        required: true
+permissions:
+  contents: write
+concurrency: release
+jobs:
+  release:
+    runs-on: windows-latest
+    env:
+      TAG: ${{ inputs.tag || github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Tag matches app version
+        shell: pwsh
+        run: |
+          $m = [xml](Get-Content app/src/main/AndroidManifest.xml -Raw)
+          $v = $m.manifest.GetAttribute('versionName','http://schemas.android.com/apk/res/android')
+          if ("v$v" -ne $env:TAG) { throw "Tag $env:TAG does not match versionName $v" }
+          "VERSION=$v" | Out-File -Append $env:GITHUB_ENV
+      - name: Check symbols, attribution and manifest
+        run: python scripts/check-assets.py
+      - name: Download hash-pinned development tools
+        run: node setup-tools.mjs
+      - name: Model and scanner checks
+        run: ./tests/run-model.ps1
+      - name: Restore the release signing key
+        shell: pwsh
+        env:
+          KEY: ${{ secrets.SIGNING_KEY_BASE64 }}
+          PASSWORD: ${{ secrets.SIGNING_PASSWORD }}
+        run: |
+          if (-not $env:KEY -or -not $env:PASSWORD) { throw 'Set the SIGNING_KEY_BASE64 and SIGNING_PASSWORD repository secrets (see BUILDING.md).' }
+          $dir = Join-Path $env:RUNNER_TEMP 'signing'
+          New-Item -ItemType Directory -Force $dir | Out-Null
+          [IO.File]::WriteAllBytes((Join-Path $dir 'vozlivre.p12'), [Convert]::FromBase64String($env:KEY.Trim()))
+          [IO.File]::WriteAllText((Join-Path $dir 'password.txt'), $env:PASSWORD.Trim())
+          "SIGNING_DIR=$dir" | Out-File -Append $env:GITHUB_ENV
+      - name: Compile and sign APK
+        run: ./build.ps1 -SigningDirectory $env:SIGNING_DIR
+      - name: Same signing key as the previous release
+        shell: pwsh
+        run: |
+          $java = (Get-ChildItem .toolchain/jdk -Directory | Select-Object -First 1).FullName + '/bin/java.exe'
+          $cp = 'build;.toolchain/apksig.jar'
+          $new = & $java -cp $cp Signer cert "build/Voz-Livre-$env:VERSION.apk"
+          if ($LASTEXITCODE -ne 0) { throw 'Could not read the new certificate' }
+          $previous = gh release list --exclude-drafts --limit 20 --json tagName -q '.[].tagName' | Where-Object { $_ -ne $env:TAG } | Select-Object -First 1
+          if ($previous) {
+            New-Item -ItemType Directory -Force previous | Out-Null
+            gh release download $previous --pattern '*.apk' --dir previous --clobber
+            $old = Get-ChildItem previous -Filter *.apk | Select-Object -First 1
+            $oldCert = & $java -cp $cp Signer cert $old.FullName
+            if ($oldCert -ne $new) { throw "Signing certificate changed ($oldCert -> $new). Installed apps could not update." }
+            "Certificate matches $previous`: $new"
+          }
+      - name: Publish release
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist | Out-Null
+          Copy-Item "build/Voz-Livre-$env:VERSION.apk" dist/
+          Copy-Item "build/Voz-Livre-$env:VERSION.apk" dist/Voz-Livre.apk
+          Get-ChildItem dist -Filter *.apk | ForEach-Object { "$((Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower())  $($_.Name)" } | Out-File -Encoding ascii dist/SHA256SUMS.txt
+          python scripts/release-notes.py $env:VERSION | Out-File -Encoding utf8 notes.md
+          gh release view $env:TAG *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $env:TAG (Get-ChildItem dist).FullName --clobber
+          } else {
+            gh release create $env:TAG (Get-ChildItem dist).FullName --title "Voz Livre $env:VERSION" --notes-file notes.md --latest
+          }
+          if ($LASTEXITCODE -ne 0) { throw 'Release publish failed' }

@@ -9,6 +9,7 @@ const assets=path.join(root,'app/src/main/assets');
 const provenance=JSON.parse(await fs.readFile(path.join(assets,'symbols-provenance.json'),'utf8'));
 const rendered=new Map();
 for(const rec of provenance.records){
+ if(!rec.source)continue; // ARASAAC PNGs come from scripts/fetch-arasaac.py
  let bytes=rendered.get(rec.source);
  const svg=await fs.readFile(path.join(root,rec.source));
  if(!bytes){bytes=await sharp(svg).resize(256,256,{fit:'contain',background:{r:255,g:255,b:255,alpha:0}}).png().toBuffer();rendered.set(rec.source,bytes);}
@@ -17,4 +18,4 @@ for(const rec of provenance.records){
  rec.sourceSha256=crypto.createHash('sha256').update(svg).digest('hex');
 }
 await fs.writeFile(path.join(assets,'symbols-provenance.json'),JSON.stringify(provenance,null,2)+'\n');
-console.log(`Rendered ${rendered.size} SVGs and their compatibility aliases. Review changes before committing.`);
+console.log(`Rendered ${rendered.size} SVGs. Review changes before committing.`);

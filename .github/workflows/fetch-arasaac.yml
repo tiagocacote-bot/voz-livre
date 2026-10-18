@@ -1,9 +1,7 @@
 name: Fetch ARASAAC pictograms
+# Manual: re-downloads the ARASAAC pictograms (the build container may not reach arasaac.org).
 on:
   workflow_dispatch:
-  push:
-    branches: ['claude/**']
-    paths: ['scripts/fetch-arasaac.py', '.github/workflows/fetch-arasaac.yml']
 permissions:
   contents: write
 jobs:

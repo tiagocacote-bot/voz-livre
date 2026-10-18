@@ -197,6 +197,59 @@ public final class Model {
     return b;
   }
 
+  /** Symbol set applied to the starter buttons: "arasaac" (default) or "mulberry". */
+  public static String symbolSet(JSONObject r) {
+    return r.optString("symbolSet", "");
+  }
+
+  /**
+   * Switches starter-button pictures between ARASAAC and Mulberry/original drawings. Buttons are
+   * matched by starter id and current picture, so personal photos and edited symbols are kept.
+   *
+   * @param legacy {"byButton": {id: [mulberry, arasaac]}, "bySymbol": {mulberry: arasaac}}
+   * @return number of pictures changed
+   */
+  public static int switchSymbols(JSONObject r, JSONObject legacy, boolean toArasaac) {
+    JSONObject byButton = legacy.optJSONObject("byButton"), bySymbol = legacy.optJSONObject("bySymbol");
+    Map<String, String> symbols = new HashMap<>();
+    Iterator<String> keys = bySymbol.keys();
+    while (keys.hasNext()) {
+      String k = keys.next();
+      if (toArasaac) symbols.put(k, bySymbol.optString(k));
+      else symbols.putIfAbsent(bySymbol.optString(k), k);
+    }
+    int changed = 0;
+    JSONArray profiles = r.optJSONArray("profiles");
+    for (int p = 0; p < profiles.length(); p++) {
+      JSONObject profile = profiles.optJSONObject(p);
+      JSONArray pages = profile.optJSONArray("pages");
+      for (int i = 0; i < pages.length(); i++) {
+        JSONArray buttons = pages.optJSONObject(i).optJSONArray("buttons");
+        for (int j = 0; j < buttons.length(); j++) {
+          JSONObject b = buttons.optJSONObject(j);
+          String s = b.optString("symbol"), next = null;
+          JSONArray pair = byButton.optJSONArray(b.optString("id"));
+          if (pair != null && s.equals(pair.optString(toArasaac ? 0 : 1)))
+            next = pair.optString(toArasaac ? 1 : 0);
+          else if (symbols.containsKey(s)) next = symbols.get(s);
+          if (next != null && !next.equals(s)) {
+            put(b, "symbol", next);
+            changed++;
+          }
+        }
+      }
+      JSONArray message = profile.optJSONArray("message");
+      if (message != null)
+        for (int i = 0; i < message.length(); i++) {
+          JSONObject token = message.optJSONObject(i);
+          String next = symbols.get(token.optString("symbol"));
+          if (next != null) put(token, "symbol", next);
+        }
+    }
+    put(r, "symbolSet", toArasaac ? "arasaac" : "mulberry");
+    return changed;
+  }
+
   public static void validate(JSONObject r) throws JSONException {
     if (!"voz-livre".equals(r.optString("format")) || r.optInt("version") != 1)
       throw new JSONException("Arquivo não é um backup Voz Livre compatível.");
@@ -247,6 +300,7 @@ public final class Model {
             throw new JSONException("Caminho de imagem inválido na mensagem.");
         }
       }
+      if (u.has("usage") && u.optJSONObject("usage") == null) u.remove("usage");
       if (u.optJSONArray("notes") == null) put(u, "notes", new JSONArray());
       if (u.optJSONArray("routines") == null) put(u, "routines", new JSONArray());
     }

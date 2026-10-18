@@ -1,0 +1,790 @@
+{
+ "about": "Starter-button pictures: Mulberry/original drawing (0.1.1) and ARASAAC (0.1.0 prototype, 0.2.0+). Used to migrate saved data and to switch picture sets.",
+ "byButton": {
+  "b1": [
+   "symbols/original-self.png",
+   "symbols/6632.png"
+  ],
+  "b2": [
+   "symbols/mulberry-want___to.png",
+   "symbols/5441.png"
+  ],
+  "b3": [
+   "symbols/original-no.png",
+   "symbols/5526.png"
+  ],
+  "b4": [
+   "symbols/original-you.png",
+   "symbols/6625.png"
+  ],
+  "b5": [
+   "symbols/original-need.png",
+   "symbols/37160.png"
+  ],
+  "b6": [
+   "symbols/original-yes.png",
+   "symbols/5584.png"
+  ],
+  "b7": [
+   "symbols/mulberry-more.png",
+   "symbols/3220.png"
+  ],
+  "b8": [
+   "symbols/mulberry-help___to.png",
+   "symbols/12252.png"
+  ],
+  "b9": [
+   "symbols/original-stop.png",
+   "symbols/7196.png"
+  ],
+  "b10": [
+   "symbols/mulberry-heart_shape.png",
+   "symbols/37826.png"
+  ],
+  "b11": [
+   "symbols/mulberry-go___to.png",
+   "symbols/8142.png"
+  ],
+  "b12": [
+   "symbols/original-have.png",
+   "symbols/32761.png"
+  ],
+  "b13": [
+   "symbols/original-here.png",
+   "symbols/5382.png"
+  ],
+  "b14": [
+   "symbols/mulberry-now.png",
+   "symbols/32747.png"
+  ],
+  "b15": [
+   "symbols/original-later.png",
+   "symbols/32749.png"
+  ],
+  "b16": [
+   "symbols/mulberry-food.png",
+   "symbols/4610.png"
+  ],
+  "b17": [
+   "symbols/mulberry-happy_man.png",
+   "symbols/9907.png"
+  ],
+  "b18": [
+   "symbols/mulberry-family.png",
+   "symbols/38351.png"
+  ],
+  "b19": [
+   "symbols/mulberry-play___to.png",
+   "symbols/23392.png"
+  ],
+  "b20": [
+   "symbols/mulberry-house.png",
+   "symbols/6964.png"
+  ],
+  "b21": [
+   "symbols/mulberry-body_outline.png",
+   "symbols/2728.png"
+  ],
+  "b22": [
+   "symbols/mulberry-talk_1___to.png",
+   "symbols/6517.png"
+  ],
+  "b23": [
+   "symbols/mulberry-water.png",
+   "symbols/2248.png"
+  ],
+  "b24": [
+   "symbols/mulberry-eat___to.png",
+   "symbols/6456.png"
+  ],
+  "b25": [
+   "symbols/mulberry-drink___to.png",
+   "symbols/6061.png"
+  ],
+  "b26": [
+   "symbols/mulberry-bread.png",
+   "symbols/2494.png"
+  ],
+  "b27": [
+   "symbols/mulberry-rice.png",
+   "symbols/6911.png"
+  ],
+  "b28": [
+   "symbols/original-beans.png",
+   "symbols/3294.png"
+  ],
+  "b29": [
+   "symbols/mulberry-meat.png",
+   "symbols/2316.png"
+  ],
+  "b30": [
+   "symbols/mulberry-chicken.png",
+   "symbols/4952.png"
+  ],
+  "b31": [
+   "symbols/mulberry-egg.png",
+   "symbols/2427.png"
+  ],
+  "b32": [
+   "symbols/mulberry-milk.png",
+   "symbols/2445.png"
+  ],
+  "b33": [
+   "symbols/mulberry-apple_juice.png",
+   "symbols/11461.png"
+  ],
+  "b34": [
+   "symbols/mulberry-banana.png",
+   "symbols/2530.png"
+  ],
+  "b35": [
+   "symbols/mulberry-apple.png",
+   "symbols/2462.png"
+  ],
+  "b36": [
+   "symbols/mulberry-biscuits.png",
+   "symbols/8295.png"
+  ],
+  "b37": [
+   "symbols/mulberry-coffee.png",
+   "symbols/24479.png"
+  ],
+  "b38": [
+   "symbols/original-soup.png",
+   "symbols/2573.png"
+  ],
+  "b39": [
+   "symbols/mulberry-pasta.png",
+   "symbols/2455.png"
+  ],
+  "b40": [
+   "symbols/mulberry-fruit.png",
+   "symbols/28339.png"
+  ],
+  "b41": [
+   "symbols/mulberry-hungry.png",
+   "symbols/35559.png"
+  ],
+  "b42": [
+   "symbols/mulberry-thirsty.png",
+   "symbols/7273.png"
+  ],
+  "b43": [
+   "symbols/mulberry-hot.png",
+   "symbols/4583.png"
+  ],
+  "b44": [
+   "symbols/original-cold.png",
+   "symbols/4652.png"
+  ],
+  "b46": [
+   "symbols/mulberry-finish.png",
+   "symbols/28429.png"
+  ],
+  "b47": [
+   "symbols/mulberry-happy_man.png",
+   "symbols/9907.png"
+  ],
+  "b48": [
+   "symbols/mulberry-sad_man.png",
+   "symbols/35545.png"
+  ],
+  "b49": [
+   "symbols/original-tired.png",
+   "symbols/35537.png"
+  ],
+  "b50": [
+   "symbols/original-pain.png",
+   "symbols/2367.png"
+  ],
+  "b51": [
+   "symbols/mulberry-afraid_man.png",
+   "symbols/10261.png"
+  ],
+  "b52": [
+   "symbols/mulberry-angry_man.png",
+   "symbols/35539.png"
+  ],
+  "b53": [
+   "symbols/mulberry-relax___to.png",
+   "symbols/31310.png"
+  ],
+  "b54": [
+   "symbols/mulberry-excited_man.png",
+   "symbols/35547.png"
+  ],
+  "b55": [
+   "symbols/original-alone.png",
+   "symbols/39247.png"
+  ],
+  "b56": [
+   "symbols/mulberry-confused_man.png",
+   "symbols/2352.png"
+  ],
+  "b57": [
+   "symbols/mulberry-good.png",
+   "symbols/5397.png"
+  ],
+  "b58": [
+   "symbols/mulberry-bad.png",
+   "symbols/5504.png"
+  ],
+  "b59": [
+   "symbols/mulberry-heart_shape.png",
+   "symbols/37826.png"
+  ],
+  "b60": [
+   "symbols/original-notlike.png",
+   "symbols/6155.png"
+  ],
+  "b62": [
+   "symbols/original-pain.png",
+   "symbols/32528.png"
+  ],
+  "b63": [
+   "symbols/mulberry-rest___to.png",
+   "symbols/3299.png"
+  ],
+  "b64": [
+   "symbols/original-friend.png",
+   "symbols/38236.png"
+  ],
+  "b65": [
+   "symbols/original-self.png",
+   "symbols/6632.png"
+  ],
+  "b66": [
+   "symbols/original-you.png",
+   "symbols/6625.png"
+  ],
+  "b67": [
+   "symbols/original-other.png",
+   "symbols/6480.png"
+  ],
+  "b68": [
+   "symbols/original-other.png",
+   "symbols/7028.png"
+  ],
+  "b69": [
+   "symbols/original-group.png",
+   "symbols/7183.png"
+  ],
+  "b70": [
+   "symbols/mulberry-mum_parent.png",
+   "symbols/2458.png"
+  ],
+  "b71": [
+   "symbols/mulberry-dad_parent.png",
+   "symbols/16829.png"
+  ],
+  "b72": [
+   "symbols/mulberry-brother.png",
+   "symbols/2423.png"
+  ],
+  "b73": [
+   "symbols/mulberry-sister.png",
+   "symbols/2422.png"
+  ],
+  "b74": [
+   "symbols/original-friend.png",
+   "symbols/25790.png"
+  ],
+  "b75": [
+   "symbols/original-friend.png",
+   "symbols/8486.png"
+  ],
+  "b76": [
+   "symbols/mulberry-family.png",
+   "symbols/38351.png"
+  ],
+  "b77": [
+   "symbols/mulberry-teacher_1a.png",
+   "symbols/6556.png"
+  ],
+  "b78": [
+   "symbols/mulberry-doctor_1a.png",
+   "symbols/6561.png"
+  ],
+  "b79": [
+   "symbols/mulberry-take_care_of___to.png",
+   "symbols/7163.png"
+  ],
+  "b81": [
+   "symbols/mulberry-grandfather.png",
+   "symbols/23718.png"
+  ],
+  "b82": [
+   "symbols/original-group.png",
+   "symbols/30014.png"
+  ],
+  "b83": [
+   "symbols/mulberry-play___to.png",
+   "symbols/23392.png"
+  ],
+  "b84": [
+   "symbols/mulberry-sleep_male___to.png",
+   "symbols/6479.png"
+  ],
+  "b85": [
+   "symbols/mulberry-walk___to.png",
+   "symbols/6044.png"
+  ],
+  "b86": [
+   "symbols/mulberry-sit___to.png",
+   "symbols/6611.png"
+  ],
+  "b87": [
+   "symbols/mulberry-stand___to.png",
+   "symbols/36073.png"
+  ],
+  "b88": [
+   "symbols/mulberry-shower_1___to.png",
+   "symbols/6058.png"
+  ],
+  "b89": [
+   "symbols/mulberry-brush_teeth___to.png",
+   "symbols/2326.png"
+  ],
+  "b90": [
+   "symbols/mulberry-read___to.png",
+   "symbols/7141.png"
+  ],
+  "b91": [
+   "symbols/mulberry-draw___to.png",
+   "symbols/8088.png"
+  ],
+  "b92": [
+   "symbols/mulberry-headphones.png",
+   "symbols/2746.png"
+  ],
+  "b93": [
+   "symbols/mulberry-watch___to.png",
+   "symbols/21385.png"
+  ],
+  "b94": [
+   "symbols/mulberry-talk_1___to.png",
+   "symbols/6517.png"
+  ],
+  "b95": [
+   "symbols/mulberry-hug___to.png",
+   "symbols/6023.png"
+  ],
+  "b96": [
+   "symbols/mulberry-wait___to.png",
+   "symbols/36914.png"
+  ],
+  "b97": [
+   "symbols/mulberry-open___to.png",
+   "symbols/24825.png"
+  ],
+  "b98": [
+   "symbols/mulberry-close___to.png",
+   "symbols/24976.png"
+  ],
+  "b99": [
+   "symbols/mulberry-take___to.png",
+   "symbols/10148.png"
+  ],
+  "b100": [
+   "symbols/mulberry-give___to.png",
+   "symbols/28431.png"
+  ],
+  "b101": [
+   "symbols/original-buy.png",
+   "symbols/8986.png"
+  ],
+  "b102": [
+   "symbols/mulberry-study___to.png",
+   "symbols/6495.png"
+  ],
+  "b103": [
+   "symbols/original-work.png",
+   "symbols/6624.png"
+  ],
+  "b104": [
+   "symbols/mulberry-go_outside___to.png",
+   "symbols/2806.png"
+  ],
+  "b105": [
+   "symbols/mulberry-return___to.png",
+   "symbols/6630.png"
+  ],
+  "b106": [
+   "symbols/original-choice.png",
+   "symbols/30510.png"
+  ],
+  "b107": [
+   "symbols/mulberry-house.png",
+   "symbols/6964.png"
+  ],
+  "b108": [
+   "symbols/mulberry-toilet.png",
+   "symbols/5921.png"
+  ],
+  "b109": [
+   "symbols/mulberry-single_bed.png",
+   "symbols/5988.png"
+  ],
+  "b110": [
+   "symbols/original-kitchen.png",
+   "symbols/25966.png"
+  ],
+  "b111": [
+   "symbols/mulberry-school.png",
+   "symbols/32446.png"
+  ],
+  "b112": [
+   "symbols/mulberry-play_area.png",
+   "symbols/39572.png"
+  ],
+  "b113": [
+   "symbols/original-hospital.png",
+   "symbols/36210.png"
+  ],
+  "b114": [
+   "symbols/mulberry-shop.png",
+   "symbols/32942.png"
+  ],
+  "b115": [
+   "symbols/mulberry-road.png",
+   "symbols/2299.png"
+  ],
+  "b116": [
+   "symbols/mulberry-car.png",
+   "symbols/2339.png"
+  ],
+  "b117": [
+   "symbols/mulberry-beach.png",
+   "symbols/30518.png"
+  ],
+  "b118": [
+   "symbols/original-pool.png",
+   "symbols/30516.png"
+  ],
+  "b119": [
+   "symbols/original-restaurant.png",
+   "symbols/32408.png"
+  ],
+  "b120": [
+   "symbols/original-pharmacy.png",
+   "symbols/37368.png"
+  ],
+  "b121": [
+   "symbols/original-work.png",
+   "symbols/16087.png"
+  ],
+  "b122": [
+   "symbols/original-garden.png",
+   "symbols/2434.png"
+  ],
+  "b123": [
+   "symbols/mulberry-room.png",
+   "symbols/6211.png"
+  ],
+  "b124": [
+   "symbols/mulberry-single_bed.png",
+   "symbols/25900.png"
+  ],
+  "b125": [
+   "symbols/mulberry-head.png",
+   "symbols/2673.png"
+  ],
+  "b126": [
+   "symbols/mulberry-stomach.png",
+   "symbols/2786.png"
+  ],
+  "b127": [
+   "symbols/mulberry-arm.png",
+   "symbols/2669.png"
+  ],
+  "b128": [
+   "symbols/mulberry-leg.png",
+   "symbols/8666.png"
+  ],
+  "b129": [
+   "symbols/mulberry-left_hand.png",
+   "symbols/2928.png"
+  ],
+  "b130": [
+   "symbols/mulberry-foot.png",
+   "symbols/25327.png"
+  ],
+  "b131": [
+   "symbols/mulberry-back.png",
+   "symbols/2748.png"
+  ],
+  "b132": [
+   "symbols/mulberry-mouth.png",
+   "symbols/2663.png"
+  ],
+  "b133": [
+   "symbols/mulberry-tooth.png",
+   "symbols/10267.png"
+  ],
+  "b134": [
+   "symbols/mulberry-eye.png",
+   "symbols/6573.png"
+  ],
+  "b135": [
+   "symbols/mulberry-ear.png",
+   "symbols/39498.png"
+  ],
+  "b136": [
+   "symbols/original-nose.png",
+   "symbols/2887.png"
+  ],
+  "b137": [
+   "symbols/original-pain.png",
+   "symbols/2367.png"
+  ],
+  "b138": [
+   "symbols/mulberry-itch.png",
+   "symbols/11356.png"
+  ],
+  "b139": [
+   "symbols/mulberry-hot_person.png",
+   "symbols/35561.png"
+  ],
+  "b140": [
+   "symbols/original-cold.png",
+   "symbols/4652.png"
+  ],
+  "b141": [
+   "symbols/mulberry-medicine.png",
+   "symbols/8163.png"
+  ],
+  "b142": [
+   "symbols/mulberry-toilet.png",
+   "symbols/5921.png"
+  ],
+  "b143": [
+   "symbols/original-breathe.png",
+   "symbols/34377.png"
+  ],
+  "b144": [
+   "symbols/original-position.png",
+   "symbols/32675.png"
+  ],
+  "b145": [
+   "symbols/mulberry-clothes_generic.png",
+   "symbols/7233.png"
+  ],
+  "b146": [
+   "symbols/mulberry-glasses.png",
+   "symbols/3329.png"
+  ],
+  "b147": [
+   "symbols/mulberry-chair.png",
+   "symbols/3155.png"
+  ],
+  "b148": [
+   "symbols/mulberry-water.png",
+   "symbols/2248.png"
+  ],
+  "b149": [
+   "symbols/mulberry-help___to.png",
+   "symbols/12252.png"
+  ],
+  "b150": [
+   "symbols/mulberry-talk_1___to.png",
+   "symbols/6517.png"
+  ],
+  "b151": [
+   "symbols/mulberry-wait___to.png",
+   "symbols/36914.png"
+  ],
+  "b152": [
+   "symbols/original-yes.png",
+   "symbols/5584.png"
+  ],
+  "b153": [
+   "symbols/original-no.png",
+   "symbols/5526.png"
+  ],
+  "b154": [
+   "symbols/mulberry-confused_man.png",
+   "symbols/9847.png"
+  ],
+  "b155": [
+   "symbols/original-repeat.png",
+   "symbols/11752.png"
+  ],
+  "b156": [
+   "symbols/mulberry-toilet___go_to_the.png",
+   "symbols/5921.png"
+  ],
+  "b157": [
+   "symbols/original-pain.png",
+   "symbols/2367.png"
+  ],
+  "b158": [
+   "symbols/original-position.png",
+   "symbols/7167.png"
+  ],
+  "b159": [
+   "symbols/original-please.png",
+   "symbols/8195.png"
+  ],
+  "b160": [
+   "symbols/original-thanks.png",
+   "symbols/8129.png"
+  ],
+  "b161": [
+   "symbols/mulberry-morning.png",
+   "symbols/6944.png"
+  ],
+  "b162": [
+   "symbols/mulberry-happy_man.png",
+   "symbols/9907.png"
+  ],
+  "b163": [
+   "symbols/original-alone.png",
+   "symbols/39247.png"
+  ],
+  "b164": [
+   "symbols/original-friend.png",
+   "symbols/38236.png"
+  ],
+  "b165": [
+   "symbols/original-no.png",
+   "symbols/5526.png"
+  ],
+  "b166": [
+   "symbols/original-choice.png",
+   "symbols/17054.png"
+  ]
+ },
+ "bySymbol": {
+  "symbols/mulberry-afraid_man.png": "symbols/10261.png",
+  "symbols/mulberry-angry_man.png": "symbols/35539.png",
+  "symbols/mulberry-apple.png": "symbols/2462.png",
+  "symbols/mulberry-apple_juice.png": "symbols/11461.png",
+  "symbols/mulberry-arm.png": "symbols/2669.png",
+  "symbols/mulberry-back.png": "symbols/2748.png",
+  "symbols/mulberry-bad.png": "symbols/5504.png",
+  "symbols/mulberry-banana.png": "symbols/2530.png",
+  "symbols/mulberry-beach.png": "symbols/30518.png",
+  "symbols/mulberry-biscuits.png": "symbols/8295.png",
+  "symbols/mulberry-body_outline.png": "symbols/2728.png",
+  "symbols/mulberry-bread.png": "symbols/2494.png",
+  "symbols/mulberry-brother.png": "symbols/2423.png",
+  "symbols/mulberry-brush_teeth___to.png": "symbols/2326.png",
+  "symbols/mulberry-car.png": "symbols/2339.png",
+  "symbols/mulberry-chair.png": "symbols/3155.png",
+  "symbols/mulberry-chicken.png": "symbols/4952.png",
+  "symbols/mulberry-close___to.png": "symbols/24976.png",
+  "symbols/mulberry-clothes_generic.png": "symbols/7233.png",
+  "symbols/mulberry-coffee.png": "symbols/24479.png",
+  "symbols/mulberry-confused_man.png": "symbols/2352.png",
+  "symbols/mulberry-dad_parent.png": "symbols/16829.png",
+  "symbols/mulberry-doctor_1a.png": "symbols/6561.png",
+  "symbols/mulberry-draw___to.png": "symbols/8088.png",
+  "symbols/mulberry-drink___to.png": "symbols/6061.png",
+  "symbols/mulberry-ear.png": "symbols/39498.png",
+  "symbols/mulberry-eat___to.png": "symbols/6456.png",
+  "symbols/mulberry-egg.png": "symbols/2427.png",
+  "symbols/mulberry-excited_man.png": "symbols/35547.png",
+  "symbols/mulberry-eye.png": "symbols/6573.png",
+  "symbols/mulberry-family.png": "symbols/38351.png",
+  "symbols/mulberry-finish.png": "symbols/28429.png",
+  "symbols/mulberry-food.png": "symbols/4610.png",
+  "symbols/mulberry-foot.png": "symbols/25327.png",
+  "symbols/mulberry-fruit.png": "symbols/28339.png",
+  "symbols/mulberry-give___to.png": "symbols/28431.png",
+  "symbols/mulberry-glasses.png": "symbols/3329.png",
+  "symbols/mulberry-go___to.png": "symbols/8142.png",
+  "symbols/mulberry-go_outside___to.png": "symbols/2806.png",
+  "symbols/mulberry-good.png": "symbols/5397.png",
+  "symbols/mulberry-grandfather.png": "symbols/23718.png",
+  "symbols/mulberry-happy_man.png": "symbols/9907.png",
+  "symbols/mulberry-head.png": "symbols/2673.png",
+  "symbols/mulberry-headphones.png": "symbols/2746.png",
+  "symbols/mulberry-heart_shape.png": "symbols/37826.png",
+  "symbols/mulberry-help___to.png": "symbols/12252.png",
+  "symbols/mulberry-hot.png": "symbols/4583.png",
+  "symbols/mulberry-hot_person.png": "symbols/35561.png",
+  "symbols/mulberry-house.png": "symbols/6964.png",
+  "symbols/mulberry-hug___to.png": "symbols/6023.png",
+  "symbols/mulberry-hungry.png": "symbols/35559.png",
+  "symbols/mulberry-itch.png": "symbols/11356.png",
+  "symbols/mulberry-left_hand.png": "symbols/2928.png",
+  "symbols/mulberry-leg.png": "symbols/8666.png",
+  "symbols/mulberry-meat.png": "symbols/2316.png",
+  "symbols/mulberry-medicine.png": "symbols/8163.png",
+  "symbols/mulberry-milk.png": "symbols/2445.png",
+  "symbols/mulberry-more.png": "symbols/3220.png",
+  "symbols/mulberry-morning.png": "symbols/6944.png",
+  "symbols/mulberry-mouth.png": "symbols/2663.png",
+  "symbols/mulberry-mum_parent.png": "symbols/2458.png",
+  "symbols/mulberry-now.png": "symbols/32747.png",
+  "symbols/mulberry-open___to.png": "symbols/24825.png",
+  "symbols/mulberry-pasta.png": "symbols/2455.png",
+  "symbols/mulberry-play___to.png": "symbols/23392.png",
+  "symbols/mulberry-play_area.png": "symbols/39572.png",
+  "symbols/mulberry-read___to.png": "symbols/7141.png",
+  "symbols/mulberry-relax___to.png": "symbols/31310.png",
+  "symbols/mulberry-rest___to.png": "symbols/3299.png",
+  "symbols/mulberry-return___to.png": "symbols/6630.png",
+  "symbols/mulberry-rice.png": "symbols/6911.png",
+  "symbols/mulberry-road.png": "symbols/2299.png",
+  "symbols/mulberry-room.png": "symbols/6211.png",
+  "symbols/mulberry-sad_man.png": "symbols/35545.png",
+  "symbols/mulberry-school.png": "symbols/32446.png",
+  "symbols/mulberry-shop.png": "symbols/32942.png",
+  "symbols/mulberry-shower_1___to.png": "symbols/6058.png",
+  "symbols/mulberry-single_bed.png": "symbols/5988.png",
+  "symbols/mulberry-sister.png": "symbols/2422.png",
+  "symbols/mulberry-sit___to.png": "symbols/6611.png",
+  "symbols/mulberry-sleep_male___to.png": "symbols/6479.png",
+  "symbols/mulberry-stand___to.png": "symbols/36073.png",
+  "symbols/mulberry-stomach.png": "symbols/2786.png",
+  "symbols/mulberry-study___to.png": "symbols/6495.png",
+  "symbols/mulberry-take___to.png": "symbols/10148.png",
+  "symbols/mulberry-take_care_of___to.png": "symbols/7163.png",
+  "symbols/mulberry-talk_1___to.png": "symbols/6517.png",
+  "symbols/mulberry-teacher_1a.png": "symbols/6556.png",
+  "symbols/mulberry-thirsty.png": "symbols/7273.png",
+  "symbols/mulberry-toilet.png": "symbols/5921.png",
+  "symbols/mulberry-toilet___go_to_the.png": "symbols/5921.png",
+  "symbols/mulberry-tooth.png": "symbols/10267.png",
+  "symbols/mulberry-wait___to.png": "symbols/36914.png",
+  "symbols/mulberry-walk___to.png": "symbols/6044.png",
+  "symbols/mulberry-want___to.png": "symbols/5441.png",
+  "symbols/mulberry-watch___to.png": "symbols/21385.png",
+  "symbols/mulberry-water.png": "symbols/2248.png",
+  "symbols/original-alone.png": "symbols/39247.png",
+  "symbols/original-beans.png": "symbols/3294.png",
+  "symbols/original-breathe.png": "symbols/34377.png",
+  "symbols/original-buy.png": "symbols/8986.png",
+  "symbols/original-choice.png": "symbols/30510.png",
+  "symbols/original-cold.png": "symbols/4652.png",
+  "symbols/original-friend.png": "symbols/38236.png",
+  "symbols/original-garden.png": "symbols/2434.png",
+  "symbols/original-group.png": "symbols/7183.png",
+  "symbols/original-have.png": "symbols/32761.png",
+  "symbols/original-here.png": "symbols/5382.png",
+  "symbols/original-hospital.png": "symbols/36210.png",
+  "symbols/original-kitchen.png": "symbols/25966.png",
+  "symbols/original-later.png": "symbols/32749.png",
+  "symbols/original-need.png": "symbols/37160.png",
+  "symbols/original-no.png": "symbols/5526.png",
+  "symbols/original-nose.png": "symbols/2887.png",
+  "symbols/original-notlike.png": "symbols/6155.png",
+  "symbols/original-other.png": "symbols/6480.png",
+  "symbols/original-pain.png": "symbols/2367.png",
+  "symbols/original-pharmacy.png": "symbols/37368.png",
+  "symbols/original-please.png": "symbols/8195.png",
+  "symbols/original-pool.png": "symbols/30516.png",
+  "symbols/original-position.png": "symbols/32675.png",
+  "symbols/original-repeat.png": "symbols/11752.png",
+  "symbols/original-restaurant.png": "symbols/32408.png",
+  "symbols/original-self.png": "symbols/6632.png",
+  "symbols/original-soup.png": "symbols/2573.png",
+  "symbols/original-stop.png": "symbols/7196.png",
+  "symbols/original-thanks.png": "symbols/8129.png",
+  "symbols/original-tired.png": "symbols/35537.png",
+  "symbols/original-work.png": "symbols/6624.png",
+  "symbols/original-yes.png": "symbols/5584.png",
+  "symbols/original-you.png": "symbols/6625.png"
+ }
+}

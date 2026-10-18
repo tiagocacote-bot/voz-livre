@@ -2,6 +2,7 @@
 
 Run where static.arasaac.org and api.arasaac.org are reachable (CI). Writes
 symbols/<id>.png (256x256, transparent) and scripts/arasaac-meta.json.
+After a run, update symbols-provenance.json hashes and run scripts/check-assets.py.
 """
 from pathlib import Path
 import io,json,sys,time,urllib.parse,urllib.request
@@ -11,7 +12,7 @@ a=r/'app/src/main/assets'
 p=json.loads((a/'symbols-provenance.json').read_text(encoding='utf8'))
 ids=sorted({Path(rec['file']).stem for rec in p['records'] if Path(rec['file']).stem.isdigit()},key=int)
 # Starter words that had no ARASAAC pictogram in the prototype: take ARASAAC's best match.
-EXTRA=['comida','corpo','delicioso','não gostar','confortável','avó']
+EXTRA=['comida','corpo','não gostar']  # 'delicioso' and 'confortável' had no result; 'avó' only matched a grandfather
 def get(url,tries=5):
     for n in range(tries):
         try:

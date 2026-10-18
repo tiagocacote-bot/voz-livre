@@ -23,6 +23,10 @@ public class ModelTest {
     }
   }
 
+  static String read(Path p) throws Exception {
+    return new String(Files.readAllBytes(p), StandardCharsets.UTF_8);
+  }
+
   public static void main(String[] args) throws Exception {
     String source = new String(Files.readAllBytes(Paths.get(args[0])), StandardCharsets.UTF_8);
     Model m = new Model(source);
@@ -102,6 +106,68 @@ public class ModelTest {
     check(scan.next() == -1 && scan.selected() == -1, "página vazia não seleciona alvo anterior");
     check(
         m.page("comida") != null && m.page("frases") != null, "navegação inicial possui destinos");
+    Path assets = Paths.get(args[0]).getParent();
+    JSONObject seed = new JSONObject(read(assets.resolve("prediction.json")));
+    JSONObject legacy = new JSONObject(read(assets.resolve("legacy-symbols.json")));
+    java.util.List<String> vocab = java.util.Arrays.asList("água", "beber", "comer", "suco", "banana");
+    JSONObject fresh = new Model(source).profile();
+    check(
+        Predictor.suggest(fresh, "eu", "", vocab, seed, 4).get(0).equals("quero"),
+        "sugestões iniciais sem histórico");
+    check(
+        Predictor.suggest(fresh, "", "", vocab, seed, 4).size() == 4,
+        "sugestões no início da mensagem");
+    for (int i = 0; i < 3; i++) Predictor.learn(fresh, "Eu quero suco.");
+    check(
+        Predictor.suggest(fresh, "quero", "", vocab, seed, 4).get(0).equals("suco"),
+        "aprende a próxima palavra mais usada");
+    check(
+        Predictor.suggest(fresh, "quero", "be", vocab, seed, 4).get(0).equals("beber"),
+        "completa palavra digitada");
+    check(
+        Predictor.suggest(fresh, "quero", "agu", vocab, seed, 4).contains("água"),
+        "completa sem exigir acento");
+    check(
+        !Predictor.suggest(fresh, "suco", "", vocab, seed, 4).contains("suco"),
+        "não repete a palavra anterior");
+    for (int i = 0; i < Predictor.MAX_ENTRIES + 50; i++) Predictor.learn(fresh, "palavra" + i);
+    check(
+        fresh.getJSONObject("usage").getJSONObject("w").length() <= Predictor.MAX_ENTRIES,
+        "aprendizado tem tamanho limitado");
+    Model learned = new Model(m.root.toString());
+    Predictor.learn(learned.profile(), "eu preciso");
+    check(
+        new Model(learned.root.toString()).profile().getJSONObject("usage").getJSONObject("b").has("eu preciso"),
+        "aprendizado é salvo no perfil");
+    Predictor.forget(learned.profile());
+    check(!learned.profile().has("usage"), "esquecer palavras aprendidas");
+    JSONObject odd = Model.copy(m.root);
+    Model.put(odd.optJSONArray("profiles").optJSONObject(0), "usage", "x");
+    Model.validate(odd);
+    check(!odd.optJSONArray("profiles").optJSONObject(0).has("usage"), "descarta aprendizado inválido");
+    Model board = new Model(source);
+    check("arasaac".equals(Model.symbolSet(board.root)), "prancha inicial usa ARASAAC");
+    String arasaac = board.root.toString();
+    JSONObject eu = board.page("inicio").getJSONArray("buttons").getJSONObject(0);
+    JSONObject quero = board.page("inicio").getJSONArray("buttons").getJSONObject(1);
+    Model.put(quero, "symbol", "user/foto.jpg");
+    board.append("eu", eu.optString("symbol"));
+    int changed = Model.switchSymbols(board.root, legacy, false);
+    check(
+        changed > 150 && eu.optString("symbol").equals("symbols/original-self.png"),
+        "trocar para Mulberry");
+    check(quero.optString("symbol").equals("user/foto.jpg"), "troca preserva foto pessoal");
+    check(
+        board.message().getJSONObject(board.message().length() - 1).optString("symbol").equals("symbols/original-self.png"),
+        "troca atualiza mensagem em andamento");
+    JSONObject old = new JSONObject(arasaac);
+    Model.switchSymbols(old, legacy, false);
+    old.remove("symbolSet");
+    Model upgraded = new Model(old.toString());
+    Model.switchSymbols(upgraded.root, legacy, true);
+    check(
+        upgraded.root.getJSONArray("profiles").toString().equals(new JSONObject(arasaac).getJSONArray("profiles").toString()),
+        "dados da 0.1.1 voltam exatamente aos pictogramas ARASAAC");
     Model.validate(m.root);
     check(true, "estado completo continua válido após fluxos");
     System.out.println("TOTAL " + passed + " verificações aprovadas");
