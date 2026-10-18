@@ -294,6 +294,22 @@
   "nós": "nosotros",
   "vocês/eles/elas": "ustedes/ellos",
   "Adicionar e abrir página": "Añadir y abrir página",
-  "Página de destino (para abrir página)": "Página de destino (para abrir una página)"
+  "Página de destino (para abrir página)": "Página de destino (para abrir una página)",
+  "Histórico de mensagens": "Historial de mensajes",
+  "Ainda não há mensagens faladas.": "Aún no hay mensajes hablados.",
+  "Toque em uma mensagem para colocá-la de novo na barra.": "Toca un mensaje para volver a ponerlo en la barra.",
+  "Limpar histórico": "Borrar historial",
+  "Proteger o backup com senha?": "¿Proteger la copia con una contraseña?",
+  "A senha protege apenas a cópia exportada. Guarde-a: sem ela o backup não pode ser restaurado.": "La contraseña protege solo la copia exportada. Guárdala: sin ella la copia no se puede restaurar.",
+  "Com senha": "Con contraseña",
+  "Sem senha": "Sin contraseña",
+  "Senha": "Contraseña",
+  "Senha do backup": "Contraseña de la copia",
+  "Use pelo menos 4 caracteres.": "Usa al menos 4 caracteres.",
+  "Digite a senha usada ao exportar este backup.": "Escribe la contraseña usada al exportar esta copia.",
+  "Backup protegido": "Copia protegida",
+  "Informe uma senha.": "Introduce una contraseña.",
+  "Este backup não está protegido por senha.": "Esta copia no está protegida con contraseña.",
+  "Senha incorreta ou backup danificado.": "Contraseña incorrecta o copia dañada."
  }
 }

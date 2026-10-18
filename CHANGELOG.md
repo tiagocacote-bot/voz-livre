@@ -1,5 +1,11 @@
 # Changes
 
+## 0.3.3 — histórico de mensagens e backup com senha
+
+- **Histórico de mensagens:** em **Mais → Histórico de mensagens**, cada mensagem falada fica guardada só no aparelho (até 100 por perfil). Toque em uma mensagem para colocá-la de novo na barra — útil para revisar a sessão de terapia. Pode ser limpo a qualquer momento.
+- **Backup com senha:** ao exportar, escolha **Com senha** para proteger o arquivo (AES-256). Sem a senha o backup não pode ser restaurado; ao restaurar, o app pede a senha. A opção **Sem senha** mantém o comportamento anterior.
+- *English:* message history kept locally (up to 100 per profile) and optional password-protected backups (AES-256).
+
 ## 0.3.2 — falar ao tocar
 
 - Em **Ajustes → Acesso**, novo botão "Adicionar à mensagem e falar ao mesmo tempo": ao tocar em uma palavra, ela entra na mensagem e é falada na hora. Útil em terapia e para reforço auditivo imediato. (É a mesma opção que já existia em **Ajustes → Voz e velocidade**, agora também no ajuste de toque.)

@@ -254,6 +254,28 @@ public class ModelTest {
     }
     Model.validate(m.root);
     check(true, "estado completo continua válido após fluxos");
+    Model hist = new Model(source);
+    for (int i = 0; i < 105; i++) hist.addHistory("mensagem " + i);
+    check(hist.history().length() == 100, "histórico guarda no máximo 100 mensagens");
+    check(
+        hist.history().optJSONObject(99).optString("text").equals("mensagem 104"),
+        "histórico mantém a mensagem mais recente");
+    hist.clearHistory();
+    check(hist.history().length() == 0, "histórico pode ser limpo");
+    byte[] secret = "conteúdo do backup".getBytes(StandardCharsets.UTF_8);
+    byte[] locked = Crypto.encrypt(secret, "senha123");
+    check(Crypto.encrypted(locked) && !Crypto.encrypted(secret), "detecta backup protegido");
+    check(
+        new String(Crypto.decrypt(locked, "senha123"), StandardCharsets.UTF_8)
+            .equals("conteúdo do backup"),
+        "backup com senha volta ao original");
+    boolean wrongPassword = false;
+    try {
+      Crypto.decrypt(locked, "outra");
+    } catch (Exception e) {
+      wrongPassword = true;
+    }
+    check(wrongPassword, "senha errada é recusada");
     System.out.println("TOTAL " + passed + " verificações aprovadas");
   }
 }

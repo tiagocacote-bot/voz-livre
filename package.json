@@ -1,6 +1,6 @@
 {
   "name": "voz-livre-artwork-tools",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": true,
   "type": "module",
   "scripts": {"symbols": "node scripts/render-symbols.mjs"},

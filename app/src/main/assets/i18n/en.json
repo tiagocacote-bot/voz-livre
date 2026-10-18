@@ -294,6 +294,22 @@
   "nós": "we",
   "vocês/eles/elas": "you all/they",
   "Adicionar e abrir página": "Add and open page",
-  "Página de destino (para abrir página)": "Destination page (to open a page)"
+  "Página de destino (para abrir página)": "Destination page (to open a page)",
+  "Histórico de mensagens": "Message history",
+  "Ainda não há mensagens faladas.": "No spoken messages yet.",
+  "Toque em uma mensagem para colocá-la de novo na barra.": "Tap a message to put it back in the bar.",
+  "Limpar histórico": "Clear history",
+  "Proteger o backup com senha?": "Protect the backup with a password?",
+  "A senha protege apenas a cópia exportada. Guarde-a: sem ela o backup não pode ser restaurado.": "The password protects only the exported copy. Keep it: without it the backup cannot be restored.",
+  "Com senha": "With password",
+  "Sem senha": "Without password",
+  "Senha": "Password",
+  "Senha do backup": "Backup password",
+  "Use pelo menos 4 caracteres.": "Use at least 4 characters.",
+  "Digite a senha usada ao exportar este backup.": "Type the password used to export this backup.",
+  "Backup protegido": "Protected backup",
+  "Informe uma senha.": "Enter a password.",
+  "Este backup não está protegido por senha.": "This backup is not password-protected.",
+  "Senha incorreta ou backup danificado.": "Wrong password or damaged backup."
  }
 }
