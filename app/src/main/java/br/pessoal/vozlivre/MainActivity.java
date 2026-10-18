@@ -183,13 +183,230 @@ public class MainActivity extends Activity {
     dialogCount++;
     handler.removeCallbacks(scanTick);
     AlertDialog d = b.create();
-    d.setOnDismissListener(
-        x -> {
-          dialogCount = Math.max(0, dialogCount - 1);
-          startScan();
-        });
+    d.setOnDismissListener(x -> closed(d));
+    d.setOnKeyListener((x, code, event) -> dialogKey(code, event));
     d.show();
+    openDialogs.add(d);
+    restartDialogScan();
     return d;
+  }
+
+  /** Every dialog's dismiss path ends here, including dialogs with their own listener. */
+  void closed(Dialog d) {
+    openDialogs.remove(d);
+    clearDialogFocus();
+    dialogCount = Math.max(0, dialogCount - 1);
+    if (topDialog() != null) restartDialogScan();
+    else startScan();
+  }
+
+  // ----- Scanning inside dialogs: linear, or by groups of 8 when a dialog has many choices -----
+
+  final ArrayList<Dialog> openDialogs = new ArrayList<>();
+  final Map<View, android.graphics.drawable.Drawable> savedForegrounds = new HashMap<>();
+  final ArrayList<View> dialogFocus = new ArrayList<>();
+  int dialogIndex = -1, dialogGroup = -1;
+  static final int GROUP = 8;
+  final Runnable dialogTick =
+      new Runnable() {
+        public void run() {
+          if (dialogScanActive() && "auto".equals(model.settings().optString("scanType", "auto"))) {
+            stepDialog();
+            handler.postDelayed(this, clamp(model.settings().optInt("scanMs", 1200), 400, 8000));
+          }
+        }
+      };
+
+  Dialog topDialog() {
+    for (int i = openDialogs.size() - 1; i >= 0; i--)
+      if (openDialogs.get(i).isShowing()) return openDialogs.get(i);
+    return null;
+  }
+
+  boolean dialogScanActive() {
+    return model != null
+        && !stopped
+        && !paused
+        && topDialog() != null
+        && "scan".equals(model.settings().optString("method"));
+  }
+
+  void restartDialogScan() {
+    handler.removeCallbacks(dialogTick);
+    clearDialogFocus();
+    dialogIndex = -1;
+    dialogGroup = -1;
+    if (!dialogScanActive()) return;
+    // Wait for the dialog's first layout so its targets are on screen.
+    handler.postDelayed(
+        () -> {
+          if (!dialogScanActive()) return;
+          stepDialog();
+          if ("auto".equals(model.settings().optString("scanType", "auto")))
+            handler.postDelayed(
+                dialogTick, clamp(model.settings().optInt("scanMs", 1200), 400, 8000));
+        },
+        250);
+  }
+
+  List<View> dialogTargets() {
+    ArrayList<View> out = new ArrayList<>();
+    Dialog d = topDialog();
+    if (d != null && d.getWindow() != null) collect(d.getWindow().getDecorView(), out);
+    return out;
+  }
+
+  void collect(View v, List<View> out) {
+    if (!v.isShown()) return;
+    if (v instanceof ListView) {
+      ListView list = (ListView) v;
+      for (int i = 0; i < list.getChildCount(); i++)
+        if (list.getChildAt(i).isShown()) out.add(list.getChildAt(i));
+      return;
+    }
+    if (v instanceof EditText || v instanceof Drawing) return;
+    if (v.isEnabled() && (v.isClickable() || v instanceof Spinner)) {
+      out.add(v);
+      return;
+    }
+    if (v instanceof ViewGroup)
+      for (int i = 0; i < ((ViewGroup) v).getChildCount(); i++)
+        collect(((ViewGroup) v).getChildAt(i), out);
+  }
+
+  /** Advances the highlight: groups first when there are many targets, then items. */
+  void stepDialog() {
+    List<View> t = dialogTargets();
+    if (t.isEmpty()) return;
+    boolean grouped = t.size() > GROUP + 2;
+    if (grouped && dialogGroup < 0) {
+      dialogIndex++;
+      int groups = (t.size() + GROUP - 1) / GROUP;
+      if (dialogIndex >= groups) {
+        if (pageLists()) return;
+        dialogIndex = 0;
+      }
+      int from = dialogIndex * GROUP;
+      focusDialog(t.subList(from, Math.min(t.size(), from + GROUP)));
+      return;
+    }
+    int from = grouped ? dialogGroup * GROUP : 0, to = grouped ? Math.min(t.size(), from + GROUP) : t.size();
+    dialogIndex++;
+    if (from + dialogIndex >= to) {
+      if (grouped) {
+        // Leaving the group: back to choosing groups, starting after this one.
+        dialogIndex = dialogGroup;
+        dialogGroup = -1;
+        focusDialog(t.subList(from, to));
+        return;
+      }
+      if (pageLists()) return;
+      dialogIndex = 0;
+    }
+    focusDialog(Collections.singletonList(t.get(from + dialogIndex)));
+  }
+
+  /** Scrolls long lists to show their next items; returns true when it scrolled. */
+  boolean pageLists() {
+    Dialog d = topDialog();
+    if (d == null || d.getWindow() == null) return false;
+    ArrayList<ListView> lists = new ArrayList<>();
+    findLists(d.getWindow().getDecorView(), lists);
+    boolean moved = false;
+    for (ListView l : lists)
+      if (l.getLastVisiblePosition() < l.getCount() - 1) {
+        l.setSelection(l.getLastVisiblePosition());
+        moved = true;
+      } else if (l.getFirstVisiblePosition() > 0) {
+        l.setSelection(0);
+        moved = true;
+      }
+    if (moved) {
+      dialogIndex = -1;
+      clearDialogFocus();
+    }
+    return moved;
+  }
+
+  void findLists(View v, List<ListView> out) {
+    if (v instanceof ListView) out.add((ListView) v);
+    else if (v instanceof ViewGroup)
+      for (int i = 0; i < ((ViewGroup) v).getChildCount(); i++)
+        findLists(((ViewGroup) v).getChildAt(i), out);
+  }
+
+  void focusDialog(List<View> views) {
+    clearDialogFocus();
+    for (View v : views) {
+      savedForegrounds.put(v, v.getForeground());
+      GradientDrawable ring = new GradientDrawable();
+      ring.setColor(Color.TRANSPARENT);
+      ring.setCornerRadius(dp(8));
+      ring.setStroke(dp(5), Color.rgb(239, 111, 25));
+      v.setForeground(ring);
+      dialogFocus.add(v);
+    }
+    if (!views.isEmpty()) {
+      View first = views.get(0);
+      first.requestRectangleOnScreen(new Rect(0, 0, first.getWidth(), first.getHeight()), false);
+    }
+  }
+
+  void clearDialogFocus() {
+    for (View v : dialogFocus) v.setForeground(savedForegrounds.remove(v));
+    dialogFocus.clear();
+  }
+
+  void selectDialog() {
+    if (dialogFocus.isEmpty()) return;
+    List<View> t = dialogTargets();
+    if (dialogFocus.size() > 1) {
+      // A group is highlighted: scan inside it.
+      dialogGroup = Math.max(0, t.indexOf(dialogFocus.get(0)) / GROUP);
+      dialogIndex = -1;
+      stepDialog();
+      restartTick();
+      return;
+    }
+    View v = dialogFocus.get(0);
+    clearDialogFocus();
+    if (v.getParent() instanceof ListView) {
+      ListView list = (ListView) v.getParent();
+      int position = list.getFirstVisiblePosition() + list.indexOfChild(v);
+      list.performItemClick(v, position, list.getItemIdAtPosition(position));
+    } else v.performClick();
+    // Dialogs that stay open (checkboxes, keyboards) keep scanning from the start.
+    dialogIndex = -1;
+    dialogGroup = -1;
+    if (dialogScanActive())
+      handler.postDelayed(
+          () -> {
+            if (dialogScanActive() && dialogFocus.isEmpty()) stepDialog();
+          },
+          300);
+    restartTick();
+  }
+
+  void restartTick() {
+    handler.removeCallbacks(dialogTick);
+    if (dialogScanActive() && "auto".equals(model.settings().optString("scanType", "auto")))
+      handler.postDelayed(dialogTick, clamp(model.settings().optInt("scanMs", 1200), 400, 8000));
+  }
+
+  boolean dialogKey(int code, KeyEvent event) {
+    if (model == null || !"scan".equals(model.settings().optString("method"))) return false;
+    if (code != KeyEvent.KEYCODE_SPACE
+        && code != KeyEvent.KEYCODE_ENTER
+        && code != KeyEvent.KEYCODE_DPAD_CENTER) return false;
+    if (event.getAction() == KeyEvent.ACTION_DOWN && event.getRepeatCount() == 0) {
+      if (paused) {
+        paused = false;
+        restartDialogScan();
+      } else if ("step".equals(model.settings().optString("scanType"))
+          && code == KeyEvent.KEYCODE_SPACE) stepDialog();
+      else selectDialog();
+    }
+    return true;
   }
 
   Button plain(String title, Runnable action) {
@@ -242,16 +459,16 @@ public class MainActivity extends Activity {
     TextView brand = text("Voz Livre", 23);
     brand.setTypeface(null, Typeface.BOLD);
     header.addView(brand, new LinearLayout.LayoutParams(0, dp(50), 1));
-    Button profiles = plain("Perfil ▾", () -> profiles());
+    Button profiles = action("Perfil ▾", () -> profiles());
     header.addView(profiles);
-    Button settings = plain("Ajustes", () -> settings());
+    Button settings = action("Ajustes", () -> settings());
     header.addView(settings);
     root.addView(header);
     LinearLayout titleRow = row();
     pageTitle = text("", 18);
     pageTitle.setTypeface(null, Typeface.BOLD);
     titleRow.addView(pageTitle, new LinearLayout.LayoutParams(0, dp(40), 1));
-    Button ed = plain(edit ? "Concluir edição" : "Editar", () -> toggleEdit());
+    Button ed = action(edit ? "Concluir edição" : "Editar", () -> toggleEdit());
     titleRow.addView(ed);
     boolean compact = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     if (compact) {
@@ -591,7 +808,7 @@ public class MainActivity extends Activity {
       grid.addView(card, lp);
     }
     if (edit) {
-      Button add = plain("+ Novo botão", () -> editButton(model.newButton(), true));
+      Button add = action("+ Novo botão", () -> editButton(model.newButton(), true));
       GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
       lp.width = 0;
       lp.height = dp(125);
@@ -810,7 +1027,6 @@ public class MainActivity extends Activity {
   boolean activeScan() {
     return model != null
         && !stopped
-        && !edit
         && !paused
         && dialogCount == 0
         && "scan".equals(model.settings().optString("method"));
@@ -956,10 +1172,38 @@ public class MainActivity extends Activity {
   }
 
   Spinner spinner(String[] values, int selected) {
-    Spinner s = new Spinner(this);
+    Spinner s = new ScanSpinner(this, values);
     s.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, values));
     s.setSelection(Math.max(0, selected));
     return s;
+  }
+
+  /** A spinner whose choices open as a regular dialog while scanning, so switches can reach them. */
+  class ScanSpinner extends Spinner {
+    final String[] values;
+
+    ScanSpinner(Context c, String[] values) {
+      super(c, Spinner.MODE_DROPDOWN);
+      this.values = values;
+    }
+
+    @Override
+    public boolean performClick() {
+      if (model == null || !"scan".equals(model.settings().optString("method")))
+        return super.performClick();
+      show(
+          new AlertDialog.Builder(MainActivity.this)
+              .setTitle("Escolha")
+              .setSingleChoiceItems(
+                  values,
+                  getSelectedItemPosition(),
+                  (d, which) -> {
+                    setSelection(which);
+                    d.dismiss();
+                  })
+              .setNegativeButton("Cancelar", null));
+      return true;
+    }
   }
 
   void editButton(JSONObject original, boolean fresh) {
@@ -2133,8 +2377,7 @@ public class MainActivity extends Activity {
                     dialog.setOnDismissListener(
                         x -> {
                           timer.cancel();
-                          dialogCount = Math.max(0, dialogCount - 1);
-                          startScan();
+                          closed(dialog);
                         });
                     timer.start();
                   } catch (Exception e) {
