@@ -1167,14 +1167,6 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/24731"
  },
- "39393": {
-  "search": "O que é isso?",
-  "keywords": [
-   "oito e um quarto",
-   "20:15h"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/39393"
- },
  "11750": {
   "search": "Posso ir?",
   "keywords": [
@@ -1190,6 +1182,13 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/2439"
  },
+ "2549": {
+  "search": "Que horas são?",
+  "keywords": [
+   "relógio"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2549"
+ },
  "4570": {
   "search": "Você pode me ajudar?",
   "keywords": [
@@ -1198,14 +1197,6 @@
    "cooperar"
   ],
   "url": "https://arasaac.org/pictograms/pt/4570"
- },
- "32954": {
-  "search": "Vamos?",
-  "keywords": [
-   "vamos a outra loja",
-   "vamos à loja"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/32954"
  },
  "2456": {
   "search": "professora",
@@ -1251,12 +1242,12 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/2282"
  },
- "28577": {
+ "2409": {
   "search": "borracha",
   "keywords": [
-   "patinho de borracha"
+   "borracha"
   ],
-  "url": "https://arasaac.org/pictograms/pt/28577"
+  "url": "https://arasaac.org/pictograms/pt/2409"
  },
  "2475": {
   "search": "mochila",
@@ -1336,6 +1327,14 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/5358"
  },
+ "39393": {
+  "search": "não sei",
+  "keywords": [
+   "oito e um quarto",
+   "20:15h"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/39393"
+ },
  "3241": {
   "search": "bola",
   "keywords": [
@@ -1357,6 +1356,13 @@
    "carrinho de brincar"
   ],
   "url": "https://arasaac.org/pictograms/pt/2340"
+ },
+ "26403": {
+  "search": "quebra-cabeça",
+  "keywords": [
+   "quebra-cabeças"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/26403"
  },
  "4935": {
   "search": "blocos",
@@ -1396,14 +1402,14 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/21945"
  },
- "25940": {
+ "9165": {
   "search": "tablet",
   "keywords": [
-   "chocolate",
-   "tablete",
-   "tablete de chocolate"
+   "tablet pc",
+   "tablet",
+   "computador híbrido"
   ],
-  "url": "https://arasaac.org/pictograms/pt/25940"
+  "url": "https://arasaac.org/pictograms/pt/9165"
  },
  "2652": {
   "search": "dançar",
@@ -1488,12 +1494,20 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/6926"
  },
- "38277": {
+ "3175": {
   "search": "manhã",
   "keywords": [
-   "depois de amanhã"
+   "amanhecer"
   ],
-  "url": "https://arasaac.org/pictograms/pt/38277"
+  "url": "https://arasaac.org/pictograms/pt/3175"
+ },
+ "3176": {
+  "search": "tarde",
+  "keywords": [
+   "entardecer",
+   "anoitecer"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/3176"
  },
  "7181": {
   "search": "noite",
@@ -1742,6 +1756,13 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/8988"
  },
+ "2781": {
+  "search": "vestir",
+  "keywords": [
+   "vestir"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2781"
+ },
  "4593": {
   "search": "jantar",
   "keywords": [
@@ -1767,9 +1788,7 @@
   "url": "https://arasaac.org/pictograms/pt/38631"
  },
  "_missing": [
-  "Acabou?",
-  "quebra-cabeça",
-  "vestir"
+  "ainda não"
  ],
  "_terms": {
   "gostoso": "32340",
@@ -1783,22 +1802,17 @@
   "como?": "12313",
   "qual?": "26022",
   "quanto?": "24731",
-  "O que é isso?": "39393",
-  "Onde está?": "39393",
   "Posso ir?": "11750",
   "Posso brincar?": "2439",
-  "Que horas são?": "39393",
+  "Que horas são?": "2549",
   "Você pode me ajudar?": "4570",
-  "Por que não?": "39393",
-  "Vamos?": "32954",
-  "Quem é você?": "39393",
   "professora": "2456",
   "colega": "39421",
   "livro": "2450",
   "caderno": "2359",
   "lápis": "2440",
   "caneta": "2282",
-  "borracha": "28577",
+  "borracha": "2409",
   "mochila": "2475",
   "tesoura": "2591",
   "cola": "2510",
@@ -1813,12 +1827,13 @@
   "bola": "3241",
   "boneca": "2482",
   "carrinho": "2340",
+  "quebra-cabeça": "26403",
   "blocos": "4935",
   "massinha": "2529",
   "balanço": "4608",
   "escorregador": "4759",
   "videogame": "21945",
-  "tablet": "25940",
+  "tablet": "9165",
   "dançar": "2652",
   "pular": "2804",
   "correr": "2719",
@@ -1830,11 +1845,10 @@
   "hoje": "7131",
   "amanhã": "7152",
   "ontem": "6926",
-  "manhã": "38277",
-  "tarde": "39393",
+  "manhã": "3175",
+  "tarde": "3176",
   "noite": "7181",
   "já": "25736",
-  "ainda não": "39393",
   "segunda-feira": "6554",
   "terça-feira": "6557",
   "quarta-feira": "6563",
@@ -1864,6 +1878,7 @@
   "rosa": "2807",
   "igual": "3423",
   "acordar": "8988",
+  "vestir": "2781",
   "jantar": "4593",
   "pijama": "2522",
   "contar história": "38631"
