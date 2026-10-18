@@ -1,5 +1,10 @@
 # Changes
 
+## 0.3.2 — falar ao tocar
+
+- Em **Ajustes → Acesso**, novo botão "Adicionar à mensagem e falar ao mesmo tempo": ao tocar em uma palavra, ela entra na mensagem e é falada na hora. Útil em terapia e para reforço auditivo imediato. (É a mesma opção que já existia em **Ajustes → Voz e velocidade**, agora também no ajuste de toque.)
+- *English:* in **Settings → Access**, a new "Add to the message and speak at the same time" option: tapping a word adds it to the message and speaks it immediately.
+
 ## 0.3.1 — novo ícone
 
 - Novo ícone: um balão de fala (comunicação) com o símbolo do infinito nas cores do arco-íris (neurodiversidade), escolhido pela própria comunidade autista e neurodivergente — no lugar da peça de quebra-cabeça, que muitas pessoas autistas rejeitam. Ícone adaptativo: fica bem em telas com ícones redondos, quadrados ou arredondados.

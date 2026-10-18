@@ -2176,6 +2176,11 @@ public class MainActivity extends Activity {
     label(form, t("Como selecionar"));
     Spinner method = spinner(methods, Arrays.asList(codes).indexOf(s.optString("method")));
     form.addView(method);
+    label(form, t("Ao tocar"));
+    CheckBox speakNow = new CheckBox(this);
+    speakNow.setText(t("Adicionar à mensagem e falar ao mesmo tempo"));
+    speakNow.setChecked(s.optBoolean("speakWords"));
+    form.addView(speakNow);
     label(form, t("Tempo de permanência / pressão (milissegundos)"));
     EditText hold = field(t("200 a 5000"), s.optInt("holdMs", 650) + "", 2);
     form.addView(hold);
@@ -2212,6 +2217,7 @@ public class MainActivity extends Activity {
                         clamp(Integer.parseInt(speed.getText().toString()), 400, 8000));
                     Model.put(s, "method", codes[method.getSelectedItemPosition()]);
                     Model.put(s, "scanType", scan.getSelectedItemPosition() == 1 ? "step" : "auto");
+                    Model.put(s, "speakWords", speakNow.isChecked());
                     paused = false;
                     save();
                     build();
