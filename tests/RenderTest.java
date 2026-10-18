@@ -17,7 +17,7 @@ public class RenderTest {
  @Test public void render() throws Exception {
   Repository repo=new Repository(RuntimeEnvironment.getApplication());repo.save(new Model(repo.defaults()));
   ActivityController<MainActivity> c=Robolectric.buildActivity(MainActivity.class).setup();MainActivity a=c.get();
-  draw(a,"inicio",411,891);a.navigate("comida");draw(a,"comida",411,891);c.pause().stop().destroy();
+  draw(a,"inicio",411,891);a.navigate("comida");draw(a,"comida",411,891);a.navigate("nucleo");draw(a,"nucleo",411,891);c.pause().stop().destroy();
  }
  @Test @Config(qualifiers="w891dp-h411dp-land-mdpi") public void landscape()throws Exception {
   Repository repo=new Repository(RuntimeEnvironment.getApplication());repo.save(new Model(repo.defaults()));
