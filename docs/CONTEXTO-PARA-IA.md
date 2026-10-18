@@ -1,6 +1,6 @@
 # Voz Livre — contexto completo para continuar o projeto (handoff para IA)
 
-> Cole este arquivo inteiro no início da conversa com a nova IA. Ele descreve o projeto, o estado atual (outubro de 2026, versão 0.3.1), as decisões tomadas, como compilar/testar/publicar, as restrições legais e o que falta fazer.
+> Cole este arquivo inteiro no início da conversa com a nova IA. Ele descreve o projeto, o estado atual (18 de outubro de 2026, versão 0.3.1 publicada), as decisões tomadas, como compilar/testar/publicar, as restrições legais e o que falta fazer.
 
 ---
 
@@ -13,19 +13,21 @@
 - **Inspiração:** o app comercial TD Snap (Tobii Dynavox). O Voz Livre é independente, **não** tem vínculo com a Tobii Dynavox e não copia código, símbolos ou vocabulários proprietários.
 - **Repositório:** https://github.com/tiagocacote-bot/voz-livre (público). Conta dona: `tiagocacote-bot`. O dono também tem a conta GitHub `tiagoealanagpt-create` (não é dona do repo).
 - **Idioma de trabalho com o dono:** português do Brasil, linguagem simples. O dono não é programador: dê passos de clique em clique quando ele precisar fazer algo no site do GitHub ou no PowerShell.
+- **Ícone (0.3.1):** balão de fala branco com o símbolo do infinito nas cores do arco-íris (neurodiversidade) sobre fundo verde-azulado `#087F8C`. A peça de quebra-cabeça foi evitada de propósito (muitas pessoas autistas a rejeitam). Ícone adaptativo em `res/drawable/icon*.xml`; PNG da loja gerado por `scripts/render-icon.py`.
 - **Aparelhos de teste do dono:** Samsung Galaxy S24 FE e tablet Samsung SM-P619. Uso básico foi relatado como funcionando em versões anteriores; a 0.3.x **ainda não foi testada em aparelho físico**.
 
 ## 2. Estado atual
 
-- **Versão publicada:** 0.3.0 (release `v0.3.0`, versionCode 4) — https://github.com/tiagocacote-bot/voz-livre/releases/tag/v0.3.0
-- **Em PR (aguardando merge):** 0.3.1 (versionCode 5) no branch `claude/galaxy-store`: novo ícone + materiais da Galaxy Store + este documento.
+- **Versão publicada:** 0.3.1 (release `v0.3.1`, versionCode 5) — https://github.com/tiagocacote-bot/voz-livre/releases/tag/v0.3.1. Tudo está na `main`; não há PR aberto.
+- **PRs já mergeados:** #1 (0.2.0), #2 (0.3.0), #3 (0.3.1: ícone, Galaxy Store, este documento).
+- **Atualização no celular não é automática:** o app não tem permissão de internet (privacidade), então não avisa sobre versão nova. Quem instalou pelo GitHub precisa baixar o APK de novo; pela Galaxy Store a atualização seria automática.
 - **Link fixo de download (sempre a release mais recente):** https://github.com/tiagocacote-bot/voz-livre/releases/latest/download/Voz-Livre.apk
 - **Histórico de versões:**
   - 0.1.0 — protótipo privado (nunca publicado) com pictogramas ARASAAC nomeados pelo ID numérico (`symbols/6632.png` = "eu").
   - 0.1.1 — primeira versão pública: trocou ARASAAC por Mulberry Symbols e desenhos próprios (para permitir uso comercial). Manteve os nomes numéricos antigos como "aliases".
   - 0.2.0 — **voltou aos pictogramas ARASAAC originais** (pedido do dono), migração automática, previsão de palavras, release assinada com link fixo.
   - 0.3.0 — varredura dentro das janelas, rotinas com pictogramas, gramática portuguesa, interface e pranchas em EN/ES, vocabulário aberto (Núcleo, Começar a falar), 5 páginas temáticas, importação TD Snap melhorada.
-  - 0.3.1 — novo ícone (balão de fala + infinito arco-íris).
+  - 0.3.1 — novo ícone (balão de fala + infinito arco-íris), materiais da Galaxy Store e este documento de contexto.
 
 ## 3. Arquitetura (Java puro, sem bibliotecas)
 
@@ -114,7 +116,7 @@ Princípios do vocabulário (documentados em `docs/VOCABULARIO.md`): vocabulári
 ## 9. Publicação em lojas (em andamento)
 
 - **Decisão do dono:** começar pelo caminho **grátis**. Escolhido: **Galaxy Store (Samsung)** — cadastro gratuito, e a loja é confiável nativamente em aparelhos Samsung (instala sem "fontes desconhecidas").
-- Materiais prontos em `docs/store/galaxy/`: `LISTING.md` (passo a passo do portal https://seller.samsungapps.com, textos pt/en, categoria, classificação, respostas do formulário), `icon-512.png`, 4 capturas (simuladas — capturas reais do celular seriam melhores). Falta o dono: criar conta de vendedor, enviar, informar e-mail de suporte.
+- Materiais prontos em `docs/store/galaxy/` (já na `main`): `LISTING.md` (passo a passo do portal https://seller.samsungapps.com, textos pt/en, categoria, classificação, respostas do formulário), `icon-512.png`, 4 capturas (simuladas — capturas reais do celular seriam melhores). Falta o dono: criar conta de vendedor, enviar, informar e-mail de suporte.
 - **Play Store:** taxa única de US$ 25; contas pessoais novas exigem teste fechado com 12 testadores por 14 dias; exige **AAB** (o build atual só gera APK — precisaria adaptar, ex.: bundletool) e provavelmente target SDK mais novo que 35; usar a chave atual no Play App Signing para não quebrar atualizações de quem instalou pelo GitHub. Ainda não feito.
 - **Outras grátis possíveis:** IzzyOnDroid (puxa APK das releases do GitHub), F-Droid (pode marcar "NonFreeAssets" pela licença NC do ARASAAC; exige build reprodutível), AppGallery, Aptoide.
 - **Atenção:** o Google anunciou verificação obrigatória de desenvolvedores para instalar apps em aparelhos certificados, começando por Brasil e outros países em 2026 — isso pode afetar a instalação do APK do GitHub. Vale o dono verificar e se registrar.
@@ -123,7 +125,7 @@ Princípios do vocabulário (documentados em `docs/VOCABULARIO.md`): vocabulári
 
 Prioridade sugerida:
 1. **Teste real** da 0.3.x no S24 FE e no tablet: atualização por cima, páginas novas, formas das palavras, troca de idioma, varredura com acionador (Bluetooth/USB), vozes EN/ES.
-2. **Galaxy Store:** acompanhar revisão e responder exigências da Samsung.
+2. **Galaxy Store:** o dono ainda vai criar a conta de vendedor e enviar o app (materiais prontos em `docs/store/galaxy/`); depois acompanhar a revisão e responder exigências da Samsung.
 3. **Play Store** (se o dono pagar): gerar AAB, subir target SDK, Data Safety, teste fechado.
 4. Melhorias de produto possíveis:
    - Varredura por linha/coluna na tela principal (hoje é linear) e destaque/áudio de varredura configurável.
