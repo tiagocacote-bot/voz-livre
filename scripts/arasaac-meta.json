@@ -1723,70 +1723,6 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/39572"
  },
- "39393": {
-  "search": "não sei",
-  "keywords": [
-   "oito e um quarto",
-   "20:15h"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/39393"
- },
- "6554": {
-  "search": "segunda-feira",
-  "keywords": [
-   "Segunda-feira",
-   "segunda-feira"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/6554"
- },
- "6557": {
-  "search": "terça-feira",
-  "keywords": [
-   "Terça-feira",
-   "terça-feira"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/6557"
- },
- "6563": {
-  "search": "quarta-feira",
-  "keywords": [
-   "Quarta-feira",
-   "quarta-feira"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/6563"
- },
- "6536": {
-  "search": "quinta-feira",
-  "keywords": [
-   "Quinta-feira",
-   "quinta-feira"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/6536"
- },
- "6629": {
-  "search": "sexta-feira",
-  "keywords": [
-   "Sexta-feira",
-   "sexta-feira"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/6629"
- },
- "6605": {
-  "search": "sábado",
-  "keywords": [
-   "Sábado",
-   "sábado"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/6605"
- },
- "6478": {
-  "search": "domingo",
-  "keywords": [
-   "Domingo",
-   "domingo"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/6478"
- },
  "5596": {
   "search": "tudo",
   "keywords": [
@@ -1870,12 +1806,15 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/5451"
  },
- "6627": {
+ "6989": {
   "search": "colocar",
   "keywords": [
-   "vestir"
+   "por",
+   "colocar",
+   "situar",
+   "pôr"
   ],
-  "url": "https://arasaac.org/pictograms/pt/6627"
+  "url": "https://arasaac.org/pictograms/pt/6989"
  },
  "5374": {
   "search": "algum",
@@ -1929,20 +1868,6 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/6019"
  },
- "5556": {
-  "search": "Algo está errado",
-  "keywords": [
-   "problema"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/5556"
- },
- "2714": {
-  "search": "Quero contar uma coisa",
-  "keywords": [
-   "contar"
-  ],
-  "url": "https://arasaac.org/pictograms/pt/2714"
- },
  "8053": {
   "search": "Quero mudar de assunto",
   "keywords": [
@@ -1967,9 +1892,7 @@
   ],
   "url": "https://arasaac.org/pictograms/pt/8109"
  },
- "_missing": [
-  "ainda não"
- ],
+ "_missing": [],
  "_terms": {
   "gostoso": "32340",
   "confortável": "11248",
@@ -2003,7 +1926,6 @@
   "lanche": "4695",
   "computador": "2487",
   "terminei": "5358",
-  "não sei": "39393",
   "bola": "3241",
   "boneca": "2482",
   "carrinho": "2340",
@@ -2029,13 +1951,6 @@
   "tarde": "3176",
   "noite": "7181",
   "já": "25736",
-  "segunda-feira": "6554",
-  "terça-feira": "6557",
-  "quarta-feira": "6563",
-  "quinta-feira": "6536",
-  "sexta-feira": "6629",
-  "sábado": "6605",
-  "domingo": "6478",
   "semana": "7244",
   "aniversário": "3087",
   "férias": "3166",
@@ -2072,15 +1987,13 @@
   "olhar": "2474",
   "montar": "2713",
   "em cima": "5451",
-  "colocar": "6627",
+  "colocar": "6989",
   "algum": "5374",
   "aquilo": "6906",
   "virar": "6006",
   "para cima": "5388",
   "Eu acho": "8662",
   "Tenho uma ideia": "6019",
-  "Algo está errado": "5556",
-  "Quero contar uma coisa": "2714",
   "Quero mudar de assunto": "8053",
   "Estou sentindo": "30196",
   "Espera, ainda não terminei": "8109"
