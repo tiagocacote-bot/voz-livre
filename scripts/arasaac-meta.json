@@ -1,0 +1,919 @@
+{
+ "2248": {
+  "keywords": [
+   "água"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2248"
+ },
+ "2299": {
+  "keywords": [
+   "rua",
+   "avenida"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2299"
+ },
+ "2316": {
+  "keywords": [
+   "carne"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2316"
+ },
+ "2326": {
+  "keywords": [
+   "escovar os dentes"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2326"
+ },
+ "2339": {
+  "keywords": [
+   "carro",
+   "automóvel"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2339"
+ },
+ "2352": {
+  "keywords": [
+   "confuso"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2352"
+ },
+ "2367": {
+  "keywords": [
+   "dor"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2367"
+ },
+ "2422": {
+  "keywords": [
+   "irmã"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2422"
+ },
+ "2423": {
+  "keywords": [
+   "irmão"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2423"
+ },
+ "2427": {
+  "keywords": [
+   "ovo"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2427"
+ },
+ "2434": {
+  "keywords": [
+   "jardim"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2434"
+ },
+ "2445": {
+  "keywords": [
+   "leite"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2445"
+ },
+ "2455": {
+  "keywords": [
+   "massa",
+   "macarrão"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2455"
+ },
+ "2458": {
+  "keywords": [
+   "mamã",
+   "mãe"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2458"
+ },
+ "2462": {
+  "keywords": [
+   "maçã"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2462"
+ },
+ "2494": {
+  "keywords": [
+   "pão"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2494"
+ },
+ "2530": {
+  "keywords": [
+   "banana"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2530"
+ },
+ "2573": {
+  "keywords": [
+   "sopa"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2573"
+ },
+ "2663": {
+  "keywords": [
+   "boca"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2663"
+ },
+ "2669": {
+  "keywords": [
+   "braço"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2669"
+ },
+ "2673": {
+  "keywords": [
+   "cabeça"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2673"
+ },
+ "2746": {
+  "keywords": [
+   "ouvir música",
+   "escutar música"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2746"
+ },
+ "2748": {
+  "keywords": [
+   "costas"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2748"
+ },
+ "2786": {
+  "keywords": [
+   "estômago",
+   "barriga"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2786"
+ },
+ "2806": {
+  "keywords": [
+   "sair"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2806"
+ },
+ "2887": {
+  "keywords": [
+   "nariz"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2887"
+ },
+ "2928": {
+  "keywords": [
+   "mão",
+   "mão direita"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/2928"
+ },
+ "3155": {
+  "keywords": [
+   "cadeira"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/3155"
+ },
+ "3220": {
+  "keywords": [
+   "mais",
+   "+"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/3220"
+ },
+ "3294": {
+  "keywords": [
+   "feijão"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/3294"
+ },
+ "3299": {
+  "keywords": [
+   "descansar",
+   "repousar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/3299"
+ },
+ "3329": {
+  "keywords": [
+   "óculos"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/3329"
+ },
+ "4583": {
+  "keywords": [
+   "quente"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/4583"
+ },
+ "4652": {
+  "keywords": [
+   "frio"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/4652"
+ },
+ "4952": {
+  "keywords": [
+   "frango",
+   "frango assado"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/4952"
+ },
+ "5382": {
+  "keywords": [
+   "aqui",
+   "cá"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5382"
+ },
+ "5397": {
+  "keywords": [
+   "bem"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5397"
+ },
+ "5441": {
+  "keywords": [
+   "querer",
+   "desejar",
+   "eu quero",
+   "quero esse",
+   "pedir",
+   "quero",
+   "apetecer"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5441"
+ },
+ "5504": {
+  "keywords": [
+   "mal"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5504"
+ },
+ "5526": {
+  "keywords": [
+   "não"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5526"
+ },
+ "5584": {
+  "keywords": [
+   "sim"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5584"
+ },
+ "5921": {
+  "keywords": [
+   "casa de banho"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5921"
+ },
+ "5988": {
+  "keywords": [
+   "quarto",
+   "dormitório"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/5988"
+ },
+ "6023": {
+  "keywords": [
+   "abraçar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6023"
+ },
+ "6044": {
+  "keywords": [
+   "caminhar",
+   "andar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6044"
+ },
+ "6058": {
+  "keywords": [
+   "tomar banho"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6058"
+ },
+ "6061": {
+  "keywords": [
+   "beber",
+   "tomar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6061"
+ },
+ "6211": {
+  "keywords": [
+   "salão",
+   "sala"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6211"
+ },
+ "6456": {
+  "keywords": [
+   "comer"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6456"
+ },
+ "6479": {
+  "keywords": [
+   "dormir"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6479"
+ },
+ "6480": {
+  "keywords": [
+   "ele"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6480"
+ },
+ "6495": {
+  "keywords": [
+   "estudar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6495"
+ },
+ "6517": {
+  "keywords": [
+   "falar",
+   "conversar",
+   "dialogar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6517"
+ },
+ "6556": {
+  "keywords": [
+   "professor do 1º ciclo",
+   "professor"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6556"
+ },
+ "6561": {
+  "keywords": [
+   "médico",
+   "doutor",
+   "médico"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6561"
+ },
+ "6573": {
+  "keywords": [
+   "olho",
+   "vista"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6573"
+ },
+ "6611": {
+  "keywords": [
+   "sentar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6611"
+ },
+ "6624": {
+  "keywords": [
+   "trabalhar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6624"
+ },
+ "6625": {
+  "keywords": [
+   "tu",
+   "te",
+   "ti",
+   "você"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6625"
+ },
+ "6630": {
+  "keywords": [
+   "voltar",
+   "volta"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6630"
+ },
+ "6632": {
+  "keywords": [
+   "eu",
+   "me",
+   "mim"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6632"
+ },
+ "6911": {
+  "keywords": [
+   "arroz"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6911"
+ },
+ "6944": {
+  "keywords": [
+   "bom dia"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6944"
+ },
+ "6964": {
+  "keywords": [
+   "casa"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/6964"
+ },
+ "7028": {
+  "keywords": [
+   "ela"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7028"
+ },
+ "7141": {
+  "keywords": [
+   "ler",
+   "leitura"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7141"
+ },
+ "7163": {
+  "keywords": [
+   "monitor",
+   "cuidador"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7163"
+ },
+ "7167": {
+  "keywords": [
+   "deslocar",
+   "mover"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7167"
+ },
+ "7183": {
+  "keywords": [
+   "nós"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7183"
+ },
+ "7196": {
+  "keywords": [
+   "parar",
+   "deter"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7196"
+ },
+ "7233": {
+  "keywords": [
+   "roupa"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7233"
+ },
+ "7273": {
+  "keywords": [
+   "sedento",
+   "ter sede",
+   "sede"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/7273"
+ },
+ "8088": {
+  "keywords": [
+   "desenhar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8088"
+ },
+ "8129": {
+  "keywords": [
+   "obrigado"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8129"
+ },
+ "8142": {
+  "keywords": [
+   "ir"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8142"
+ },
+ "8163": {
+  "keywords": [
+   "medicamento",
+   "tratamento"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8163"
+ },
+ "8195": {
+  "keywords": [
+   "por favor",
+   "rogar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8195"
+ },
+ "8295": {
+  "keywords": [
+   "biscoito"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8295"
+ },
+ "8486": {
+  "keywords": [
+   "amiga"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8486"
+ },
+ "8666": {
+  "keywords": [
+   "perna"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8666"
+ },
+ "8986": {
+  "keywords": [
+   "comprar",
+   "ir às compras",
+   "fazer as compras"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/8986"
+ },
+ "9847": {
+  "keywords": [
+   "perguntar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/9847"
+ },
+ "9907": {
+  "keywords": [
+   "contente",
+   "feliz"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/9907"
+ },
+ "10148": {
+  "keywords": [
+   "apanhar",
+   "tomar",
+   "pegar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/10148"
+ },
+ "10261": {
+  "keywords": [
+   "medo",
+   "temor"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/10261"
+ },
+ "10267": {
+  "keywords": [
+   "dente"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/10267"
+ },
+ "11356": {
+  "keywords": [
+   "coçar",
+   "picar",
+   "arranhar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/11356"
+ },
+ "11461": {
+  "keywords": [
+   "sumo"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/11461"
+ },
+ "11752": {
+  "keywords": [
+   "repetir"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/11752"
+ },
+ "12252": {
+  "keywords": [
+   "apoio",
+   "ajuda",
+   "colaboração",
+   "cooperação"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/12252"
+ },
+ "16087": {
+  "keywords": [
+   "trabalho",
+   "profissionalismo"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/16087"
+ },
+ "16829": {
+  "keywords": [
+   "papaia"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/16829"
+ },
+ "17054": {
+  "keywords": [
+   "outro",
+   "outra"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/17054"
+ },
+ "21385": {
+  "keywords": [
+   "assistir"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/21385"
+ },
+ "23392": {
+  "keywords": [
+   "jogar",
+   "brincar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/23392"
+ },
+ "23718": {
+  "keywords": [
+   "avô",
+   "vovô"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/23718"
+ },
+ "24479": {
+  "keywords": [
+   "café"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/24479"
+ },
+ "24825": {
+  "keywords": [
+   "abrir"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/24825"
+ },
+ "24976": {
+  "keywords": [
+   "fechar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/24976"
+ },
+ "25327": {
+  "keywords": [
+   "pé"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/25327"
+ },
+ "25790": {
+  "keywords": [
+   "amigo"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/25790"
+ },
+ "25900": {
+  "keywords": [
+   "cama"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/25900"
+ },
+ "25966": {
+  "keywords": [
+   "cozinha"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/25966"
+ },
+ "28339": {
+  "keywords": [
+   "fruta",
+   "frutos"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/28339"
+ },
+ "28429": {
+  "keywords": [
+   "acabar",
+   "finalizar",
+   "acabou!",
+   "acabou",
+   "já chega!",
+   "já chega"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/28429"
+ },
+ "28431": {
+  "keywords": [
+   "dar",
+   "oferecer"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/28431"
+ },
+ "30014": {
+  "keywords": [
+   "mundo",
+   "Terra"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/30014"
+ },
+ "30510": {
+  "keywords": [
+   "escolher",
+   "seleccionar",
+   "decidir",
+   "preferir"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/30510"
+ },
+ "30516": {
+  "keywords": [
+   "piscina"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/30516"
+ },
+ "30518": {
+  "keywords": [
+   "praia",
+   "costa"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/30518"
+ },
+ "31310": {
+  "keywords": [
+   "tranquilo",
+   "calmo",
+   "tranquila",
+   "calma"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/31310"
+ },
+ "32408": {
+  "keywords": [
+   "restaurante"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32408"
+ },
+ "32446": {
+  "keywords": [
+   "escola",
+   "escola secundária"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32446"
+ },
+ "32528": {
+  "keywords": [
+   "incómodo"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32528"
+ },
+ "32675": {
+  "keywords": [
+   "posição",
+   "postura"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32675"
+ },
+ "32747": {
+  "keywords": [
+   "agora"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32747"
+ },
+ "32749": {
+  "keywords": [
+   "depois",
+   "logo"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32749"
+ },
+ "32761": {
+  "keywords": [
+   "segurar",
+   "ter",
+   "possuir",
+   "apertar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32761"
+ },
+ "32942": {
+  "keywords": [
+   "mercado"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/32942"
+ },
+ "34377": {
+  "keywords": [
+   "respirar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/34377"
+ },
+ "35537": {
+  "keywords": [
+   "cansado",
+   "cansada"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/35537"
+ },
+ "35539": {
+  "keywords": [
+   "chateado",
+   "zangado",
+   "chateada",
+   "irritado",
+   "irritada",
+   "zangada"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/35539"
+ },
+ "35545": {
+  "keywords": [
+   "triste"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/35545"
+ },
+ "35547": {
+  "keywords": [
+   "contente",
+   "alegre"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/35547"
+ },
+ "35559": {
+  "keywords": [
+   "fome"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/35559"
+ },
+ "35561": {
+  "keywords": [
+   "calor"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/35561"
+ },
+ "36073": {
+  "keywords": [
+   "levantar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/36073"
+ },
+ "36210": {
+  "keywords": [
+   "hospital"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/36210"
+ },
+ "36914": {
+  "keywords": [
+   "esperar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/36914"
+ },
+ "37160": {
+  "keywords": [
+   "necessitar"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/37160"
+ },
+ "37368": {
+  "keywords": [
+   "farmácia"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/37368"
+ },
+ "37826": {
+  "keywords": [
+   "gostar",
+   "gosto disso"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/37826"
+ },
+ "37834": {
+  "keywords": [
+   "picante"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/37834"
+ },
+ "38236": {
+  "keywords": [
+   "companhia de teatro"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/38236"
+ },
+ "38351": {
+  "keywords": [
+   "família"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/38351"
+ },
+ "39247": {
+  "keywords": [
+   "só",
+   "sozinho",
+   "sozinha",
+   "solidão"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/39247"
+ },
+ "39498": {
+  "keywords": [
+   "ouvido"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/39498"
+ },
+ "39572": {
+  "keywords": [
+   "comboio de brincar",
+   "comboio de parque infantil"
+  ],
+  "url": "https://arasaac.org/pictograms/pt/39572"
+ }
+}
