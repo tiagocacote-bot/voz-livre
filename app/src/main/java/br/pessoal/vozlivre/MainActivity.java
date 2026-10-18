@@ -921,7 +921,9 @@ public class MainActivity extends Activity {
           (b.optBoolean("disabled") ? "⚠ " : "")
               + b.optString("label")
               + ("link".equals(b.optString("type")) || "wordlink".equals(b.optString("type")) ? " ›" : "");
-      TextView t = text(label, clamp(model.settings().optInt("font", 19), 15, 30));
+      int font = clamp(model.settings().optInt("font", 19), 15, 30);
+      // Wide grids (core page) shrink labels so whole words fit the narrower cards.
+      TextView t = text(label, cols >= 5 ? Math.max(11, font * 4 / cols) : font);
       t.setGravity(Gravity.CENTER);
       t.setMaxLines(3);
       t.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);

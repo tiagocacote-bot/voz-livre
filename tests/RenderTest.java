@@ -11,7 +11,7 @@ import org.robolectric.annotation.*;
 import org.robolectric.android.controller.ActivityController;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(sdk=35, application=Application.class, qualifiers="w411dp-h891dp-port-mdpi", shadows=RuntimeTest.PosixAtomicRename.class)
+@Config(sdk=35, application=Application.class, qualifiers="pt-rBR-w411dp-h891dp-port-mdpi", shadows=RuntimeTest.PosixAtomicRename.class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 public class RenderTest {
  @Test public void render() throws Exception {
@@ -19,7 +19,7 @@ public class RenderTest {
   ActivityController<MainActivity> c=Robolectric.buildActivity(MainActivity.class).setup();MainActivity a=c.get();
   draw(a,"inicio",411,891);a.navigate("comida");draw(a,"comida",411,891);a.navigate("nucleo");draw(a,"nucleo",411,891);c.pause().stop().destroy();
  }
- @Test @Config(qualifiers="w891dp-h411dp-land-mdpi") public void landscape()throws Exception {
+ @Test @Config(qualifiers="pt-rBR-w891dp-h411dp-land-mdpi") public void landscape()throws Exception {
   Repository repo=new Repository(RuntimeEnvironment.getApplication());repo.save(new Model(repo.defaults()));
   ActivityController<MainActivity> c=Robolectric.buildActivity(MainActivity.class).setup();MainActivity a=c.get();draw(a,"paisagem",891,411);
   Assert.assertTrue("Landscape must leave a full card visible",a.pageScroll.getHeight()>=a.grid.getChildAt(0).getHeight()+12);c.pause().stop().destroy();

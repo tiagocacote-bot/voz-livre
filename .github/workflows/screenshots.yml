@@ -1,6 +1,6 @@
 name: Update screenshots
 # Renders the starter board with Robolectric and commits docs/images/*.png.
-# Suggestion row is tinted to tell it apart from navigation.
+# Rendered with a pt-BR device so the screenshots show the Portuguese interface.
 on:
   workflow_dispatch:
   push:
