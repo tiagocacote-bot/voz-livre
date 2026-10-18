@@ -37,11 +37,29 @@ final class Repository {
         read(context.getAssets().open("default.json"), 8000000), StandardCharsets.UTF_8);
   }
 
+  JSONObject legacy() throws IOException, JSONException {
+    return new JSONObject(
+        new String(
+            read(context.getAssets().open("legacy-symbols.json"), 2000000),
+            StandardCharsets.UTF_8));
+  }
+
+  /** Data saved before 0.2.0 has no symbol set: move its starter buttons to ARASAAC. */
+  Model upgrade(Model m) {
+    if (Model.symbolSet(m.root).isEmpty())
+      try {
+        Model.switchSymbols(m.root, legacy(), true);
+      } catch (Exception ignored) {
+      }
+    return m;
+  }
+
   Model load() throws Exception {
     if (!state.getBaseFile().exists() && !new File(state.getBaseFile().getPath() + ".bak").exists())
       return new Model(defaults());
     try {
-      return new Model(new String(read(state.openRead(), 32000000), StandardCharsets.UTF_8));
+      return upgrade(
+          new Model(new String(read(state.openRead(), 32000000), StandardCharsets.UTF_8)));
     } catch (Exception e) {
       recovered = true;
       File snapshot =
@@ -54,8 +72,10 @@ final class Repository {
       File previous = new File(context.getFilesDir(), "anterior.json");
       if (previous.exists())
         try {
-          return new Model(
-              new String(read(new FileInputStream(previous), 32000000), StandardCharsets.UTF_8));
+          return upgrade(
+              new Model(
+                  new String(
+                      read(new FileInputStream(previous), 32000000), StandardCharsets.UTF_8)));
         } catch (Exception ignored) {
         }
       return new Model(defaults());
@@ -151,7 +171,7 @@ final class Repository {
   }
 
   Model restoreImages(byte[] bytes) throws Exception {
-    Model restored = parseBackup(bytes);
+    Model restored = upgrade(parseBackup(bytes));
     JSONObject images =
         new JSONObject(new String(bytes, StandardCharsets.UTF_8)).optJSONObject("images");
     if (images == null) return restored;

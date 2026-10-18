@@ -1,5 +1,15 @@
 # Artwork and third-party notices
 
+## ARASAAC pictograms
+
+**Pictographic symbols: Sergio Palao. Origin: ARASAAC (https://arasaac.org). License: CC BY-NC-SA 4.0. Owner: Government of Aragón (Spain).**
+
+License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International, https://creativecommons.org/licenses/by-nc-sa/4.0/.
+
+Files `symbols/<number>.png`, where the number is the ARASAAC pictogram id (for example `symbols/6632.png` is https://arasaac.org/pictograms/pt/6632). They were downloaded with `scripts/fetch-arasaac.py` from `static.arasaac.org` (500 px PNG) and resized to transparent 256×256 PNGs; no other changes. The Portuguese labels and the choice of pictogram for each button are specific to Voz Livre and are not endorsed by ARASAAC. Per-file hashes and source URLs are in `app/src/main/assets/symbols-provenance.json`.
+
+**Non-commercial:** these pictograms, and the app as distributed with them, may not be sold or used commercially. Derivatives of the pictograms must keep the same license. The independently written MIT code is not affected and can be reused without them.
+
 ## Mulberry Symbols
 
 **Mulberry Symbols by Steve Lee**. Copyright 2018–2026 Steve Lee.

@@ -1,0 +1,33 @@
+{
+  "about": "Sugestões iniciais de próxima palavra (pt-BR). Ponto de partida editável; o uso de cada perfil passa a ter prioridade.",
+  "next": {
+    "": ["eu", "quero", "não", "sim", "você", "preciso", "ajuda", "mais"],
+    "eu": ["quero", "preciso", "gosto", "estou", "não", "tenho", "vou"],
+    "você": ["quer", "pode", "gosta", "está", "vai"],
+    "ele": ["quer", "está", "gosta", "vai"],
+    "ela": ["quer", "está", "gosta", "vai"],
+    "nós": ["vamos", "queremos", "podemos"],
+    "não": ["quero", "gosto", "entendi", "sei", "posso", "agora"],
+    "quero": ["comer", "beber", "água", "ir", "brincar", "mais", "dormir", "ajuda", "sair", "parar"],
+    "preciso": ["de", "ir", "ajuda", "descansar", "banheiro"],
+    "de": ["ajuda", "água", "remédio", "você", "casa"],
+    "gosto": ["de", "muito", "disso"],
+    "estou": ["com", "bem", "cansado", "feliz", "triste", "mal"],
+    "com": ["fome", "sede", "dor", "medo", "frio", "calor", "sono"],
+    "ir": ["ao", "para", "embora", "casa", "banheiro", "escola", "parque"],
+    "ao": ["banheiro", "parque", "mercado", "hospital"],
+    "para": ["casa", "escola", "o", "a"],
+    "vou": ["comer", "dormir", "sair", "brincar"],
+    "mais": ["água", "comida", "um", "tempo", "por favor"],
+    "comer": ["agora", "pão", "arroz", "banana", "mais"],
+    "beber": ["água", "suco", "leite", "café"],
+    "tenho": ["fome", "sede", "dor", "medo"],
+    "dor": ["de", "na", "cabeça", "barriga"],
+    "na": ["cabeça", "barriga", "perna", "mão", "boca"],
+    "agora": ["não", "sim", "por favor"],
+    "obrigado": ["você"],
+    "pode": ["repetir", "ajudar", "esperar", "me"],
+    "me": ["ajuda", "dá", "espera"],
+    "sim": ["por favor", "quero", "obrigado"]
+  }
+}

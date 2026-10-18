@@ -20,6 +20,9 @@ $env:TMP = $tdTemp
 $tdAapt = Join-Path $tdTools 'aapt2/aapt2.exe'
 $tdManifest = Join-Path $tdBuild 'AndroidManifest.xml'
 $tdManifestXml = [System.IO.File]::ReadAllText((Join-Path $tdMain 'AndroidManifest.xml')).Replace('<manifest ', '<manifest package="br.pessoal.vozlivre" ')
+$tdVersion = ([xml]$tdManifestXml).manifest.GetAttribute('versionName','http://schemas.android.com/apk/res/android')
+if (-not $tdVersion) { throw 'versionName ausente no manifesto' }
+$tdApk = Join-Path $tdBuild "Voz-Livre-$tdVersion.apk"
 [System.IO.File]::WriteAllText($tdManifest, $tdManifestXml)
 Invoke-Checked $tdAapt @('compile','--dir',(Join-Path $tdMain 'res'),'-o',(Join-Path $tdBuild 'resources.zip'))
 Invoke-Checked $tdAapt @('link','-I',(Join-Path $tdTools 'android.jar'),'--manifest',$tdManifest,'--java',(Join-Path $tdBuild 'generated'),'-o',(Join-Path $tdBuild 'base.apk'),(Join-Path $tdBuild 'resources.zip'))
@@ -38,6 +41,6 @@ if (-not (Test-Path -LiteralPath $tdKey)) {
 }
 Invoke-Checked $tdJavac @('--release','8','-classpath',(Join-Path $tdTools 'apksig.jar'),'-d',$tdBuild,(Join-Path $tdRoot 'Signer.java'))
 $tdClasspath = $tdBuild + ';' + (Join-Path $tdTools 'apksig.jar')
-Invoke-Checked $tdJava @('-cp',$tdClasspath,'Signer','sign',(Join-Path $tdBuild 'unsigned.apk'),(Join-Path $tdBuild 'Voz-Livre-0.1.1.apk'),$tdKey,$tdPassword)
-Invoke-Checked $tdJava @('-cp',$tdClasspath,'Signer','verify',(Join-Path $tdBuild 'Voz-Livre-0.1.1.apk'))
-Invoke-Checked $tdAapt @('dump','badging',(Join-Path $tdBuild 'Voz-Livre-0.1.1.apk'))
+Invoke-Checked $tdJava @('-cp',$tdClasspath,'Signer','sign',(Join-Path $tdBuild 'unsigned.apk'),$tdApk,$tdKey,$tdPassword)
+Invoke-Checked $tdJava @('-cp',$tdClasspath,'Signer','verify',$tdApk)
+Invoke-Checked $tdAapt @('dump','badging',$tdApk)

@@ -7,6 +7,17 @@ import java.util.*;
 
 public final class Signer {
   public static void main(String[] args) throws Exception {
+    if (args[0].equals("cert")) {
+      ApkVerifier.Result r =
+          new ApkVerifier.Builder(new File(args[1])).setMinCheckedPlatformVersion(26).build().verify();
+      if (!r.isVerified()) throw new Exception("Assinatura inválida");
+      byte[] d =
+          MessageDigest.getInstance("SHA-256").digest(r.getSignerCertificates().get(0).getEncoded());
+      StringBuilder hex = new StringBuilder();
+      for (byte b : d) hex.append(String.format("%02x", b));
+      System.out.println(hex);
+      return;
+    }
     if (args[0].equals("verify")) {
       ApkVerifier.Result r =
           new ApkVerifier.Builder(new File(args[1]))

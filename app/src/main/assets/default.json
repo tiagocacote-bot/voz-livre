@@ -1,6 +1,7 @@
 {
   "format": "voz-livre",
   "version": 1,
+  "symbolSet": "arasaac",
   "activeProfile": "principal",
   "profiles": [
     {
@@ -19,7 +20,7 @@
               "type": "word",
               "id": "b1",
               "hidden": false,
-              "symbol": "symbols/original-self.png"
+              "symbol": "symbols/6632.png"
             },
             {
               "label": "quero",
@@ -28,7 +29,7 @@
               "type": "word",
               "id": "b2",
               "hidden": false,
-              "symbol": "symbols/mulberry-want___to.png"
+              "symbol": "symbols/5441.png"
             },
             {
               "label": "não",
@@ -37,7 +38,7 @@
               "type": "word",
               "id": "b3",
               "hidden": false,
-              "symbol": "symbols/original-no.png"
+              "symbol": "symbols/5526.png"
             },
             {
               "label": "você",
@@ -46,7 +47,7 @@
               "type": "word",
               "id": "b4",
               "hidden": false,
-              "symbol": "symbols/original-you.png"
+              "symbol": "symbols/6625.png"
             },
             {
               "label": "preciso",
@@ -55,7 +56,7 @@
               "type": "word",
               "id": "b5",
               "hidden": false,
-              "symbol": "symbols/original-need.png"
+              "symbol": "symbols/37160.png"
             },
             {
               "label": "sim",
@@ -64,7 +65,7 @@
               "type": "word",
               "id": "b6",
               "hidden": false,
-              "symbol": "symbols/original-yes.png"
+              "symbol": "symbols/5584.png"
             },
             {
               "label": "mais",
@@ -73,7 +74,7 @@
               "type": "word",
               "id": "b7",
               "hidden": false,
-              "symbol": "symbols/mulberry-more.png"
+              "symbol": "symbols/3220.png"
             },
             {
               "label": "ajuda",
@@ -82,7 +83,7 @@
               "type": "word",
               "id": "b8",
               "hidden": false,
-              "symbol": "symbols/mulberry-help___to.png"
+              "symbol": "symbols/12252.png"
             },
             {
               "label": "parar",
@@ -91,7 +92,7 @@
               "type": "word",
               "id": "b9",
               "hidden": false,
-              "symbol": "symbols/original-stop.png"
+              "symbol": "symbols/7196.png"
             },
             {
               "label": "gosto",
@@ -100,7 +101,7 @@
               "type": "word",
               "id": "b10",
               "hidden": false,
-              "symbol": "symbols/mulberry-heart_shape.png"
+              "symbol": "symbols/37826.png"
             },
             {
               "label": "ir",
@@ -109,7 +110,7 @@
               "type": "word",
               "id": "b11",
               "hidden": false,
-              "symbol": "symbols/mulberry-go___to.png"
+              "symbol": "symbols/8142.png"
             },
             {
               "label": "ter",
@@ -118,7 +119,7 @@
               "type": "word",
               "id": "b12",
               "hidden": false,
-              "symbol": "symbols/original-have.png"
+              "symbol": "symbols/32761.png"
             },
             {
               "label": "aqui",
@@ -127,7 +128,7 @@
               "type": "word",
               "id": "b13",
               "hidden": false,
-              "symbol": "symbols/original-here.png"
+              "symbol": "symbols/5382.png"
             },
             {
               "label": "agora",
@@ -136,7 +137,7 @@
               "type": "word",
               "id": "b14",
               "hidden": false,
-              "symbol": "symbols/mulberry-now.png"
+              "symbol": "symbols/32747.png"
             },
             {
               "label": "depois",
@@ -145,7 +146,7 @@
               "type": "word",
               "id": "b15",
               "hidden": false,
-              "symbol": "symbols/original-later.png"
+              "symbol": "symbols/32749.png"
             },
             {
               "label": "Comer e beber",
@@ -156,7 +157,7 @@
               "type": "link",
               "id": "b16",
               "hidden": false,
-              "symbol": "symbols/mulberry-food.png"
+              "symbol": "symbols/4610.png"
             },
             {
               "label": "Sentimentos",
@@ -167,7 +168,7 @@
               "type": "link",
               "id": "b17",
               "hidden": false,
-              "symbol": "symbols/mulberry-happy_man.png"
+              "symbol": "symbols/9907.png"
             },
             {
               "label": "Pessoas",
@@ -178,7 +179,7 @@
               "type": "link",
               "id": "b18",
               "hidden": false,
-              "symbol": "symbols/mulberry-family.png"
+              "symbol": "symbols/38351.png"
             },
             {
               "label": "Fazer",
@@ -189,7 +190,7 @@
               "type": "link",
               "id": "b19",
               "hidden": false,
-              "symbol": "symbols/mulberry-play___to.png"
+              "symbol": "symbols/23392.png"
             },
             {
               "label": "Lugares",
@@ -200,7 +201,7 @@
               "type": "link",
               "id": "b20",
               "hidden": false,
-              "symbol": "symbols/mulberry-house.png"
+              "symbol": "symbols/6964.png"
             },
             {
               "label": "Meu corpo",
@@ -211,7 +212,7 @@
               "type": "link",
               "id": "b21",
               "hidden": false,
-              "symbol": "symbols/mulberry-body_outline.png"
+              "symbol": "symbols/2728.png"
             },
             {
               "label": "Frases rápidas",
@@ -222,7 +223,7 @@
               "type": "link",
               "id": "b22",
               "hidden": false,
-              "symbol": "symbols/mulberry-talk_1___to.png"
+              "symbol": "symbols/6517.png"
             }
           ],
           "columns": 3
@@ -238,7 +239,7 @@
               "type": "word",
               "id": "b23",
               "hidden": false,
-              "symbol": "symbols/mulberry-water.png"
+              "symbol": "symbols/2248.png"
             },
             {
               "label": "comer",
@@ -247,7 +248,7 @@
               "type": "word",
               "id": "b24",
               "hidden": false,
-              "symbol": "symbols/mulberry-eat___to.png"
+              "symbol": "symbols/6456.png"
             },
             {
               "label": "beber",
@@ -256,7 +257,7 @@
               "type": "word",
               "id": "b25",
               "hidden": false,
-              "symbol": "symbols/mulberry-drink___to.png"
+              "symbol": "symbols/6061.png"
             },
             {
               "label": "pão",
@@ -265,7 +266,7 @@
               "type": "word",
               "id": "b26",
               "hidden": false,
-              "symbol": "symbols/mulberry-bread.png"
+              "symbol": "symbols/2494.png"
             },
             {
               "label": "arroz",
@@ -274,7 +275,7 @@
               "type": "word",
               "id": "b27",
               "hidden": false,
-              "symbol": "symbols/mulberry-rice.png"
+              "symbol": "symbols/6911.png"
             },
             {
               "label": "feijão",
@@ -283,7 +284,7 @@
               "type": "word",
               "id": "b28",
               "hidden": false,
-              "symbol": "symbols/original-beans.png"
+              "symbol": "symbols/3294.png"
             },
             {
               "label": "carne",
@@ -292,7 +293,7 @@
               "type": "word",
               "id": "b29",
               "hidden": false,
-              "symbol": "symbols/mulberry-meat.png"
+              "symbol": "symbols/2316.png"
             },
             {
               "label": "frango",
@@ -301,7 +302,7 @@
               "type": "word",
               "id": "b30",
               "hidden": false,
-              "symbol": "symbols/mulberry-chicken.png"
+              "symbol": "symbols/4952.png"
             },
             {
               "label": "ovo",
@@ -310,7 +311,7 @@
               "type": "word",
               "id": "b31",
               "hidden": false,
-              "symbol": "symbols/mulberry-egg.png"
+              "symbol": "symbols/2427.png"
             },
             {
               "label": "leite",
@@ -319,7 +320,7 @@
               "type": "word",
               "id": "b32",
               "hidden": false,
-              "symbol": "symbols/mulberry-milk.png"
+              "symbol": "symbols/2445.png"
             },
             {
               "label": "suco",
@@ -328,7 +329,7 @@
               "type": "word",
               "id": "b33",
               "hidden": false,
-              "symbol": "symbols/mulberry-apple_juice.png"
+              "symbol": "symbols/11461.png"
             },
             {
               "label": "banana",
@@ -337,7 +338,7 @@
               "type": "word",
               "id": "b34",
               "hidden": false,
-              "symbol": "symbols/mulberry-banana.png"
+              "symbol": "symbols/2530.png"
             },
             {
               "label": "maçã",
@@ -346,7 +347,7 @@
               "type": "word",
               "id": "b35",
               "hidden": false,
-              "symbol": "symbols/mulberry-apple.png"
+              "symbol": "symbols/2462.png"
             },
             {
               "label": "biscoito",
@@ -355,7 +356,7 @@
               "type": "word",
               "id": "b36",
               "hidden": false,
-              "symbol": "symbols/mulberry-biscuits.png"
+              "symbol": "symbols/8295.png"
             },
             {
               "label": "café",
@@ -364,7 +365,7 @@
               "type": "word",
               "id": "b37",
               "hidden": false,
-              "symbol": "symbols/mulberry-coffee.png"
+              "symbol": "symbols/24479.png"
             },
             {
               "label": "sopa",
@@ -373,7 +374,7 @@
               "type": "word",
               "id": "b38",
               "hidden": false,
-              "symbol": "symbols/original-soup.png"
+              "symbol": "symbols/2573.png"
             },
             {
               "label": "macarrão",
@@ -382,7 +383,7 @@
               "type": "word",
               "id": "b39",
               "hidden": false,
-              "symbol": "symbols/mulberry-pasta.png"
+              "symbol": "symbols/2455.png"
             },
             {
               "label": "fruta",
@@ -391,7 +392,7 @@
               "type": "word",
               "id": "b40",
               "hidden": false,
-              "symbol": "symbols/mulberry-fruit.png"
+              "symbol": "symbols/28339.png"
             },
             {
               "label": "fome",
@@ -400,7 +401,7 @@
               "type": "word",
               "id": "b41",
               "hidden": false,
-              "symbol": "symbols/mulberry-hungry.png"
+              "symbol": "symbols/35559.png"
             },
             {
               "label": "sede",
@@ -409,7 +410,7 @@
               "type": "word",
               "id": "b42",
               "hidden": false,
-              "symbol": "symbols/mulberry-thirsty.png"
+              "symbol": "symbols/7273.png"
             },
             {
               "label": "quente",
@@ -418,7 +419,7 @@
               "type": "word",
               "id": "b43",
               "hidden": false,
-              "symbol": "symbols/mulberry-hot.png"
+              "symbol": "symbols/4583.png"
             },
             {
               "label": "frio",
@@ -427,7 +428,7 @@
               "type": "word",
               "id": "b44",
               "hidden": false,
-              "symbol": "symbols/original-cold.png"
+              "symbol": "symbols/4652.png"
             },
             {
               "label": "gostoso",
@@ -445,7 +446,7 @@
               "type": "word",
               "id": "b46",
               "hidden": false,
-              "symbol": "symbols/mulberry-finish.png"
+              "symbol": "symbols/28429.png"
             }
           ],
           "columns": 3
@@ -461,7 +462,7 @@
               "type": "word",
               "id": "b47",
               "hidden": false,
-              "symbol": "symbols/mulberry-happy_man.png"
+              "symbol": "symbols/9907.png"
             },
             {
               "label": "triste",
@@ -470,7 +471,7 @@
               "type": "word",
               "id": "b48",
               "hidden": false,
-              "symbol": "symbols/mulberry-sad_man.png"
+              "symbol": "symbols/35545.png"
             },
             {
               "label": "cansado",
@@ -479,7 +480,7 @@
               "type": "word",
               "id": "b49",
               "hidden": false,
-              "symbol": "symbols/original-tired.png"
+              "symbol": "symbols/35537.png"
             },
             {
               "label": "com dor",
@@ -488,7 +489,7 @@
               "type": "word",
               "id": "b50",
               "hidden": false,
-              "symbol": "symbols/original-pain.png"
+              "symbol": "symbols/2367.png"
             },
             {
               "label": "com medo",
@@ -497,7 +498,7 @@
               "type": "word",
               "id": "b51",
               "hidden": false,
-              "symbol": "symbols/mulberry-afraid_man.png"
+              "symbol": "symbols/10261.png"
             },
             {
               "label": "bravo",
@@ -506,7 +507,7 @@
               "type": "word",
               "id": "b52",
               "hidden": false,
-              "symbol": "symbols/mulberry-angry_man.png"
+              "symbol": "symbols/35539.png"
             },
             {
               "label": "calmo",
@@ -515,7 +516,7 @@
               "type": "word",
               "id": "b53",
               "hidden": false,
-              "symbol": "symbols/mulberry-relax___to.png"
+              "symbol": "symbols/31310.png"
             },
             {
               "label": "animado",
@@ -524,7 +525,7 @@
               "type": "word",
               "id": "b54",
               "hidden": false,
-              "symbol": "symbols/mulberry-excited_man.png"
+              "symbol": "symbols/35547.png"
             },
             {
               "label": "sozinho",
@@ -533,7 +534,7 @@
               "type": "word",
               "id": "b55",
               "hidden": false,
-              "symbol": "symbols/original-alone.png"
+              "symbol": "symbols/39247.png"
             },
             {
               "label": "confuso",
@@ -542,7 +543,7 @@
               "type": "word",
               "id": "b56",
               "hidden": false,
-              "symbol": "symbols/mulberry-confused_man.png"
+              "symbol": "symbols/2352.png"
             },
             {
               "label": "bem",
@@ -551,7 +552,7 @@
               "type": "word",
               "id": "b57",
               "hidden": false,
-              "symbol": "symbols/mulberry-good.png"
+              "symbol": "symbols/5397.png"
             },
             {
               "label": "mal",
@@ -560,7 +561,7 @@
               "type": "word",
               "id": "b58",
               "hidden": false,
-              "symbol": "symbols/mulberry-bad.png"
+              "symbol": "symbols/5504.png"
             },
             {
               "label": "gosto",
@@ -569,7 +570,7 @@
               "type": "word",
               "id": "b59",
               "hidden": false,
-              "symbol": "symbols/mulberry-heart_shape.png"
+              "symbol": "symbols/37826.png"
             },
             {
               "label": "não gosto",
@@ -578,7 +579,7 @@
               "type": "word",
               "id": "b60",
               "hidden": false,
-              "symbol": "symbols/original-notlike.png"
+              "symbol": "symbols/6155.png"
             },
             {
               "label": "confortável",
@@ -596,7 +597,7 @@
               "type": "word",
               "id": "b62",
               "hidden": false,
-              "symbol": "symbols/original-pain.png"
+              "symbol": "symbols/32528.png"
             },
             {
               "label": "quero descansar",
@@ -605,7 +606,7 @@
               "type": "word",
               "id": "b63",
               "hidden": false,
-              "symbol": "symbols/mulberry-rest___to.png"
+              "symbol": "symbols/3299.png"
             },
             {
               "label": "quero companhia",
@@ -614,7 +615,7 @@
               "type": "word",
               "id": "b64",
               "hidden": false,
-              "symbol": "symbols/original-friend.png"
+              "symbol": "symbols/38236.png"
             }
           ],
           "columns": 3
@@ -630,7 +631,7 @@
               "type": "word",
               "id": "b65",
               "hidden": false,
-              "symbol": "symbols/original-self.png"
+              "symbol": "symbols/6632.png"
             },
             {
               "label": "você",
@@ -639,7 +640,7 @@
               "type": "word",
               "id": "b66",
               "hidden": false,
-              "symbol": "symbols/original-you.png"
+              "symbol": "symbols/6625.png"
             },
             {
               "label": "ele",
@@ -648,7 +649,7 @@
               "type": "word",
               "id": "b67",
               "hidden": false,
-              "symbol": "symbols/original-other.png"
+              "symbol": "symbols/6480.png"
             },
             {
               "label": "ela",
@@ -657,7 +658,7 @@
               "type": "word",
               "id": "b68",
               "hidden": false,
-              "symbol": "symbols/original-other.png"
+              "symbol": "symbols/7028.png"
             },
             {
               "label": "nós",
@@ -666,7 +667,7 @@
               "type": "word",
               "id": "b69",
               "hidden": false,
-              "symbol": "symbols/original-group.png"
+              "symbol": "symbols/7183.png"
             },
             {
               "label": "mamãe",
@@ -675,7 +676,7 @@
               "type": "word",
               "id": "b70",
               "hidden": false,
-              "symbol": "symbols/mulberry-mum_parent.png"
+              "symbol": "symbols/2458.png"
             },
             {
               "label": "papai",
@@ -684,7 +685,7 @@
               "type": "word",
               "id": "b71",
               "hidden": false,
-              "symbol": "symbols/mulberry-dad_parent.png"
+              "symbol": "symbols/16829.png"
             },
             {
               "label": "irmão",
@@ -693,7 +694,7 @@
               "type": "word",
               "id": "b72",
               "hidden": false,
-              "symbol": "symbols/mulberry-brother.png"
+              "symbol": "symbols/2423.png"
             },
             {
               "label": "irmã",
@@ -702,7 +703,7 @@
               "type": "word",
               "id": "b73",
               "hidden": false,
-              "symbol": "symbols/mulberry-sister.png"
+              "symbol": "symbols/2422.png"
             },
             {
               "label": "amigo",
@@ -711,7 +712,7 @@
               "type": "word",
               "id": "b74",
               "hidden": false,
-              "symbol": "symbols/original-friend.png"
+              "symbol": "symbols/25790.png"
             },
             {
               "label": "amiga",
@@ -720,7 +721,7 @@
               "type": "word",
               "id": "b75",
               "hidden": false,
-              "symbol": "symbols/original-friend.png"
+              "symbol": "symbols/8486.png"
             },
             {
               "label": "família",
@@ -729,7 +730,7 @@
               "type": "word",
               "id": "b76",
               "hidden": false,
-              "symbol": "symbols/mulberry-family.png"
+              "symbol": "symbols/38351.png"
             },
             {
               "label": "professor",
@@ -738,7 +739,7 @@
               "type": "word",
               "id": "b77",
               "hidden": false,
-              "symbol": "symbols/mulberry-teacher_1a.png"
+              "symbol": "symbols/6556.png"
             },
             {
               "label": "médico",
@@ -747,7 +748,7 @@
               "type": "word",
               "id": "b78",
               "hidden": false,
-              "symbol": "symbols/mulberry-doctor_1a.png"
+              "symbol": "symbols/6561.png"
             },
             {
               "label": "cuidador",
@@ -756,7 +757,7 @@
               "type": "word",
               "id": "b79",
               "hidden": false,
-              "symbol": "symbols/mulberry-take_care_of___to.png"
+              "symbol": "symbols/7163.png"
             },
             {
               "label": "avó",
@@ -774,7 +775,7 @@
               "type": "word",
               "id": "b81",
               "hidden": false,
-              "symbol": "symbols/mulberry-grandfather.png"
+              "symbol": "symbols/23718.png"
             },
             {
               "label": "todo mundo",
@@ -783,7 +784,7 @@
               "type": "word",
               "id": "b82",
               "hidden": false,
-              "symbol": "symbols/original-group.png"
+              "symbol": "symbols/30014.png"
             }
           ],
           "columns": 3
@@ -799,7 +800,7 @@
               "type": "word",
               "id": "b83",
               "hidden": false,
-              "symbol": "symbols/mulberry-play___to.png"
+              "symbol": "symbols/23392.png"
             },
             {
               "label": "dormir",
@@ -808,7 +809,7 @@
               "type": "word",
               "id": "b84",
               "hidden": false,
-              "symbol": "symbols/mulberry-sleep_male___to.png"
+              "symbol": "symbols/6479.png"
             },
             {
               "label": "andar",
@@ -817,7 +818,7 @@
               "type": "word",
               "id": "b85",
               "hidden": false,
-              "symbol": "symbols/mulberry-walk___to.png"
+              "symbol": "symbols/6044.png"
             },
             {
               "label": "sentar",
@@ -826,7 +827,7 @@
               "type": "word",
               "id": "b86",
               "hidden": false,
-              "symbol": "symbols/mulberry-sit___to.png"
+              "symbol": "symbols/6611.png"
             },
             {
               "label": "levantar",
@@ -835,7 +836,7 @@
               "type": "word",
               "id": "b87",
               "hidden": false,
-              "symbol": "symbols/mulberry-stand___to.png"
+              "symbol": "symbols/36073.png"
             },
             {
               "label": "tomar banho",
@@ -844,7 +845,7 @@
               "type": "word",
               "id": "b88",
               "hidden": false,
-              "symbol": "symbols/mulberry-shower_1___to.png"
+              "symbol": "symbols/6058.png"
             },
             {
               "label": "escovar os dentes",
@@ -853,7 +854,7 @@
               "type": "word",
               "id": "b89",
               "hidden": false,
-              "symbol": "symbols/mulberry-brush_teeth___to.png"
+              "symbol": "symbols/2326.png"
             },
             {
               "label": "ler",
@@ -862,7 +863,7 @@
               "type": "word",
               "id": "b90",
               "hidden": false,
-              "symbol": "symbols/mulberry-read___to.png"
+              "symbol": "symbols/7141.png"
             },
             {
               "label": "desenhar",
@@ -871,7 +872,7 @@
               "type": "word",
               "id": "b91",
               "hidden": false,
-              "symbol": "symbols/mulberry-draw___to.png"
+              "symbol": "symbols/8088.png"
             },
             {
               "label": "ouvir música",
@@ -880,7 +881,7 @@
               "type": "word",
               "id": "b92",
               "hidden": false,
-              "symbol": "symbols/mulberry-headphones.png"
+              "symbol": "symbols/2746.png"
             },
             {
               "label": "assistir",
@@ -889,7 +890,7 @@
               "type": "word",
               "id": "b93",
               "hidden": false,
-              "symbol": "symbols/mulberry-watch___to.png"
+              "symbol": "symbols/21385.png"
             },
             {
               "label": "conversar",
@@ -898,7 +899,7 @@
               "type": "word",
               "id": "b94",
               "hidden": false,
-              "symbol": "symbols/mulberry-talk_1___to.png"
+              "symbol": "symbols/6517.png"
             },
             {
               "label": "abraçar",
@@ -907,7 +908,7 @@
               "type": "word",
               "id": "b95",
               "hidden": false,
-              "symbol": "symbols/mulberry-hug___to.png"
+              "symbol": "symbols/6023.png"
             },
             {
               "label": "esperar",
@@ -916,7 +917,7 @@
               "type": "word",
               "id": "b96",
               "hidden": false,
-              "symbol": "symbols/mulberry-wait___to.png"
+              "symbol": "symbols/36914.png"
             },
             {
               "label": "abrir",
@@ -925,7 +926,7 @@
               "type": "word",
               "id": "b97",
               "hidden": false,
-              "symbol": "symbols/mulberry-open___to.png"
+              "symbol": "symbols/24825.png"
             },
             {
               "label": "fechar",
@@ -934,7 +935,7 @@
               "type": "word",
               "id": "b98",
               "hidden": false,
-              "symbol": "symbols/mulberry-close___to.png"
+              "symbol": "symbols/24976.png"
             },
             {
               "label": "pegar",
@@ -943,7 +944,7 @@
               "type": "word",
               "id": "b99",
               "hidden": false,
-              "symbol": "symbols/mulberry-take___to.png"
+              "symbol": "symbols/10148.png"
             },
             {
               "label": "dar",
@@ -952,7 +953,7 @@
               "type": "word",
               "id": "b100",
               "hidden": false,
-              "symbol": "symbols/mulberry-give___to.png"
+              "symbol": "symbols/28431.png"
             },
             {
               "label": "comprar",
@@ -961,7 +962,7 @@
               "type": "word",
               "id": "b101",
               "hidden": false,
-              "symbol": "symbols/original-buy.png"
+              "symbol": "symbols/8986.png"
             },
             {
               "label": "estudar",
@@ -970,7 +971,7 @@
               "type": "word",
               "id": "b102",
               "hidden": false,
-              "symbol": "symbols/mulberry-study___to.png"
+              "symbol": "symbols/6495.png"
             },
             {
               "label": "trabalhar",
@@ -979,7 +980,7 @@
               "type": "word",
               "id": "b103",
               "hidden": false,
-              "symbol": "symbols/original-work.png"
+              "symbol": "symbols/6624.png"
             },
             {
               "label": "sair",
@@ -988,7 +989,7 @@
               "type": "word",
               "id": "b104",
               "hidden": false,
-              "symbol": "symbols/mulberry-go_outside___to.png"
+              "symbol": "symbols/2806.png"
             },
             {
               "label": "voltar",
@@ -997,7 +998,7 @@
               "type": "word",
               "id": "b105",
               "hidden": false,
-              "symbol": "symbols/mulberry-return___to.png"
+              "symbol": "symbols/6630.png"
             },
             {
               "label": "escolher",
@@ -1006,7 +1007,7 @@
               "type": "word",
               "id": "b106",
               "hidden": false,
-              "symbol": "symbols/original-choice.png"
+              "symbol": "symbols/30510.png"
             }
           ],
           "columns": 3
@@ -1022,7 +1023,7 @@
               "type": "word",
               "id": "b107",
               "hidden": false,
-              "symbol": "symbols/mulberry-house.png"
+              "symbol": "symbols/6964.png"
             },
             {
               "label": "banheiro",
@@ -1031,7 +1032,7 @@
               "type": "word",
               "id": "b108",
               "hidden": false,
-              "symbol": "symbols/mulberry-toilet.png"
+              "symbol": "symbols/5921.png"
             },
             {
               "label": "quarto",
@@ -1040,7 +1041,7 @@
               "type": "word",
               "id": "b109",
               "hidden": false,
-              "symbol": "symbols/mulberry-single_bed.png"
+              "symbol": "symbols/5988.png"
             },
             {
               "label": "cozinha",
@@ -1049,7 +1050,7 @@
               "type": "word",
               "id": "b110",
               "hidden": false,
-              "symbol": "symbols/original-kitchen.png"
+              "symbol": "symbols/25966.png"
             },
             {
               "label": "escola",
@@ -1058,7 +1059,7 @@
               "type": "word",
               "id": "b111",
               "hidden": false,
-              "symbol": "symbols/mulberry-school.png"
+              "symbol": "symbols/32446.png"
             },
             {
               "label": "parque",
@@ -1067,7 +1068,7 @@
               "type": "word",
               "id": "b112",
               "hidden": false,
-              "symbol": "symbols/mulberry-play_area.png"
+              "symbol": "symbols/39572.png"
             },
             {
               "label": "hospital",
@@ -1076,7 +1077,7 @@
               "type": "word",
               "id": "b113",
               "hidden": false,
-              "symbol": "symbols/original-hospital.png"
+              "symbol": "symbols/36210.png"
             },
             {
               "label": "mercado",
@@ -1085,7 +1086,7 @@
               "type": "word",
               "id": "b114",
               "hidden": false,
-              "symbol": "symbols/mulberry-shop.png"
+              "symbol": "symbols/32942.png"
             },
             {
               "label": "rua",
@@ -1094,7 +1095,7 @@
               "type": "word",
               "id": "b115",
               "hidden": false,
-              "symbol": "symbols/mulberry-road.png"
+              "symbol": "symbols/2299.png"
             },
             {
               "label": "carro",
@@ -1103,7 +1104,7 @@
               "type": "word",
               "id": "b116",
               "hidden": false,
-              "symbol": "symbols/mulberry-car.png"
+              "symbol": "symbols/2339.png"
             },
             {
               "label": "praia",
@@ -1112,7 +1113,7 @@
               "type": "word",
               "id": "b117",
               "hidden": false,
-              "symbol": "symbols/mulberry-beach.png"
+              "symbol": "symbols/30518.png"
             },
             {
               "label": "piscina",
@@ -1121,7 +1122,7 @@
               "type": "word",
               "id": "b118",
               "hidden": false,
-              "symbol": "symbols/original-pool.png"
+              "symbol": "symbols/30516.png"
             },
             {
               "label": "restaurante",
@@ -1130,7 +1131,7 @@
               "type": "word",
               "id": "b119",
               "hidden": false,
-              "symbol": "symbols/original-restaurant.png"
+              "symbol": "symbols/32408.png"
             },
             {
               "label": "farmácia",
@@ -1139,7 +1140,7 @@
               "type": "word",
               "id": "b120",
               "hidden": false,
-              "symbol": "symbols/original-pharmacy.png"
+              "symbol": "symbols/37368.png"
             },
             {
               "label": "trabalho",
@@ -1148,7 +1149,7 @@
               "type": "word",
               "id": "b121",
               "hidden": false,
-              "symbol": "symbols/original-work.png"
+              "symbol": "symbols/16087.png"
             },
             {
               "label": "jardim",
@@ -1157,7 +1158,7 @@
               "type": "word",
               "id": "b122",
               "hidden": false,
-              "symbol": "symbols/original-garden.png"
+              "symbol": "symbols/2434.png"
             },
             {
               "label": "sala",
@@ -1166,7 +1167,7 @@
               "type": "word",
               "id": "b123",
               "hidden": false,
-              "symbol": "symbols/mulberry-room.png"
+              "symbol": "symbols/6211.png"
             },
             {
               "label": "cama",
@@ -1175,7 +1176,7 @@
               "type": "word",
               "id": "b124",
               "hidden": false,
-              "symbol": "symbols/mulberry-single_bed.png"
+              "symbol": "symbols/25900.png"
             }
           ],
           "columns": 3
@@ -1191,7 +1192,7 @@
               "type": "word",
               "id": "b125",
               "hidden": false,
-              "symbol": "symbols/mulberry-head.png"
+              "symbol": "symbols/2673.png"
             },
             {
               "label": "barriga",
@@ -1200,7 +1201,7 @@
               "type": "word",
               "id": "b126",
               "hidden": false,
-              "symbol": "symbols/mulberry-stomach.png"
+              "symbol": "symbols/2786.png"
             },
             {
               "label": "braço",
@@ -1209,7 +1210,7 @@
               "type": "word",
               "id": "b127",
               "hidden": false,
-              "symbol": "symbols/mulberry-arm.png"
+              "symbol": "symbols/2669.png"
             },
             {
               "label": "perna",
@@ -1218,7 +1219,7 @@
               "type": "word",
               "id": "b128",
               "hidden": false,
-              "symbol": "symbols/mulberry-leg.png"
+              "symbol": "symbols/8666.png"
             },
             {
               "label": "mão",
@@ -1227,7 +1228,7 @@
               "type": "word",
               "id": "b129",
               "hidden": false,
-              "symbol": "symbols/mulberry-left_hand.png"
+              "symbol": "symbols/2928.png"
             },
             {
               "label": "pé",
@@ -1236,7 +1237,7 @@
               "type": "word",
               "id": "b130",
               "hidden": false,
-              "symbol": "symbols/mulberry-foot.png"
+              "symbol": "symbols/25327.png"
             },
             {
               "label": "costas",
@@ -1245,7 +1246,7 @@
               "type": "word",
               "id": "b131",
               "hidden": false,
-              "symbol": "symbols/mulberry-back.png"
+              "symbol": "symbols/2748.png"
             },
             {
               "label": "boca",
@@ -1254,7 +1255,7 @@
               "type": "word",
               "id": "b132",
               "hidden": false,
-              "symbol": "symbols/mulberry-mouth.png"
+              "symbol": "symbols/2663.png"
             },
             {
               "label": "dente",
@@ -1263,7 +1264,7 @@
               "type": "word",
               "id": "b133",
               "hidden": false,
-              "symbol": "symbols/mulberry-tooth.png"
+              "symbol": "symbols/10267.png"
             },
             {
               "label": "olho",
@@ -1272,7 +1273,7 @@
               "type": "word",
               "id": "b134",
               "hidden": false,
-              "symbol": "symbols/mulberry-eye.png"
+              "symbol": "symbols/6573.png"
             },
             {
               "label": "ouvido",
@@ -1281,7 +1282,7 @@
               "type": "word",
               "id": "b135",
               "hidden": false,
-              "symbol": "symbols/mulberry-ear.png"
+              "symbol": "symbols/39498.png"
             },
             {
               "label": "nariz",
@@ -1290,7 +1291,7 @@
               "type": "word",
               "id": "b136",
               "hidden": false,
-              "symbol": "symbols/original-nose.png"
+              "symbol": "symbols/2887.png"
             },
             {
               "label": "dor",
@@ -1299,7 +1300,7 @@
               "type": "word",
               "id": "b137",
               "hidden": false,
-              "symbol": "symbols/original-pain.png"
+              "symbol": "symbols/2367.png"
             },
             {
               "label": "coceira",
@@ -1308,7 +1309,7 @@
               "type": "word",
               "id": "b138",
               "hidden": false,
-              "symbol": "symbols/mulberry-itch.png"
+              "symbol": "symbols/11356.png"
             },
             {
               "label": "calor",
@@ -1317,7 +1318,7 @@
               "type": "word",
               "id": "b139",
               "hidden": false,
-              "symbol": "symbols/mulberry-hot_person.png"
+              "symbol": "symbols/35561.png"
             },
             {
               "label": "frio",
@@ -1326,7 +1327,7 @@
               "type": "word",
               "id": "b140",
               "hidden": false,
-              "symbol": "symbols/original-cold.png"
+              "symbol": "symbols/4652.png"
             },
             {
               "label": "remédio",
@@ -1335,7 +1336,7 @@
               "type": "word",
               "id": "b141",
               "hidden": false,
-              "symbol": "symbols/mulberry-medicine.png"
+              "symbol": "symbols/8163.png"
             },
             {
               "label": "banheiro",
@@ -1344,7 +1345,7 @@
               "type": "word",
               "id": "b142",
               "hidden": false,
-              "symbol": "symbols/mulberry-toilet.png"
+              "symbol": "symbols/5921.png"
             },
             {
               "label": "respirar",
@@ -1353,7 +1354,7 @@
               "type": "word",
               "id": "b143",
               "hidden": false,
-              "symbol": "symbols/original-breathe.png"
+              "symbol": "symbols/34377.png"
             },
             {
               "label": "posição",
@@ -1362,7 +1363,7 @@
               "type": "word",
               "id": "b144",
               "hidden": false,
-              "symbol": "symbols/original-position.png"
+              "symbol": "symbols/32675.png"
             },
             {
               "label": "roupa",
@@ -1371,7 +1372,7 @@
               "type": "word",
               "id": "b145",
               "hidden": false,
-              "symbol": "symbols/mulberry-clothes_generic.png"
+              "symbol": "symbols/7233.png"
             },
             {
               "label": "óculos",
@@ -1380,7 +1381,7 @@
               "type": "word",
               "id": "b146",
               "hidden": false,
-              "symbol": "symbols/mulberry-glasses.png"
+              "symbol": "symbols/3329.png"
             },
             {
               "label": "cadeira",
@@ -1389,7 +1390,7 @@
               "type": "word",
               "id": "b147",
               "hidden": false,
-              "symbol": "symbols/mulberry-chair.png"
+              "symbol": "symbols/3155.png"
             },
             {
               "label": "água",
@@ -1398,7 +1399,7 @@
               "type": "word",
               "id": "b148",
               "hidden": false,
-              "symbol": "symbols/mulberry-water.png"
+              "symbol": "symbols/2248.png"
             }
           ],
           "columns": 3
@@ -1414,7 +1415,7 @@
               "type": "speak",
               "id": "b149",
               "hidden": false,
-              "symbol": "symbols/mulberry-help___to.png"
+              "symbol": "symbols/12252.png"
             },
             {
               "label": "Quero falar uma coisa",
@@ -1423,7 +1424,7 @@
               "type": "speak",
               "id": "b150",
               "hidden": false,
-              "symbol": "symbols/mulberry-talk_1___to.png"
+              "symbol": "symbols/6517.png"
             },
             {
               "label": "Espere, estou falando",
@@ -1432,7 +1433,7 @@
               "type": "speak",
               "id": "b151",
               "hidden": false,
-              "symbol": "symbols/mulberry-wait___to.png"
+              "symbol": "symbols/36914.png"
             },
             {
               "label": "Sim",
@@ -1441,7 +1442,7 @@
               "type": "speak",
               "id": "b152",
               "hidden": false,
-              "symbol": "symbols/original-yes.png"
+              "symbol": "symbols/5584.png"
             },
             {
               "label": "Não",
@@ -1450,7 +1451,7 @@
               "type": "speak",
               "id": "b153",
               "hidden": false,
-              "symbol": "symbols/original-no.png"
+              "symbol": "symbols/5526.png"
             },
             {
               "label": "Não entendi",
@@ -1459,7 +1460,7 @@
               "type": "speak",
               "id": "b154",
               "hidden": false,
-              "symbol": "symbols/mulberry-confused_man.png"
+              "symbol": "symbols/9847.png"
             },
             {
               "label": "Pode repetir?",
@@ -1468,7 +1469,7 @@
               "type": "speak",
               "id": "b155",
               "hidden": false,
-              "symbol": "symbols/original-repeat.png"
+              "symbol": "symbols/11752.png"
             },
             {
               "label": "Quero ir ao banheiro",
@@ -1477,7 +1478,7 @@
               "type": "speak",
               "id": "b156",
               "hidden": false,
-              "symbol": "symbols/mulberry-toilet___go_to_the.png"
+              "symbol": "symbols/5921.png"
             },
             {
               "label": "Estou com dor",
@@ -1486,7 +1487,7 @@
               "type": "speak",
               "id": "b157",
               "hidden": false,
-              "symbol": "symbols/original-pain.png"
+              "symbol": "symbols/2367.png"
             },
             {
               "label": "Quero mudar de posição",
@@ -1495,7 +1496,7 @@
               "type": "speak",
               "id": "b158",
               "hidden": false,
-              "symbol": "symbols/original-position.png"
+              "symbol": "symbols/7167.png"
             },
             {
               "label": "Por favor",
@@ -1504,7 +1505,7 @@
               "type": "speak",
               "id": "b159",
               "hidden": false,
-              "symbol": "symbols/original-please.png"
+              "symbol": "symbols/8195.png"
             },
             {
               "label": "Obrigado",
@@ -1513,7 +1514,7 @@
               "type": "speak",
               "id": "b160",
               "hidden": false,
-              "symbol": "symbols/original-thanks.png"
+              "symbol": "symbols/8129.png"
             },
             {
               "label": "Bom dia",
@@ -1522,7 +1523,7 @@
               "type": "speak",
               "id": "b161",
               "hidden": false,
-              "symbol": "symbols/mulberry-morning.png"
+              "symbol": "symbols/6944.png"
             },
             {
               "label": "Tudo bem?",
@@ -1531,7 +1532,7 @@
               "type": "speak",
               "id": "b162",
               "hidden": false,
-              "symbol": "symbols/mulberry-happy_man.png"
+              "symbol": "symbols/9907.png"
             },
             {
               "label": "Quero ficar sozinho",
@@ -1540,7 +1541,7 @@
               "type": "speak",
               "id": "b163",
               "hidden": false,
-              "symbol": "symbols/original-alone.png"
+              "symbol": "symbols/39247.png"
             },
             {
               "label": "Quero companhia",
@@ -1549,7 +1550,7 @@
               "type": "speak",
               "id": "b164",
               "hidden": false,
-              "symbol": "symbols/original-friend.png"
+              "symbol": "symbols/38236.png"
             },
             {
               "label": "Essa não foi minha escolha",
@@ -1558,7 +1559,7 @@
               "type": "speak",
               "id": "b165",
               "hidden": false,
-              "symbol": "symbols/original-no.png"
+              "symbol": "symbols/5526.png"
             },
             {
               "label": "Quero outra coisa",
@@ -1567,7 +1568,7 @@
               "type": "speak",
               "id": "b166",
               "hidden": false,
-              "symbol": "symbols/original-choice.png"
+              "symbol": "symbols/17054.png"
             }
           ],
           "columns": 3

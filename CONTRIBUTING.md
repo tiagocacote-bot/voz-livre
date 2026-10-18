@@ -6,7 +6,7 @@ For a bug report, include Android version, device model, access method, reproduc
 
 Before a pull request, read [BUILDING.md](BUILDING.md), run the model and asset checks, and describe behavior and test coverage. Runtime tests cover storage recovery, profiles, backups, imports, editing and scanning on simulated Android APIs 28 and 35. Real-device accessibility tests remain a separate need. Add or change tests when the behavior warrants them.
 
-By contributing, you agree to license your original code/docs/drawings under MIT. Preserve CC BY-SA 4.0 attribution and source for Mulberry derivatives. Do not contribute commercial symbol sets or other assets you cannot redistribute. Translations and starter-vocabulary proposals should be reviewed with people who use them.
+By contributing, you agree to license your original code/docs/drawings under MIT. Preserve CC BY-SA 4.0 attribution and source for Mulberry derivatives and CC BY-NC-SA 4.0 attribution for ARASAAC pictograms (Sergio Palao, ARASAAC, Government of Aragón). Do not contribute commercial symbol sets or other assets you cannot redistribute. Translations and starter-vocabulary proposals should be reviewed with people who use them.
 
 ---
 
@@ -14,4 +14,4 @@ Contribuições de pessoas que utilizam CAA, autistas, famílias, profissionais 
 
 Nas issues, informe aparelho, Android, método de acesso, passos e resultado esperado. Use exemplos fictícios e imagens sem dados pessoais. Em mudanças de varredura e permanência, informe quais equipamentos foram testados. Compatibilidade com mouse não comprova rastreamento ocular.
 
-Leia BUILDING.md e execute as verificações antes de enviar alterações. Código e desenhos próprios devem ser MIT; mantenha os créditos CC BY-SA das imagens Mulberry. Não envie símbolos comerciais ou arquivos sem autorização de redistribuição.
+Leia BUILDING.md e execute as verificações antes de enviar alterações. Código e desenhos próprios devem ser MIT; mantenha os créditos CC BY-SA das imagens Mulberry e CC BY-NC-SA dos pictogramas ARASAAC. Não envie símbolos comerciais ou arquivos sem autorização de redistribuição.

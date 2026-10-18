@@ -1,11 +1,11 @@
 {
-  "license": "Per-record: MIT or CC BY-SA 4.0",
+  "license": "Per-record: MIT, CC BY-SA 4.0 or CC BY-NC-SA 4.0",
   "upstream": {
     "repo": "mulberrysymbols/mulberry-symbols",
     "tag": "v3.6.1",
     "commit": "9cbab9f400c5de44e2bc58839cca07294aadb086"
   },
-  "author": "Mulberry Symbols by Steve Lee; original drawings by Voz Livre contributors",
+  "author": "ARASAAC pictograms by Sergio Palao (Government of Aragón); Mulberry Symbols by Steve Lee; original drawings by Voz Livre contributors",
   "origin": "https://mulberrysymbols.org",
   "records": [
     {
@@ -2333,1660 +2333,1936 @@
       "sourceSha256": "3afda8bdf7ee13e53517778bf072746fcce6d28fa5f8986c0e2bc6451795ff4c"
     },
     {
-      "search": "legacy 6632.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6632.png",
-      "source": "artwork/original-self.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "4803c4f90434323f46edeed4c0eac2a3d3b88aaf3035cb205875457f0ea8e916",
-      "sourceSha256": "01980e0ba468e0df0690ae3f1676a12a0dea8d34eb51c4903f71d73272e4a6a1",
-      "aliasOf": "symbols/original-self.png"
-    },
-    {
-      "search": "legacy 5441.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5441.png",
-      "source": "artwork/mulberry-want___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/want_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "a60e4dc819d6502c96f82b528424a33fbcd23f583a853cfa2e40e173cbe3a7d6",
-      "sourceSha256": "0e0ccccf418b88956ba12cc9e8f60902ba6858038fddf1e7ed20d58b802714f9",
-      "aliasOf": "symbols/mulberry-want___to.png"
-    },
-    {
-      "search": "legacy 5526.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5526.png",
-      "source": "artwork/original-no.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "9ed690b2739d5701eae75f7bfac9ae0525a0f2c87bc94bf5119c4c37695371ec",
-      "sourceSha256": "5581cb8701e632378e2ad6169a1fabe53aa577f052d5baa65db0f2fbaffae8ee",
-      "aliasOf": "symbols/original-no.png"
-    },
-    {
-      "search": "legacy 6625.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6625.png",
-      "source": "artwork/original-you.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "bd7dd064eb80ae4b79d8bb57af40c6e62dec34cf5a5f06518906aeee5dcd6a70",
-      "sourceSha256": "145cdb9fc7e85321d5b3b9f2e124fb3a80c72bec292d162be810ca58d9565f85",
-      "aliasOf": "symbols/original-you.png"
-    },
-    {
-      "search": "legacy 37160.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/37160.png",
-      "source": "artwork/original-need.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "36ae07259e8ce5b39ce0ad5a4a43fa33f66e0fd539e007b84872d15a9a107d7d",
-      "sourceSha256": "8ba2307c0dfa077f1efd58328fb26fe3c9ba7ccfff525f0ec6a61547df45d020",
-      "aliasOf": "symbols/original-need.png"
-    },
-    {
-      "search": "legacy 5584.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5584.png",
-      "source": "artwork/original-yes.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "cd212e2adbed058d576944d8f395f3e66f83a432d77ee6a72834bcd48ac412b1",
-      "sourceSha256": "807aef3a09a6fb787bae601f121c34347771ae442e41a76a83cc452c389d777a",
-      "aliasOf": "symbols/original-yes.png"
-    },
-    {
-      "search": "legacy 3220.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/3220.png",
-      "source": "artwork/mulberry-more.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/more.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "530ba90fba00fd31083109b3c6fe04d466c842e7b140621fcb9b6aab846cf8f8",
-      "sourceSha256": "30f7fb26ef6549f121b9ca88a78d2659af46c4a50f5da281e7c900773102756f",
-      "aliasOf": "symbols/mulberry-more.png"
-    },
-    {
-      "search": "legacy 12252.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/12252.png",
-      "source": "artwork/mulberry-help___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/help_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "d48fab07e2981b9f56455c712221c6d19a3018c6f2b72aa83524301a0a8f458a",
-      "sourceSha256": "27e0ec40a99f2aba72be2ebf87575393aefd2059b702277647e2f8bcb284695f",
-      "aliasOf": "symbols/mulberry-help___to.png"
-    },
-    {
-      "search": "legacy 7196.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7196.png",
-      "source": "artwork/original-stop.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "96cd81825814c33f9b4d769891c4c05922f5aff8db2395ce02fc1ee9607dad58",
-      "sourceSha256": "465e2c4e9392c313d7008efdde20e7b8a7c00ac475e4d26c6c309d6cadb9e6ec",
-      "aliasOf": "symbols/original-stop.png"
-    },
-    {
-      "search": "legacy 37826.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/37826.png",
-      "source": "artwork/mulberry-heart_shape.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/heart_shape.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "705ad5bf824ce6ff4e5c3a5190c897e7d678eeac285f14de65f10f027ff7de91",
-      "sourceSha256": "f5f1e8254b2c49d34c67bbaf30765b48f8e735a8cb0af23c2fd86f416a2e797d",
-      "aliasOf": "symbols/mulberry-heart_shape.png"
-    },
-    {
-      "search": "legacy 8142.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8142.png",
-      "source": "artwork/mulberry-go___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/go_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "029889ae743be20b0a53720ed2f96fb061be796d82947a1bd78f84eeb47cf6ab",
-      "sourceSha256": "a32004c30699c7d11fcb758dd76e95df609929c156cdef2413efc7358a397f50",
-      "aliasOf": "symbols/mulberry-go___to.png"
-    },
-    {
-      "search": "legacy 32761.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32761.png",
-      "source": "artwork/original-have.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "cef515e9a2002d65705e44fc8930685a6b2dccb6786e2fcfb7c2ca352f0b582d",
-      "sourceSha256": "cfb1f12685274fbe71e557e9d78b253d8262fe3ac4c26ed6c15af762ee4240ae",
-      "aliasOf": "symbols/original-have.png"
-    },
-    {
-      "search": "legacy 5382.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5382.png",
-      "source": "artwork/original-here.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "31cd18daedab51bc5aad90984c8e49241935fd7a4ccbbb963a7c91fa9249d5c6",
-      "sourceSha256": "c84b4df5f8f636c743255a830de1e31fb4c99330a74fce93a1496b1c8fade4eb",
-      "aliasOf": "symbols/original-here.png"
-    },
-    {
-      "search": "legacy 32747.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32747.png",
-      "source": "artwork/mulberry-now.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/now.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "0bd02fd41e766dd08d107cdaa61252066ecd1303a37398daf984fd0b542c42ff",
-      "sourceSha256": "98996f30bc612561a924d3fdaeb60f51b9942c7b0c27a1fd4f2705f6bdb7c49a",
-      "aliasOf": "symbols/mulberry-now.png"
-    },
-    {
-      "search": "legacy 32749.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32749.png",
-      "source": "artwork/original-later.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "d7d2f9914800a209cc11b4328fde6c070b51d1d00da649a72d779833253ca41c",
-      "sourceSha256": "3e177568904fd401df613b783025c21e6e823406a588d8eb912a6155b4b454a7",
-      "aliasOf": "symbols/original-later.png"
-    },
-    {
-      "search": "legacy 2248.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "água",
+      "keywords": [
+        "água"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/2248.png",
-      "source": "artwork/mulberry-water.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/water.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "20904813ee23b5ba50b5c01df591b8680754ada8792852a59bacebe65c2918bc",
-      "sourceSha256": "41f1d361028a521c5f8bc34b7b679f3610f838d1dbf6cdbafca597f2bbabb16b",
-      "aliasOf": "symbols/mulberry-water.png"
-    },
-    {
-      "search": "legacy 6456.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6456.png",
-      "source": "artwork/mulberry-eat___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/eat_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "31341c37cc748ee722efd02b834038061490a8b1fa5dbff36f57338a42815998",
-      "sourceSha256": "1976c6a6e613dba208cad077069bcc98f111b95f899777109fa6a03a7c76cd01",
-      "aliasOf": "symbols/mulberry-eat___to.png"
-    },
-    {
-      "search": "legacy 6061.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6061.png",
-      "source": "artwork/mulberry-drink___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/drink_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "4c7a997ad4007bd6655a78290e8bf22696b694b719c24efaf87f3e4f6fa93ef6",
-      "sourceSha256": "3b1cefe95429bc6425d22b5f20131aa813654d4177092c4d6084fc4486dac96c",
-      "aliasOf": "symbols/mulberry-drink___to.png"
-    },
-    {
-      "search": "legacy 2494.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2494.png",
-      "source": "artwork/mulberry-bread.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/bread.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "6d7562e9583b590f5bad1f2fa05e543d4a89b73685714417cca30f566bc4ea87",
-      "sourceSha256": "95a8e49d4d5bd8a0517461603416f1b245d436af5e394e71f32a6c9f1c0e7b2e",
-      "aliasOf": "symbols/mulberry-bread.png"
-    },
-    {
-      "search": "legacy 6911.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6911.png",
-      "source": "artwork/mulberry-rice.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/rice.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "ad170c0d201450fc905e5c36d61082526d3b6f7a103547d91a67c90240811a08",
-      "sourceSha256": "85634d0d14bebd21325fcf7cc2c39af82577943dca21be50eaa93a051dc3b744",
-      "aliasOf": "symbols/mulberry-rice.png"
-    },
-    {
-      "search": "legacy 3294.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/3294.png",
-      "source": "artwork/original-beans.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "29665ee0230924881396a2cf155c3e23543b1377735c830c5fd1a6c1d3c4c753",
-      "sourceSha256": "2c89e5d25b6e40d80ec23196eeb5e400a4a8526f08940d4767309549861ba1fb",
-      "aliasOf": "symbols/original-beans.png"
-    },
-    {
-      "search": "legacy 2316.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2316.png",
-      "source": "artwork/mulberry-meat.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/meat.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "1b84057087211da0954639f0feec2bdc5d675c46745fa8c4610aa0566811b1f7",
-      "sourceSha256": "6225a4b04c8fd6a7471b1d1dd09b92f7e077e3f053fd30db1e934e60a9e5181c",
-      "aliasOf": "symbols/mulberry-meat.png"
-    },
-    {
-      "search": "legacy 4952.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/4952.png",
-      "source": "artwork/mulberry-chicken.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/chicken.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "c21530b157366597a9545f87f929c370803ef1ae01b18badb106377e72f17a0e",
-      "sourceSha256": "42f9519f3356db30b8ad2aa9fa8090b11c95b2f7535b67bdbc1820cd607247ba",
-      "aliasOf": "symbols/mulberry-chicken.png"
-    },
-    {
-      "search": "legacy 2427.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2427.png",
-      "source": "artwork/mulberry-egg.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/egg.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "438cfcd970f166e0fbe454885897bc9eebcfd6c11663070318efbeba2c932518",
-      "sourceSha256": "8e4ea973c402c6550b897f118aeb8db4f49f210cf0e74dd9f9ba6c6c1bfd7c0f",
-      "aliasOf": "symbols/mulberry-egg.png"
-    },
-    {
-      "search": "legacy 2445.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2445.png",
-      "source": "artwork/mulberry-milk.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/milk.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "70ecb1c9268259ea9db0d92710cd7b214aae64d6ff98c2174c1144844f2f1ba8",
-      "sourceSha256": "81767309981039167609a75707bd1a9ff101fa2b7d0b4920a300c6e46de784af",
-      "aliasOf": "symbols/mulberry-milk.png"
-    },
-    {
-      "search": "legacy 11461.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/11461.png",
-      "source": "artwork/mulberry-apple_juice.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/apple_juice.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "18e5f2d4523d1f5b5c5fb0d013dc16bba8bf34efd797725bad94e9b03a19dd8d",
-      "sourceSha256": "f900bb57cd92da5648441ecb4f92f4070acea5afea14e75d8929ce8a4f72b8a1",
-      "aliasOf": "symbols/mulberry-apple_juice.png"
-    },
-    {
-      "search": "legacy 2530.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2530.png",
-      "source": "artwork/mulberry-banana.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/banana.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "80132dcaf629ed4fee724aa6fbaf39e3dd6596704cd48201c6f017089f2e4ded",
-      "sourceSha256": "a86fa2484d74cd81a18c0135f1b6a8033dcd9449e22feed98dda0984813b562b",
-      "aliasOf": "symbols/mulberry-banana.png"
-    },
-    {
-      "search": "legacy 2462.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2462.png",
-      "source": "artwork/mulberry-apple.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/apple.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "1bcfff5d11ac9d33440b3f7a4a12e993226c6875ef502fd5df8f3edc9dc692e8",
-      "sourceSha256": "e0a6af55afae75447a11bb38560d81c4f0e6783cfcd89e2e1fcfa2ef0fbd939e",
-      "aliasOf": "symbols/mulberry-apple.png"
-    },
-    {
-      "search": "legacy 8295.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8295.png",
-      "source": "artwork/mulberry-biscuits.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/biscuits.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "000979893c3269b2d4acc00179220a98fb68721e6ca09d6940a85e8da3bd7ca8",
-      "sourceSha256": "f4653bdc09232483f2c495051eecad5008e19eb6d5815d63278d8e6114d78607",
-      "aliasOf": "symbols/mulberry-biscuits.png"
-    },
-    {
-      "search": "legacy 24479.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/24479.png",
-      "source": "artwork/mulberry-coffee.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/coffee.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "df4b28f44e97fa5a0004ff41c4a743a1b44eac1e7b7772919ffa949dd4675d11",
-      "sourceSha256": "ed201c0c58e8c9bc6c95d4ac2ca1ddcd89a3ead2fad4051cfe00be8119a23648",
-      "aliasOf": "symbols/mulberry-coffee.png"
-    },
-    {
-      "search": "legacy 2573.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2573.png",
-      "source": "artwork/original-soup.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "9b7459437543139a838c9c5781897b7dfd9c40b5bf737c6c814f72b7224c36c5",
-      "sourceSha256": "36b559e587efd00e03cd039ebee210b732ffc92cb1a76114b5e26972ff8d2688",
-      "aliasOf": "symbols/original-soup.png"
-    },
-    {
-      "search": "legacy 2455.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2455.png",
-      "source": "artwork/mulberry-pasta.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/pasta.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "ef0e72d14f0675e05f754538cafb96bf238d3d1d9128b8e6c30f66c73a5b9b74",
-      "sourceSha256": "ed4acb655068995babe0eee9e8047e7aa5e963903db43a85c87c8c0d640e3340",
-      "aliasOf": "symbols/mulberry-pasta.png"
-    },
-    {
-      "search": "legacy 28339.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/28339.png",
-      "source": "artwork/mulberry-fruit.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/fruit.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "8de11d48c7387fe455102c9c0b815bb511e816aad0801b563661581c8c490070",
-      "sourceSha256": "05b96641cef27d10f69c4f14145ae3a6dfdb736770d8de337c0b7eedc438ac12",
-      "aliasOf": "symbols/mulberry-fruit.png"
-    },
-    {
-      "search": "legacy 35559.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/35559.png",
-      "source": "artwork/mulberry-hungry.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/hungry.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "5be5f83915e5660d1fd0e9e16c7fdced9f99c9907ad6c3f7ac537cad49a28d4c",
-      "sourceSha256": "bcfb5a78580133439cf6a4ee438e6c7506ab3647607bb62504bdd9d0b43c8c12",
-      "aliasOf": "symbols/mulberry-hungry.png"
-    },
-    {
-      "search": "legacy 7273.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7273.png",
-      "source": "artwork/mulberry-thirsty.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/thirsty.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "1aca84b619d17ccdc52b39fdf69514fec7744f5a0cd8b96217582576967b9d90",
-      "sourceSha256": "a4288e8de8158286729dfcfcb4776bcdd5fc9c67f37a4117d94f94c290e096fd",
-      "aliasOf": "symbols/mulberry-thirsty.png"
-    },
-    {
-      "search": "legacy 4583.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/4583.png",
-      "source": "artwork/mulberry-hot.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/hot.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "24c3aaca5fe440a9157ed910830aea110d1ab6f6a28b1ba3a76ba9bf96cc4554",
-      "sourceSha256": "985827bc6865e44d4e8f4f788e024ddcc75a44ed1250686ce6c3f0c70945c9be",
-      "aliasOf": "symbols/mulberry-hot.png"
-    },
-    {
-      "search": "legacy 4652.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/4652.png",
-      "source": "artwork/original-cold.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "c6012b7f6288223eab8ba4712631d7a94bc2f8fe8e1596967aa105ec6bc0161c",
-      "sourceSha256": "e8ab068b7cfa565bf84dadea8e56edd0b002e13b6ca86492bbdc6d0381ebdef0",
-      "aliasOf": "symbols/original-cold.png"
-    },
-    {
-      "search": "legacy 28429.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/28429.png",
-      "source": "artwork/mulberry-finish.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/finish.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "0f7c5b29561911d21bad00158a11e43b8afa5a02ce8467739d54f265d54946c1",
-      "sourceSha256": "a2a4b5e39f7635d255ae89dfa9cf987c4f4b6efa06c469bbf1c91c5ff8e1bb0c",
-      "aliasOf": "symbols/mulberry-finish.png"
-    },
-    {
-      "search": "legacy 9907.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/9907.png",
-      "source": "artwork/mulberry-happy_man.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/happy_man.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "6e3fe10574821ce2209e5c235c840d3ee7729eacf61902c3db7e10035077bdd8",
-      "sourceSha256": "9d839148f501de54ee3ffd3c1d4e2b005ca5a0f8e3c47ed697c6670e6a30d6a1",
-      "aliasOf": "symbols/mulberry-happy_man.png"
-    },
-    {
-      "search": "legacy 35545.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/35545.png",
-      "source": "artwork/mulberry-sad_man.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/sad_man.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "4a2a7785f9ffa0a1da9651df41fc715da4082d5216078f0658d68cc96613cf73",
-      "sourceSha256": "204eb219f68c0e7f0ba71e28fc5d40443557d79645df1bd74d0fa09742786b3c",
-      "aliasOf": "symbols/mulberry-sad_man.png"
-    },
-    {
-      "search": "legacy 35537.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/35537.png",
-      "source": "artwork/original-tired.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "78e0cfabd286ff090be307caa9cf104026c1e9872961780b182f9819b0aff71f",
-      "sourceSha256": "a3ade9e172b1e172a9c124991a1b2e275ccc65770ea2cdc0a823ffddaf0858df",
-      "aliasOf": "symbols/original-tired.png"
-    },
-    {
-      "search": "legacy 2367.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2367.png",
-      "source": "artwork/original-pain.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "377873b7e50eee6a14392f74d3ac6822fcbd0fed4b9a2b370fbca8166915fb65",
-      "sourceSha256": "96b053b0174bead1704a9a88d07a044c59834edc671f70c0e2416a753ec943d9",
-      "aliasOf": "symbols/original-pain.png"
-    },
-    {
-      "search": "legacy 10261.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/10261.png",
-      "source": "artwork/mulberry-afraid_man.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/afraid_man.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "230534a33834850c7bd29e52d708dfeba0d3719b72378556c13b4714ec32554b",
-      "sourceSha256": "5f4cbd946f8b4182223d8ad48f806fdd902f09f0e88ce7d09a0578cf158c1306",
-      "aliasOf": "symbols/mulberry-afraid_man.png"
-    },
-    {
-      "search": "legacy 35539.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/35539.png",
-      "source": "artwork/mulberry-angry_man.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/angry_man.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "c0ca62d908e72b85bf3459ad43b3b02466d480bf40e1a80e38080143d6f3fad1",
-      "sourceSha256": "d98f2fd3fac006e40c4217ea7b704eb0994139f1717b126230150f31602a37bd",
-      "aliasOf": "symbols/mulberry-angry_man.png"
-    },
-    {
-      "search": "legacy 31310.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/31310.png",
-      "source": "artwork/mulberry-relax___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/relax_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "03ee9949b7493b891e835866e0b9ed77490c5c1d6e4bbdeed449011e3fa5429c",
-      "sourceSha256": "4a761653e92174bff00a7f1a87a945af7fc1dfaea498a598c049bb54e9a4d6d6",
-      "aliasOf": "symbols/mulberry-relax___to.png"
-    },
-    {
-      "search": "legacy 35547.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/35547.png",
-      "source": "artwork/mulberry-excited_man.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/excited_man.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "d01a22373e3f19875345f83da7db5ca74e0cfbea15e93616a14559a02da99159",
-      "sourceSha256": "a008ebd68d09ace5699b4646b271ef8b07bf08f1ed474c9827d8a04c8f7fc6c4",
-      "aliasOf": "symbols/mulberry-excited_man.png"
-    },
-    {
-      "search": "legacy 39247.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/39247.png",
-      "source": "artwork/original-alone.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "f0c5e850e9887c4831f10f2c6ca0837e9eb5c66cbc1b742f4472cacd23fabcde",
-      "sourceSha256": "0feb1e8f5e04584bd83fc5e204d6163f7bae571d17d58ed9f355c297cd4dabae",
-      "aliasOf": "symbols/original-alone.png"
-    },
-    {
-      "search": "legacy 2352.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2352.png",
-      "source": "artwork/mulberry-confused_man.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/confused_man.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "b3db7cc821d44d8366d94b50230ad4ccce3a1d1fca373fe789f3912f3ade0aca",
-      "sourceSha256": "cdce5428c2caf1d3e002c0192fb07cdcf8259faf1d2d391fb9caad079f0ccefa",
-      "aliasOf": "symbols/mulberry-confused_man.png"
-    },
-    {
-      "search": "legacy 5397.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5397.png",
-      "source": "artwork/mulberry-good.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/good.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "a0cb66056eabe9606379b02a09055252d16e7a8750f0b7a1efd237ec5fe769e3",
-      "sourceSha256": "f593e50ddb8c3de464c3e672f881e1f254cd73dd1f397c45511765d953d2489d",
-      "aliasOf": "symbols/mulberry-good.png"
-    },
-    {
-      "search": "legacy 5504.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5504.png",
-      "source": "artwork/mulberry-bad.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/bad.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "49626353db761c2240b1d78d810ccb3ccf43008c71b0aa7f8ee5cd3fc1cace6a",
-      "sourceSha256": "38a8fdae1f2f19b0c2b00bf2e8a6d557c8bca35a5f9d06799ac86b6ad071bda3",
-      "aliasOf": "symbols/mulberry-bad.png"
-    },
-    {
-      "search": "legacy 37834.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/37834.png",
-      "source": "artwork/mulberry-heart_shape.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/heart_shape.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "705ad5bf824ce6ff4e5c3a5190c897e7d678eeac285f14de65f10f027ff7de91",
-      "sourceSha256": "f5f1e8254b2c49d34c67bbaf30765b48f8e735a8cb0af23c2fd86f416a2e797d",
-      "aliasOf": "symbols/mulberry-heart_shape.png"
-    },
-    {
-      "search": "legacy 32528.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32528.png",
-      "source": "artwork/original-pain.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "377873b7e50eee6a14392f74d3ac6822fcbd0fed4b9a2b370fbca8166915fb65",
-      "sourceSha256": "96b053b0174bead1704a9a88d07a044c59834edc671f70c0e2416a753ec943d9",
-      "aliasOf": "symbols/original-pain.png"
-    },
-    {
-      "search": "legacy 3299.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/3299.png",
-      "source": "artwork/mulberry-rest___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/rest_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "191d955fbadabe219e9e93ba17b195e5aedfc22355d9d21d4dc6a17cfb020e49",
-      "sourceSha256": "7ab53c9216d6e80bf81c13847c211c6316564587a22abfe82dd3afc2b626032a",
-      "aliasOf": "symbols/mulberry-rest___to.png"
-    },
-    {
-      "search": "legacy 38236.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/38236.png",
-      "source": "artwork/original-friend.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "c4cdc987d2c37060ae12b483160fe858f27f105cdc5c6a77b8998e6d62adda1d",
-      "sourceSha256": "15ccf36ed10e75a5148c3171064bba0a64e5c568d09acbfcf1cf993269e5fa6e",
-      "aliasOf": "symbols/original-friend.png"
-    },
-    {
-      "search": "legacy 6480.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6480.png",
-      "source": "artwork/original-other.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "1f4a2258cdb83616ee3b3c8c284006b26a48da4f5af14b6ca2c95cc1b2663aba",
-      "sourceSha256": "082ab2e86d2d42715592e30887d35e47413060987070c3b1f78c3c20c9472c1b",
-      "aliasOf": "symbols/original-other.png"
-    },
-    {
-      "search": "legacy 7028.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7028.png",
-      "source": "artwork/original-other.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "1f4a2258cdb83616ee3b3c8c284006b26a48da4f5af14b6ca2c95cc1b2663aba",
-      "sourceSha256": "082ab2e86d2d42715592e30887d35e47413060987070c3b1f78c3c20c9472c1b",
-      "aliasOf": "symbols/original-other.png"
-    },
-    {
-      "search": "legacy 7183.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7183.png",
-      "source": "artwork/original-group.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "0b9498897752a019bb5c0ffdde494bb84e0fc7ef681fef0365a31a5bc71b99bc",
-      "sourceSha256": "c70cdf6ca047b000e7b46b659b2f233c1df3be10b0b318480ab847456ced2a2f",
-      "aliasOf": "symbols/original-group.png"
-    },
-    {
-      "search": "legacy 2458.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2458.png",
-      "source": "artwork/mulberry-mum_parent.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/mum_parent.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "d21d44de065987753d46eb3778b80473e622f456a54b026497db8b48dae593d6",
-      "sourceSha256": "0fae1b9bfd5c393f4de9d963219ffeb397a1bf979ad0270738793604ab79a8f0",
-      "aliasOf": "symbols/mulberry-mum_parent.png"
-    },
-    {
-      "search": "legacy 16829.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/16829.png",
-      "source": "artwork/mulberry-dad_parent.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/dad_parent.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "35d9345c6cc5790ba90d95808cba8ed3164a1040f5f81ee8d7e4500b3b4d6d52",
-      "sourceSha256": "f48c04aca12467d829d23014310e9e540a18f874b2c8f68ade0710a3a7ef3210",
-      "aliasOf": "symbols/mulberry-dad_parent.png"
-    },
-    {
-      "search": "legacy 2423.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2423.png",
-      "source": "artwork/mulberry-brother.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/brother.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "27ad6eca690edf4e3313a119f11f769879348e70c2270c3d6e2786f9542d65f7",
-      "sourceSha256": "817145040cae42db16cd06bbf7c89078d8e5a4f9cae9ac6a7046ff3b63b2b79b",
-      "aliasOf": "symbols/mulberry-brother.png"
-    },
-    {
-      "search": "legacy 2422.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2422.png",
-      "source": "artwork/mulberry-sister.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/sister.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "64000f991fed0265abca00aeaea6c7d304f996deac58e8f37735f51acc8306a3",
-      "sourceSha256": "5e4948b6472808d4377b8049d8106892e3cbbbd15743331335e60960e0d590ed",
-      "aliasOf": "symbols/mulberry-sister.png"
-    },
-    {
-      "search": "legacy 25790.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/25790.png",
-      "source": "artwork/original-friend.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "c4cdc987d2c37060ae12b483160fe858f27f105cdc5c6a77b8998e6d62adda1d",
-      "sourceSha256": "15ccf36ed10e75a5148c3171064bba0a64e5c568d09acbfcf1cf993269e5fa6e",
-      "aliasOf": "symbols/original-friend.png"
-    },
-    {
-      "search": "legacy 8486.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8486.png",
-      "source": "artwork/original-friend.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "c4cdc987d2c37060ae12b483160fe858f27f105cdc5c6a77b8998e6d62adda1d",
-      "sourceSha256": "15ccf36ed10e75a5148c3171064bba0a64e5c568d09acbfcf1cf993269e5fa6e",
-      "aliasOf": "symbols/original-friend.png"
-    },
-    {
-      "search": "legacy 38351.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/38351.png",
-      "source": "artwork/mulberry-family.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/family.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "abc359242216c83f863da497ed77de1ea78ea27f38fc28501dd8572119c049a3",
-      "sourceSha256": "5f0f1669bad6894b053e0d1a4a01342276a07037043815df0472f36baba70a9c",
-      "aliasOf": "symbols/mulberry-family.png"
-    },
-    {
-      "search": "legacy 6556.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6556.png",
-      "source": "artwork/mulberry-teacher_1a.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/teacher_1a.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "61f9061771c17aa65dcba72f1c013092338db73488332a8e0c7c57e2d5a899c9",
-      "sourceSha256": "89aac9ae13ffbd0a07f1e7aa3f4db530b114940ae388c9372bc0bc369b24927c",
-      "aliasOf": "symbols/mulberry-teacher_1a.png"
-    },
-    {
-      "search": "legacy 6561.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6561.png",
-      "source": "artwork/mulberry-doctor_1a.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/doctor_1a.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "4d6e671b8cf54410a9001009a1f62e8e57a9bc7b3727ecd43e89a2074ec79621",
-      "sourceSha256": "4a1ac868914d1a35c7df8243b4f80c1c3b7cf53034f02c07d3413d63655f32e3",
-      "aliasOf": "symbols/mulberry-doctor_1a.png"
-    },
-    {
-      "search": "legacy 7163.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7163.png",
-      "source": "artwork/mulberry-take_care_of___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/take_care_of_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "e0d80abfb47a9803ef4af1ee39c3050a0845b77116c24701e94040fbea1cc52f",
-      "sourceSha256": "10262a8e5f69a8699c27d105afd3bd6468dd607cd425e4d0af585eccb90c71c7",
-      "aliasOf": "symbols/mulberry-take_care_of___to.png"
-    },
-    {
-      "search": "legacy 23718.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/23718.png",
-      "source": "artwork/mulberry-grandmother.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/grandmother.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "5cb951283f03ce662b7498079d55ff608b14024f2eb7a00bfb98e1ec7cac76a6",
-      "sourceSha256": "8ae38333719d6c3f47917ada610bbebd3386b719f88bac7ab66aadec35e02e20",
-      "aliasOf": "symbols/mulberry-grandmother.png"
-    },
-    {
-      "search": "legacy 30014.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/30014.png",
-      "source": "artwork/original-group.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "0b9498897752a019bb5c0ffdde494bb84e0fc7ef681fef0365a31a5bc71b99bc",
-      "sourceSha256": "c70cdf6ca047b000e7b46b659b2f233c1df3be10b0b318480ab847456ced2a2f",
-      "aliasOf": "symbols/original-group.png"
-    },
-    {
-      "search": "legacy 23392.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/23392.png",
-      "source": "artwork/mulberry-play___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/play_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "407a025eb132171c376c2c5af367e0f8b9a758230b887687efb9e5252989c175",
-      "sourceSha256": "50ecdc722b1da345dbaa33d764178c7ec70ac49d83609a67b9b2cb2f63f3e404",
-      "aliasOf": "symbols/mulberry-play___to.png"
-    },
-    {
-      "search": "legacy 6479.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6479.png",
-      "source": "artwork/mulberry-sleep_male___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/sleep_male_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "51f826081f9d1b21b99fac075b82a2dc636fc057b4eeae5f181e7aac3fa9b6a6",
-      "sourceSha256": "27be392b6077c39bc8b6ef2d53cd777fcc38073ebfa26ca99aa7310c6b92940b",
-      "aliasOf": "symbols/mulberry-sleep_male___to.png"
-    },
-    {
-      "search": "legacy 6044.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6044.png",
-      "source": "artwork/mulberry-walk___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/walk_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "df19b192588ab54c357d7683a2bc00ba5b0f7cbcbefa2ab97c79d3076957c331",
-      "sourceSha256": "3787c771b5ea139af42c9af502784f471446c2580ae2e37449b1c1e804e9a46b",
-      "aliasOf": "symbols/mulberry-walk___to.png"
-    },
-    {
-      "search": "legacy 6611.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6611.png",
-      "source": "artwork/mulberry-sit___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/sit_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "8d743671ff05681588b6e43795bc87357f48648a585e46948f50d99b9c4dbbbe",
-      "sourceSha256": "1fbc99679867b5aa9114624ca157087940f71bda43b62a64e42b8d83f382fdda",
-      "aliasOf": "symbols/mulberry-sit___to.png"
-    },
-    {
-      "search": "legacy 36073.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/36073.png",
-      "source": "artwork/mulberry-stand___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/stand_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "e4f00bbed7293369189b577cc2560ffd09cccb0accaf361331072a2e63fecc3a",
-      "sourceSha256": "06d6e9a0375ad2bb45d3b3817aaeb9a642b5bd2f4149107048f0bf0a7d8f98fb",
-      "aliasOf": "symbols/mulberry-stand___to.png"
-    },
-    {
-      "search": "legacy 6058.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6058.png",
-      "source": "artwork/mulberry-shower_1___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/shower_1_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "9760f7a5c0797d050e4f7e31597f73d7084ae0b1e5b858e8dbfe18af91084c15",
-      "sourceSha256": "d5dc26259501b52463169022c0cbd3cd5170e7aa4a52b2667b8f5657f139cb3a",
-      "aliasOf": "symbols/mulberry-shower_1___to.png"
-    },
-    {
-      "search": "legacy 2326.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2326.png",
-      "source": "artwork/mulberry-brush_teeth___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/brush_teeth_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "527a5bd1fa49f3ba8972fc74fa7478860e04fcbeac3c143d21ea9f5e23bf43d9",
-      "sourceSha256": "425e2bf52cb277c0a810f9251afc951b0c12f5be6e94c57fa5441854b0a4eaf2",
-      "aliasOf": "symbols/mulberry-brush_teeth___to.png"
-    },
-    {
-      "search": "legacy 7141.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7141.png",
-      "source": "artwork/mulberry-read___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/read_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "e8751e2a0cb58a150c8814cea3c362a22b5a1c4c5bf456e822330ba0100212ca",
-      "sourceSha256": "581522f7b80d7d8bcbb522c41d39804cb48f34a69b0d31c7a7cb72c833368106",
-      "aliasOf": "symbols/mulberry-read___to.png"
-    },
-    {
-      "search": "legacy 8088.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8088.png",
-      "source": "artwork/mulberry-draw___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/draw_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "0c3da0a40a7941e318fb444b65529664a2f613abcbe8d3e33ab8e79f5a6b3be1",
-      "sourceSha256": "725c005be21c88eeb1c523df89c169c040d6c5bbe7f6019a5dba50283b434bed",
-      "aliasOf": "symbols/mulberry-draw___to.png"
-    },
-    {
-      "search": "legacy 2746.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2746.png",
-      "source": "artwork/mulberry-headphones.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/headphones.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "08d5e0621718977a5471fa8f7805237718a6d46018b04cbe48bc3d9b43c359ce",
-      "sourceSha256": "eaec6d2339d1b0d21f1f7351674f13b680f624f4b288a536177dbdaaf93b9da6",
-      "aliasOf": "symbols/mulberry-headphones.png"
-    },
-    {
-      "search": "legacy 21385.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/21385.png",
-      "source": "artwork/mulberry-watch___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/watch_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "6b2b749e1a985cec6925c2e966aef945465aa40635dcdc6f8d4a21c524242a58",
-      "sourceSha256": "08fe4872117bb64650cc85df4f84fbffca151ccbf329fac69ed273e45782830b",
-      "aliasOf": "symbols/mulberry-watch___to.png"
-    },
-    {
-      "search": "legacy 6517.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6517.png",
-      "source": "artwork/mulberry-talk_1___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/talk_1_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "7c89a0aa1c05ff7b31008ac3c521eb0771e8965a3ab99db75b7ea2667b3a3545",
-      "sourceSha256": "ccc2a3e233c52299862cdb7d66208a1e4ff890252800bb48747a4b56d630f959",
-      "aliasOf": "symbols/mulberry-talk_1___to.png"
-    },
-    {
-      "search": "legacy 6023.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6023.png",
-      "source": "artwork/mulberry-hug___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/hug_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "2678f1fc3a03ad5ad18820319713b970d99adb6919bf058f1c8e8a17d829b6d8",
-      "sourceSha256": "15a9cbb8b248cceefd934ef295870bf66e9e6781435e7f3eb8acd3a48cc1d959",
-      "aliasOf": "symbols/mulberry-hug___to.png"
-    },
-    {
-      "search": "legacy 36914.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/36914.png",
-      "source": "artwork/mulberry-wait___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/wait_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "c54e14469631d1e18fcf5cb7faff7d95de03e31e895ba7d0d5ef5ac06ed3faa3",
-      "sourceSha256": "d22c2255e5d413ef069f2cb1f444b1a72c25c8524093c51746291d42d44df048",
-      "aliasOf": "symbols/mulberry-wait___to.png"
-    },
-    {
-      "search": "legacy 24825.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/24825.png",
-      "source": "artwork/mulberry-open___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/open_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "edbe6c581c3ec05d87452d4d1a4ff959d712534cb836f9e50862dd80c9f1fa26",
-      "sourceSha256": "adb25b57f0b17a44ca1b21f66b9a32cf59c35282558de4d874f912bf95a066f0",
-      "aliasOf": "symbols/mulberry-open___to.png"
-    },
-    {
-      "search": "legacy 24976.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/24976.png",
-      "source": "artwork/mulberry-close___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/close_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "91cfb8d5ccc09f8c18d0f7180d2fa4691afbe7f84a40b9d97bd0ed93626a4e7e",
-      "sourceSha256": "a4cf6fe163511af0423a87599445fe8ce60bd9d9152bae6e69612073e331c341",
-      "aliasOf": "symbols/mulberry-close___to.png"
-    },
-    {
-      "search": "legacy 10148.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/10148.png",
-      "source": "artwork/mulberry-take___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/take_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "7ce40eef1dfab3cc7d8538abeed024e2dab4ffe340781433f359ddc148006943",
-      "sourceSha256": "ac2758fc5116c11d24bb9b351192f95334ae1e126840394ba5a936dccc56ab04",
-      "aliasOf": "symbols/mulberry-take___to.png"
-    },
-    {
-      "search": "legacy 28431.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/28431.png",
-      "source": "artwork/mulberry-give___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/give_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "2156840631ce3c20c580d900c4827ea3f1cc16a9e2e44200845b57c6fa7bbce1",
-      "sourceSha256": "9c803f119c6f725425d7a2a9edcfa311480484a4c5c16acdfe9b5e72d4193b05",
-      "aliasOf": "symbols/mulberry-give___to.png"
-    },
-    {
-      "search": "legacy 8986.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8986.png",
-      "source": "artwork/original-buy.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "18f9ccb37509323b29c1a12b916285e09bc91f8aab35327f53e9c868b1eaa670",
-      "sourceSha256": "501755a68d65057feba62025bd21ba98fe5f369554c66715c0c424472b19461c",
-      "aliasOf": "symbols/original-buy.png"
-    },
-    {
-      "search": "legacy 6495.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6495.png",
-      "source": "artwork/mulberry-study___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/study_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "db37273930bda6442872d6f20aa39d0b40e6934d07cae25dc1118eb0abb04d52",
-      "sourceSha256": "3241a01628323775f30d72e79a1c3a2a7a5b786c63ec9bce4d83830d8543fe62",
-      "aliasOf": "symbols/mulberry-study___to.png"
-    },
-    {
-      "search": "legacy 6624.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6624.png",
-      "source": "artwork/original-work.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "4d7598e7ef4eebfad64a2089dce5170e935aaa1d66824ae07bb25db521e92a24",
-      "sourceSha256": "ff79bf06866dc40eee37bacb80594b51a4588468ca87213dc222b777a974186b",
-      "aliasOf": "symbols/original-work.png"
-    },
-    {
-      "search": "legacy 2806.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2806.png",
-      "source": "artwork/mulberry-go_outside___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/go_outside_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "d50067d8d9e292bd40b1956b33595c3d662efb4afd94a43f7644f1d7fc10683a",
-      "sourceSha256": "44641d3fd1a5e4bd4bcb37fcc29c424f4c5b3c619cdbe3390d77d39abe7df9fd",
-      "aliasOf": "symbols/mulberry-go_outside___to.png"
-    },
-    {
-      "search": "legacy 6630.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6630.png",
-      "source": "artwork/mulberry-return___to.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/return_%2C_to.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "7dafc5217e5f00c4f20f5d323d193ff1a30a582e7da605350c5bb16719678d69",
-      "sourceSha256": "9a5be3a2efdbd5679ee179e9fe48180683cdb658ee42003be409e3abcc5c2e49",
-      "aliasOf": "symbols/mulberry-return___to.png"
-    },
-    {
-      "search": "legacy 30510.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/30510.png",
-      "source": "artwork/original-choice.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "77b80f27d38a7868fbb9c3bf3389e4d877b9404bebec5fe38533b72a803e3179",
-      "sourceSha256": "3afda8bdf7ee13e53517778bf072746fcce6d28fa5f8986c0e2bc6451795ff4c",
-      "aliasOf": "symbols/original-choice.png"
-    },
-    {
-      "search": "legacy 6964.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6964.png",
-      "source": "artwork/mulberry-house.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/house.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "904f730662acb1752941c035b4a0037400bd175960df6e76e29cd5ca5afabcca",
-      "sourceSha256": "d221419ee88f1b269324f3c90a187c46a06ed5bfd33165f35ff6119c89c180e4",
-      "aliasOf": "symbols/mulberry-house.png"
-    },
-    {
-      "search": "legacy 5921.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5921.png",
-      "source": "artwork/mulberry-toilet.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/toilet.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "b169a08073468f2638b3f12c09e0ed5cd3d82c5b29b6669e9e862ab2dbc8248b",
-      "sourceSha256": "c986367e3ee348cce567106ea0acd7ea9dd336d123e128b386a297c8b3640945",
-      "aliasOf": "symbols/mulberry-toilet.png"
-    },
-    {
-      "search": "legacy 5988.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/5988.png",
-      "source": "artwork/mulberry-single_bed.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/single_bed.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "742495a8d69c0110fbae63aa69ae33260d7da6016a95ffd7ef9065756d292463",
-      "sourceSha256": "e340228699439907b85b79e71cbc9235d6075b17ae51bea6dece715f290de229",
-      "aliasOf": "symbols/mulberry-single_bed.png"
-    },
-    {
-      "search": "legacy 25966.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/25966.png",
-      "source": "artwork/original-kitchen.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "da5197283428b37d7f51578ba0558ec7143d78d1642b4f7bfe966f96bc7ae8cf",
-      "sourceSha256": "a1795842bf89607968d0cd07c3463e4c718d6a17e259d6bd62830670b6467765",
-      "aliasOf": "symbols/original-kitchen.png"
-    },
-    {
-      "search": "legacy 32446.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32446.png",
-      "source": "artwork/mulberry-school.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/school.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "cd8d3bb025ee3659dcb73428dd9685d01da3fb947c13b9febe8b064f838b90b7",
-      "sourceSha256": "f08736870d0284bda8c27dfb6a1464c618cde7e4d0a4ae4293fea3abe3feea1b",
-      "aliasOf": "symbols/mulberry-school.png"
-    },
-    {
-      "search": "legacy 39572.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/39572.png",
-      "source": "artwork/mulberry-play_area.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/play_area.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "96fbad9bb9b272794e1b9f18832d2f5253049d8094394860bad5cfac1a6aa366",
-      "sourceSha256": "16c7e063dccd1abf0745d2721ec5b81b661b5f1a75249ec1a9531aa2ac55b8a5",
-      "aliasOf": "symbols/mulberry-play_area.png"
-    },
-    {
-      "search": "legacy 36210.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/36210.png",
-      "source": "artwork/original-hospital.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "1f3acdb80657f7d6096ecdc2d028e876f563e9b4b112d1633cf80f903c3fbd19",
-      "sourceSha256": "4901e5dd50caa3197b0beb46da77b49d54dfc0644ffd669ac87fd8a382cf40fd",
-      "aliasOf": "symbols/original-hospital.png"
-    },
-    {
-      "search": "legacy 32942.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32942.png",
-      "source": "artwork/mulberry-shop.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/shop.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "a6309d5f88d89e97637d4ecebd70af63cbf69710464bd98b70d8857f384a5549",
-      "sourceSha256": "85298fc788af369cefdd5d4186e83f14d3e3d33351ed67df1fb86bf8f2fa1c75",
-      "aliasOf": "symbols/mulberry-shop.png"
-    },
-    {
-      "search": "legacy 2299.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2248",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "458b9deb9fbe47e9b99134042f2ae22436e6c180c0269c870c5d608d2092f615"
+    },
+    {
+      "search": "rua",
+      "keywords": [
+        "rua",
+        "avenida"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/2299.png",
-      "source": "artwork/mulberry-road.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/road.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "0c12dd9ad2043ab7cc6a31eea47506d4e6d674bbe06e19d69fa7b0ddc44c88d8",
-      "sourceSha256": "6df9852d93ff0814514c4f0a7de9bd353f8110a3978eb54b18aa3fbaf37bdb85",
-      "aliasOf": "symbols/mulberry-road.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2299",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2a9f74e3a507a3fc0efbfb989889cffa08643b7bda332cec50ab755ef6bbba12"
     },
     {
-      "search": "legacy 2339.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "carne",
+      "keywords": [
+        "carne"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2316.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2316",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "3144bab8b36d5ae52d086f7ef1b5be642c1a8db6393504c4e21c7e3f3c5b3e4a"
+    },
+    {
+      "search": "escovar os dentes",
+      "keywords": [
+        "escovar os dentes"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2326.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2326",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "83f3bfdddff9d0d4e1e76e584809456d3ff3f60d8583e941779ee2d27dd0f06d"
+    },
+    {
+      "search": "carro",
+      "keywords": [
+        "carro",
+        "automóvel"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/2339.png",
-      "source": "artwork/mulberry-car.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/car.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "094c3cb2ed132d15c2da72a3e0e5096f2aa1db8be4bae982768ef4dae1808248",
-      "sourceSha256": "0ca106e1e3d4dfc637ef90549d53cb54679b93824c53e7f06da0bcbc06993667",
-      "aliasOf": "symbols/mulberry-car.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2339",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e33490aa481c7f4558cb6c187961c245886bb26c7938f446ffa73879d31c0905"
     },
     {
-      "search": "legacy 30518.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/30518.png",
-      "source": "artwork/mulberry-beach.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/beach.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "62da80a2c982b0e7d3b9fb5627735683ec2ca57d1e7a348b14e451977933aef4",
-      "sourceSha256": "4a36d01ff7a93238b4b0d1f1130a32decbaf080e6451d9e5fd101e8cd3805b45",
-      "aliasOf": "symbols/mulberry-beach.png"
+      "search": "confuso",
+      "keywords": [
+        "confuso"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2352.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2352",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e1d183cfd606bd909977a168f3d3367f9f04319fa18e0208fbcaed59b9b5e6e3"
     },
     {
-      "search": "legacy 30516.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/30516.png",
-      "source": "artwork/original-pool.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "fcfc68f31e8bc19484ea9118e7a264d443090d10470a1d4aeef5ab0910afc0dc",
-      "sourceSha256": "e69a643885815852295ce5132593493bb2dfaba2f55ad9b8005017aa4a9281ae",
-      "aliasOf": "symbols/original-pool.png"
+      "search": "com dor",
+      "keywords": [
+        "dor"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2367.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2367",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "289d8ef8ce5a3a73d021fb9ad82e4755980c8ff8ec9f83915cb8d1d9c74ebd79"
     },
     {
-      "search": "legacy 32408.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32408.png",
-      "source": "artwork/original-restaurant.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "b2cdce98e6a5385a34e93b808fc32f971aa2ba358b27976ed5150a3c40ef34d1",
-      "sourceSha256": "2cad92ed3143d4ff876615e35f936094ba03e05baeca365bed5ab1f93b4788f7",
-      "aliasOf": "symbols/original-restaurant.png"
+      "search": "irmã",
+      "keywords": [
+        "irmã"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2422.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2422",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "bbddaa4694cc8c03aa38848b480cfcd4a2fafb18afae20ac1eede789c3c9bbd5"
     },
     {
-      "search": "legacy 37368.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/37368.png",
-      "source": "artwork/original-pharmacy.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "c0ef745f8cf8fe35fbce8c0821b236e373525c06f628b803a2d7a2ef9fde5cae",
-      "sourceSha256": "135408c3f8f41d5030fa895461f9cb40d8d6e9bc6ffac452981544739110b5d2",
-      "aliasOf": "symbols/original-pharmacy.png"
+      "search": "irmão",
+      "keywords": [
+        "irmão"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2423.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2423",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a66b68db4f202f2af8e8704fe62a5adaaa82932f58ce51e964000fb9da83caf1"
     },
     {
-      "search": "legacy 16087.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/16087.png",
-      "source": "artwork/original-work.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "4d7598e7ef4eebfad64a2089dce5170e935aaa1d66824ae07bb25db521e92a24",
-      "sourceSha256": "ff79bf06866dc40eee37bacb80594b51a4588468ca87213dc222b777a974186b",
-      "aliasOf": "symbols/original-work.png"
+      "search": "ovo",
+      "keywords": [
+        "ovo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2427.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2427",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "03f44b1696ff36ef342c6837d4d571812fdb15fd1c3dd44df25bd7b6041a4911"
     },
     {
-      "search": "legacy 2434.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "jardim",
+      "keywords": [
+        "jardim"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/2434.png",
-      "source": "artwork/original-garden.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "4544bf939a7d9a6ac0c607e33af1f45fd87a1382bc7e668b23e1bf4bd87c708a",
-      "sourceSha256": "98ff4ef3514e5130a25b39dd51447a05ee0481694281f7776fe88806ad5281a0",
-      "aliasOf": "symbols/original-garden.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2434",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b1d9f44488318ca9e000f40a40abacea3fd93b8b87bbc1fffbef9a56c6b61997"
     },
     {
-      "search": "legacy 6211.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6211.png",
-      "source": "artwork/mulberry-room.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/room.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "2e96acf5117fc13bf73d6829a63d7756c3829416328e3d808ab603af14e6d16b",
-      "sourceSha256": "c75ad4c261e1d3514e1bacb4a94da9883641fa02b1f0d832a3bd18469bcbd274",
-      "aliasOf": "symbols/mulberry-room.png"
+      "search": "leite",
+      "keywords": [
+        "leite"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2445.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2445",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "db3e28d4991439151171fd2ec36d174c3b5d527610786bf68396dea41821fe95"
     },
     {
-      "search": "legacy 25900.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/25900.png",
-      "source": "artwork/mulberry-single_bed.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/single_bed.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "742495a8d69c0110fbae63aa69ae33260d7da6016a95ffd7ef9065756d292463",
-      "sourceSha256": "e340228699439907b85b79e71cbc9235d6075b17ae51bea6dece715f290de229",
-      "aliasOf": "symbols/mulberry-single_bed.png"
+      "search": "macarrão",
+      "keywords": [
+        "massa",
+        "macarrão"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2455.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2455",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b2524baf2ae6f2089db616174d1346e0ae8ad7cefddb725a15ecf1959f31b741"
     },
     {
-      "search": "legacy 2673.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2673.png",
-      "source": "artwork/mulberry-head.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/head.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "71a61ca2d0e96cd453d05b39e6d2186316814e51154dee6cfb4b92f214fc2194",
-      "sourceSha256": "30578ec5450dd36263b8f6d3d36bf71338e7f5f2ea15918639cd849672586bc2",
-      "aliasOf": "symbols/mulberry-head.png"
+      "search": "mamãe",
+      "keywords": [
+        "mamã",
+        "mãe"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2458.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2458",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "8a350e4c5ba1433dabaddb00e40eb2e70f900feaab206ce022f88fbf952adb14"
     },
     {
-      "search": "legacy 2786.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2786.png",
-      "source": "artwork/mulberry-stomach.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/stomach.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "b91dd3fc1551f26bf2557c3cdeb5a8503f3c722694ea4be455212f711e7e6319",
-      "sourceSha256": "084ebbaadd0ce383d35011c60bfd2b96cb958b9730e37edbdd8b62dca82463ab",
-      "aliasOf": "symbols/mulberry-stomach.png"
+      "search": "maçã",
+      "keywords": [
+        "maçã"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2462.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2462",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ebb618791d4cd6997ffd2cff27fdab671489a30ffdb4d0bf9ace3df43634b7b3"
     },
     {
-      "search": "legacy 2669.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2669.png",
-      "source": "artwork/mulberry-arm.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/arm.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "4bce34325658991c170dbe629bfd9b20764ebd57b36fd8dbc29574f788afd3da",
-      "sourceSha256": "0725394133f289b1f6da4059be7abf00e84515a3a672f270e4e430478ca18a24",
-      "aliasOf": "symbols/mulberry-arm.png"
+      "search": "pão",
+      "keywords": [
+        "pão"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2494.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2494",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1f501364f6b76b6568876f4afdaf42f2c18088976e6b0fcd326af9f4702b4f52"
     },
     {
-      "search": "legacy 8666.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8666.png",
-      "source": "artwork/mulberry-leg.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/leg.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "a38dde75395369dc27441903917ed503d7427e66d53a0d8e509be63d0a5b37a6",
-      "sourceSha256": "a21828208fb060896f7ab6f0dbadf79c4365f8d84e910bc6e60d40c3621e7978",
-      "aliasOf": "symbols/mulberry-leg.png"
+      "search": "banana",
+      "keywords": [
+        "banana"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2530.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2530",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7f6abdde1dd6af3b251f068702f99133c5169e5749ce8bab7a70ce9a5371cb0c"
     },
     {
-      "search": "legacy 2928.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2928.png",
-      "source": "artwork/mulberry-left_hand.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/left_hand.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "32a39ce69c8856176db335c841006c4ea10d5459024bf7aa8fc61346f6c222ad",
-      "sourceSha256": "3bbae3094ba506d28aaa2f9c0128e9c258bd6af1b74bf96e80f81318e132f4dc",
-      "aliasOf": "symbols/mulberry-left_hand.png"
+      "search": "sopa",
+      "keywords": [
+        "sopa"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2573.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2573",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "134ad4f72d2d4ba117fa1bc51491b11f40baf4052680c1a4db59e6593dbeb43a"
     },
     {
-      "search": "legacy 25327.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/25327.png",
-      "source": "artwork/mulberry-foot.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/foot.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "53c207efb9c7fdbffb21656e86cad45baa310d9dbc2ae38c27e3ffc0a727b091",
-      "sourceSha256": "7404a41763888b61b9771513eb4a28c404bf64dd2d0cfdf7a35d844d36e0a179",
-      "aliasOf": "symbols/mulberry-foot.png"
-    },
-    {
-      "search": "legacy 2748.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/2748.png",
-      "source": "artwork/mulberry-back.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/back.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "46018ef5dc23a1cf62a01103f6e3aa9dd638b7cff511ad4c4ba7778798afbccc",
-      "sourceSha256": "b7fd0cfe4a735afa79cf742e394568af95990f0c09d22ec0d1625c0cc27a572f",
-      "aliasOf": "symbols/mulberry-back.png"
-    },
-    {
-      "search": "legacy 2663.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "boca",
+      "keywords": [
+        "boca"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/2663.png",
-      "source": "artwork/mulberry-mouth.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/mouth.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "521c768b267737721465ad3d65325ae967158380b2bbd1c399416ff54ccdb2db",
-      "sourceSha256": "057d3dc63f1c902a8ebebe4e6a6fb631c22f4659f54e83cf8469e9ec7a4a7a83",
-      "aliasOf": "symbols/mulberry-mouth.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2663",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "05eb8c500207d390a438fd8ac430ed77dfaba78eee8d133b619f49318890e1c7"
     },
     {
-      "search": "legacy 10267.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/10267.png",
-      "source": "artwork/mulberry-tooth.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/tooth.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "7f81dd201c992b717686a0fcbbc9341c75aa1facbc8bfe61b8de4450bb6fae8c",
-      "sourceSha256": "be80656955b26be65702083a61a1999ac740a4e0f770a0f4e108b4080530826a",
-      "aliasOf": "symbols/mulberry-tooth.png"
+      "search": "braço",
+      "keywords": [
+        "braço"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2669.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2669",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "bb5ab9300a06fd1b88369e0be750f5a39102e326861a0449a0ed3c01adab6a47"
     },
     {
-      "search": "legacy 6573.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/6573.png",
-      "source": "artwork/mulberry-eye.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/eye.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "ded31b8c36ebefaa342b8bce9bef28d7c385624395fac2f1bcfda1eff514deff",
-      "sourceSha256": "65c44e8155cdc106513ac2912320621f5067656738b1c3e6ae29babd51742b3f",
-      "aliasOf": "symbols/mulberry-eye.png"
+      "search": "cabeça",
+      "keywords": [
+        "cabeça"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2673.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2673",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4360bfdfd29597f10429c1974940c14979217c30a08db4c595075c3af9a1b13d"
     },
     {
-      "search": "legacy 39498.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/39498.png",
-      "source": "artwork/mulberry-ear.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/ear.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "ba9ef87e03fffb327cf4835e748619202bc1384a546a8b8d15f3a9a6e21495f9",
-      "sourceSha256": "0f755c822160c9cf57e237e405d851a5a3f34e9d51cc93de4609f004625d4128",
-      "aliasOf": "symbols/mulberry-ear.png"
+      "search": "Meu corpo",
+      "keywords": [
+        "corpo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2728.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2728",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4d42e88fb5aae1cf7aa486944234bf3582c64cdc4bd41f4cb3e31cd1bcfa4232"
     },
     {
-      "search": "legacy 2887.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "ouvir música",
+      "keywords": [
+        "ouvir música",
+        "escutar música"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2746.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2746",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c778ddc614be48e9a83349e761fa16a95c2815cbd992d240d8f70e73bf0cdc8e"
+    },
+    {
+      "search": "costas",
+      "keywords": [
+        "costas"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2748.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2748",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "36bbc46f3ec8df04ef32abf05ebfc350282cbbeec6eccbc3e9409038b4e553e7"
+    },
+    {
+      "search": "barriga",
+      "keywords": [
+        "estômago",
+        "barriga"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2786.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2786",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e9be074ffd3eaca5cf28c400c7a660e14657f750aa85b6416475cf3b2593ee8d"
+    },
+    {
+      "search": "sair",
+      "keywords": [
+        "sair"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2806.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2806",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ac5e0db2237056437db5c888a4467211f1448a6928ce737b42baae33d6315142"
+    },
+    {
+      "search": "nariz",
+      "keywords": [
+        "nariz"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/2887.png",
-      "source": "artwork/original-nose.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "cf0e8dc39a41172928968e7304dd9ddb655d3d91756c5bbcf231a2c4783aa212",
-      "sourceSha256": "99fc85219e67659143c26aa0fdb227a528f5f6d04525d8508a59bd01c0cd91c2",
-      "aliasOf": "symbols/original-nose.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2887",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "097196f70ffccaa9b31f26058fbcc3d8b688c39c2f981e51fe4ce2bf8f8576d8"
     },
     {
-      "search": "legacy 11356.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/11356.png",
-      "source": "artwork/mulberry-itch.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/itch.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "e7b90a65a6fca9a71b534888c336a6844ad6dabe1d3fd27c731f40b4d75d0e8e",
-      "sourceSha256": "8fe427f3210182930500cc7715c212b062c93ea69d51bbdfd04a7afefea54fed",
-      "aliasOf": "symbols/mulberry-itch.png"
+      "search": "mão",
+      "keywords": [
+        "mão",
+        "mão direita"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/2928.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/2928",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1182d2215a02205c982f571343588407c729d42fda6ed7cf2a16a4cfde794361"
     },
     {
-      "search": "legacy 35561.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/35561.png",
-      "source": "artwork/mulberry-hot_person.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/hot_person.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "f3feef49dc8ff74ee4a641a0f4c86856d1dba6340191e1fca059a4521943fe77",
-      "sourceSha256": "8c6fd69cf00a72a6b68157d1bff0453185aa11294e2dcacb2a0080c1b75554a0",
-      "aliasOf": "symbols/mulberry-hot_person.png"
-    },
-    {
-      "search": "legacy 8163.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8163.png",
-      "source": "artwork/mulberry-medicine.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/medicine.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "b9b082e6c0f8e183fa50191f998bb0f50a32bec77b3d510e9dc942adc2b0ed28",
-      "sourceSha256": "7e19df27ba83bb14d610408a2a9f24bbde958eff0d661220a5be6418771ea966",
-      "aliasOf": "symbols/mulberry-medicine.png"
-    },
-    {
-      "search": "legacy 34377.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/34377.png",
-      "source": "artwork/original-breathe.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "253c5f1096368bc37c2012f39ee4b6163f8d0775d293297a927105fa6c6f220c",
-      "sourceSha256": "eadeed10395ae8ec045fdf28ac4aa6cbce7bebfd8c5d3769015aa8c0b7624552",
-      "aliasOf": "symbols/original-breathe.png"
-    },
-    {
-      "search": "legacy 32675.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/32675.png",
-      "source": "artwork/original-position.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "8f22443223014b8a0951675ccfeadbf560a8e698651e9dcaf81bd9831630360d",
-      "sourceSha256": "03a11595d42a14998b20e7d0608fab34bccc75f5c06a2f2f906df9f45ee41664",
-      "aliasOf": "symbols/original-position.png"
-    },
-    {
-      "search": "legacy 7233.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7233.png",
-      "source": "artwork/mulberry-clothes_generic.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/clothes_generic.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "0473c7151bedaa4dfe60a9696b5a9c11c8cb6644357725857c1df27c0851e74e",
-      "sourceSha256": "9e9d7bb97e60d786ac0588b6e1c883cdca0783b6a228afe98535ae50c055bf7f",
-      "aliasOf": "symbols/mulberry-clothes_generic.png"
-    },
-    {
-      "search": "legacy 3329.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/3329.png",
-      "source": "artwork/mulberry-glasses.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/glasses.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "6f0c4b11f204275de93d124788cf19fcdb69e78089b7251800d5fa110bca9a40",
-      "sourceSha256": "9be8d1f71ddb8a721bffebe9a59977a1b7a8dca4179f790a11764018223f1528",
-      "aliasOf": "symbols/mulberry-glasses.png"
-    },
-    {
-      "search": "legacy 3155.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "cadeira",
+      "keywords": [
+        "cadeira"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/3155.png",
-      "source": "artwork/mulberry-chair.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/chair.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "3ba029f7530166beb90d4571db20ddce196abfc6ca3b01be5e916944b5c76cb7",
-      "sourceSha256": "8ba459f7ecd73ef99a36615de5cf017301384e80d5dac977a5700f97104f0728",
-      "aliasOf": "symbols/mulberry-chair.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3155",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1fce0cbd7612095f23a48c521f908abd7869642cc854c4981585bf45acbc218a"
     },
     {
-      "search": "legacy 9847.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/9847.png",
-      "source": "artwork/mulberry-confused_man.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/confused_man.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "b3db7cc821d44d8366d94b50230ad4ccce3a1d1fca373fe789f3912f3ade0aca",
-      "sourceSha256": "cdce5428c2caf1d3e002c0192fb07cdcf8259faf1d2d391fb9caad079f0ccefa",
-      "aliasOf": "symbols/mulberry-confused_man.png"
+      "search": "mais",
+      "keywords": [
+        "mais",
+        "+"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3220.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3220",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ed70ea7c34d4c9251da65cb5580c0cf611c17909b1a7876b866d8c08e5361b39"
     },
     {
-      "search": "legacy 11752.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/11752.png",
-      "source": "artwork/original-repeat.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "9f17ea70092af7f4248852aaedd3e4ef20991cc2207142b2334f1b4e865f67e0",
-      "sourceSha256": "14764f7b3fc9acbdba944732784e2eaf5d580b7fa48804f85c76699074ad03e5",
-      "aliasOf": "symbols/original-repeat.png"
+      "search": "feijão",
+      "keywords": [
+        "feijão"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3294.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3294",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "8cc296f52f69d5a72d992e2271092685ce649e6e9eaf7e6e4299326a8679ded2"
     },
     {
-      "search": "legacy 7167.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/7167.png",
-      "source": "artwork/original-position.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "8f22443223014b8a0951675ccfeadbf560a8e698651e9dcaf81bd9831630360d",
-      "sourceSha256": "03a11595d42a14998b20e7d0608fab34bccc75f5c06a2f2f906df9f45ee41664",
-      "aliasOf": "symbols/original-position.png"
+      "search": "quero descansar",
+      "keywords": [
+        "descansar",
+        "repousar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3299.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3299",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "31a37e573043a11ca345be76e44f128e44bd78c4df2529325891e3ee057ca097"
     },
     {
-      "search": "legacy 8195.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8195.png",
-      "source": "artwork/original-please.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "fa95966b331a6f4b4645a41ce381b0ed2964153b6ea406ba896eb245194f1ada",
-      "sourceSha256": "71aab363143b7d218274ec9dc8287746d70f56784b91acbfc3978957a8ac4ab7",
-      "aliasOf": "symbols/original-please.png"
+      "search": "óculos",
+      "keywords": [
+        "óculos"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/3329.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/3329",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f014115b06777e7db1147d36d1fe211e92aae280d04c1ecf91a481d056838e2b"
     },
     {
-      "search": "legacy 8129.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
-      "file": "symbols/8129.png",
-      "source": "artwork/original-thanks.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "989a8bb50289a13809f722bc417e6abe17ffa9598d7b4f60bfabc6f28810da5a",
-      "sourceSha256": "444996300e6304dae67599e894832d55854bfe883e7b85cdd5ec820636c16528",
-      "aliasOf": "symbols/original-thanks.png"
+      "search": "quente",
+      "keywords": [
+        "quente"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4583.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4583",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "686d593138b116a806571d0266d2038438542332ce79530fa28d8cd16b1ca800"
     },
     {
-      "search": "legacy 6944.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "Comer e beber",
+      "keywords": [
+        "comida",
+        "alimento"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4610.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4610",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9d5f97ca32a870d3d98b0b60273e717287d2eb4e44d1cc84ca1b1ea321b11eb0"
+    },
+    {
+      "search": "frio",
+      "keywords": [
+        "frio"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4652.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4652",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c487ba10c464e96cc0e9207d0517305eaac284e9834d3cebfa1069cfb6e3fba3"
+    },
+    {
+      "search": "frango",
+      "keywords": [
+        "frango",
+        "frango assado"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/4952.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/4952",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b41c5452087160bd1f29933497c45ecf1ea40f2640dbf0ff05f99897dbf03894"
+    },
+    {
+      "search": "aqui",
+      "keywords": [
+        "aqui",
+        "cá"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5382.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5382",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f70184b863f471c0d93e1315928ba83d63a09da40bf39aacecbad59502351578"
+    },
+    {
+      "search": "bem",
+      "keywords": [
+        "bem"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5397.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5397",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b54971df1489d9dd5e1cdea25d48c548c83b25c29216c3acf0f85f774fe4defb"
+    },
+    {
+      "search": "quero",
+      "keywords": [
+        "querer",
+        "desejar",
+        "eu quero",
+        "quero esse",
+        "pedir",
+        "quero",
+        "apetecer"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5441.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5441",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "01b80fabe4b5eb9319c716e60b78bd046fbcf72d82e691f99141a06a6eb6b2be"
+    },
+    {
+      "search": "mal",
+      "keywords": [
+        "mal"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5504.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5504",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b7559de4b3b5dda177da201278b4b278d611fe3bbe78af3ea82aacbbd3529668"
+    },
+    {
+      "search": "não",
+      "keywords": [
+        "não"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5526.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5526",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "6865ad1a2dd71c3546e49f58392a43e50dd00357385bae78824702fcb40ea8f0"
+    },
+    {
+      "search": "sim",
+      "keywords": [
+        "sim"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5584.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5584",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "03abffad7c1cb046c06c203cac62f9bb029019209518a649c4cffe77da332bf9"
+    },
+    {
+      "search": "banheiro",
+      "keywords": [
+        "casa de banho"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5921.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5921",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "adebbc7579ecbe17a82649e6598245f075c00dd9bcddd73ae5e79dcdef48ff04"
+    },
+    {
+      "search": "quarto",
+      "keywords": [
+        "quarto",
+        "dormitório"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/5988.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/5988",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "06af2045edcad8bd28569d32dd43603122ef0cef6c36e117f4a506119074218e"
+    },
+    {
+      "search": "abraçar",
+      "keywords": [
+        "abraçar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6023.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6023",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "78d2c81781d631b598ecdfcfef46cef9b192d89b57665145ab10a9e635eb2a9d"
+    },
+    {
+      "search": "andar",
+      "keywords": [
+        "caminhar",
+        "andar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6044.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6044",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d1927c9816acee1ea0d3d63d721b55ae86425635d583159cfc52b09fb934d909"
+    },
+    {
+      "search": "tomar banho",
+      "keywords": [
+        "tomar banho"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6058.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6058",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d8483c5dbb0bc96e141f93a92d1e707b26efb267ce4900c2cbd65c4041fc57b9"
+    },
+    {
+      "search": "beber",
+      "keywords": [
+        "beber",
+        "tomar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6061.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6061",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ee32422eae64141eff9f1613a688ef01010aa3ba775f1474cd9bf20df99ad20a"
+    },
+    {
+      "search": "não gosto",
+      "keywords": [
+        "não gostar",
+        "não gosto disso",
+        "desagradável",
+        "desagradar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6155.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6155",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f7f815d85168e1da82a653f9a220019f6a10148ddfaf180f445ce6c8b2665b60"
+    },
+    {
+      "search": "sala",
+      "keywords": [
+        "salão",
+        "sala"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6211.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6211",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5a66ce1980f523fd8c9717d3218b2c8dca19e0fa4fd74f7b204a5b6314cd154d"
+    },
+    {
+      "search": "comer",
+      "keywords": [
+        "comer"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6456.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6456",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4aa0ccd7e3f6f2436a4a82ec8e89aa23e3bcce36927ce63c2dbf4a58eea3d684"
+    },
+    {
+      "search": "dormir",
+      "keywords": [
+        "dormir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6479.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6479",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2234d303748ccd6c8955a5b7d8f93011966d3d44152d3228324c4dfc58aefbac"
+    },
+    {
+      "search": "ele",
+      "keywords": [
+        "ele"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6480.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6480",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a4153408761d071e20210745c2c1170ac21edb54620914e1652f41e405c89678"
+    },
+    {
+      "search": "estudar",
+      "keywords": [
+        "estudar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6495.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6495",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "3040c53c664d957103926decbf0b9b7f0bc82f36b14e0ce0b62ae530d51c3a20"
+    },
+    {
+      "search": "Frases rápidas",
+      "keywords": [
+        "falar",
+        "conversar",
+        "dialogar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6517.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6517",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "12f83c088c968af3a2415825ce3d38542fdbc80e911903c14b9c328a77c1b779"
+    },
+    {
+      "search": "professor",
+      "keywords": [
+        "professor do 1º ciclo",
+        "professor"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6556.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6556",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "bea1837c81922902a59688b157a28c02541b499b24c666d3b04ac275b5a20191"
+    },
+    {
+      "search": "médico",
+      "keywords": [
+        "médico",
+        "doutor",
+        "médico"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6561.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6561",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "fe8534f2a09b36c980c870db7451c2e2dcf06c8613544adbe073de60ae60b449"
+    },
+    {
+      "search": "olho",
+      "keywords": [
+        "olho",
+        "vista"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6573.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6573",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b216c3fda16913952af4a1f7ffd2e8be6eafb5fd7735d75854f56c51f067b016"
+    },
+    {
+      "search": "sentar",
+      "keywords": [
+        "sentar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6611.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6611",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "22a4b41610c0761de924182fbccc658ac2d6d4e2fa2ed30a2a19996d3040439b"
+    },
+    {
+      "search": "trabalhar",
+      "keywords": [
+        "trabalhar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6624.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6624",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b0217ef19b400b3b6280ee87d6e35698a07685f3bf4dd6818f5fa4a31871e91d"
+    },
+    {
+      "search": "você",
+      "keywords": [
+        "tu",
+        "te",
+        "ti",
+        "você"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6625.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6625",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "66df825c37a4ad3e6f16f740c10e629d5cf416b69fbc5d35db3c5b26bbe5df64"
+    },
+    {
+      "search": "voltar",
+      "keywords": [
+        "voltar",
+        "volta"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6630.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6630",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c570373e434c11901be86068cac2206f34aeee83aa483487fb328a8aca9ac853"
+    },
+    {
+      "search": "eu",
+      "keywords": [
+        "eu",
+        "me",
+        "mim"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6632.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6632",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "01c8512ff7d0a85e9ef27c385dabc735d27b38bd0b190ded49bf66db7e590b25"
+    },
+    {
+      "search": "arroz",
+      "keywords": [
+        "arroz"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6911.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6911",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e4b8e831c5baf3f5bd1c3924abd4c803b7ab7365dcfd8bc3a7bcf368d04b0904"
+    },
+    {
+      "search": "Bom dia",
+      "keywords": [
+        "bom dia"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/6944.png",
-      "source": "artwork/mulberry-morning.svg",
-      "url": "https://raw.githubusercontent.com/mulberrysymbols/mulberry-symbols/9cbab9f400c5de44e2bc58839cca07294aadb086/EN/morning.svg",
-      "license": "CC BY-SA 4.0",
-      "sha256": "699667f92ae45c4ab862efecc1054ffc3f05bddef6944d693771ffcbbbd56825",
-      "sourceSha256": "0ce3da5b60e53651aec28b76b77ff619d89a8985ce720377b1869364a901896c",
-      "aliasOf": "symbols/mulberry-morning.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6944",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a6860930ec114b17d98109bb59c3ef5445d5ee3423fd25ef6f0d4a55629fbdfc"
     },
     {
-      "search": "legacy 17054.png",
-      "keywords": [],
-      "provider": "Compatibility alias",
+      "search": "Lugares",
+      "keywords": [
+        "casa"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/6964.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/6964",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "eb3be4b94d8f733a33e7313920f792f420fffb3a83b0c4ea9cfda0a5761c3b51"
+    },
+    {
+      "search": "ela",
+      "keywords": [
+        "ela"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7028.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7028",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ab4ca2c374f579316bee03be4025611f2f2ec073b892774a80c8d496108a367c"
+    },
+    {
+      "search": "ler",
+      "keywords": [
+        "ler",
+        "leitura"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7141.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7141",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2e7ed620ff5a69ff928931283d880e955396563929a54e296ee743a00299b484"
+    },
+    {
+      "search": "cuidador",
+      "keywords": [
+        "monitor",
+        "cuidador"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7163.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7163",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "f7e58b2c6c82930b0c212797ed5f603079bbcebfe8afc83330cc062d8c765512"
+    },
+    {
+      "search": "Quero mudar de posição",
+      "keywords": [
+        "deslocar",
+        "mover"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7167.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7167",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ada4c73b0fdb53bee4300fdbe60f00b6b9e651fa030572476c0802eac824704d"
+    },
+    {
+      "search": "nós",
+      "keywords": [
+        "nós"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7183.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7183",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b286833a1a6341db53e2adc6300c1373a6b7a3ddfbf5b5e85e08a06d336219f8"
+    },
+    {
+      "search": "parar",
+      "keywords": [
+        "parar",
+        "deter"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7196.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7196",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b46940e0c02fea8e8629c249214b94e7d811efc1cec87c1fc3ad6cade71eb2b2"
+    },
+    {
+      "search": "roupa",
+      "keywords": [
+        "roupa"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7233.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7233",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4400142a6d69c253331b217f5f38617c7aefa084b0c7720b66944a0eabef15a3"
+    },
+    {
+      "search": "sede",
+      "keywords": [
+        "sedento",
+        "ter sede",
+        "sede"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/7273.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/7273",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "90bd23af2bb9559141c172602ed472a24fa4e5e61f8f9bc62d594d18c88da311"
+    },
+    {
+      "search": "desenhar",
+      "keywords": [
+        "desenhar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8088.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8088",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7580a2af173f2934e3e64f49836cb31d5be11123e437a49f7edaf399459a45b9"
+    },
+    {
+      "search": "Obrigado",
+      "keywords": [
+        "obrigado"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8129.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8129",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1d63494569ce13522ab0d1a2dea53fb6d3f0da509e33595c2a9cdace29a387ee"
+    },
+    {
+      "search": "ir",
+      "keywords": [
+        "ir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8142.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8142",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "feca2ccfb69ec40fd56f5c5720ea9fda43c18a4711d6f8875f5181560d95fca0"
+    },
+    {
+      "search": "remédio",
+      "keywords": [
+        "medicamento",
+        "tratamento"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8163.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8163",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "36fc00ffaf2608ab6889e4e97f430c94f8462d0ca8deba785071b71fe3d5d3e5"
+    },
+    {
+      "search": "Por favor",
+      "keywords": [
+        "por favor",
+        "rogar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8195.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8195",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2df6c3c0f6e01411ee816dc6d5f2da98a6fb7f540dd980005e5d6514174bf74f"
+    },
+    {
+      "search": "biscoito",
+      "keywords": [
+        "biscoito"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8295.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8295",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ee0c195f3b45b3f359ff998dcb2884bafcdc9ed9058b0aa90150e715b16ede46"
+    },
+    {
+      "search": "amiga",
+      "keywords": [
+        "amiga"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8486.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8486",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "321fd46d787b71f28e4d6ea1cf3aab663d39d6e84d5a8a15e44cb58569a77a37"
+    },
+    {
+      "search": "perna",
+      "keywords": [
+        "perna"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8666.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8666",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "98fa93df91b33cf6488d990638c8a42f2554bc6267f5ceec8172d7d119ce4bda"
+    },
+    {
+      "search": "comprar",
+      "keywords": [
+        "comprar",
+        "ir às compras",
+        "fazer as compras"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/8986.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/8986",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ace5fc24adab9c6df6b490a5da8ccb7b05b533e9b239d0aa6ac192c8fecb546a"
+    },
+    {
+      "search": "Não entendi",
+      "keywords": [
+        "perguntar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/9847.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/9847",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "266eb872a783c85788378406eeb908784219e760acdbc84c9716f8b5dc601967"
+    },
+    {
+      "search": "Sentimentos",
+      "keywords": [
+        "contente",
+        "feliz"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/9907.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/9907",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5bf02f910e08bc122f19fc04a5d0660997d3407a226a0f23b1f3877b68622277"
+    },
+    {
+      "search": "pegar",
+      "keywords": [
+        "apanhar",
+        "tomar",
+        "pegar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/10148.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/10148",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "85a18586c7df79a2ea516741b9ad4b54cb05fb55aa6823572126a5dcda987592"
+    },
+    {
+      "search": "com medo",
+      "keywords": [
+        "medo",
+        "temor"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/10261.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/10261",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5237cc92b3e5a2d5f3fe00d22bed1535826397c0c9f9d0050a91439d53187b7e"
+    },
+    {
+      "search": "dente",
+      "keywords": [
+        "dente"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/10267.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/10267",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "3dc83d76dd232a3937510e37631c691689b3357c37d2d37dfa80c304948e04a8"
+    },
+    {
+      "search": "coceira",
+      "keywords": [
+        "coçar",
+        "picar",
+        "arranhar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11356.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11356",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7b72bf8acc335453ed9dbe99e01b3c964c2c04cfb518d1952c7df9e0aaa8f6e0"
+    },
+    {
+      "search": "suco",
+      "keywords": [
+        "sumo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11461.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11461",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "5f525909fe61931fb7abe255ad57a575c95b957efb42c9e6c79fece3a0ade141"
+    },
+    {
+      "search": "Pode repetir?",
+      "keywords": [
+        "repetir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/11752.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/11752",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "842d77aa7dfc6671ccb0a0d73ebfe4e57f9217e60756f0dc9c91761e5a852006"
+    },
+    {
+      "search": "ajuda",
+      "keywords": [
+        "apoio",
+        "ajuda",
+        "colaboração",
+        "cooperação"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/12252.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/12252",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "743cabc898ef3deb1f154670d59b5cc1aa34cd0a1d987ac2ae346a0d9625c655"
+    },
+    {
+      "search": "trabalho",
+      "keywords": [
+        "trabalho",
+        "profissionalismo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/16087.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/16087",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "fa32141859fbdf65b80daa4d76aca20445c411da87da6563ffe12475ad5a9288"
+    },
+    {
+      "search": "papai",
+      "keywords": [
+        "papaia"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/16829.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/16829",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e109d53afc02398fe21d57025ef9fa5ce41c387064a1df40efbb64fb34eb8edb"
+    },
+    {
+      "search": "Quero outra coisa",
+      "keywords": [
+        "outro",
+        "outra"
+      ],
+      "provider": "ARASAAC",
       "file": "symbols/17054.png",
-      "source": "artwork/original-choice.svg",
-      "url": null,
-      "license": "MIT",
-      "sha256": "77b80f27d38a7868fbb9c3bf3389e4d877b9404bebec5fe38533b72a803e3179",
-      "sourceSha256": "3afda8bdf7ee13e53517778bf072746fcce6d28fa5f8986c0e2bc6451795ff4c",
-      "aliasOf": "symbols/original-choice.png"
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/17054",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a0689dba3e799eb209d34be3e788b8d78ef226005e2aabdf2b7b8039ef8da78e"
+    },
+    {
+      "search": "assistir",
+      "keywords": [
+        "assistir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/21385.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/21385",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "db6b70655722776c200c0270620d6fc0874c88393b86857127c9504e6346e449"
+    },
+    {
+      "search": "Fazer",
+      "keywords": [
+        "jogar",
+        "brincar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/23392.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/23392",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "6d04762e3a8370c0275f9d15ab94145aec75f57245a56dc84ba916098b3df927"
+    },
+    {
+      "search": "avô",
+      "keywords": [
+        "avô",
+        "vovô"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/23718.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/23718",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "81080b49c4fc136fa463d66443513e1c00f4d7535ca00ad3462118c2c2a50164"
+    },
+    {
+      "search": "café",
+      "keywords": [
+        "café"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/24479.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/24479",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1719108264125ff3679075565cb384867bf2c440ca42c52449b041181d5ee0c1"
+    },
+    {
+      "search": "abrir",
+      "keywords": [
+        "abrir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/24825.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/24825",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "6f1ecfd013bdbf89ea57572c618f99a7411e7e077ce229a4fd82f92f9e63eabb"
+    },
+    {
+      "search": "fechar",
+      "keywords": [
+        "fechar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/24976.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/24976",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "822e5ade8eea4b8cc459c4b5f7e0557a043b9fda2764053c45a619a1ffd89f90"
+    },
+    {
+      "search": "pé",
+      "keywords": [
+        "pé"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/25327.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/25327",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "3a479fa443bdb0964fb24e18574d0097afd88308effd336b5a274b14ac3e798d"
+    },
+    {
+      "search": "amigo",
+      "keywords": [
+        "amigo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/25790.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/25790",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e096e2ef6efcef8d3cf2f9d7e12fa1fc1856f3d8659c5e7e3f51ca082990f30f"
+    },
+    {
+      "search": "cama",
+      "keywords": [
+        "cama"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/25900.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/25900",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "0dd0339f480a0f94897eca4e91d335eea01088e2096f5663157fed1fc8298d9a"
+    },
+    {
+      "search": "cozinha",
+      "keywords": [
+        "cozinha"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/25966.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/25966",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2e76d7e075fb5c33e3bba43154d3b6c3a6d5b0960453549a678882d07108150b"
+    },
+    {
+      "search": "fruta",
+      "keywords": [
+        "fruta",
+        "frutos"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/28339.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/28339",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "df0ae5dedde8291f278dd5909cbece8a3b4641f795295e18f82f56f8fdd89d01"
+    },
+    {
+      "search": "acabou",
+      "keywords": [
+        "acabar",
+        "finalizar",
+        "acabou!",
+        "acabou",
+        "já chega!",
+        "já chega"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/28429.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/28429",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "7098f017b46ef6f8de1098091f4ae83c2c575edf0969388f6e2c8427b8a3ccc3"
+    },
+    {
+      "search": "dar",
+      "keywords": [
+        "dar",
+        "oferecer"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/28431.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/28431",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "97dfc840ee3338a9de0f92b6b3be0f5f7f3bd966a0f9654ad586a624fe2ed7c7"
+    },
+    {
+      "search": "todo mundo",
+      "keywords": [
+        "mundo",
+        "Terra"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/30014.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/30014",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "abce143a205ddf6f50841056d4ffc88a8b30f9fe636c77bd58bd2a441b79a981"
+    },
+    {
+      "search": "escolher",
+      "keywords": [
+        "escolher",
+        "seleccionar",
+        "decidir",
+        "preferir"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/30510.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/30510",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ce2985e2ef7960d02e94fceb365ccfce5b578e25734f5bb4968dbd28e50c3af1"
+    },
+    {
+      "search": "piscina",
+      "keywords": [
+        "piscina"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/30516.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/30516",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "d153f0089ea72ca24806ec9ab43b224c2edc4058d7802e1d0a8bd58c9b832cd6"
+    },
+    {
+      "search": "praia",
+      "keywords": [
+        "praia",
+        "costa"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/30518.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/30518",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "b31470507500387d2ef5fd3b5aff011d72487208be175da3835a774c5a794057"
+    },
+    {
+      "search": "calmo",
+      "keywords": [
+        "tranquilo",
+        "calmo",
+        "tranquila",
+        "calma"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/31310.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/31310",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ad369542d97417c2bc9f8a5f3299837c290fecf9789c51c6587df0a4a2558554"
+    },
+    {
+      "search": "restaurante",
+      "keywords": [
+        "restaurante"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32408.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32408",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1796c1dd84e597fe22db0d4802d26b9bf252849722d00aa3875f1b98bdcf8bee"
+    },
+    {
+      "search": "escola",
+      "keywords": [
+        "escola",
+        "escola secundária"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32446.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32446",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a73faa5b16180a49941e1854fdcabe72c6df0d35627a35103c44c082ad59ddcf"
+    },
+    {
+      "search": "desconfortável",
+      "keywords": [
+        "incómodo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32528.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32528",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "3672f4e2ecb113c4ece1d1d40fa6b0fb6d58fae1c32280b6464689bd9112c3db"
+    },
+    {
+      "search": "posição",
+      "keywords": [
+        "posição",
+        "postura"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32675.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32675",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "51fa573e552b452a26aa761515a7a42abc7e2fddff7eb254772829f57cbe99c9"
+    },
+    {
+      "search": "agora",
+      "keywords": [
+        "agora"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32747.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32747",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a2e6544876878ab0a6798da354c75b13f3f433d0926fd7e8c11abd9afa880119"
+    },
+    {
+      "search": "depois",
+      "keywords": [
+        "depois",
+        "logo"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32749.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32749",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "4ac250dad17650cd7f4f3c75615846086b026e945c99597e8b98345263106ddb"
+    },
+    {
+      "search": "ter",
+      "keywords": [
+        "segurar",
+        "ter",
+        "possuir",
+        "apertar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32761.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32761",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a0e566a31e1a05433907f316772ec33c3832c1fdf38124e5b535b764f2f43506"
+    },
+    {
+      "search": "mercado",
+      "keywords": [
+        "mercado"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/32942.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/32942",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "14c7aeed4f784ec0106069763a0180b81a438082177f968111b1367a338989ce"
+    },
+    {
+      "search": "respirar",
+      "keywords": [
+        "respirar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/34377.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/34377",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "47e2ff2c9c231903d4ec54d9c5dff50ba2941c2583034012695ee3181fffa79a"
+    },
+    {
+      "search": "cansado",
+      "keywords": [
+        "cansado",
+        "cansada"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/35537.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/35537",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "1ed1f164c37b896d95bb5872c022222642d6e8b29c647629af5e9c6f954bc434"
+    },
+    {
+      "search": "bravo",
+      "keywords": [
+        "chateado",
+        "zangado",
+        "chateada",
+        "irritado",
+        "irritada",
+        "zangada"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/35539.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/35539",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "97cf962b27e05fa2b4b5cdc6c5b96e91d877b9d5c99c9a620a12804b889350d1"
+    },
+    {
+      "search": "triste",
+      "keywords": [
+        "triste"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/35545.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/35545",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "824fb5621faed4d2793f1e21ad72ec2260c806c3dbd7d3752a2437e71410e23b"
+    },
+    {
+      "search": "animado",
+      "keywords": [
+        "contente",
+        "alegre"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/35547.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/35547",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9018f61ff61723563757f5a2d145b7b0596c82cbaba6c19ef6f6703f2e9c5ff1"
+    },
+    {
+      "search": "fome",
+      "keywords": [
+        "fome"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/35559.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/35559",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e2d7cb359d0ba4cd51921df92a47ca8803864660a3be59e2cb0e9e5f60c1d7b7"
+    },
+    {
+      "search": "calor",
+      "keywords": [
+        "calor"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/35561.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/35561",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "92e55bdcd96dfa0cd2b13f8e9891ebac0ab2cf1d360ff89a51570168e9fa5a13"
+    },
+    {
+      "search": "levantar",
+      "keywords": [
+        "levantar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/36073.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/36073",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "6b103e7e857770ebd986c8fb779fe085e8349f8c57237da9537fd95f948092cb"
+    },
+    {
+      "search": "hospital",
+      "keywords": [
+        "hospital"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/36210.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/36210",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "e24164acf2b456eda4d0592b044ccce26c69a5f54d3d936f41032af63317d144"
+    },
+    {
+      "search": "esperar",
+      "keywords": [
+        "esperar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/36914.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/36914",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2183a347c66e59e580c26821304a4b9baa84adde8b3b2b5d5c0f7f33e4eca2b0"
+    },
+    {
+      "search": "preciso",
+      "keywords": [
+        "necessitar"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/37160.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/37160",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "c746187b2096ee8071f0d4707c7140a38038d68c03f25656e631ac8c3d2413ad"
+    },
+    {
+      "search": "farmácia",
+      "keywords": [
+        "farmácia"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/37368.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/37368",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "beec965317171eaa42e6d6294ab1d4bb0aedc5a1a8e2e9c0ef03a6206de11c29"
+    },
+    {
+      "search": "gosto",
+      "keywords": [
+        "gostar",
+        "gosto disso"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/37826.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/37826",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "2f8aac0bfaddbb691f898ad09fb8320ac0ec95f4f5c031063565939569596d1b"
+    },
+    {
+      "search": "picante",
+      "keywords": [
+        "picante"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/37834.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/37834",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a8ea7d905b01408a30c5b8684bdffe31f080201f817e4d1ff0716aab4c06f233"
+    },
+    {
+      "search": "quero companhia",
+      "keywords": [
+        "companhia de teatro"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/38236.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/38236",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "9d9e1ad8e9521147fce66b4ef95c3fcaaaf5de4dff442fbd532acf6e4c60f222"
+    },
+    {
+      "search": "Pessoas",
+      "keywords": [
+        "família"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/38351.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/38351",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "86b7d2f56d5b778a655315d17d20aed5fbad495bcbcf7a977b3291ed31bd679a"
+    },
+    {
+      "search": "sozinho",
+      "keywords": [
+        "só",
+        "sozinho",
+        "sozinha",
+        "solidão"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/39247.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/39247",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "8df1597fdaa7307d50c06056c08c6698512f343d2d39815463e3ddedb30e9245"
+    },
+    {
+      "search": "ouvido",
+      "keywords": [
+        "ouvido"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/39498.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/39498",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "ca23c413b759f6a454a4f7c773389732f7d9d009754e2859988ccd74cc2c3f46"
+    },
+    {
+      "search": "parque",
+      "keywords": [
+        "comboio de brincar",
+        "comboio de parque infantil"
+      ],
+      "provider": "ARASAAC",
+      "file": "symbols/39572.png",
+      "source": null,
+      "url": "https://arasaac.org/pictograms/pt/39572",
+      "author": "Sergio Palao",
+      "license": "CC BY-NC-SA 4.0",
+      "sha256": "a0ce4e01d8946f003ce8a90e93fbb077f522ae407211ffdc13b87950b85084f5"
     }
-  ]
+  ],
+  "arasaac": {
+    "origin": "https://arasaac.org",
+    "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "owner": "Government of Aragón (Spain)",
+    "author": "Sergio Palao"
+  }
 }

@@ -6,11 +6,11 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '24'
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
       - name: Check symbols, attribution and manifest
@@ -21,8 +21,35 @@ jobs:
         run: ./tests/run-model.ps1
       - name: Compile and verify APK with an ephemeral CI key
         run: ./build.ps1
-      - uses: actions/upload-artifact@v4
+      - name: Resolve Robolectric test dependencies
+        shell: pwsh
+        run: |
+          $deps = Join-Path $PWD 'build/robo-deps'
+          mvn -q -B -f tests/pom.xml dependency:copy-dependencies -DincludeScope=test "-DoutputDirectory=$deps"
+          if ($LASTEXITCODE -ne 0) { throw 'Maven failed' }
+          Get-ChildItem $deps -Filter *.aar | ForEach-Object {
+            $zip = Join-Path $env:RUNNER_TEMP ($_.BaseName + '.zip')
+            Copy-Item $_.FullName $zip
+            $out = Join-Path $env:RUNNER_TEMP $_.BaseName
+            Expand-Archive $zip $out -Force
+            Copy-Item (Join-Path $out 'classes.jar') (Join-Path $deps ($_.BaseName + '-classes.jar'))
+          }
+          New-Item -ItemType Directory -Force .test-fixtures | Out-Null
+          Invoke-WebRequest 'https://raw.githubusercontent.com/willwade/AACProcessors/9e538963b236b84afce1ecf94980506d9a9bcd64/examples/demofiles/Medical%20Advocacy.spb' -OutFile .test-fixtures/sample.spb
+          if ((Get-FileHash .test-fixtures/sample.spb -Algorithm SHA256).Hash -ne 'D2D6895D4FDC3C258EB971C05330CF34E446EC25DA016643F3DDE26BA0C98836') { throw 'Unexpected fixture hash' }
+      - name: Android runtime and render tests (Robolectric, APIs 28 and 35)
+        run: ./tests/run-runtime.ps1
+      - uses: actions/upload-artifact@v5
         with:
           name: voz-livre-ci-apk
-          path: build/Voz-Livre-0.1.1.apk
+          path: build/Voz-Livre-*.apk
+          retention-days: 7
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: voz-livre-screenshots
+          path: |
+            build/inicio.png
+            build/comida.png
+            build/paisagem.png
           retention-days: 7
